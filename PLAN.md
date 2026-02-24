@@ -204,6 +204,9 @@ The agent uses tools to query the property database, enabling questions like:
 4. **`.env.local`** — Environment template with placeholder values — DONE
 5. **`docs/elevenlabs-setup-guide.md`** — Step-by-step dashboard setup guide — DONE
    - 10-step walkthrough: account creation, agent config, tool registration, testing
+6. **ElevenLabs dashboard configuration** — DONE
+   - Agent created: "dummycrowd" with system prompt, first message, 4 client tools registered
+   - API key generated, Agent ID obtained, `.env.local` populated
 
 ### Phase 5: Build Voice Agent Component (Day 2, ~2 hours)
 1. **`src/components/VoiceAgent.tsx`** — Main conversation component
