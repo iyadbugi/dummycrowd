@@ -37,6 +37,7 @@ export interface PropertyValuation {
 export interface PropertyPhysical {
   bedrooms: number;
   bathrooms: number;
+  sqft?: number;
 }
 
 export interface PropertyLocation {

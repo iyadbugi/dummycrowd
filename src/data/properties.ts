@@ -2,22 +2,22 @@ import { Property } from "@/types/property";
 
 export const liveProperties: Property[] = [
   {
-    "id": 780,
-    "code": "SC-327",
-    "title": "Villa in the Sky Penthouse, DIFC",
-    "investmentType": "FLIP",
+    "id": 784,
+    "code": "SC-331",
+    "title": "Studio in Discovery Gardens",
+    "investmentType": "HOLD",
     "propertyCategory": "RESIDENTIAL",
-    "price": 0,
-    "projectPrice": 0,
+    "price": 578000,
+    "projectPrice": 578000,
     "propertyType": "APARTMENT",
-    "investmentCategory": null,
+    "investmentCategory": "LONG_TERM",
     "propertyStatus": "LIVE",
     "renovationProgress": null,
     "totalReturnRoi": 0,
     "totalReturnRoiPercentage": 0,
     "investors": 0,
     "rental": {
-      "grossYield": null,
+      "grossYield": 6.07,
       "netYield": null,
       "dividendYield": null,
       "grossRent": null,
@@ -27,7 +27,7 @@ export const liveProperties: Property[] = [
     },
     "performance": {
       "investors": 0,
-      "annualized": null,
+      "annualized": 10.5,
       "totalGrossRoi": null,
       "investmentPeriod": 0,
       "funded": 0,
@@ -43,8 +43,72 @@ export const liveProperties: Property[] = [
       "expectedSaleProceed": null
     },
     "physical": {
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "sqft": 550
+    },
+    "location": {
+      "area": {
+        "name": "Discovery Gardens",
+        "displayName": "Discovery Gardens"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": null,
+      "closeDate": null,
+      "soldDate": null,
+      "completionDate": null
+    }
+  },
+  {
+    "id": 780,
+    "code": "SC-327",
+    "title": "\"Villa in the Sky\" 3-floor Penthouse in Central Park Tower, DIFC",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 27352040,
+    "projectPrice": 27352040,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "LIVE",
+    "renovationProgress": null,
+    "totalReturnRoi": 0,
+    "totalReturnRoiPercentage": 0,
+    "investors": 72,
+    "rental": {
+      "grossYield": null,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": null,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 72,
+      "annualized": 15.13,
+      "totalGrossRoi": null,
+      "investmentPeriod": 12,
+      "funded": 33.15,
+      "fundedAmount": 9066001.26,
+      "totalReturnRoi": null,
+      "totalReturnRoiPercentage": null,
+      "renovationProgress": null
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": null,
+      "expectedSaleProceed": null
+    },
+    "physical": {
       "bedrooms": 4,
-      "bathrooms": 5
+      "bathrooms": 5,
+      "sqft": 6496
     },
     "location": {
       "area": {
@@ -109,7 +173,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -171,7 +236,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 824
     },
     "location": {
       "area": {
@@ -233,7 +299,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 4
+      "bathrooms": 4,
+      "sqft": 3016
     },
     "location": {
       "area": {
@@ -295,7 +362,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -357,7 +425,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -419,7 +488,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -481,7 +551,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -543,7 +614,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1225
     },
     "location": {
       "area": {
@@ -605,7 +677,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 2000
     },
     "location": {
       "area": {
@@ -667,7 +740,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -729,7 +803,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -791,7 +866,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -853,7 +929,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 0
+      "bathrooms": 0,
+      "sqft": 475
     },
     "location": {
       "area": {
@@ -915,7 +992,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 5
+      "bathrooms": 5,
+      "sqft": 2000
     },
     "location": {
       "area": {
@@ -977,7 +1055,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -1039,7 +1118,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -1101,7 +1181,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 5,
-      "bathrooms": 5
+      "bathrooms": 5,
+      "sqft": 5300
     },
     "location": {
       "area": {
@@ -1163,7 +1244,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -1225,7 +1307,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -1287,7 +1370,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -1349,7 +1433,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -1411,7 +1496,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -1473,7 +1559,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -1535,7 +1622,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -1597,7 +1685,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -1659,7 +1748,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -1721,7 +1811,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -1783,7 +1874,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -1845,7 +1937,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -1907,7 +2000,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -1969,7 +2063,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -2031,7 +2126,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -2093,7 +2189,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -2155,7 +2252,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -2217,7 +2315,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -2279,7 +2378,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -2341,7 +2441,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 4
+      "bathrooms": 4,
+      "sqft": 3850
     },
     "location": {
       "area": null,
@@ -2400,7 +2501,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 2075
     },
     "location": {
       "area": {
@@ -2462,7 +2564,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 4
+      "bathrooms": 4,
+      "sqft": 2050
     },
     "location": {
       "area": {
@@ -2524,7 +2627,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1200
     },
     "location": {
       "area": {
@@ -2586,7 +2690,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -2648,7 +2753,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -2710,7 +2816,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -2772,7 +2879,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -2834,7 +2942,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -2896,7 +3005,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 2075
     },
     "location": {
       "area": {
@@ -2958,7 +3068,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -3020,7 +3131,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1225
     },
     "location": {
       "area": {
@@ -3082,7 +3194,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -3144,7 +3257,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1275
     },
     "location": {
       "area": {
@@ -3206,7 +3320,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -3268,7 +3383,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -3330,7 +3446,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -3392,7 +3509,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1200
     },
     "location": {
       "area": {
@@ -3454,7 +3572,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -3516,7 +3635,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -3578,7 +3698,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -3640,7 +3761,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -3702,7 +3824,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -3764,7 +3887,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -3826,7 +3950,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1275
     },
     "location": {
       "area": {
@@ -3888,7 +4013,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -3950,7 +4076,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -4012,7 +4139,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1200
     },
     "location": {
       "area": {
@@ -4074,7 +4202,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -4136,7 +4265,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -4198,7 +4328,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -4260,7 +4391,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -4322,7 +4454,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1200
     },
     "location": {
       "area": {
@@ -4384,7 +4517,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -4446,7 +4580,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -4508,7 +4643,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -4570,7 +4706,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -4632,7 +4769,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -4694,7 +4832,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -4756,7 +4895,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1250
     },
     "location": {
       "area": {
@@ -4818,7 +4958,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": -1
+      "bathrooms": -1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -4880,7 +5021,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -4942,7 +5084,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -5004,7 +5147,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -5066,7 +5210,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -5128,7 +5273,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1225
     },
     "location": {
       "area": {
@@ -5190,7 +5336,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -5252,7 +5399,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -5314,7 +5462,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -5376,7 +5525,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -5438,7 +5588,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -5500,7 +5651,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -5562,7 +5714,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -5624,7 +5777,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -5686,7 +5840,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -5748,7 +5903,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -5810,7 +5966,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -5872,7 +6029,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -5934,7 +6092,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -5996,7 +6155,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -6058,7 +6218,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -6120,7 +6281,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -6182,7 +6344,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -6244,7 +6407,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -6306,7 +6470,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -6368,7 +6533,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -6430,7 +6596,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -6492,7 +6659,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -6554,7 +6722,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -6616,7 +6785,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -6678,7 +6848,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -6740,7 +6911,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -6802,7 +6974,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -6864,7 +7037,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -6926,7 +7100,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -6988,7 +7163,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -7050,7 +7226,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1225
     },
     "location": {
       "area": {
@@ -7112,7 +7289,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -7174,7 +7352,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -7236,7 +7415,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1250
     },
     "location": {
       "area": {
@@ -7298,7 +7478,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -7360,7 +7541,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -7422,7 +7604,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -7484,7 +7667,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -7546,7 +7730,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -7608,7 +7793,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -7670,7 +7856,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -7732,7 +7919,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -7794,7 +7982,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -7856,7 +8045,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -7918,7 +8108,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -7980,7 +8171,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -8042,7 +8234,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -8104,7 +8297,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -8166,7 +8360,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -8228,7 +8423,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -8290,7 +8486,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -8352,7 +8549,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -8414,7 +8612,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 2250
     },
     "location": {
       "area": {
@@ -8476,7 +8675,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -8538,7 +8738,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -8600,7 +8801,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -8662,7 +8864,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -8724,7 +8927,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -8786,7 +8990,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -8848,7 +9053,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -8910,7 +9116,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -8972,7 +9179,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -9034,7 +9242,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -9096,7 +9305,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -9158,7 +9368,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -9220,7 +9431,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -9282,7 +9494,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 2275
     },
     "location": {
       "area": {
@@ -9344,7 +9557,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -9406,7 +9620,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -9468,7 +9683,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -9530,7 +9746,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -9592,7 +9809,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -9654,7 +9872,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -9716,7 +9935,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -9778,7 +9998,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -9840,7 +10061,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4525
     },
     "location": {
       "area": {
@@ -9902,7 +10124,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 5,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 5275
     },
     "location": {
       "area": {
@@ -9964,7 +10187,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4525
     },
     "location": {
       "area": {
@@ -10026,7 +10250,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4600
     },
     "location": {
       "area": {
@@ -10088,7 +10313,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4500
     },
     "location": {
       "area": {
@@ -10150,7 +10376,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4575
     },
     "location": {
       "area": {
@@ -10212,7 +10439,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -10274,7 +10502,8 @@ export const fundedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4500
     },
     "location": {
       "area": {
@@ -10339,7 +10568,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 4
+      "bathrooms": 4,
+      "sqft": 3850
     },
     "location": {
       "area": null,
@@ -10398,7 +10628,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 3,
-      "bathrooms": 4
+      "bathrooms": 4,
+      "sqft": 2050
     },
     "location": {
       "area": {
@@ -10460,7 +10691,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -10522,7 +10754,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -10584,7 +10817,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1250
     },
     "location": {
       "area": {
@@ -10646,7 +10880,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": -1
+      "bathrooms": -1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -10708,7 +10943,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -10770,7 +11006,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1225
     },
     "location": {
       "area": {
@@ -10832,7 +11069,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -10894,7 +11132,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -10956,7 +11195,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -11018,7 +11258,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -11080,7 +11321,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -11142,7 +11384,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -11204,7 +11447,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -11266,7 +11510,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -11328,7 +11573,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -11390,7 +11636,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -11452,7 +11699,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -11514,7 +11762,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -11576,7 +11825,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -11638,7 +11888,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -11700,7 +11951,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -11762,7 +12014,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 1225
     },
     "location": {
       "area": {
@@ -11824,7 +12077,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -11886,7 +12140,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -11948,7 +12203,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 1250
     },
     "location": {
       "area": {
@@ -12010,7 +12266,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -12072,7 +12329,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 1300
     },
     "location": {
       "area": {
@@ -12134,7 +12392,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -12196,7 +12455,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -12258,7 +12518,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -12320,7 +12581,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -12382,7 +12644,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -12444,7 +12707,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -12506,7 +12770,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -12568,7 +12833,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -12630,7 +12896,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -12692,7 +12959,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -12754,7 +13022,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -12816,7 +13085,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -12878,7 +13148,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -12940,7 +13211,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 2250
     },
     "location": {
       "area": {
@@ -13002,7 +13274,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 775
     },
     "location": {
       "area": {
@@ -13064,7 +13337,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -13126,7 +13400,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -13188,7 +13463,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 575
     },
     "location": {
       "area": {
@@ -13250,7 +13526,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -13312,7 +13589,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -13374,7 +13652,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 800
     },
     "location": {
       "area": {
@@ -13436,7 +13715,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -13498,7 +13778,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 600
     },
     "location": {
       "area": {
@@ -13560,7 +13841,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -13622,7 +13904,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 500
     },
     "location": {
       "area": {
@@ -13684,7 +13967,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -13746,7 +14030,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 2275
     },
     "location": {
       "area": {
@@ -13808,7 +14093,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -13870,7 +14156,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -13932,7 +14219,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 750
     },
     "location": {
       "area": {
@@ -13994,7 +14282,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 850
     },
     "location": {
       "area": {
@@ -14056,7 +14345,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 1,
-      "bathrooms": 2
+      "bathrooms": 2,
+      "sqft": 825
     },
     "location": {
       "area": {
@@ -14118,7 +14408,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 550
     },
     "location": {
       "area": {
@@ -14180,7 +14471,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 1
+      "bathrooms": 1,
+      "sqft": 525
     },
     "location": {
       "area": {
@@ -14242,7 +14534,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4600
     },
     "location": {
       "area": {
@@ -14304,7 +14597,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4500
     },
     "location": {
       "area": {
@@ -14366,7 +14660,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4575
     },
     "location": {
       "area": {
@@ -14428,7 +14723,8 @@ export const exitedProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 4,
-      "bathrooms": 3
+      "bathrooms": 3,
+      "sqft": 4500
     },
     "location": {
       "area": {
