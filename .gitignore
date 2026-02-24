@@ -32,6 +32,10 @@ yarn-error.log*
 .env
 .env*.local
 
+# screenshots / artifacts
+*.png
+.playwright-mcp/
+
 # vercel
 .vercel
 
