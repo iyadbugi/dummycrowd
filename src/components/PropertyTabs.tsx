@@ -51,6 +51,11 @@ export default function PropertyTabs() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Reset type filter to ALL when switching tabs
+  useEffect(() => {
+    setTypeFilter("ALL");
+  }, [activeTab]);
+
   // Compute filtered properties
   const filteredProperties = useMemo(() => {
     const tabData = tabs.find((t) => t.key === activeTab);

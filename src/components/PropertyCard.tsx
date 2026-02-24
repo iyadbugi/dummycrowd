@@ -77,6 +77,7 @@ function MetricRow({
 // Hold metrics (funded / CLOSED)
 // ---------------------------------------------------------------------------
 function HoldMetrics({ property }: { property: Property }) {
+  const isLive = property.propertyStatus === "LIVE";
   const rentalYield =
     property.rental.dividendYield ?? property.rental.grossYield ?? null;
   const rentalYieldDisplay = rentalYield !== null ? `${rentalYield}%` : "\u2014";
@@ -95,21 +96,32 @@ function HoldMetrics({ property }: { property: Property }) {
     marketValueDisplay += ` (${sign}${pct}%)`;
   }
 
+  // Annualized ROI (shown for LIVE cards instead of market value)
+  const annualized = property.performance.annualized;
+  const annualizedDisplay = annualized !== null ? `${annualized}%` : "\u2014";
+
   const rentalIncome = `Dhs ${formatPrice(property.rental.totalRentalIncome)}`;
 
   return (
     <div className="space-y-1.5">
       <MetricRow label="Rental yield" value={rentalYieldDisplay} />
-      <MetricRow label="Purchase price" value={purchasePrice} />
-      {property.valuation.marketValue !== null ? (
-        <div className="flex justify-between items-baseline">
-          <span className="text-sc-text-muted text-sm">Current market value</span>
-          <span className={`text-sm font-medium ${marketValueClass}`}>
-            {marketValueDisplay}
-          </span>
-        </div>
+      {isLive ? (
+        // Live Hold cards: show Annualized ROI instead of market value
+        <MetricRow label="Annualized ROI" value={annualizedDisplay} />
       ) : (
-        <MetricRow label="Current market value" value={"\u2014"} />
+        <>
+          <MetricRow label="Purchase price" value={purchasePrice} />
+          {property.valuation.marketValue !== null ? (
+            <div className="flex justify-between items-baseline">
+              <span className="text-sc-text-muted text-sm">Current market value</span>
+              <span className={`text-sm font-medium ${marketValueClass}`}>
+                {marketValueDisplay}
+              </span>
+            </div>
+          ) : (
+            <MetricRow label="Current market value" value={"\u2014"} />
+          )}
+        </>
       )}
       <div className="border-t border-gray-100 my-2" />
       <MetricRow label="Rental income to date" value={rentalIncome} />
@@ -235,7 +247,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   const isExited = property.propertyStatus === "EXITED";
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow p-0 gap-0">
+    <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow p-0 gap-0">
       {/* ---- Image area ---- */}
       <div className={`h-[200px] rounded-t-xl overflow-hidden relative bg-gradient-to-br ${gradient}`}>
         {/* Top-left badge */}
