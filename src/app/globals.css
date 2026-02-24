@@ -45,6 +45,18 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --color-sc-navy: var(--sc-navy);
+  --color-sc-navy-light: var(--sc-navy-light);
+  --color-sc-blue: var(--sc-blue);
+  --color-sc-blue-light: var(--sc-blue-light);
+  --color-sc-green: var(--sc-green);
+  --color-sc-purple: var(--sc-purple);
+  --color-sc-pink: var(--sc-pink);
+  --color-sc-gray-bg: var(--sc-gray-bg);
+  --color-sc-text-dark: var(--sc-text-dark);
+  --color-sc-text-muted: var(--sc-text-muted);
+  --color-sc-text-green: var(--sc-text-green);
+  --color-sc-text-red: var(--sc-text-red);
 }
 
 :root {
@@ -80,6 +92,18 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --sc-navy: #1B2559;
+  --sc-navy-light: #243068;
+  --sc-blue: #2563EB;
+  --sc-blue-light: #3B82F6;
+  --sc-green: #22C55E;
+  --sc-purple: #8B5CF6;
+  --sc-pink: #EC4899;
+  --sc-gray-bg: #F5F6FA;
+  --sc-text-dark: #1E293B;
+  --sc-text-muted: #64748B;
+  --sc-text-green: #16A34A;
+  --sc-text-red: #DC2626;
 }
 
 .dark {
