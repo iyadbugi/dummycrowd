@@ -188,18 +188,22 @@ The agent uses tools to query the property database, enabling questions like:
    - Registered as Tailwind utilities via `@theme inline`
 8. **shadcn components used**: `button`, `card`, `badge`, `progress`
 
-### Phase 4: Configure ElevenLabs Agent (Day 2, ~1-2 hours)
-1. **Create agent in ElevenLabs dashboard**
-   - Name: "SmartInvestor"
-   - Voice: Professional, warm (test a few options)
-   - System prompt: Full SmartCrowd knowledge base + instructions for personality and tool usage
-   - First message: "Hi! I'm your SmartCrowd investment advisor. I can help you understand our properties, explain how fractional investing works, or answer any questions about your portfolio. What would you like to know?"
-2. **Register 4 tools** (client-side via the React SDK):
-   - `lookup_property`: params `{property_id: string}` → returns full property details
-   - `search_properties`: params `{area?: string, type?: "Hold"|"Flip"|"Exited", min_yield?: number}` → returns matching properties
-   - `calculate_roi`: params `{investment_amount: number, property_id: string, holding_years?: number}` → returns projected returns after fees
-   - `get_renovation_status`: params `{property_id: string}` → returns renovation % and timeline for Flip properties
-3. **Test in playground** — iterate on prompt until natural
+### Phase 4: Configure ElevenLabs Agent ~~(Day 2, ~1-2 hours)~~ COMPLETED
+1. **`src/lib/agent-tools.ts`** — 4 client-side tool handlers — DONE
+   - `lookupProperty`: fuzzy match by SC code or name/area, returns up to 3 formatted summaries
+   - `searchProperties`: filter by area, type (Hold/Flip), status (Live/Funded/Exited), min yield; returns up to 5 results
+   - `calculateRoi`: projects net returns after fees (1.5% entry, 0.5% annual, 2.5% exit) for Hold/Flip/Exited
+   - `getRenovationStatus`: returns renovation % + qualitative status for Flip properties
+   - Helpers: `findProperties()` (fuzzy matching), `formatPropertySummary()` (voice-optimized formatting)
+2. **`src/lib/agent-config.ts`** — System prompt + tool definitions — DONE
+   - `SYSTEM_PROMPT`: persona, knowledge base, tool routing rules, guardrails
+   - `FIRST_MESSAGE`: agent greeting
+   - `TOOL_DEFINITIONS`: 4 tool contracts with parameter schemas for ElevenLabs dashboard
+3. **`src/app/api/signed-url/route.ts`** — Signed URL API route — DONE
+   - Fetches signed WebSocket URL from ElevenLabs API, keeps API key server-side
+4. **`.env.local`** — Environment template with placeholder values — DONE
+5. **`docs/elevenlabs-setup-guide.md`** — Step-by-step dashboard setup guide — DONE
+   - 10-step walkthrough: account creation, agent config, tool registration, testing
 
 ### Phase 5: Build Voice Agent Component (Day 2, ~2 hours)
 1. **`src/components/VoiceAgent.tsx`** — Main conversation component
@@ -244,7 +248,7 @@ dummycrowd/
 │   │   ├── page.tsx                  # Property browse page (tabs + grid) ✅
 │   │   ├── globals.css               # Global styles + Tailwind + SC color scheme ✅
 │   │   └── api/
-│   │       └── agent-token/route.ts  # ElevenLabs signed URL generation (Phase 5)
+│   │       └── signed-url/route.ts  # ElevenLabs signed URL generation ✅
 │   ├── components/
 │   │   ├── Sidebar.tsx           # SmartCrowd-style sidebar nav ✅
 │   │   ├── PropertyTabs.tsx      # Live/Funded/Exited tab bar + type filter ✅
@@ -258,12 +262,16 @@ dummycrowd/
 │   ├── lib/
 │   │   ├── utils.ts             # shadcn cn() utility ✅
 │   │   ├── property-utils.ts    # formatPrice, getPropertySpecs, etc. ✅
-│   │   └── agent-tools.ts      # Tool handler functions for ElevenLabs agent (Phase 5)
+│   │   ├── agent-tools.ts      # Tool handler functions for ElevenLabs agent ✅
+│   │   └── agent-config.ts    # System prompt + tool definitions ✅
 │   └── types/
 │       └── property.ts          # TypeScript types for properties ✅
 ├── docs/
+│   ├── elevenlabs-setup-guide.md        # ElevenLabs dashboard config guide ✅
 │   └── plans/
-│       └── 2026-02-24-dashboard-ui.md  # Phase 3 implementation plan
+│       ├── 2026-02-24-dashboard-ui.md   # Phase 3 implementation plan
+│       ├── 2026-02-24-elevenlabs-agent-design.md  # Phase 4 design doc ✅
+│       └── 2026-02-24-phase4-implementation.md    # Phase 4 implementation plan ✅
 ├── .env.local                   # ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID
 ├── next.config.ts
 ├── components.json              # shadcn config
