@@ -17,9 +17,10 @@ The user has an Associate Product Manager interview at **SmartCrowd** tomorrow a
 A **SmartCrowd dashboard clone** with an embedded ElevenLabs voice agent. The UI replicates the look and feel of SmartCrowd's actual property browse page (sidebar nav, property cards with tabs for Live/Funded/Exited). The voice agent sits as a floating assistant button and can answer two types of questions:
 
 1. **Property-specific queries** — "What's the renovation progress on the Palm Jumeirah Flip?", "What's the rental yield for the 1-bedroom in IMPZ?", "Which property has the best ROI?"
+
 2. **General knowledge queries** — "How does fractional investing work?", "What are SmartCrowd's fees?", "What's the difference between Hold and Flip?"
 
-All property data is real data captured from SmartCrowd's platform API (1 live + 165 funded + 67 exited = 233 properties).
+All property data is real data captured from SmartCrowd's platform API (2 live + 165 funded + 67 exited = 234 properties).
 
 ---
 
@@ -102,7 +103,7 @@ All property data is real data captured from SmartCrowd's platform API (1 live +
 ### Data Capture Summary
 
 All property data has been captured via API interception from SmartCrowd's public API (`api.phoenix.smartcrowd.ae`):
-- **1 Live**: SC-327 "Villa in the Sky" Penthouse, DIFC (Flip, limited public data)
+- **2 Live**: SC-331 "Studio in Discovery Gardens" (Hold, 578K AED, 6.07% yield) + SC-327 "Villa in the Sky" Penthouse, DIFC (Flip, 27.35M AED, 33.15% funded)
 - **165 Funded**: Full structured data including rental yields, market values, renovation progress, investor counts, funded dates
 - **67 Exited**: Full data including exit prices, total rental income, holding periods, ROI percentages
 
@@ -110,7 +111,7 @@ All property data has been captured via API interception from SmartCrowd's publi
 
 Each property includes: id, code, title, investmentType, price, propertyType, investmentCategory, propertyStatus, renovationProgress, rental (yields, rent, income), performance (investors, ROI, funded%), valuation (market value, sale proceeds), physical (beds, baths, sqft), location (area, building, city), auction (dates)
 
-*(Full dataset of all 233 properties will be in `src/data/properties.ts`)*
+*(Full dataset of all 234 properties is in `src/data/properties.ts`)*
 
 ---
 
@@ -148,30 +149,44 @@ The agent uses tools to query the property database, enabling questions like:
 ### Phase 2: Build Data Layer ~~(Day 1, ~1 hour)~~ COMPLETED
 1. **`src/types/property.ts`** — TypeScript interfaces for all property data — DONE
    - Types discovered from actual API data: `PropertyStatus` includes `SOLD`, `PropertyType` includes `HOTEL_APARTMENT` and `TOWN_HOUSE`, `InvestmentCategory` includes `SHORT_TERM`, `PropertyCategory` includes `COMMERCIAL`
-2. **`src/data/properties.ts`** — All 233 properties (1 live + 165 funded + 67 exited) as typed objects — DONE
+   - Added `sqft?: number` to `PropertyPhysical` interface (Phase 3)
+2. **`src/data/properties.ts`** — All 234 properties (2 live + 165 funded + 67 exited) as typed objects — DONE
    - Transformed from raw API data via Node.js script
    - Spot-checked: SC-315 yield = 6.72%, SC-309 renovation = 80%, SC-285 ROI = 24.59% — all correct
-   - Note: No image URLs in API data — will use gradient placeholders
+   - Added SC-331 (new live Hold property: Studio in Discovery Gardens, 578K AED, 6.07% yield)
+   - Updated SC-327 with real data (72 investors, 33.15% funded, 15.13% ROI, 27.35M project cost)
+   - Added sqft values to all 234 properties (known values from screenshots + derived estimates)
+   - Images: area-based gradient placeholders (no image URLs in API data)
 3. **`src/data/knowledge.ts`** — SmartCrowd constants (fees, stats, investment models, FAQs) — DONE
 
-### Phase 3: Build Dashboard UI (Day 1-2, ~3-4 hours)
-1. **Layout** (`app/layout.tsx`)
-   - SmartCrowd-style sidebar: logo, nav items (Explore, Wallet, Portfolio, Cart, Notifications), light/dark mode toggle
-   - Main content area to the right
-2. **Property Browse Page** (`app/page.tsx`)
-   - Tab bar: Live (1) | Funded (165) | Exited (67) — counts from actual data
-   - Sort & Filter controls (area dropdown, type filter)
-   - Scrollable property cards grid with all 233 properties, filtered by active tab
-3. **Property Card Generation** (`src/components/PropertyCard.tsx`)
-   - Single component that renders differently based on property type/status
-   - Receives a typed property object from `properties.ts` and adapts layout:
-   - **Hold cards** (funded): property image (from `baseImageUrl` in API data), Hold badge, tag badges (e.g. "Instant Returns", "High Yield"), investor count, property name, SC-ID code, beds/sqft/area/rental type, rental yield %, purchase price, current market value with change %, funded date, rental income to date
-   - **Flip cards** (funded): property image, Flip badge, investor count, property name, SC-ID code, beds/sqft/area, annualized ROI %, estimated timeline, renovation progress bar (0-100%), project cost
-   - **Exited cards**: property image, Hold/Flip badge, investor count, property name, SC-ID code, beds/sqft/area/rental type, exit price, total rental income, holding period, total return ROI amount + percentage
-   - **Live card** (SC-327): Flip badge, title only with "Sign up to unlock" overlay (mimics real SC behavior)
-   - Images: use `baseImageUrl` from captured API data where available, fallback to a gradient placeholder
-4. **`src/components/PropertyGrid.tsx`** — maps over the filtered properties array and renders a `PropertyCard` for each, with infinite scroll or virtualized list for performance (165 cards on funded tab)
-5. **shadcn components needed**: `button`, `card`, `badge`, `tabs`, `dialog`, `progress`, `separator`, `scroll-area`
+### Phase 3: Build Dashboard UI ~~(Day 1-2, ~3-4 hours)~~ COMPLETED
+1. **Layout** (`app/layout.tsx`) — DONE
+   - SmartCrowd-style dark navy sidebar (280px fixed): logo, nav items (Explore active, Wallet, Portfolio, Cart, Notifications, Help & Support), Light Mode toggle, app download section, user avatar
+   - Main content area to the right with light gray background (#F5F6FA)
+2. **Property Browse Page** (`app/page.tsx`) — DONE
+   - Tab bar: Live (2) | Funded (165) | Exited (67) — pill-style tabs, counts from actual data
+   - All/Hold/Flip type filter dropdown (resets on tab switch)
+   - Paginated property cards grid (12 per page) with prev/next controls
+3. **Property Card Component** (`src/components/PropertyCard.tsx`) — DONE
+   - Single component that renders 4 variants based on investmentType + propertyStatus:
+   - **Hold cards** (funded): gradient image, green Hold badge, investor count + "Instant Returns" pills, SC-code badge, specs row (beds/sqft/area/term), rental yield, purchase price, market value with change %, rental income
+   - **Flip cards** (funded): gradient image, purple Flip badge, investor count pill, specs row, annualized ROI, timeline, renovation progress in purple, project cost
+   - **Live cards**: Hold or Flip metrics + funding progress bar (green for Hold, blue for Flip), remaining amount, funded percentage
+   - **Exited cards**: exit price, total rental income, holding period, total return in green
+   - Area-based gradient colors for image placeholders (13 areas mapped)
+4. **`src/components/PropertyGrid.tsx`** — DONE
+   - Responsive grid: 3 cols desktop, 2 cols tablet, 1 col mobile
+   - Pagination: 12 cards/page, resets on tab/filter change
+5. **`src/components/PropertyTabs.tsx`** — DONE
+   - Manages tab state (live/funded/exited) + type filter (All/Hold/Flip)
+   - Filters properties with useMemo, passes to PropertyGrid
+   - Type filter resets to "All" on tab switch
+6. **`src/lib/property-utils.ts`** — DONE
+   - `formatPrice()`, `formatPriceShort()`, `getPropertySpecs()`, `getRemainingAmount()`, `getFundedPercentage()`
+7. **SmartCrowd color scheme** in `globals.css` — DONE
+   - CSS variables: sc-navy, sc-blue, sc-green, sc-purple, sc-pink, sc-gray-bg, sc-text-dark/muted/green/red
+   - Registered as Tailwind utilities via `@theme inline`
+8. **shadcn components used**: `button`, `card`, `badge`, `progress`
 
 ### Phase 4: Configure ElevenLabs Agent (Day 2, ~1-2 hours)
 1. **Create agent in ElevenLabs dashboard**
@@ -222,34 +237,38 @@ The agent uses tools to query the property database, enabling questions like:
 ## File Structure
 
 ```
-smart-investor/
-├── app/
-│   ├── layout.tsx                # Dashboard layout with sidebar
-│   ├── page.tsx                  # Property browse page (tabs + grid)
-│   ├── globals.css               # Global styles + Tailwind + SC color scheme
-│   └── api/
-│       └── agent-token/route.ts  # ElevenLabs signed URL generation
+dummycrowd/
 ├── src/
+│   ├── app/
+│   │   ├── layout.tsx                # Dashboard layout with sidebar ✅
+│   │   ├── page.tsx                  # Property browse page (tabs + grid) ✅
+│   │   ├── globals.css               # Global styles + Tailwind + SC color scheme ✅
+│   │   └── api/
+│   │       └── agent-token/route.ts  # ElevenLabs signed URL generation (Phase 5)
 │   ├── components/
-│   │   ├── Sidebar.tsx           # SmartCrowd-style sidebar nav
-│   │   ├── PropertyTabs.tsx      # Live/Funded/Exited tab bar
-│   │   ├── PropertyCard.tsx      # Card component (adapts for Hold/Flip/Exited)
-│   │   ├── PropertyGrid.tsx      # Grid of property cards
-│   │   ├── VoiceAgent.tsx        # ElevenLabs voice agent (floating button + overlay)
-│   │   └── ui/                   # shadcn components
+│   │   ├── Sidebar.tsx           # SmartCrowd-style sidebar nav ✅
+│   │   ├── PropertyTabs.tsx      # Live/Funded/Exited tab bar + type filter ✅
+│   │   ├── PropertyCard.tsx      # Card component (Hold/Flip/Live/Exited variants) ✅
+│   │   ├── PropertyGrid.tsx      # Paginated grid of property cards ✅
+│   │   ├── VoiceAgent.tsx        # ElevenLabs voice agent (Phase 5)
+│   │   └── ui/                   # shadcn components (button, card, badge, tabs, dialog, progress, separator, scroll-area)
 │   ├── data/
-│   │   ├── properties.ts        # All 233 properties (1 live + 165 funded + 67 exited)
-│   │   └── knowledge.ts         # SmartCrowd constants, fees, FAQs
+│   │   ├── properties.ts        # All 234 properties (2 live + 165 funded + 67 exited) ✅
+│   │   └── knowledge.ts         # SmartCrowd constants, fees, FAQs ✅
 │   ├── lib/
-│   │   ├── utils.ts             # shadcn cn() utility
-│   │   └── agent-tools.ts      # Tool handler functions for ElevenLabs agent
+│   │   ├── utils.ts             # shadcn cn() utility ✅
+│   │   ├── property-utils.ts    # formatPrice, getPropertySpecs, etc. ✅
+│   │   └── agent-tools.ts      # Tool handler functions for ElevenLabs agent (Phase 5)
 │   └── types/
-│       └── property.ts          # TypeScript types for properties
+│       └── property.ts          # TypeScript types for properties ✅
+├── docs/
+│   └── plans/
+│       └── 2026-02-24-dashboard-ui.md  # Phase 3 implementation plan
 ├── .env.local                   # ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID
 ├── next.config.ts
-├── tailwind.config.ts
 ├── components.json              # shadcn config
 ├── package.json
+├── PLAN.md
 └── tsconfig.json
 ```
 
