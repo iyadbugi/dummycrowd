@@ -1,0 +1,296 @@
+# SmartInvestor — AI Voice Agent for SmartCrowd Dashboard
+
+## Context
+
+The user has an Associate Product Manager interview at **SmartCrowd** tomorrow and wants to apply for the **ElevenLabs Customer Success** role. They want to build a project that demonstrates:
+- **Builder mentality** — shipping a working product, not just talking about ideas
+- **SmartCrowd domain knowledge** — understanding fractional real estate investing in MENA
+- **ElevenLabs platform competence** — hands-on experience building and deploying a voice agent
+- **Product thinking** — solving a real user problem (investor portfolio Q&A + education)
+
+**User profile**: Non-technical PM based in Middle East, 2-3 days to build. Claude Code does the coding.
+
+---
+
+## What We're Building
+
+A **SmartCrowd dashboard clone** with an embedded ElevenLabs voice agent. The UI replicates the look and feel of SmartCrowd's actual property browse page (sidebar nav, property cards with tabs for Live/Funded/Exited). The voice agent sits as a floating assistant button and can answer two types of questions:
+
+1. **Property-specific queries** — "What's the renovation progress on the Palm Jumeirah Flip?", "What's the rental yield for the 1-bedroom in IMPZ?", "Which property has the best ROI?"
+2. **General knowledge queries** — "How does fractional investing work?", "What are SmartCrowd's fees?", "What's the difference between Hold and Flip?"
+
+All property data is real data captured from SmartCrowd's platform API (1 live + 165 funded + 67 exited = 233 properties).
+
+---
+
+## Architecture
+
+```
+┌──────────────────────────────────────────────┐
+│   Next.js Web App (Vercel)                    │
+│                                               │
+│  ┌─────────┐  ┌──────────────────────────┐   │
+│  │ Sidebar  │  │ Property Browse View     │   │
+│  │ Nav      │  │ ┌──────────────────────┐ │   │
+│  │ - Explore│  │ │ Tabs: Live|Funded|   │ │   │
+│  │ - Wallet │  │ │       Exited         │ │   │
+│  │ - Port-  │  │ ├──────────────────────┤ │   │
+│  │   folio  │  │ │ Property Cards Grid  │ │   │
+│  │ - Cart   │  │ │ (real SC data)       │ │   │
+│  │          │  │ └──────────────────────┘ │   │
+│  └─────────┘  └──────────────────────────┘   │
+│                                               │
+│  ┌──────────────────────────────────────────┐ │
+│  │ 🎙 Floating Voice Agent Button           │ │
+│  │ → Opens voice conversation overlay       │ │
+│  │ → ElevenLabs React SDK (WebRTC)          │ │
+│  └──────────────────────────────────────────┘ │
+│                                               │
+│  ┌──────────────────────────────────────────┐ │
+│  │ API Routes                                │ │
+│  │ - /api/properties (lookup by ID/area/type)│ │
+│  │ - /api/calculate-roi                      │ │
+│  │ - /api/agent-token (ElevenLabs auth)      │ │
+│  └──────────────────────────────────────────┘ │
+└──────────────────────────────────────────────┘
+                    │
+                    ▼
+┌──────────────────────────────────────────────┐
+│   ElevenLabs Agent (Cloud)                    │
+│                                               │
+│   Voice: Professional, warm                   │
+│   Knowledge: SmartCrowd general info          │
+│   Tools:                                      │
+│   - lookup_property (by ID, area, or type)    │
+│   - search_properties (filter by criteria)    │
+│   - calculate_roi (investment projections)    │
+│   - get_renovation_status (for Flip props)    │
+│   Persona: SmartCrowd Investment Advisor      │
+└──────────────────────────────────────────────┘
+```
+
+---
+
+## Property Data (Scraped from SmartCrowd)
+
+### Funded Properties (20 — sample shown)
+
+| ID | Name | Type | Area | Beds | Sqft | Yield/ROI | Purchase | Market Value | Change | Investors | Rental Income |
+|----|------|------|------|------|------|-----------|----------|--------------|--------|-----------|---------------|
+| SC-330 | Studio, Discovery Gardens | Hold | Discovery Gardens | - | 550 | 6.07% | 578K | 580K | +0.35% | 150 | 0 |
+| SC-326 | 1B+Study, Bali Residences JVT | Hold | JVT | 1 | 824 | 5.94% | 1,290K | 1,300K | +0.78% | 317 | 5,863 |
+| SC-325 | 3BR Penthouse, Bellevue Downtown | Flip | Downtown | 3 | 3016 | 15.01% ann. | - | - | 0% reno | 212 | - |
+| SC-323 | 1B Lakeside, IMPZ | Hold | IMPZ | 1 | 596 | 6.25% | 600K | 600K | 0% | 174 | 4,690 |
+| SC-319 | Old Town Island, Downtown | Flip | Old Town | 2 | 2227 | 15.33% ann. | - | - | 5% reno | 150 | - |
+| SC-317 | Serenia West, Palm Jumeirah | Flip | Palm Jumeirah | 3 | 3447 | 15.49% ann. | - | - | 10% reno | 195 | - |
+| SC-315 | 1BR Hera Tower, Sports City | Hold | Sports City | 1 | 760 | 6.72% | 835K | 850K | +1.80% | 212 | 25,449 |
+| SC-314 | 1BR Joya Blanca, Arjan | Hold | Arjan | 1 | 746 | 6.14% | 995K | 1,100K | +10.55% | 286 | 27,262 |
+| SC-309 | 5BR Villa, Sidra 3 Dubai Hills | Flip | Dubai Hills | 5 | 4109 | 15.19% ann. | - | - | 80% reno | 207 | - |
+| SC-312 | 3BR Penthouse, Downtown | Flip | Downtown | 3 | 2800 | 15.47% ann. | - | - | 20% reno | 263 | - |
+
+### Exited Properties (20 — sample shown)
+
+| ID | Name | Type | Area | Exit Price | Total Rental | Holding | ROI |
+|----|------|------|------|-----------|-------------|---------|-----|
+| SC-285 | 3BR Villa, Palm Jumeirah | Flip | Palm Jumeirah | 24,000,000 | - | 14 mo | +24.59% |
+| SC-282 | 3BR Duplex, DIFC | Flip | DIFC | 8,700,000 | - | 18 mo | +25.01% |
+| SC-231 | 1BR Duplex, Fortunato JVC | Hold | JVC | 894,469 | 130,228 | 34 mo | +49.28% |
+| SC-208 | 1BR, 8 Blvd Walk Downtown | Hold | Downtown | 1,531,158 | 178,605 | 43 mo | +51.12% |
+| SC-179 | 1BR Fortunato Tower, JVC | Hold | JVC | 713,403 | 102,376 | 35 mo | +63.92% |
+| SC-187 | Yacht Bay Studio, Marina | Hold | Dubai Marina | 910,307 | 165,191 | 47 mo | +47.08% |
+
+### Data Capture Summary
+
+All property data has been captured via API interception from SmartCrowd's public API (`api.phoenix.smartcrowd.ae`):
+- **1 Live**: SC-327 "Villa in the Sky" Penthouse, DIFC (Flip, limited public data)
+- **165 Funded**: Full structured data including rental yields, market values, renovation progress, investor counts, funded dates
+- **67 Exited**: Full data including exit prices, total rental income, holding periods, ROI percentages
+
+**Raw data file**: `/Users/flashy/.claude/projects/-Users-flashy/0eaeaf78-3e8c-4ae2-88c0-44cb5cf92e30/tool-results/mcp-playwright-browser_run_code-1771926478771.txt`
+
+Each property includes: id, code, title, investmentType, price, propertyType, investmentCategory, propertyStatus, renovationProgress, rental (yields, rent, income), performance (investors, ROI, funded%), valuation (market value, sale proceeds), physical (beds, baths, sqft), location (area, building, city), auction (dates)
+
+*(Full dataset of all 233 properties will be in `src/data/properties.ts`)*
+
+---
+
+## Agent Knowledge Base
+
+### General SmartCrowd Knowledge (baked into system prompt)
+- **Platform**: DFSA-regulated, DIFC-registered, AED 500 minimum, 5000+ investors, 165+ funded properties, 67 exits
+- **How it works**: Register (5 min) → KYC (free) → Fund wallet → Browse → Invest → Earn returns → Exit
+- **Hold model**: 3-5yr hold, earn rental income + capital appreciation, target 7-11% annual
+- **Flip model**: 9-12 month, buy undervalued → renovate → sell, target 15-30% ROI
+- **Fees**: 1.5% entry, 0.5% annual admin, 2.5% exit, 0% performance fee
+- **Track record**: 67 exits, avg ~35-40% net ROI, AED 220M+ in exit proceeds
+- **Exit options**: 5-year investor vote, Share Transfer Facility (March/September windows)
+- **Advantages**: Lowest entry (AED 500), full lifecycle management, no performance fees, Sharia-compliant
+
+### Property-Specific Knowledge (via tool calls)
+The agent uses tools to query the property database, enabling questions like:
+- "What's the renovation progress on the Sidra villa?" → calls `get_renovation_status("SC-309")` → "80% complete"
+- "What's the yield on the IMPZ properties?" → calls `search_properties({area: "IMPZ"})` → lists SC-323, SC-321, SC-320
+- "If I invest 10,000 in the Sports City property, what would I earn?" → calls `calculate_roi({amount: 10000, property_id: "SC-315"})`
+
+---
+
+## Implementation Plan
+
+### Phase 1: Setup ~~(Day 1, ~1 hour)~~ COMPLETED
+1. ~~**Create ElevenLabs account** at elevenlabs.io → generate API key~~ *(pending — user to set up)*
+2. **Scaffold Next.js project** in `/Users/flashy/Downloads/dummycrowd/` — DONE
+   - Next.js 16.1.6 with App Router + Turbopack + Tailwind v4
+   - Installed: `@elevenlabs/react`, `@elevenlabs/elevenlabs-js` *(packages renamed from `@11labs/react` and `elevenlabs`)*
+   - shadcn/ui initialized + components added: `button`, `card`, `badge`, `tabs`, `dialog`, `progress`, `separator`, `scroll-area`
+   - Git repo initialized with proper `.gitignore`
+   - Build verified passing
+
+### Phase 2: Build Data Layer ~~(Day 1, ~1 hour)~~ COMPLETED
+1. **`src/types/property.ts`** — TypeScript interfaces for all property data — DONE
+   - Types discovered from actual API data: `PropertyStatus` includes `SOLD`, `PropertyType` includes `HOTEL_APARTMENT` and `TOWN_HOUSE`, `InvestmentCategory` includes `SHORT_TERM`, `PropertyCategory` includes `COMMERCIAL`
+2. **`src/data/properties.ts`** — All 233 properties (1 live + 165 funded + 67 exited) as typed objects — DONE
+   - Transformed from raw API data via Node.js script
+   - Spot-checked: SC-315 yield = 6.72%, SC-309 renovation = 80%, SC-285 ROI = 24.59% — all correct
+   - Note: No image URLs in API data — will use gradient placeholders
+3. **`src/data/knowledge.ts`** — SmartCrowd constants (fees, stats, investment models, FAQs) — DONE
+
+### Phase 3: Build Dashboard UI (Day 1-2, ~3-4 hours)
+1. **Layout** (`app/layout.tsx`)
+   - SmartCrowd-style sidebar: logo, nav items (Explore, Wallet, Portfolio, Cart, Notifications), light/dark mode toggle
+   - Main content area to the right
+2. **Property Browse Page** (`app/page.tsx`)
+   - Tab bar: Live (1) | Funded (165) | Exited (67) — counts from actual data
+   - Sort & Filter controls (area dropdown, type filter)
+   - Scrollable property cards grid with all 233 properties, filtered by active tab
+3. **Property Card Generation** (`src/components/PropertyCard.tsx`)
+   - Single component that renders differently based on property type/status
+   - Receives a typed property object from `properties.ts` and adapts layout:
+   - **Hold cards** (funded): property image (from `baseImageUrl` in API data), Hold badge, tag badges (e.g. "Instant Returns", "High Yield"), investor count, property name, SC-ID code, beds/sqft/area/rental type, rental yield %, purchase price, current market value with change %, funded date, rental income to date
+   - **Flip cards** (funded): property image, Flip badge, investor count, property name, SC-ID code, beds/sqft/area, annualized ROI %, estimated timeline, renovation progress bar (0-100%), project cost
+   - **Exited cards**: property image, Hold/Flip badge, investor count, property name, SC-ID code, beds/sqft/area/rental type, exit price, total rental income, holding period, total return ROI amount + percentage
+   - **Live card** (SC-327): Flip badge, title only with "Sign up to unlock" overlay (mimics real SC behavior)
+   - Images: use `baseImageUrl` from captured API data where available, fallback to a gradient placeholder
+4. **`src/components/PropertyGrid.tsx`** — maps over the filtered properties array and renders a `PropertyCard` for each, with infinite scroll or virtualized list for performance (165 cards on funded tab)
+5. **shadcn components needed**: `button`, `card`, `badge`, `tabs`, `dialog`, `progress`, `separator`, `scroll-area`
+
+### Phase 4: Configure ElevenLabs Agent (Day 2, ~1-2 hours)
+1. **Create agent in ElevenLabs dashboard**
+   - Name: "SmartInvestor"
+   - Voice: Professional, warm (test a few options)
+   - System prompt: Full SmartCrowd knowledge base + instructions for personality and tool usage
+   - First message: "Hi! I'm your SmartCrowd investment advisor. I can help you understand our properties, explain how fractional investing works, or answer any questions about your portfolio. What would you like to know?"
+2. **Register 4 tools** (client-side via the React SDK):
+   - `lookup_property`: params `{property_id: string}` → returns full property details
+   - `search_properties`: params `{area?: string, type?: "Hold"|"Flip"|"Exited", min_yield?: number}` → returns matching properties
+   - `calculate_roi`: params `{investment_amount: number, property_id: string, holding_years?: number}` → returns projected returns after fees
+   - `get_renovation_status`: params `{property_id: string}` → returns renovation % and timeline for Flip properties
+3. **Test in playground** — iterate on prompt until natural
+
+### Phase 5: Build Voice Agent Component (Day 2, ~2 hours)
+1. **`src/components/VoiceAgent.tsx`** — Main conversation component
+   - Uses `@11labs/react` `useConversation` hook
+   - Floating mic button (bottom-right corner of dashboard)
+   - When clicked: opens overlay/modal with:
+     - Pulsing animation while agent speaks
+     - "Listening..." / "Speaking..." / "Thinking..." states
+     - End call button
+   - Client-side tool handlers that query the local property data (no API routes needed — data is in-memory)
+2. **`app/api/agent-token/route.ts`** — Server-side route to generate signed URL for ElevenLabs (keeps API key server-side)
+
+### Phase 6: Integration & Polish (Day 2-3, ~2 hours)
+1. **Wire up tool handlers** — when agent calls `lookup_property`, the client-side handler searches the local properties array and returns results
+2. **Polish the dashboard**
+   - Match SmartCrowd's blue/white color scheme
+   - Property card hover states
+   - Responsive for mobile demo
+   - Smooth transitions on tab switch
+3. **Test conversations end-to-end**:
+   - "What's the rental yield for the 1-bedroom in IMPZ?" → agent calls search_properties → "The 1-bedroom in Lakeside IMPZ (SC-323) has a rental yield of 6.25%..."
+   - "How's the renovation going on the Sidra villa?" → agent calls get_renovation_status → "The 5-bedroom villa in Sidra 3 is at 80% renovation progress..."
+   - "How does fractional investing work?" → agent answers from knowledge base
+   - "What fees does SmartCrowd charge?" → agent explains 1.5% entry, 0.5% annual, 2.5% exit
+   - "If I invest 5000 dirhams in the Sports City property, what would I make?" → agent calls calculate_roi → returns projection
+
+### Phase 7: Deploy (Day 3, ~1 hour)
+1. **Init git repo + push to GitHub**
+2. **Deploy to Vercel** — set env vars (ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID)
+3. **Test live URL** on phone + desktop
+4. **Record a 60-second demo video** (optional but high-impact for ElevenLabs application)
+
+---
+
+## File Structure
+
+```
+smart-investor/
+├── app/
+│   ├── layout.tsx                # Dashboard layout with sidebar
+│   ├── page.tsx                  # Property browse page (tabs + grid)
+│   ├── globals.css               # Global styles + Tailwind + SC color scheme
+│   └── api/
+│       └── agent-token/route.ts  # ElevenLabs signed URL generation
+├── src/
+│   ├── components/
+│   │   ├── Sidebar.tsx           # SmartCrowd-style sidebar nav
+│   │   ├── PropertyTabs.tsx      # Live/Funded/Exited tab bar
+│   │   ├── PropertyCard.tsx      # Card component (adapts for Hold/Flip/Exited)
+│   │   ├── PropertyGrid.tsx      # Grid of property cards
+│   │   ├── VoiceAgent.tsx        # ElevenLabs voice agent (floating button + overlay)
+│   │   └── ui/                   # shadcn components
+│   ├── data/
+│   │   ├── properties.ts        # All 233 properties (1 live + 165 funded + 67 exited)
+│   │   └── knowledge.ts         # SmartCrowd constants, fees, FAQs
+│   ├── lib/
+│   │   ├── utils.ts             # shadcn cn() utility
+│   │   └── agent-tools.ts      # Tool handler functions for ElevenLabs agent
+│   └── types/
+│       └── property.ts          # TypeScript types for properties
+├── .env.local                   # ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID
+├── next.config.ts
+├── tailwind.config.ts
+├── components.json              # shadcn config
+├── package.json
+└── tsconfig.json
+```
+
+---
+
+## Key Dependencies
+
+- `next` (16.1.6) — React framework with App Router + Turbopack
+- `@elevenlabs/react` — ElevenLabs React SDK for voice conversations *(renamed from `@11labs/react`)*
+- `@elevenlabs/elevenlabs-js` — ElevenLabs JS SDK (server-side token generation) *(renamed from `elevenlabs`)*
+- `tailwindcss` (v4) — Styling
+- shadcn/ui: `button`, `card`, `badge`, `tabs`, `dialog`, `progress`, `separator`, `scroll-area`
+
+---
+
+## Verification
+
+1. **Dashboard renders**: `npm run dev` → sidebar + property cards display correctly across all 3 tabs
+2. **Data accuracy**: Property cards match real SmartCrowd data (spot-check SC-315 yield = 6.72%, SC-309 renovation = 80%)
+3. **Voice agent connects**: Click floating mic → microphone permission → agent greets you
+4. **Property queries work**: Ask "What's the yield on the IMPZ property?" → agent returns 6.25%
+5. **Renovation queries work**: Ask "How far along is the Sidra villa renovation?" → agent returns 80%
+6. **General knowledge works**: Ask "How does SmartCrowd work?" → coherent explanation
+7. **ROI calculator works**: Ask "If I invest 10,000 in Sports City, what do I earn?" → returns projection with fee breakdown
+8. **Deploy test**: Live URL works on mobile and desktop
+9. **Demo readiness**: Can walk through dashboard + have a voice conversation in under 2 minutes
+
+---
+
+## What This Demonstrates
+
+### SmartCrowd Interview (tomorrow)
+- "I built a voice-powered assistant for your dashboard that can answer investor questions about their properties and about fractional investing in general"
+- Shows: deep product understanding, initiative, builder mentality, AI product vision
+- Talking point: "This could reduce Help & Support tickets by 40%+ and improve investor confidence during onboarding"
+
+### ElevenLabs Application
+- Built a production-quality conversational agent on the ElevenLabs platform with:
+  - Custom tool integrations (4 tools)
+  - React SDK + WebRTC integration
+  - Real enterprise use case (FinTech investor dashboard)
+  - Knowledge base + dynamic data retrieval
+- Shows: hands-on platform expertise, enterprise customer empathy, ability to advise on agent design
+- Talking point: "I built this to understand the platform from a customer's perspective — the biggest insight was how tool design determines conversation quality"
