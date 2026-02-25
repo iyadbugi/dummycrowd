@@ -84,6 +84,9 @@ export default function VoiceAgent() {
       const res = await fetch("/api/signed-url");
       if (!res.ok) throw new Error("Failed to get signed URL");
       const { signedUrl } = await res.json();
+      // Note: system prompt, tools, and firstMessage must be configured
+      // on the ElevenLabs dashboard. Client-side overrides require
+      // override permissions to be enabled in the agent's dashboard settings.
       await conversation.startSession({ signedUrl });
     } catch (err) {
       console.error("Failed to start conversation:", err);
@@ -133,51 +136,30 @@ export default function VoiceAgent() {
         </button>
       )}
 
-      {/* Active conversation UI */}
+      {/* Active conversation UI — single responsive container with ONE Orb */}
       {isActive && (
-        <>
-          {/* Mobile: full-screen overlay (below md breakpoint) */}
-          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 md:hidden">
-            <div className="flex flex-col items-center gap-6">
-              <div className="h-48 w-48">
-                <Orb colors={["#2563EB", "#3B82F6"]} agentState={orbState} />
-              </div>
-              <p className="text-lg font-medium text-white">{statusText}</p>
-              {errorMsg && (
-                <p className="text-sm text-red-400">{errorMsg}</p>
-              )}
-              <button
-                onClick={endConversation}
-                className="flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700"
-              >
-                <PhoneOff className="h-4 w-4" />
-                End Call
-              </button>
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 md:inset-auto md:bottom-6 md:right-6 md:w-80 md:rounded-2xl md:bg-white md:p-6 md:shadow-2xl md:animate-in md:slide-in-from-bottom-4 md:duration-300">
+          <div className="flex flex-col items-center gap-6 md:gap-4">
+            <div className="h-48 w-48 md:h-40 md:w-40">
+              <Orb colors={["#2563EB", "#3B82F6"]} agentState={orbState} />
             </div>
-          </div>
-
-          {/* Desktop: bottom-right panel (md and above) */}
-          <div className="fixed bottom-6 right-6 z-50 hidden w-80 rounded-2xl bg-white p-6 shadow-2xl md:block animate-in slide-in-from-bottom-4 duration-300">
-            <div className="flex flex-col items-center gap-4">
-              <div className="h-40 w-40">
-                <Orb colors={["#2563EB", "#3B82F6"]} agentState={orbState} />
-              </div>
-              <p className="text-sm font-medium text-sc-text-dark">
-                {statusText}
+            <p className="text-lg font-medium text-white md:text-sm md:text-sc-text-dark">
+              {statusText}
+            </p>
+            {errorMsg && (
+              <p className="text-sm text-red-400 md:text-xs md:text-red-500">
+                {errorMsg}
               </p>
-              {errorMsg && (
-                <p className="text-xs text-red-500">{errorMsg}</p>
-              )}
-              <button
-                onClick={endConversation}
-                className="flex items-center gap-2 rounded-full bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700"
-              >
-                <PhoneOff className="h-4 w-4" />
-                End Call
-              </button>
-            </div>
+            )}
+            <button
+              onClick={endConversation}
+              className="flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700 md:px-5 md:py-2.5"
+            >
+              <PhoneOff className="h-4 w-4" />
+              End Call
+            </button>
           </div>
-        </>
+        </div>
       )}
     </>
   );
