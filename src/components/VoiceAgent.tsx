@@ -62,7 +62,8 @@ export default function VoiceAgent() {
       setMode("listening");
       setErrorMsg(null);
     },
-    onDisconnect: () => {
+    onDisconnect: (reason?: unknown) => {
+      console.log("ElevenLabs disconnected:", reason);
       setAgentState("idle");
       setMode(null);
     },
@@ -84,9 +85,6 @@ export default function VoiceAgent() {
       const res = await fetch("/api/signed-url");
       if (!res.ok) throw new Error("Failed to get signed URL");
       const { signedUrl } = await res.json();
-      // Note: system prompt, tools, and firstMessage must be configured
-      // on the ElevenLabs dashboard. Client-side overrides require
-      // override permissions to be enabled in the agent's dashboard settings.
       await conversation.startSession({ signedUrl });
     } catch (err) {
       console.error("Failed to start conversation:", err);
