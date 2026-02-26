@@ -49,9 +49,9 @@ All property data is real data captured from SmartCrowd's platform API (2 live +
 │                                               │
 │  ┌──────────────────────────────────────────┐ │
 │  │ API Routes                                │ │
-│  │ - /api/properties (lookup by ID/area/type)│ │
-│  │ - /api/calculate-roi                      │ │
-│  │ - /api/agent-token (ElevenLabs auth)      │ │
+│  │ - /api/signed-url (ElevenLabs auth)       │ │
+│  │ (Property lookup + ROI calc are           │ │
+│  │  client-side — data is in-memory)         │ │
 │  └──────────────────────────────────────────┘ │
 └──────────────────────────────────────────────┘
                     │
@@ -208,36 +208,44 @@ The agent uses tools to query the property database, enabling questions like:
    - Agent created: "dummycrowd" with system prompt, first message, 4 client tools registered
    - API key generated, Agent ID obtained, `.env.local` populated
 
-### Phase 5: Build Voice Agent Component (Day 2, ~2 hours)
-1. **`src/components/VoiceAgent.tsx`** — Main conversation component
-   - Uses `@11labs/react` `useConversation` hook
-   - Floating mic button (bottom-right corner of dashboard)
-   - When clicked: opens overlay/modal with:
-     - Pulsing animation while agent speaks
-     - "Listening..." / "Speaking..." / "Thinking..." states
-     - End call button
-   - Client-side tool handlers that query the local property data (no API routes needed — data is in-memory)
-2. **`app/api/agent-token/route.ts`** — Server-side route to generate signed URL for ElevenLabs (keeps API key server-side)
+### Phase 5: Build Voice Agent Component ~~(Day 2, ~2 hours)~~ COMPLETED
+1. **`src/components/VoiceAgent.tsx`** — Main conversation component — DONE
+   - Uses `@elevenlabs/react` `useConversation` hook with signed URL auth
+   - Floating mic button (bottom-right, pulsing blue #2563EB)
+   - Desktop (≥768px): Bottom-right card panel (280px wide) with Orb + status + End Call
+   - Mobile (<768px): Full-screen overlay with centered Orb + status + End Call
+   - 4 client-side tool handlers wired: `lookup_property`, `search_properties`, `calculate_roi`, `get_renovation_status`
+   - State management: idle → connecting → connected (listening/speaking/thinking) → error
+   - Event handlers: onConnect, onDisconnect, onModeChange, onError
+2. **`src/components/ui/orb.tsx`** — ElevenLabs 3D Orb visualization — DONE
+   - React Three Fiber + Perlin noise shader animation
+   - State mapping: idle → listening (oscillating) → talking (amplified) → thinking (slow pulse)
+   - WebGL context loss recovery, dynamic import (SSR: false)
+   - Color customization, fade-in animation, volume reactivity
+3. **VoiceAgent integrated into `app/layout.tsx`** — DONE
+   - Single Orb instance to prevent WebGL context loss
 
-### Phase 6: Integration & Polish (Day 2-3, ~2 hours)
-1. **Wire up tool handlers** — when agent calls `lookup_property`, the client-side handler searches the local properties array and returns results
-2. **Polish the dashboard**
-   - Match SmartCrowd's blue/white color scheme
-   - Property card hover states
-   - Responsive for mobile demo
+### Phase 6: Integration & Polish (Day 3)
+1. ~~**Wire up tool handlers**~~ — DONE in Phase 5 (tools wired directly in VoiceAgent.tsx)
+2. **Polish the dashboard** — REMAINING
+   - ~~Match SmartCrowd's blue/white color scheme~~ — DONE
+   - ~~Property card hover states~~ — DONE
+   - ~~Responsive for mobile demo~~ — DONE
    - Smooth transitions on tab switch
-3. **Test conversations end-to-end**:
+   - Any visual polish or bug fixes found during testing
+3. **Test conversations end-to-end** — REMAINING
    - "What's the rental yield for the 1-bedroom in IMPZ?" → agent calls search_properties → "The 1-bedroom in Lakeside IMPZ (SC-323) has a rental yield of 6.25%..."
    - "How's the renovation going on the Sidra villa?" → agent calls get_renovation_status → "The 5-bedroom villa in Sidra 3 is at 80% renovation progress..."
    - "How does fractional investing work?" → agent answers from knowledge base
    - "What fees does SmartCrowd charge?" → agent explains 1.5% entry, 0.5% annual, 2.5% exit
    - "If I invest 5000 dirhams in the Sports City property, what would I make?" → agent calls calculate_roi → returns projection
 
-### Phase 7: Deploy (Day 3, ~1 hour)
-1. **Init git repo + push to GitHub**
-2. **Deploy to Vercel** — set env vars (ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID)
-3. **Test live URL** on phone + desktop
-4. **Record a 60-second demo video** (optional but high-impact for ElevenLabs application)
+### Phase 7: Deploy (Day 3)
+1. ~~**Init git repo**~~ — DONE
+2. **Push to GitHub** — REMAINING
+3. **Deploy to Vercel** — set env vars (ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID)
+4. **Test live URL** on phone + desktop
+5. **Record a 60-second demo video** (optional but high-impact for ElevenLabs application)
 
 ---
 
@@ -257,8 +265,8 @@ dummycrowd/
 │   │   ├── PropertyTabs.tsx      # Live/Funded/Exited tab bar + type filter ✅
 │   │   ├── PropertyCard.tsx      # Card component (Hold/Flip/Live/Exited variants) ✅
 │   │   ├── PropertyGrid.tsx      # Paginated grid of property cards ✅
-│   │   ├── VoiceAgent.tsx        # ElevenLabs voice agent (Phase 5)
-│   │   └── ui/                   # shadcn components (button, card, badge, tabs, dialog, progress, separator, scroll-area)
+│   │   ├── VoiceAgent.tsx        # ElevenLabs voice agent + floating button + panel/overlay ✅
+│   │   └── ui/                   # shadcn components + orb.tsx (3D Orb visualization) ✅
 │   ├── data/
 │   │   ├── properties.ts        # All 234 properties (2 live + 165 funded + 67 exited) ✅
 │   │   └── knowledge.ts         # SmartCrowd constants, fees, FAQs ✅
@@ -274,7 +282,9 @@ dummycrowd/
 │   └── plans/
 │       ├── 2026-02-24-dashboard-ui.md   # Phase 3 implementation plan
 │       ├── 2026-02-24-elevenlabs-agent-design.md  # Phase 4 design doc ✅
-│       └── 2026-02-24-phase4-implementation.md    # Phase 4 implementation plan ✅
+│       ├── 2026-02-24-phase4-implementation.md    # Phase 4 implementation plan ✅
+│       ├── 2026-02-25-voice-agent-design.md       # Phase 5 design doc ✅
+│       └── 2026-02-25-voice-agent-implementation.md # Phase 5 implementation plan ✅
 ├── .env.local                   # ELEVENLABS_API_KEY, NEXT_PUBLIC_AGENT_ID
 ├── next.config.ts
 ├── components.json              # shadcn config
@@ -288,9 +298,11 @@ dummycrowd/
 ## Key Dependencies
 
 - `next` (16.1.6) — React framework with App Router + Turbopack
-- `@elevenlabs/react` — ElevenLabs React SDK for voice conversations *(renamed from `@11labs/react`)*
-- `@elevenlabs/elevenlabs-js` — ElevenLabs JS SDK (server-side token generation) *(renamed from `elevenlabs`)*
+- `@elevenlabs/react` (0.14.1) — ElevenLabs React SDK for voice conversations (useConversation hook)
+- `@elevenlabs/elevenlabs-js` (2.36.0) — ElevenLabs JS SDK (server-side signed URL generation)
+- `@react-three/fiber` (9.5.0) + `@react-three/drei` (10.7.7) + `three` (0.183.1) — 3D Orb visualization
 - `tailwindcss` (v4) — Styling
+- `lucide-react` — Icons
 - shadcn/ui: `button`, `card`, `badge`, `tabs`, `dialog`, `progress`, `separator`, `scroll-area`
 
 ---
