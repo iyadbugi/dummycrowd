@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Property } from "@/types/property";
 import PropertyCard from "@/components/PropertyCard";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,7 @@ interface PropertyGridProps {
 export default function PropertyGrid({ properties }: PropertyGridProps) {
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Reset to page 0 when properties array changes
+  // Reset to page 0 when properties array changes (tab/filter switch)
   useEffect(() => {
     setCurrentPage(0);
   }, [properties]);
@@ -33,8 +34,15 @@ export default function PropertyGrid({ properties }: PropertyGridProps) {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {currentProperties.map((p) => (
-          <PropertyCard key={p.id} property={p} />
+        {currentProperties.map((p, index) => (
+          <motion.div
+            key={p.id}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
+          >
+            <PropertyCard property={p} />
+          </motion.div>
         ))}
       </div>
 
