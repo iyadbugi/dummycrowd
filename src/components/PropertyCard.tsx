@@ -25,8 +25,14 @@ const gradients: Record<string, string> = {
   "Business Bay": "from-slate-500 to-blue-600",
 };
 
-function getGradient(areaName: string): string {
-  return gradients[areaName] ?? "from-slate-400 to-gray-500";
+function getGradient(areaName: string, title: string): string {
+  if (gradients[areaName]) return gradients[areaName];
+  // Fall back: check if any known area appears in the title
+  const titleLower = title.toLowerCase();
+  for (const [area, grad] of Object.entries(gradients)) {
+    if (titleLower.includes(area.toLowerCase())) return grad;
+  }
+  return "from-slate-400 to-gray-500";
 }
 
 // ---------------------------------------------------------------------------
@@ -41,7 +47,7 @@ function SpecRow({ specs }: { specs: string[] }) {
         const Icon = specIcons[i] ?? MapPin;
         return (
           <span key={i} className="flex items-center gap-1">
-            {i > 0 && <span className="text-gray-300 mx-0.5">|</span>}
+            {i > 0 && <span className="text-gray-300 dark:text-white/20 mx-0.5">|</span>}
             <Icon className="w-3.5 h-3.5 shrink-0" />
             <span>{spec}</span>
           </span>
@@ -123,7 +129,7 @@ function HoldMetrics({ property }: { property: Property }) {
           )}
         </>
       )}
-      <div className="border-t border-gray-100 my-2" />
+      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
       <MetricRow label="Rental income to date" value={rentalIncome} />
     </div>
   );
@@ -146,7 +152,7 @@ function FlipMetrics({ property }: { property: Property }) {
     <div className="space-y-1.5">
       <MetricRow label="Annualized ROI" value={annualized} />
       <MetricRow label="Estimated timeline" value={timeline} />
-      <div className="border-t border-gray-100 my-2" />
+      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
       <div className="flex justify-between items-baseline">
         <span className="text-sc-text-muted text-sm">Renovation progress</span>
         <span className="text-sc-purple text-sm font-medium">{renovationProgress}</span>
@@ -180,7 +186,7 @@ function ExitedMetrics({ property }: { property: Property }) {
       <MetricRow label="Exit price" value={exitPrice} />
       <MetricRow label="Total rental income" value={totalRental} />
       <MetricRow label="Holding period" value={holdingPeriod} />
-      <div className="border-t border-gray-100 my-2" />
+      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
       <div className="flex justify-between items-baseline">
         <span className="text-sc-text-muted text-sm">Total return</span>
         <span
@@ -207,7 +213,7 @@ function FundingProgress({ property }: { property: Property }) {
 
   return (
     <div className="space-y-2">
-      <div className="border-t border-gray-100 my-2" />
+      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
       <div className="flex justify-between items-baseline">
         <span
           className={`text-sm font-semibold ${
@@ -238,7 +244,7 @@ interface PropertyCardProps {
 
 export default function PropertyCard({ property }: PropertyCardProps) {
   const areaName = property.location.area?.name ?? "";
-  const gradient = getGradient(areaName);
+  const gradient = getGradient(areaName, property.title);
   const specs = getPropertySpecs(property);
   const isHold = property.investmentType === "HOLD";
   const isFlip = property.investmentType === "FLIP";
@@ -247,7 +253,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   const isExited = property.propertyStatus === "EXITED";
 
   return (
-    <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow p-0 gap-0">
+    <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow p-0 gap-0 dark:bg-[#111F42] dark:border-[#1C3058]">
       {/* ---- Image area ---- */}
       <div className={`h-[200px] rounded-t-xl overflow-hidden relative bg-gradient-to-br ${gradient}`}>
         {/* Top-left badge */}
@@ -290,7 +296,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           <h3 className="font-semibold text-sc-text-dark text-base leading-snug line-clamp-2">
             {property.title}
           </h3>
-          <span className="shrink-0 rounded-full border border-[#8B5CF6] text-[#8B5CF6] text-xs px-2 py-0.5 font-medium whitespace-nowrap">
+          <span className="shrink-0 rounded-full border border-[#8B5CF6] text-[#8B5CF6] text-xs px-2 py-0.5 font-medium whitespace-nowrap dark:border-[#8B5CF6]/50">
             {property.code}
           </span>
         </div>

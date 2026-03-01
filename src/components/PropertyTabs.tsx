@@ -78,7 +78,7 @@ export default function PropertyTabs() {
       {/* Header row: tabs + type filter */}
       <div className="flex items-center justify-between mb-6">
         {/* Left: Tab pills */}
-        <div className="flex items-center gap-1 rounded-full border border-gray-200 bg-white p-1">
+        <div className="flex items-center gap-1 rounded-full border border-gray-200 dark:border-[#1C3058] bg-white dark:bg-[#111F42] p-1">
           {tabs.map((tab) => {
             const count = tab.getData().length;
             const isActive = activeTab === tab.key;
@@ -103,7 +103,7 @@ export default function PropertyTabs() {
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setDropdownOpen((prev) => !prev)}
-            className="border border-gray-200 rounded-lg px-4 py-2 bg-white text-sm flex items-center gap-2 hover:border-gray-300 transition-colors"
+            className="border border-gray-200 dark:border-[#1C3058] rounded-lg px-4 py-2 bg-white dark:bg-[#111F42] text-sc-text-dark text-sm flex items-center gap-2 hover:border-gray-300 dark:hover:border-white/20 transition-colors"
           >
             <currentFilterOption.icon className="h-4 w-4 text-sc-text-muted" />
             <span>{currentFilterOption.label}</span>
@@ -111,7 +111,7 @@ export default function PropertyTabs() {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg py-1 z-10 min-w-[140px]">
+            <div className="absolute right-0 top-full mt-1 bg-white dark:bg-[#111F42] border border-gray-200 dark:border-[#1C3058] rounded-lg shadow-lg py-1 z-10 min-w-[140px]">
               {typeFilterOptions.map((option) => {
                 const Icon = option.icon;
                 const isActive = typeFilter === option.value;
@@ -123,7 +123,7 @@ export default function PropertyTabs() {
                       setTypeFilter(option.value);
                       setDropdownOpen(false);
                     }}
-                    className={`w-full px-4 py-2.5 hover:bg-gray-50 flex items-center gap-2 text-sm cursor-pointer transition-colors ${
+                    className={`w-full px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-white/5 flex items-center gap-2 text-sm cursor-pointer transition-colors ${
                       isActive
                         ? "text-sc-blue font-medium"
                         : "text-sc-text-dark"

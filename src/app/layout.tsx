@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import VoiceAgent from "@/components/VoiceAgent";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,17 +27,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex h-screen">
-          <Sidebar />
-          <main className="flex-1 overflow-y-auto bg-sc-gray-bg p-6">
-            {children}
-          </main>
-        </div>
-        <VoiceAgent />
+        <ThemeProvider>
+          <div className="flex h-screen bg-sc-gray-bg dark:bg-[#0B1A33] transition-colors duration-300">
+            {/* Sidebar wrapper: adds padding so the sidebar floats */}
+            <div className="p-3 flex-shrink-0">
+              <Sidebar />
+            </div>
+            <main className="flex-1 overflow-y-auto p-6">
+              {children}
+            </main>
+          </div>
+          <VoiceAgent />
+        </ThemeProvider>
       </body>
     </html>
   );

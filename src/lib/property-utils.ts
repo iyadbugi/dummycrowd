@@ -1,5 +1,21 @@
 import { Property } from "@/types/property";
 
+const KNOWN_AREAS = [
+  "Palm Jumeirah", "Downtown Dubai", "Downtown", "DIFC", "Dubai Marina",
+  "Business Bay", "JVC", "JVT", "JLT", "Sports City", "IMPZ",
+  "Discovery Gardens", "Arjan", "Dubai Hills", "Old Town",
+  "Silicon Oasis", "Al Furjan", "Jumeirah Village",
+];
+
+function extractAreaFromTitle(title: string): string | null {
+  for (const area of KNOWN_AREAS) {
+    if (title.toLowerCase().includes(area.toLowerCase())) {
+      return area;
+    }
+  }
+  return null;
+}
+
 /**
  * Formats a price amount with commas and 2 decimal places.
  * Example: 578000 -> "578,000.00"
@@ -47,9 +63,14 @@ export function getPropertySpecs(property: Property): string[] {
     specs.push(`${property.physical.sqft.toLocaleString("en-US")} sq ft`);
   }
 
-  // Area display name (if available)
+  // Area display name (if available, fall back to extracting from title)
   if (property.location.area) {
     specs.push(property.location.area.displayName);
+  } else {
+    const areaFromTitle = extractAreaFromTitle(property.title);
+    if (areaFromTitle) {
+      specs.push(areaFromTitle);
+    }
   }
 
   // Investment term (for HOLD properties with investmentCategory)
