@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { useConversation } from "@elevenlabs/react";
 import { Mic, PhoneOff } from "lucide-react";
 import {
-  searchProperties,
   calculateRoi,
   getRenovationStatus,
 } from "@/lib/agent-tools";
@@ -26,16 +25,6 @@ export default function VoiceAgent() {
 
   const conversation = useConversation({
     clientTools: {
-      search_properties: (params: {
-        area?: string;
-        type?: string;
-        status?: string;
-        min_yield?: number;
-      }) => {
-        setMode("thinking");
-        const result = searchProperties(params);
-        return result;
-      },
       calculate_roi: (params: {
         property_id: string;
         investment_amount: number;

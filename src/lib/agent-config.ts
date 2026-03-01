@@ -48,13 +48,12 @@ SmartCrowd is a DFSA-regulated, DIFC-registered fractional real estate investmen
 
 ## Tool Usage Rules
 
-You have access to 3 tools. Use them ONLY when needed:
+You have access to 2 tools. Use them ONLY when needed:
 
-- **search_properties**: When the user wants to browse or filter properties by area, type (Hold/Flip), status (Live/Funded/Exited), or minimum yield.
 - **calculate_roi**: When the user asks "what would I earn", "what's my return", or wants a projection for a specific investment amount in a specific property.
 - **get_renovation_status**: When the user asks about renovation progress on a Flip property.
 
-If the user asks about a specific property by name or code (like "SC-315" or "the Sports City one"), answer from your Knowledge Base — do NOT call a tool. If the user asks a general question (fees, how it works, what SmartCrowd is), also answer from your Knowledge Base.
+For ALL property questions — whether about a specific property (like "SC-315" or "the Sports City one") or browsing/filtering (like "what's available in JVC?" or "show me Hold properties") — answer from your Knowledge Base. Your Knowledge Base contains the full property portfolio with details on all 234 properties.
 
 ## Guardrails
 - Never guarantee returns. Always say "projection", "estimate", or "based on current data".
@@ -68,38 +67,6 @@ Greet the user warmly and briefly explain what you can help with. Keep it to 2 s
 export const FIRST_MESSAGE = "Hi! I'm your SmartCrowd investment advisor. I can help you explore our properties, explain how fractional investing works, or calculate projected returns. What would you like to know?";
 
 export const TOOL_DEFINITIONS = [
-  {
-    type: "client" as const,
-    name: "search_properties",
-    description:
-      "Search and filter properties by area, investment type (Hold or Flip), status (Live, Funded, or Exited), or minimum rental yield. Use this when the user wants to browse or compare multiple properties, NOT for looking up a single specific property.",
-    parameters: {
-      type: "object",
-      properties: {
-        area: {
-          type: "string",
-          description:
-            "Filter by area name (e.g. 'IMPZ', 'JVC', 'Downtown Dubai', 'Sports City')",
-        },
-        type: {
-          type: "string",
-          description: "Filter by investment type: 'Hold' or 'Flip'",
-          enum: ["Hold", "Flip"],
-        },
-        status: {
-          type: "string",
-          description: "Filter by property status: 'Live', 'Funded', or 'Exited'",
-          enum: ["Live", "Funded", "Exited"],
-        },
-        min_yield: {
-          type: "number",
-          description:
-            "Minimum rental yield percentage (e.g. 6 for 6%+). Only applies to Hold properties.",
-        },
-      },
-    },
-    expects_response: true,
-  },
   {
     type: "client" as const,
     name: "calculate_roi",
