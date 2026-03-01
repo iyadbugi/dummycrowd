@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { useConversation } from "@elevenlabs/react";
 import { Mic, PhoneOff } from "lucide-react";
 import {
-  lookupProperty,
   searchProperties,
   calculateRoi,
   getRenovationStatus,
@@ -27,11 +26,6 @@ export default function VoiceAgent() {
 
   const conversation = useConversation({
     clientTools: {
-      lookup_property: (params: { property_id: string }) => {
-        setMode("thinking");
-        const result = lookupProperty(params);
-        return result;
-      },
       search_properties: (params: {
         area?: string;
         type?: string;

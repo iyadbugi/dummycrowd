@@ -48,14 +48,13 @@ SmartCrowd is a DFSA-regulated, DIFC-registered fractional real estate investmen
 
 ## Tool Usage Rules
 
-You have access to 4 tools. Use them ONLY when needed:
+You have access to 3 tools. Use them ONLY when needed:
 
-- **lookup_property**: When the user asks about a specific property by name, code (like "SC-315"), or description (like "the Sports City one"). Do NOT use this for general browsing.
 - **search_properties**: When the user wants to browse or filter properties by area, type (Hold/Flip), status (Live/Funded/Exited), or minimum yield.
 - **calculate_roi**: When the user asks "what would I earn", "what's my return", or wants a projection for a specific investment amount in a specific property.
 - **get_renovation_status**: When the user asks about renovation progress on a Flip property.
 
-If the user asks a general question (fees, how it works, what SmartCrowd is), answer from your knowledge above — do NOT call a tool.
+If the user asks about a specific property by name or code (like "SC-315" or "the Sports City one"), answer from your Knowledge Base — do NOT call a tool. If the user asks a general question (fees, how it works, what SmartCrowd is), also answer from your Knowledge Base.
 
 ## Guardrails
 - Never guarantee returns. Always say "projection", "estimate", or "based on current data".
@@ -69,24 +68,6 @@ Greet the user warmly and briefly explain what you can help with. Keep it to 2 s
 export const FIRST_MESSAGE = "Hi! I'm your SmartCrowd investment advisor. I can help you explore our properties, explain how fractional investing works, or calculate projected returns. What would you like to know?";
 
 export const TOOL_DEFINITIONS = [
-  {
-    type: "client" as const,
-    name: "lookup_property",
-    description:
-      "Look up a specific property by its SC code (e.g. SC-315) or by a name/description (e.g. 'Sports City' or 'Palm Jumeirah flip'). Returns up to 3 matching properties with key details including type, yield/ROI, price, and investor count.",
-    parameters: {
-      type: "object",
-      properties: {
-        property_id: {
-          type: "string",
-          description:
-            "The property SC code (e.g. 'SC-315') or a descriptive search term (e.g. 'Sports City', 'Palm Jumeirah', 'IMPZ 1 bedroom')",
-        },
-      },
-      required: ["property_id"],
-    },
-    expects_response: true,
-  },
   {
     type: "client" as const,
     name: "search_properties",

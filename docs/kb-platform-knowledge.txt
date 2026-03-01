@@ -1,0 +1,147 @@
+SmartCrowd Platform Knowledge
+
+About SmartCrowd
+
+SmartCrowd is the MENA region's first and largest regulated fractional real estate investment platform. It lets you own a piece of Dubai real estate starting from just AED 500. The platform is regulated by the Dubai Financial Services Authority (DFSA) and registered in the Dubai International Financial Centre (DIFC), placing it under one of the strongest regulatory frameworks in the region.
+
+SmartCrowd has over 5,000 investors, has funded more than 165 properties, and has successfully exited 67 properties to date, returning over AED 220 million in exit proceeds. The average net ROI across those exits is approximately 41 percent, with average annual appreciation of 11 percent.
+
+How It Works
+
+Getting started is straightforward and takes seven steps. First, you register — it takes under five minutes and there are no registration fees. Then you complete a free identity verification (KYC). Once verified, you fund your SmartCrowd eWallet. From there you browse available properties on the dashboard, and when you find one you like, you invest — the minimum is AED 500. After that, you earn returns: either regular rental income for Hold properties or your share of the profit when a Flip property is sold. Finally, you cash out when the property exits.
+
+Investment Structure: How Ownership Works
+
+When a property reaches 100 percent funding, SmartCrowd creates a Special Purpose Vehicle (SPV) — a separate legal entity whose sole purpose is to hold that specific property. Each SPV is divided into 1,000,000 shares, and your ownership is proportional to your investment. For example, if you invest AED 500 in a property worth AED 1,000,000, you receive 500 shares — that is 0.05 percent ownership.
+
+The SPV is registered in the DIFC public register, which means you can verify your ownership at any time by looking up the SPV name (they follow the naming convention "SC-" followed by a number, like SC-315). The title deed for the property is issued in the SPV's name, not individual investors' names, because Dubai's RERA only allows 5 to 10 names on a single title deed. But you legally own shares in the SPV, and the SPV legally owns the property — so your ownership is real and documented.
+
+This structure also protects you. Because the SPV is a separate company from SmartCrowd, your investment is legally isolated from SmartCrowd's own business. Even in the unlikely event that the company faced financial difficulties, the property held by the SPV is protected.
+
+Hold vs Flip: Two Ways to Invest
+
+SmartCrowd offers two investment strategies that work quite differently.
+
+Hold investments are traditional buy-and-hold. You invest in a property and earn regular rental income, distributed monthly, for a recommended holding period of about 3 to 5 years. On top of the rental income, you benefit from capital appreciation — the increase in the property's market value over time. Historical performance shows average annual returns of 6 to 15 percent across different Dubai locations including Business Bay, JLT, Downtown, Marina, and JVC.
+
+Flip investments are shorter-term. SmartCrowd buys an undervalued property, renovates it with quality finishes, and sells it for a profit. The typical holding period is 9 to 12 months, and the target total ROI is 15 to 30 percent. There is no rental income — your return comes entirely from the difference between the purchase price and the sale price after renovation.
+
+Here is a practical comparison. Say you invest AED 10,000 in a Hold property with a 7 percent gross rental yield. Over 3 years, you would earn roughly AED 2,100 in rent (before fees) plus any capital appreciation. If you instead put that same AED 10,000 into a Flip property targeting 25 percent ROI over 12 months, your gross return would be about AED 2,500 — but all at once when the property sells, not spread over time. Hold gives you steady income; Flip gives you a shorter, lump-sum return.
+
+Fee Structure
+
+SmartCrowd's fees differ depending on whether you are investing in a Hold or Flip property.
+
+Hold Strategy Fees:
+Entry fee: 1.5 percent of your investment amount, charged once when you invest. This covers escrow services, AML compliance, property sourcing, due diligence, processing, and third-party reports.
+Annual administration fee: 0.5 percent, charged quarterly on a pro-rata basis and deducted from your wallet. This covers SPV administration, property management, and performance updates. It begins from the property transfer date.
+Exit fee: 2.5 percent of the sale price, charged when the property is sold. This covers legal and administrative management at exit.
+Performance fee: Zero. SmartCrowd does not charge any performance fee on Hold properties.
+
+Flip Strategy Fees:
+Entry fee: 2.5 percent of your investment amount, charged once at entry. This is higher than Hold because Flip properties involve more sourcing and renovation management.
+Profit split: 60/40 — investors receive 60 percent of profits and the platform takes 40 percent. However, this only applies after a 10 percent hurdle rate is achieved. That means investors receive the first 10 percent of returns in full before any profit sharing kicks in. This hurdle rate provides downside protection.
+There is no separate annual administration fee or exit fee for Flip properties.
+
+What SmartCrowd Does Not Charge:
+No account setup fees. No performance fees on Hold properties. No KYC verification fees — the platform covers those costs.
+
+Worked Example — Hold Property:
+If you invest AED 10,000 in a Hold property:
+You pay AED 150 as an entry fee (1.5 percent of 10,000), leaving AED 9,850 working in the property.
+Each year, you pay AED 50 in administration fees (0.5 percent of 10,000), deducted quarterly at AED 12.50.
+If the property is sold after 3 years for a 20 percent gain, the exit proceeds on your share would be about AED 12,000. You would pay AED 300 as an exit fee (2.5 percent of 12,000).
+Your net profit after all fees: roughly AED 1,350 in appreciation plus any rental income earned during the 3 years, minus AED 150 in total admin fees.
+
+Worked Example — Flip Property:
+If you invest AED 10,000 in a Flip property:
+You pay AED 250 as an entry fee (2.5 percent of 10,000), leaving AED 9,750 in the investment.
+The property is renovated and sold 12 months later for a 25 percent gross profit. On your AED 10,000, the gross return would be AED 2,500.
+The first 10 percent (AED 1,000) goes entirely to you. The remaining AED 1,500 is split 60/40: you receive AED 900 and the platform takes AED 600.
+Your net return: AED 1,900, or 19 percent on your original AED 10,000.
+
+Operating Costs Passed Through to Properties:
+In addition to SmartCrowd's fees, properties incur standard Dubai real estate operating costs that affect net returns. These include property management fees (typically 5 percent of gross rent, or AED 1,800 to 2,000 minimum for long-term rentals, and 18 to 20 percent for short-term rentals), Dubai Land Department transfer fees (4 percent), trustee fees (AED 2,100 for properties below AED 500,000 or AED 4,200 above, plus AED 580 for the title deed), and brokerage fees at sale (2 percent plus VAT, totaling 2.1 percent). These costs are standard across all Dubai real estate transactions — they are not unique to SmartCrowd.
+
+Exit and Liquidity Options
+
+One common concern is whether your money gets locked up. Here are the actual exit options:
+
+For Hold properties, SmartCrowd recommends a holding period of around 5 years, at which point investors vote on whether to sell the property or continue holding. A majority consensus is required for the exit vote. But you do not have to wait 5 years — SmartCrowd offers a Share Transfer Facility.
+
+The Share Transfer Facility operates twice a year, in March and September, for a two-week window each time. During these windows, you can list some or all of your shares in a property for sale to other investors on the platform. You can set your own price within 15 percent above or below the current market value. Only properties that have been active for over one year are eligible — and properties that are nearing exit are typically excluded so investors can maximize their returns through the full exit process.
+
+Buyers in the Share Transfer Facility must have at least one active investment on SmartCrowd. The fees for buying through the facility are the same as regular platform fees: 1.5 percent entry and 0.5 percent annual admin. After you purchase shares, future rental income flows directly to your wallet.
+
+For Flip properties, the exit happens automatically when the renovated property is sold, which is typically 9 to 12 months after the investment closes. There is no Share Transfer Facility for Flip properties since the holding period is short.
+
+It is fair to say that fractional real estate is less liquid than stocks or bonds. But the combination of the Share Transfer Facility for Hold properties and the short timeline for Flip properties gives you more flexibility than many investors initially expect.
+
+Track Record
+
+SmartCrowd's track record is strong and verifiable:
+67 properties have been fully exited.
+Average net ROI across those exits: approximately 41 percent.
+Average annual appreciation: 11 percent.
+Total exit proceeds exceed AED 220 million.
+Over 5,000 investors have participated on the platform.
+More than 165 properties have been funded in total.
+
+Some specific exit examples:
+SC-138 (Al Waha Villas): 38-month holding period, AED 904,205 total ROI.
+SC-141 (Dubai Marina Studio): 36-month holding period, AED 425,928 total ROI.
+SC-166 (Downtown Dubai): 50-month holding period, AED 517,382 total ROI.
+
+Past performance does not guarantee future results. Real estate values can go down as well as up, and rental income can vary depending on market conditions and occupancy.
+
+Regulation and Investor Protection
+
+SmartCrowd is regulated by the Dubai Financial Services Authority (DFSA), the independent financial regulator of the Dubai International Financial Centre (DIFC). This is the same regulatory regime that oversees major international banks and asset managers operating in Dubai.
+
+Each property is held in a separate SPV registered in the DIFC public register. This means the property assets are legally separated from SmartCrowd's own business. The SPV structure shields investors from SmartCrowd platform liabilities and potential bankruptcy — the property is isolated in its own legal entity.
+
+You can verify your ownership at any time by checking the DIFC public register and searching for the SPV name corresponding to your property.
+
+SmartCrowd is not a timeshare and it is not an unregulated offering. It is a properly licensed investment platform operating under one of the most respected financial regulators in the Middle East.
+
+Advantages of SmartCrowd
+
+The lowest minimum investment in the region — just AED 500 to get started, compared to AED 500,000 or more for traditional real estate.
+Fully digital platform — invest from anywhere in the world without paperwork or travel.
+Professional property curation — every property is pre-vetted before listing with rigorous quality and investment potential standards.
+Full lifecycle property management — SmartCrowd handles everything from acquisition to tenant management to eventual sale.
+No performance fees on Hold properties — unlike some platforms that charge up to 20 percent of profits.
+Institutional-level transparency — independent market valuations, complete fee disclosure, and regular performance updates.
+Diversification made easy — build a portfolio across multiple properties and locations to reduce risk.
+Sharia-compliant investments available for investors who require them.
+DFSA regulation and DIFC registration provide genuine investor protection and oversight.
+Passive income — monthly rental returns flow directly to your wallet with zero property management responsibilities.
+
+Frequently Asked Questions
+
+How does fractional investing work?
+Fractional investing lets you own a share of a property by pooling funds with other investors through a Special Purpose Vehicle (SPV). SmartCrowd handles everything — from property selection, acquisition, and management to eventual sale. Each SPV is divided into 1,000,000 shares, and you receive shares proportional to your investment. You earn returns based on your ownership percentage.
+
+What is the minimum investment?
+You can start investing with as little as AED 500. This makes it possible to try fractional real estate without committing a large amount upfront, or to diversify across multiple properties.
+
+How do I earn returns?
+For Hold properties, you earn monthly rental income (calculated from collected rent minus property expenses, distributed proportionally) plus capital appreciation when the property's market value increases. For Flip properties, you earn a share of the profit when the renovated property is sold. Either way, returns are proportional to your investment.
+
+What fees does SmartCrowd charge?
+For Hold properties: 1.5 percent entry fee (one-time), 0.5 percent annual administration fee (quarterly), and 2.5 percent exit fee on sale price. No performance fee. For Flip properties: 2.5 percent entry fee and a 60/40 profit split after a 10 percent hurdle rate. No account setup fees. No KYC fees.
+
+How can I exit my investment?
+For Hold properties, investors vote on whether to sell at around the 5-year mark. You can also exit earlier via the Share Transfer Facility, which opens for two weeks every March and September — you set your own price within 15 percent of market value. Flip properties exit automatically when the renovated property sells, typically within 9 to 12 months.
+
+Is SmartCrowd regulated?
+Yes. SmartCrowd is regulated by the Dubai Financial Services Authority (DFSA) and registered in the Dubai International Financial Centre (DIFC). Each property is held in a separate SPV registered in the DIFC public register. This is one of the strongest regulatory frameworks in the region.
+
+Who owns the property? Is my name on the title deed?
+The property is legally owned by the SPV, and you own shares in the SPV proportional to your investment. The title deed is issued in the SPV's name because Dubai's RERA only allows 5 to 10 names on a single deed. But your ownership is real and documented — you can verify it in the DIFC public register at any time.
+
+What is an SPV and why does it matter?
+An SPV (Special Purpose Vehicle) is a separate legal entity created specifically to hold one property. It isolates the property from SmartCrowd's own business operations. If SmartCrowd ever faced financial difficulties, your property investment is protected because it sits in its own independent legal entity. Each SPV has 1,000,000 shares and is registered in the DIFC.
+
+What happens to my investment if SmartCrowd goes bankrupt?
+Your investment is held in a separate SPV, not in SmartCrowd's accounts. The SPV is an independent legal entity registered in the DIFC. This means your property investment is legally isolated from SmartCrowd's own liabilities. The property and your ownership of it are protected by this structure.

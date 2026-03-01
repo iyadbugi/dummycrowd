@@ -1,0 +1,999 @@
+SmartCrowd Property Portfolio
+
+
+=== LIVE PROPERTIES — Open for Investment (2 properties) ===
+1 Hold, 1 Flip. Total value: AED 27.93M. 72 investors
+
+--- DIFC ---
+SC-327: "Villa in the Sky" 3-floor Penthouse in Central Park Tower, DIFC (Flip, Live)
+4BR, 6,496 sqft, DIFC
+Price: AED 27.35M. Annualized: 15.13%. 12 months. 72 investors. 33% funded
+
+--- Discovery Gardens ---
+SC-331: Studio in Discovery Gardens (Hold, Live)
+Studio, 550 sqft, Discovery Gardens
+Price: AED 578,000. Gross yield: 6.07%. Annualized: 10.5%
+
+
+=== FUNDED PROPERTIES — Fully Funded, Earning Returns (165 properties) ===
+151 Hold, 14 Flip. Total value: AED 342.78M. 28,048 investors. Avg gross yield: 11.2%
+
+--- Al Barari ---
+ID-234: Miami House Collection 38 (Flip, Exited)
+4BR, 4,525 sqft, Al Barari
+Price: AED 36M. 12 months. 110 investors
+
+ID-233: Miami House Collection 37 (Flip, Exited)
+5BR, 5,275 sqft, Al Barari
+Price: AED 33.61M. 12 months. 840 investors
+
+--- Arjan ---
+SC-314: 1 Bedroom in Joya Blanca, Arjan (Hold, Exited)
+1BR, 800 sqft, Arjan
+Price: AED 995,000. Gross yield: 7.54%. Net yield: 6.65%. Annualized: 11.17%. Market value: AED 1.10M (+10.55%). 60 months. 286 investors
+
+--- Business Bay ---
+SC-313: Studio in Aykon Tower, Business Bay (Hold, Exited)
+Studio, 475 sqft, Business Bay
+Price: AED 795,000. Gross yield: 8.18%. Net yield: 7%. Annualized: 8.02%. Market value: AED 830,000 (+4.4%). 60 months. 194 investors
+
+SC-305: 1 Bedroom in DAMAC Voleo (The Vogue) – Business Bay (Hold, Exited)
+1BR, 800 sqft, Business Bay
+Price: AED 1.12M. Gross yield: 8.2%. Net yield: 6.59%. Annualized: 8.05%. Market value: AED 1.20M (+6.95%). 60 months. 234 investors
+
+SC-296: 1 Bedroom in Bay Square 2 – Business Bay (Hold, Exited)
+1BR, 750 sqft, Business Bay
+Price: AED 1.73M. Gross yield: 8.12%. Net yield: 7.15%. Annualized: 9.09%. Market value: AED 1.90M (+10.14%). 60 months. 334 investors
+
+SC-292: 1 Bedroom in Executive Bay, Tower A – Business Bay (Hold, Exited)
+1BR, 825 sqft, Business Bay
+Price: AED 1.15M. Gross yield: 12.14%. Net yield: 10.35%. Annualized: 8.93%. Market value: AED 1.38M (+19.57%). 60 months. 145 investors
+
+SC-289: Studio in The Cosmopolitan, Business Bay (Hold, Exited)
+Studio, 500 sqft, Business Bay
+Price: AED 824,000. Gross yield: 8.74%. Net yield: 7.09%. Annualized: 8.02%. Market value: AED 870,000 (+5.58%). 60 months. 191 investors
+
+SC-269: Studio In Bay Square 3 (Hold, Exited)
+Studio, 500 sqft, Business Bay
+Price: AED 950,000. Gross yield: 10.53%. Net yield: 9.41%. Annualized: 9.88%. 60 months. 192 investors
+
+SC-263: Studio in SLS Residences (Hold, Exited)
+Studio, 600 sqft, Business Bay
+Price: AED 1.27M. Gross yield: 9.8%. Annualized: 9.88%. 60 months. 253 investors
+
+SC-260: Bay Square 9 (Hold, Exited)
+Studio, 550 sqft, Business Bay
+Price: AED 935,000. Gross yield: 9.89%. Annualized: 9.87%. 60 months. 257 investors
+
+SC-248: Studio in 15 Northside (Hold, Exited)
+Studio, 600 sqft, Business Bay
+Price: AED 850,000. Gross yield: 12.78%. Net yield: 11.9%. Annualized: 8.32%. 60 months. 314 investors
+
+SC-235: Beautiful 1 Bedroom in Windsor Manor, Business Bay (Hold, Exited)
+1BR, 775 sqft, Business Bay
+Price: AED 925,000. Gross yield: 14.25%. Net yield: 13.2%. Annualized: 9.23%. Total ROI: 21.2%. Sale proceeds: AED 1.24M. 20 months. 255 investors
+
+SC-178: Studio in Marquise Square, Business Bay (Hold, Exited)
+Studio, 500 sqft, Business Bay
+Price: AED 720,000. Gross yield: 12.93%. Net yield: 11.94%. Annualized: 9.06%. Total ROI: 56.24%. Sale proceeds: AED 1.15M. 36 months. 73 investors
+
+--- Damac Hills ---
+SC-301: Studio in Carson, Tower B – DAMAC Hills (Hold, Exited)
+Studio, 575 sqft, Damac Hills
+Price: AED 585,000. Gross yield: 8.21%. Net yield: 6.82%. Annualized: 7.14%. Market value: AED 600,000 (+2.56%). 60 months. 158 investors
+
+SC-295: 1 Bedroom in Carson, Tower C, DAMAC Hills (Hold, Exited)
+1BR, 775 sqft, Damac Hills
+Price: AED 885,000. Gross yield: 9.04%. Net yield: 7.63%. Annualized: 8.37%. Market value: AED 900,000 (+1.69%). 60 months. 197 investors
+
+--- DIFC ---
+SC-282: 3 Bedroom Duplex, Central Park Towers (Flip, Exited)
+3BR, 2,050 sqft, DIFC
+Price: AED 4.88M. Total ROI: 25.01%. Sale proceeds: AED 8.70M. 18 months. Renovation: 100%. 57 investors
+
+SC-278: Studio in Central Park Towers, DIFC (Hold, Exited)
+Studio, 550 sqft, DIFC
+Price: AED 1.35M. Gross yield: 8.52%. Net yield: 7.47%. Annualized: 9.8%. 60 months. 247 investors
+
+SC-237: 1-Bedroom in Park Towers, DIFC  (Hold, Exited)
+1BR, 825 sqft, DIFC
+Price: AED 1.30M. Gross yield: 9.08%. Net yield: 7.57%. Annualized: 7.7%. 60 months. 345 investors
+
+--- Discovery Gardens ---
+SC-330: Studio in Discovery Gardens (Hold, Funded)
+Studio, 550 sqft, Discovery Gardens
+Price: AED 578,000. Gross yield: 8.3%. Net yield: 6.69%. Annualized: 10.5%. Market value: AED 580,000 (+0.35%). 60 months. 150 investors
+
+--- Downtown Dubai ---
+SC-325: 3 Bedroom Penthouse in Bellevue, Downtown Dubai (Flip, Funded)
+3BR, 3,016 sqft, Downtown Dubai
+Price: AED 8.30M. 9 months. 212 investors
+
+SC-312: 3 Bedroom Penthouse in Downtown (Flip, Exited)
+3BR, 2,000 sqft, Downtown Dubai
+Price: AED 8.70M. Annualized: 15%. 9 months. Renovation: 20%. 263 investors
+
+SC-307: Studio in 8 Boulevard Walk, Downtown (Hold, Exited)
+Studio, 525 sqft, Downtown Dubai
+Price: AED 1.27M. Gross yield: 7.09%. Net yield: 6.49%. Annualized: 8.27%. Market value: AED 1.32M (+4.33%). 60 months. 300 investors
+
+SC-273: 1 Bed in 8 BLVD Walk, Downtown Dubai (Hold, Exited)
+1BR, 850 sqft, Downtown Dubai
+Price: AED 1.60M. Gross yield: 8.63%. Net yield: 7.51%. Annualized: 9.33%. 60 months. 287 investors
+
+SC-272: 3 Bedroom in South Ridge 6, Downtown (Hold, Exited)
+3BR, 2,075 sqft, Downtown Dubai
+Price: AED 4.15M. Gross yield: 7.83%. Net yield: 7.07%. Annualized: 9.67%. 60 months. 595 investors
+
+SC-241: 2 Bedroom in Burj Al Nujoom, Downtown (Hold, Exited)
+2BR, 1,200 sqft, Downtown Dubai
+Price: AED 1.53M. Gross yield: 9.12%. Net yield: 7.77%. Annualized: 7.89%. 60 months. 264 investors
+
+SC-232: 1 Bedroom in Burj Al Nujoom, Downtown (Hold, Exited)
+1BR, 775 sqft, Downtown Dubai
+Price: AED 835,000. Gross yield: 16.72%. Annualized: 10.57%. Total ROI: 32.33%. Sale proceeds: AED 1.13M. 39 months. 179 investors
+
+SC-225: 2 Bedroom in Burj Al Nujoom, Downtown (Hold, Exited)
+2BR, 1,225 sqft, Downtown Dubai
+Price: AED 1.25M. Gross yield: 16.13%. Net yield: 14.37%. Annualized: 10.55%. Total ROI: 28.16%. Sale proceeds: AED 1.64M. 33 months. 245 investors
+
+SC-222: Studio in 8 Boulevard Walk, Downtown (Hold, Exited)
+Studio, 575 sqft, Downtown Dubai
+Price: AED 780,000. Gross yield: 14.92%. Net yield: 13.59%. Annualized: 9.94%. 60 months. 202 investors
+
+SC-208: Fantastic 1-Bedroom in 8 Boulevard Walk, Downtown (Hold, Exited)
+1BR, 750 sqft, Downtown Dubai
+Price: AED 980,000. Gross yield: 17.41%. Net yield: 15.69%. Annualized: 11.64%. Total ROI: 51.12%. Sale proceeds: AED 1.53M. 43 months. 112 investors
+
+SC-205: 1-Bedroom in 8 Boulevard Walk, Downtown Dubai (Hold, Exited)
+1BR, 800 sqft, Downtown Dubai
+Price: AED 1M. Gross yield: 17.06%. Net yield: 15.29%. Annualized: 11.74%. 60 months. 157 investors
+
+SC-201: Stellar 1-Bedroom in Downtown Dubai (Hold, Exited)
+1BR, 825 sqft, Downtown Dubai
+Price: AED 950,000. Gross yield: 17.96%. Net yield: 16.19%. Annualized: 12.13%. Total ROI: 40.49%. Sale proceeds: AED 1.41M. 28 months. 86 investors
+
+SC-187: Yacht Bay Studio in Dubai Marina (Hold, Exited)
+Studio, 600 sqft, Downtown Dubai
+Price: AED 630,000. Gross yield: 13.9%. Net yield: 12.76%. Annualized: 9.45%. Total ROI: 47.08%. Sale proceeds: AED 910,307.28. 47 months. 60 investors
+
+SC-186: Burj Views Podium (Hold, Exited)
+Studio, 575 sqft, Downtown Dubai
+Price: AED 780,000. Gross yield: 13.52%. Net yield: 11.99%. Annualized: 8.88%. 60 months. 64 investors
+
+SC-183: Fantastic Studio in Dubai Silicon Oasis (Hold, Exited)
+Studio, 500 sqft, Downtown Dubai
+Price: AED 280,000. Gross yield: 10.71%. Net yield: 9.17%. Annualized: 7.9%. 60 months. 47 investors
+
+SC-177: 1-Bedroom in Botanica Tower, Dubai Marina (Hold, Exited)
+1BR, 850 sqft, Downtown Dubai
+Price: AED 1.20M. Gross yield: 11.38%. Net yield: 10.32%. Annualized: 9.12%. 60 months. 130 investors
+
+SC-176: One Bedroom in Burj Views A, Downtown Dubai (Hold, Exited)
+1BR, 825 sqft, Downtown Dubai
+Price: AED 925,000. Gross yield: 13.42%. Net yield: 11.67%. Annualized: 8.93%. 60 months. 48 investors
+
+SC-168: Boulevard Central 2, Studio (Hold, Exited)
+Studio, 500 sqft, Downtown Dubai
+Price: AED 875,000. Gross yield: 11.56%. Net yield: 10.59%. Annualized: 10.5%. Total ROI: 46.39%. Sale proceeds: AED 1.23M. 52 months. 68 investors
+
+SC-166: Studio in Claren Tower 1, Downtown Dubai (Hold, Exited)
+Studio, 575 sqft, Downtown Dubai
+Price: AED 775,000. Gross yield: 13.05%. Net yield: 11.56%. Annualized: 6.02%. Total ROI: 59.55%. Sale proceeds: AED 1.16M. 51 months. 63 investors
+
+SC-151: Burj Al Nujoom Studio (Hold, Exited)
+Studio, 575 sqft, Downtown Dubai
+Price: AED 480,000. Gross yield: 16.2%. Net yield: 14.2%. Annualized: 7.32%. 60 months. 105 investors
+
+ID-225: Beautiful Studio in Burj Al Nujoom, Downtown (Hold, Exited)
+Studio, 575 sqft, Downtown Dubai
+Price: AED 580,000. Gross yield: 17.38%. Annualized: 10.39%. 60 months. 202 investors
+
+--- Dubai Creek Harbour ---
+SC-267: M01 Bayshore 4, Creek Harbour (Hold, Exited)
+2BR, 1,275 sqft, Dubai Creek Harbour
+Price: AED 1.93M. Gross yield: 11.28%. Annualized: 10.65%. 60 months. 334 investors
+
+--- Dubai Hills Estate ---
+SC-318: 2 Bedroom in The Pinnacle, Dubai Hills Estate (Hold, Exited)
+2BR, 1,225 sqft, Dubai Hills Estate
+Price: AED 2.62M. Gross yield: 7.06%. Net yield: 6.26%. Annualized: 10.97%. Market value: AED 2.65M (+1.15%). 60 months. 435 investors
+
+SC-309: 5 Bedroom Villa in Sidra 3, Dubai Hills (Flip, Exited)
+5BR, 5,300 sqft, Dubai Hills Estate
+Price: AED 12M. 9 months. Renovation: 80%. 207 investors
+
+SC-274: 1 Bed in Privé Residence, Dubai Hills Estate (Hold, Exited)
+1BR, 750 sqft, Dubai Hills Estate
+Price: AED 1.38M. Gross yield: 8.73%. Net yield: 7.61%. Annualized: 9.2%. 60 months. 301 investors
+
+SC-271: 1 Bed in Collective 2, Dubai Hills Estate (Hold, Exited)
+1BR, 800 sqft, Dubai Hills Estate
+Price: AED 1.15M. Gross yield: 8.26%. Net yield: 7.32%. Annualized: 9.03%. 60 months. 241 investors
+
+SC-261: Collective 2.0, Dubai Hills Estate (Hold, Exited)
+1BR, 850 sqft, Dubai Hills Estate
+Price: AED 1.12M. Gross yield: 8.93%. Annualized: 9.8%. 60 months. 253 investors
+
+--- Dubai Marina ---
+SC-316: 2 Bedroom in Elite Residence, Dubai Marina (Hold, Exited)
+2BR, 1,300 sqft, Dubai Marina
+Price: AED 1.80M. Gross yield: 7.23%. Net yield: 6.23%. Annualized: 10.89%. Market value: AED 1.84M (+2.36%). 60 months. 453 investors
+
+SC-300: 1 Bedroom in Blakely Tower, Park Island, Dubai Marina (Hold, Exited)
+1BR, 800 sqft, Dubai Marina
+Price: AED 1.58M. Gross yield: 9.03%. Net yield: 8.4%. Annualized: 9.48%. Market value: AED 1.63M (+2.84%). 60 months. 304 investors
+
+SC-291: 1 Bedroom in Al Sahab Tower 2, Dubai Marina (Hold, Exited)
+1BR, 800 sqft, Dubai Marina
+Price: AED 1.48M. Gross yield: 10.52%. Net yield: 9.79%. Annualized: 9.35%. Market value: AED 1.50M (+1.69%). 60 months. 300 investors
+
+SC-283: 3 Bed in Sky View Tower, Dubai Marina (Hold, Exited)
+3BR, 2,075 sqft, Dubai Marina
+Price: AED 2.60M. Gross yield: 8.46%. Net yield: 7.48%. Annualized: 9.66%. 60 months. 389 investors
+
+SC-258: Rented Studio in The Address (Hold, Exited)
+Studio, 600 sqft, Dubai Marina
+Price: AED 1.59M. Gross yield: 11.22%. Annualized: 8.98%. 60 months. 281 investors
+
+SC-252: 2 Bedroom in Marina View Tower (Hold, Exited)
+2BR, 1,275 sqft, Dubai Marina
+Price: AED 1.38M. Gross yield: 12.41%. Annualized: 8.95%. 60 months. 331 investors
+
+SC-249: 2 bedroom in Marina Quays West (Hold, Exited)
+2BR, 1,200 sqft, Dubai Marina
+Price: AED 2.17M. Gross yield: 11.05%. Annualized: 8.44%. 60 months. 247 investors
+
+SC-236: Beautiful 1-Bedroom in Dorra Bay, Dubai Marina (Hold, Exited)
+1BR, 800 sqft, Dubai Marina
+Price: AED 1.18M. Gross yield: 13.2%. Net yield: 12.13%. Annualized: 9.18%. 60 months. 237 investors
+
+SC-233: 2 Bedroom in Opal Tower, Dubai Marina (Hold, Exited)
+2BR, 1,250 sqft, Dubai Marina
+Price: AED 1.31M. Gross yield: 16.52%. Annualized: 10.3%. Total ROI: 32.46%. Sale proceeds: AED 1.87M. 29 months. 352 investors
+
+SC-228: 1-Bedroom in Point Tower, Dubai Marina (Hold, Exited)
+1BR, 775 sqft, Dubai Marina
+Price: AED 1.20M. Gross yield: 14.87%. Annualized: 10.04%. 60 months. 343 investors
+
+SC-221: Rare Studio in Murjan 2, JBR (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 1.10M. Gross yield: 15.51%. Net yield: 14.6%. Annualized: 11.2%. 60 months. 190 investors
+
+SC-220: Fantastic 1-Bedroom in Dream Towers, Dubai Marina (Hold, Exited)
+1BR, 775 sqft, Dubai Marina
+Price: AED 690,000. Gross yield: 16.86%. Net yield: 15.21%. Annualized: 10.42%. Total ROI: 22.37%. Sale proceeds: AED 898,247. 29 months. 207 investors
+
+SC-211: 1-Bedroom in Dream Towers, Dubai Marina (Hold, Exited)
+1BR, 825 sqft, Dubai Marina
+Price: AED 600,000. Gross yield: 18.1%. Net yield: 16.56%. Annualized: 10.55%. Total ROI: 38.09%. Sale proceeds: AED 877,205.42. 31 months. 118 investors
+
+SC-202: Remarkable 2-Bedroom in Dubai Marina (Hold, Exited)
+2BR, 1,300 sqft, Dubai Marina
+Price: AED 925,000. Gross yield: 18.45%. Net yield: 17.19%. Annualized: 12.09%. Total ROI: 43.53%. Sale proceeds: AED 1.39M. 32 months. 126 investors
+
+SC-193: 1-Bedroom in Cascades Tower, Dubai Marina (Hold, Exited)
+1BR, 750 sqft, Dubai Marina
+Price: AED 800,000. Gross yield: 15.12%. Net yield: 12.92%. Annualized: 9.91%. Total ROI: 26.43%. Sale proceeds: AED 1.10M. 19 months. 160 investors
+
+SC-185: Studio One (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 730,000. Gross yield: 13.81%. Net yield: 12.77%. Annualized: 9.32%. Total ROI: 33.23%. Sale proceeds: AED 1.04M. 23 months. 148 investors
+
+SC-181: 1-Bedroom in The Cascades, Dubai Marina (Hold, Exited)
+1BR, 825 sqft, Dubai Marina
+Price: AED 800,000. Gross yield: 13.57%. Net yield: 11.33%. Annualized: 8.8%. Total ROI: 30.76%. Sale proceeds: AED 1.11M. 27 months. 75 investors
+
+SC-169: 2 bedroom in Studio One, Dubai Marina  (Hold, Exited)
+2BR, 1,225 sqft, Dubai Marina
+Price: AED 1.25M. Gross yield: 11.68%. Net yield: 10.64%. Annualized: 9.32%. Total ROI: 55.77%. Sale proceeds: AED 1.82M. 49 months. 155 investors
+
+SC-148: Marina Residence One-Bed (Hold, Exited)
+1BR, 750 sqft, Dubai Marina
+Price: AED 530,000. Gross yield: 19.08%. Net yield: 17.2%. Annualized: 9.67%. Total ROI: 54.24%. Sale proceeds: AED 809,332.68. 32 months. 49 investors
+
+SC-145: Bay Central Studio (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 530,000. Gross yield: 13.5%. Net yield: 11.7%. Annualized: 9.79%. Total ROI: 36.62%. Sale proceeds: AED 765,173.07. 17 months. 53 investors
+
+SC-141: Studio One (Hold, Exited)
+Studio, 600 sqft, Dubai Marina
+Price: AED 500,000. Gross yield: 14%. Net yield: 12.76%. Annualized: 7.33%. Total ROI: 76.5%. Sale proceeds: AED 855,095.06. 37 months. 60 investors
+
+SC-137: Marina View - One Bedroom (Hold, Exited)
+1BR, 775 sqft, Dubai Marina
+Price: AED 650,000. Gross yield: 8.92%. Net yield: 7.37%. Annualized: 7.1%. Total ROI: 68.38%. Sale proceeds: AED 1.09M. 29 months. 58 investors
+
+SC-111: Marina Diamond 1 by Diamond Developers (Studio) (Hold, Exited)
+Studio, 500 sqft, Dubai Marina
+Price: AED 420,000. Gross yield: 13.1%. Net yield: 11.49%. Annualized: 10.64%. Total ROI: 59.24%. Sale proceeds: AED 605,817.75. 44 months. 39 investors
+
+SC-104: Marina Quays ( Dubai Marina) (Hold, Exited)
+1BR, 825 sqft, Dubai Marina
+Price: AED 841,500. Gross yield: 11%. Net yield: 8.77%. Annualized: 6.74%. Total ROI: 26.46%. Sale proceeds: AED 1.01M. 48 months. 35 investors
+
+SC-103: Marina Diamond 1 (Studio) (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 475,000. Gross yield: 11.81%. Net yield: 10.32%. Annualized: 6.69%. Total ROI: 42.08%. Sale proceeds: AED 608,888.06. 53 months. 48 investors
+
+--- Dubai South City ---
+SC-174: Studio apartment in Mag 5, Dubai South (Hold, Exited)
+Studio, 525 sqft, Dubai South City
+Price: AED 291,000. Gross yield: 17.06%. Annualized: 7.31%. Total ROI: 29.03%. Sale proceeds: AED 376,885.78. 38 months. 69 investors
+
+SC-163: Mag 5 - 565 - Studio (Hold, Exited)
+Studio, 500 sqft, Dubai South City
+Price: AED 292,006. Gross yield: 8.22%. Annualized: 9.63%. Total ROI: 33.88%. Sale proceeds: AED 386,138.85. 46 months. 33 investors
+
+SC-162: Two Bedroom in Mag 5, Dubai South (Hold, Exited)
+2BR, 1,300 sqft, Dubai South City
+Price: AED 442,944. Gross yield: 8.13%. Annualized: 9.6%. Total ROI: 46.85%. Sale proceeds: AED 633,465.13. 46 months. 28 investors
+
+SC-161: Mag 5 - 560 - Studio (Hold, Exited)
+Studio, 575 sqft, Dubai South City
+Price: AED 292,006. Gross yield: 8.22%. Annualized: 9.59%. Total ROI: 40.7%. Sale proceeds: AED 411,304. 43 months. 26 investors
+
+--- Dubailand ---
+SC-143: Lakeside Studio Tower C (Hold, Exited)
+Studio, 500 sqft, Dubailand
+Price: AED 210,000. Gross yield: 10.95%. Net yield: 8.71%. Annualized: 7.39%. Total ROI: 44.25%. Sale proceeds: AED 307,881.63. 32 months. 27 investors
+
+SC-138: Al Waha Villas - 2 bhk townhome (Hold, Exited)
+2BR, 2,250 sqft, Dubailand
+Price: AED 765,000. Gross yield: 9.93%. Net yield: 9.09%. Annualized: 8.06%. Total ROI: 107.19%. Sale proceeds: AED 1.60M. 39 months. 86 investors
+
+--- Emirates Living ---
+SC-114: Remraam by Dubai Properties (1 Bed) (Hold, Exited)
+1BR, 825 sqft, Emirates Living
+Price: AED 435,000. Gross yield: 10.34%. Net yield: 8.2%. Annualized: 9.36%. Total ROI: 30.04%. Sale proceeds: AED 498,022.14. 53 months. 43 investors
+
+--- IMPZ ---
+SC-323: 1 Bed in Lakeside, IMPZ (Hold, Funded)
+1BR, 750 sqft, IMPZ
+Price: AED 600,000. Gross yield: 8.33%. Net yield: 6.86%. Annualized: 10.21%. 60 months. 174 investors
+
+SC-321: 1 Bed in Lakeside, IMPZ (Hold, Funded)
+1BR, 800 sqft, IMPZ
+Price: AED 600,000. Gross yield: 8.33%. Net yield: 6.86%. Annualized: 10.21%. 60 months. 180 investors
+
+SC-320: Studio in Lakeside, IMPZ (Hold, Exited)
+Studio, 500 sqft, IMPZ
+Price: AED 395,000. Gross yield: 8.61%. Net yield: 7.24%. Annualized: 10.33%. Market value: AED 400,000 (+1.27%). 60 months. 103 investors
+
+SC-190: Studio in Dubai Production City (IMPZ) (Hold, Exited)
+Studio, 550 sqft, IMPZ
+Price: AED 228,000. Gross yield: 10.09%. Net yield: 8.09%. Annualized: 7.82%. 60 months. 75 investors
+
+SC-159: Lincoln Park North Side (Hold, Exited)
+1BR, 775 sqft, IMPZ
+Price: AED 430,000. Gross yield: 9.77%. Net yield: 7.69%. Annualized: 9.46%. Total ROI: 33.3%. Sale proceeds: AED 585,751.14. 35 months. 74 investors
+
+SC-152: Lago Vista C - Studio (Hold, Exited)
+Studio, 600 sqft, IMPZ
+Price: AED 255,000. Gross yield: 9.41%. Net yield: 7.29%. Annualized: 9.46%. Total ROI: 30.37%. Sale proceeds: AED 357,490.44. 26 months. 33 investors
+
+SC-117: Damac's Lakeside Tower Studio (Hold, Exited)
+Studio, 525 sqft, IMPZ
+Price: AED 225,000. Gross yield: 13.33%. Net yield: 11.57%. Annualized: 7.67%. Total ROI: 39.56%. Sale proceeds: AED 314,267.05. 39 months. 24 investors
+
+--- JBR ---
+SC-171: JBR - Murjan 2 - Studio (Hold, Exited)
+Studio, 575 sqft, JBR
+Price: AED 850,000. Gross yield: 11.86%. Net yield: 10.72%. Annualized: 8.44%. Total ROI: 36.13%. Sale proceeds: AED 1.13M. 37 months. 102 investors
+
+--- JLT ---
+SC-281: 2 Bedroom in Bonnington Tower, JLT (Hold, Exited)
+2BR, 1,200 sqft, JLT
+Price: AED 2.06M. Gross yield: 7.9%. Annualized: 9.85%. 60 months. 383 investors
+
+SC-251: SmartCrowd Plus - Dubai Gate 2  (Hold, Exited)
+Studio, 550 sqft, JLT
+Price: AED 570,000. Gross yield: 14.97%. Annualized: 7.59%. 60 months. 271 investors
+
+SC-243: New Dubai Gate 2 - Studio (Hold, Exited)
+Studio, 550 sqft, JLT
+Price: AED 525,000. Gross yield: 17.14%. Annualized: 8.77%. 60 months. 138 investors
+
+SC-239: 1 Bedroom in Lakside - Jumeirah Lake Towers  (Hold, Exited)
+1BR, 775 sqft, JLT
+Price: AED 950,000. Gross yield: 13.06%. Net yield: 12%. Annualized: 8.03%. 60 months. 304 investors
+
+SC-227: 1-Bedroom in Indigo Tower, Jumeirah Lake Towers (Hold, Exited)
+1BR, 750 sqft, JLT
+Price: AED 855,000. Gross yield: 15.42%. Annualized: 10.41%. 60 months. 277 investors
+
+SC-223: 1-Bedroom in Armada Tower 3, Jumeirah Lake Towers (Hold, Exited)
+1BR, 850 sqft, JLT
+Price: AED 775,000. Gross yield: 16.01%. Annualized: 10.35%. Total ROI: 20.82%. Sale proceeds: AED 970,773. 30 months. 184 investors
+
+SC-189: Modern Studio in Jumeirah Lake Towers (Hold, Exited)
+Studio, 525 sqft, JLT
+Price: AED 425,000. Gross yield: 10.12%. Net yield: 8.69%. Annualized: 9.09%. 60 months. 88 investors
+
+SC-157: Goldcrest Views 2 JLT - 6th floor (Hold, Exited)
+Studio, 600 sqft, JLT
+Price: AED 350,000. Gross yield: 9.86%. Net yield: 8.04%. Annualized: 10.59%. Total ROI: 67.39%. Sale proceeds: AED 632,476.47. 32 months. 52 investors
+
+SC-156: Goldcrest Views 2 JLT - 9th floor (Hold, Exited)
+Studio, 575 sqft, JLT
+Price: AED 350,000. Gross yield: 8.57%. Net yield: 6.75%. Annualized: 8.01%. 60 months. 39 investors
+
+SC-118: Concorde Tower (Hold, Exited)
+1BR, 800 sqft, JLT
+Price: AED 450,000. Gross yield: 10%. Net yield: 7.92%. Annualized: 8.33%. Total ROI: 83.96%. Sale proceeds: AED 770,782.72. 53 months. 70 investors
+
+SC-102: Lake View Studio (Hold, Exited)
+Studio, 525 sqft, JLT
+Price: AED 500,000. Gross yield: 11%. Net yield: 9.9%. Annualized: 13.37%. Total ROI: 48.36%. Sale proceeds: AED 663,874.89. 62 months. 29 investors
+
+--- Jumeriah Islands ---
+ID-230: Miami House Collection 36 (Flip, Exited)
+4BR, 4,525 sqft, Jumeriah Islands
+Price: AED 30.58M. 12 months. 441 investors
+
+ID-228: Miami House Collection 25 (Flip, Exited)
+4BR, 4,600 sqft, Jumeriah Islands
+Price: AED 15.47M. Total ROI: 15.58%. Sale proceeds: AED 25M. 12 months. Renovation: 100%. 494 investors
+
+ID-227: Miami House Collection 22 (Flip, Exited)
+4BR, 4,500 sqft, Jumeriah Islands
+Price: AED 12.68M. Net yield: 20.97%. Total ROI: 18.84%. Sale proceeds: AED 21.75M. 17 months. Renovation: 100%. 514 investors
+
+ID-226: Miami House Collection 9 (Flip, Exited)
+4BR, 4,575 sqft, Jumeriah Islands
+Price: AED 9.25M. Total ROI: 45.04%. Sale proceeds: AED 23M. 11 months. Renovation: 100%. 332 investors
+
+ID-224: Miami House Collection 8 (Flip, Exited)
+4BR, 4,500 sqft, Jumeriah Islands
+Price: AED 12.57M. Total ROI: 29.25%. Sale proceeds: AED 22M. 18 months. Renovation: 100%. 299 investors
+
+--- JVC ---
+SC-311: 1 Bedroom in Binghatti Rose, Jumeirah Village Circle (Hold, Exited)
+1BR, 850 sqft, JVC
+Price: AED 890,000. Gross yield: 7.87%. Net yield: 6.91%. Annualized: 7.87%. Market value: AED 930,000 (+4.49%). 60 months. 219 investors
+
+SC-308: 1 Bedroom in Milano, Jumeirah Village Circle (Hold, Exited)
+1BR, 800 sqft, JVC
+Price: AED 1.02M. Gross yield: 9.99%. Net yield: 8.81%. Annualized: 8.01%. Market value: AED 1.04M (+1.46%). 60 months. 241 investors
+
+SC-304: 1 Bedroom in Belgravia 1, Jumeirah Village Circle (Hold, Exited)
+1BR, 775 sqft, JVC
+Price: AED 1.27M. Gross yield: 10.02%. Net yield: 9.08%. Annualized: 8.39%. Market value: AED 1.30M (+2.36%). 60 months. 272 investors
+
+SC-302: Studio in La Riviera Azure, Jumeirah Village Circle (Hold, Exited)
+Studio, 600 sqft, JVC
+Price: AED 695,000. Gross yield: 11.22%. Net yield: 10.29%. Annualized: 7.57%. Market value: AED 715,000 (+2.88%). 60 months. 166 investors
+
+SC-299: 1 Bedroom in Plaza Residence - Jumeirah Village Circle (Hold, Exited)
+1BR, 775 sqft, JVC
+Price: AED 840,000. Gross yield: 8.93%. Net yield: 7.33%. Annualized: 8.11%. Market value: AED 880,000 (+4.76%). 60 months. 183 investors
+
+SC-297: Converted Studio to 1-Bed in Shamal Residence 2 (Hold, Exited)
+1BR, 800 sqft, JVC
+Price: AED 910,000. Gross yield: 12.67%. Net yield: 11.41%. Annualized: 9.13%. Market value: AED 950,000 (+4.4%). 60 months. 210 investors
+
+SC-288: 1 Bedroom in Harrington House - Jumeirah Village Circle (Hold, Exited)
+1BR, 775 sqft, JVC
+Price: AED 1.13M. Gross yield: 8.62%. Net yield: 7.63%. Annualized: 8.84%. Market value: AED 1.15M (+2.22%). 60 months. 249 investors
+
+SC-286: 1 Bed In Regent Court - Jumeirah Village Circle (Hold, Exited)
+1BR, 825 sqft, JVC
+Price: AED 1.02M. Gross yield: 9.02%. Net yield: 7.73%. Annualized: 8.75%. Market value: AED 1.06M (+3.41%). 60 months. 204 investors
+
+SC-270: 2 Bedroom in Marwa Heights (Hold, Exited)
+2BR, 1,225 sqft, JVC
+Price: AED 1.18M. Gross yield: 9.79%. Net yield: 8.55%. Annualized: 9.76%. 60 months. 198 investors
+
+SC-266: Studio In Laya Mansion (Hold, Exited)
+Studio, 550 sqft, JVC
+Price: AED 490,000. Gross yield: 9.8%. Annualized: 8.29%. 60 months. 121 investors
+
+SC-262: Belgravia Heights 1 (Hold, Exited)
+2BR, 1,200 sqft, JVC
+Price: AED 1.42M. Gross yield: 10.25%. Annualized: 10.31%. 60 months. 309 investors
+
+SC-256: Studio in Oxford 212 (Hold, Exited)
+Studio, 550 sqft, JVC
+Price: AED 560,000. Gross yield: 13.85%. Annualized: 8.09%. 60 months. 160 investors
+
+SC-254: Studio in Pantheon Elysee (Hold, Exited)
+Studio, 500 sqft, JVC
+Price: AED 535,000. Gross yield: 14.5%. Net yield: 13.45%. Annualized: 8.03%. 60 months. 168 investors
+
+SC-231: One-Bedroom Duplex in Fortunato, JVC (Hold, Exited)
+1BR, 750 sqft, JVC
+Price: AED 580,000. Gross yield: 10.34%. Annualized: 8.27%. Total ROI: 49.28%. Sale proceeds: AED 894,468.67. 34 months. 145 investors
+
+SC-226: Beautiful Studio in Crystal Residences, JVC (Hold, Exited)
+Studio, 575 sqft, JVC
+Price: AED 385,000. Gross yield: 9.87%. Annualized: 8.07%. 60 months. 146 investors
+
+SC-212: Modern Studio in Bloom Towers, JVC (Hold, Exited)
+Studio, 600 sqft, JVC
+Price: AED 385,000. Gross yield: 9.61%. Net yield: 8.73%. Annualized: 8.08%. 60 months. 121 investors
+
+SC-182: Shamal Residence 2 (Hold, Exited)
+Studio, 600 sqft, JVC
+Price: AED 360,000. Gross yield: 9.72%. Net yield: 7.77%. Annualized: 8.68%. Total ROI: 49.89%. Sale proceeds: AED 530,318.25. 47 months. 16 investors
+
+SC-179: One Bedroom in Fortunato Tower, JVC (Hold, Exited)
+1BR, 775 sqft, JVC
+Price: AED 420,000. Gross yield: 9.76%. Net yield: 8.14%. Annualized: 7.95%. Total ROI: 63.92%. Sale proceeds: AED 713,403.07. 35 months. 84 investors
+
+SC-175: Studio apartment in Eaton Place by Ellington, JVC (Hold, Exited)
+Studio, 550 sqft, JVC
+Price: AED 405,000. Gross yield: 8.4%. Net yield: 7.09%. Annualized: 7.03%. 60 months. 74 investors
+
+SC-170: Bloom Tower Studio (Hold, Exited)
+Studio, 550 sqft, JVC
+Price: AED 370,000. Gross yield: 9.73%. Net yield: 8.6%. Annualized: 7.49%. 60 months. 43 investors
+
+SC-155: Botanica JVC (Hold, Exited)
+Studio, 550 sqft, JVC
+Price: AED 360,000. Gross yield: 9.44%. Net yield: 8.13%. Annualized: 6.39%. 60 months. 63 investors
+
+SC-154: Crystal Residence JVC (Hold, Exited)
+Studio, 525 sqft, JVC
+Price: AED 340,000. Gross yield: 11.18%. Net yield: 9.53%. Annualized: 6.59%. Total ROI: 77.22%. Sale proceeds: AED 586,176.89. 50 months. 70 investors
+
+SC-153: Shamal Residence JVC (Hold, Exited)
+Studio, 500 sqft, JVC
+Price: AED 365,000. Gross yield: 10.41%. Net yield: 8.44%. Annualized: 9.34%. Total ROI: 50.54%. Sale proceeds: AED 515,314.89. 53 months. 82 investors
+
+SC-132: Belgravia 2 by Ellington (Hold, Exited)
+Studio, 525 sqft, JVC
+Price: AED 430,000. Gross yield: 8.84%. Net yield: 7.19%. Annualized: 7.05%. Total ROI: 67.99%. Sale proceeds: AED 670,789.15. 56 months. 53 investors
+
+SC-131: Eaton Place by Ellington (Hold, Exited)
+1BR, 750 sqft, JVC
+Price: AED 890,000. Gross yield: 7.3%. Annualized: 11.17%. Total ROI: 31.88%. Sale proceeds: AED 1.09M. 51 months. 124 investors
+
+SC-109: JVC Townhouse by Nakheel (1 Bed) (Hold, Exited)
+1BR, 2,275 sqft, JVC
+Price: AED 980,000. Gross yield: 8.67%. Annualized: 7.76%. Total ROI: 47.3%. Sale proceeds: AED 1.40M. 39 months. 67 investors
+
+SC-106: Pulse Smart Residence, JVC (1 Bed) (Hold, Exited)
+1BR, 750 sqft, JVC
+Price: AED 455,000. Gross yield: 10.99%. Net yield: 9.01%. Annualized: 6.56%. Total ROI: 35.95%. Sale proceeds: AED 557,725.38. 71 months. 51 investors
+
+RS-102: 105 Living Gardens 2 (Hold, Exited)
+Studio, 550 sqft, JVC
+Price: AED 454,156. Gross yield: 6.78%. Net yield: 5.47%. Annualized: 8.98%. 60 months. 46 investors
+
+--- JVT ---
+SC-326: 1 Bed + Study in Bali Residences, JVT (Hold, Funded)
+1BR, 824 sqft, JVT
+Price: AED 1.29M. Gross yield: 7.29%. Net yield: 6.4%. Annualized: 10.51%. Market value: AED 1.30M (+0.78%). 60 months. 317 investors
+
+SC-310: Studio in Al Jawhara, Jumeirah Village Triangle (Hold, Exited)
+Studio, 575 sqft, JVT
+Price: AED 573,000. Gross yield: 11.64%. Net yield: 10.11%. Annualized: 7.13%. Market value: AED 600,000 (+4.71%). 60 months. 178 investors
+
+--- MBR City ---
+SC-290: 1 Bedroom in Azizi Park Avenue, Meydan City (Hold, Exited)
+1BR, 775 sqft, MBR City
+Price: AED 1.04M. Gross yield: 7.88%. Net yield: 6.95%. Annualized: 8.12%. Market value: AED 1.07M (+2.88%). 60 months. 208 investors
+
+SC-264: Sobha Creek Vistas Reserve (Hold, Exited)
+1BR, 750 sqft, MBR City
+Price: AED 980,000. Gross yield: 12.82%. Annualized: 9.63%. 60 months. 227 investors
+
+SC-192: 1-Bedroom in MBR City (Hold, Exited)
+1BR, 850 sqft, MBR City
+Price: AED 960,000. Gross yield: 9.06%. Net yield: 7.83%. Annualized: 9.25%. 60 months. 97 investors
+
+SC-180: Studio apartment in KOA Canvas, MBR City (Hold, Exited)
+Studio, 550 sqft, MBR City
+Price: AED 700,000. Gross yield: 10%. Net yield: 8.42%. Annualized: 8.27%. 60 months. 59 investors
+
+--- Old Town ---
+SC-319: Old Town Island, Downtown  (Flip, Funded)
+2BR, 1,300 sqft, Old Town
+Price: AED 4.05M. 9 months. Renovation: 5%. 150 investors
+
+--- Other ---
+SC-285: 3 Bedroom Villa, Palm Jumeirah (Flip, Exited)
+3BR, 3,850 sqft, Dubai
+Price: AED 14.82M. Total ROI: 24.59%. Sale proceeds: AED 24M. 14 months. Renovation: 100%. 114 investors
+
+--- Palm Jumeirah ---
+SC-317: Serenia Residences West, Palm Jumeirah (Flip, Exited)
+3BR, 2,000 sqft, Palm Jumeirah
+Price: AED 10.30M. Annualized: 15%. 9 months. Renovation: 10%. 195 investors
+
+SC-234: 1 Bedroom in Golden Mile 8, Palm Jumeirah (Hold, Exited)
+1BR, 850 sqft, Palm Jumeirah
+Price: AED 1.60M. Gross yield: 12.6%. Annualized: 9.04%. Total ROI: 18.61%. Sale proceeds: AED 2.07M. 18 months. 193 investors
+
+--- Remraam ---
+SC-110: Dubai Properties' Remraam (1 Bed) (Hold, Exited)
+1BR, 850 sqft, Remraam
+Price: AED 442,000. Gross yield: 12.44%. Net yield: 10.38%. Annualized: 9%. Total ROI: 26.19%. Sale proceeds: AED 495,553.33. 57 months. 53 investors
+
+SC-107: Studio in Al Thamam Building, Remraam (Hold, Exited)
+Studio, 525 sqft, Remraam
+Price: AED 287,000. Gross yield: 11.5%. Net yield: 9.37%. Annualized: 7.56%. Total ROI: 49.72%. Sale proceeds: AED 382,415.77. 62 months. 38 investors
+
+--- Silicon Oasis ---
+SC-293: 1 Bedroom in Silicon Gates 2, DSO (Hold, Exited)
+1BR, 850 sqft, Silicon Oasis
+Price: AED 530,000. Gross yield: 9.43%. Net yield: 8.21%. Annualized: 7.59%. Market value: AED 550,000 (+3.77%). 60 months. 115 investors
+
+SC-253: Studio in Silicon Gates 1 (Hold, Exited)
+Studio, 600 sqft, Silicon Oasis
+Price: AED 320,000. Gross yield: 17.45%. Net yield: 15.7%. Annualized: 6.33%. 60 months. 93 investors
+
+SC-250: Studio in Silicon Gates 1 (Hold, Exited)
+Studio, 525 sqft, Silicon Oasis
+Price: AED 310,000. Gross yield: 11.29%. Annualized: 6.44%. 60 months. 84 investors
+
+SC-246: SC246 - Studio in Spring Oasis, DSO (Hold, Exited)
+Studio, 500 sqft, Silicon Oasis
+Price: AED 315,000. Gross yield: 10.48%. Annualized: 6.12%. 60 months. 84 investors
+
+SC-242: SC242 - Studio in Spring Oasis, DSO (Hold, Exited)
+Studio, 525 sqft, Silicon Oasis
+Price: AED 335,000. Gross yield: 9.25%. Annualized: 6.76%. 60 months. 112 investors
+
+SC-238: Silicon Gates 3 - Studio (Hold, Exited)
+Studio, 500 sqft, Silicon Oasis
+Price: AED 330,000. Gross yield: 10.61%. Annualized: 6.61%. 60 months. 98 investors
+
+SC-184: Silicon Gates 1 A (Hold, Exited)
+Studio, 525 sqft, Silicon Oasis
+Price: AED 280,000. Gross yield: 10.71%. Net yield: 8.86%. Annualized: 7.34%. 60 months. 30 investors
+
+SC-160: Studio in Silicon Gates 1, DSO (Hold, Exited)
+Studio, 550 sqft, Silicon Oasis
+Price: AED 250,000. Gross yield: 10%. Net yield: 7.99%. Annualized: 9.24%. Total ROI: 45.08%. Sale proceeds: AED 383,464.29. 38 months. 20 investors
+
+SC-142: One Bedroom with Two Balconies in DSO (Hold, Exited)
+1BR, 750 sqft, Silicon Oasis
+Price: AED 340,000. Gross yield: 10%. Net yield: 7.79%. Annualized: 8.32%. Total ROI: 27.09%. Sale proceeds: AED 430,506.26. 38 months. 42 investors
+
+SC-140: Affordable Studio in Silicon Oasis (Hold, Exited)
+Studio, 600 sqft, Silicon Oasis
+Price: AED 208,000. Gross yield: 11.54%. Net yield: 8.55%. Annualized: 6.87%. Total ROI: 24.41%. Sale proceeds: AED 257,785.24. 31 months. 30 investors
+
+SC-124: Silicon Gates 1 (DSO) (Hold, Exited)
+Studio, 575 sqft, Silicon Oasis
+Price: AED 210,000. Gross yield: 10.48%. Net yield: 8.05%. Annualized: 7.13%. Total ROI: 81.55%. Sale proceeds: AED 377,746.79. 54 months. 41 investors
+
+--- Sports city ---
+SC-315: 1 Bedroom in Hera Tower, Sports City (Hold, Exited)
+1BR, 825 sqft, Sports city
+Price: AED 835,000. Gross yield: 8.74%. Net yield: 7.3%. Annualized: 8.2%. Market value: AED 850,000 (+1.8%). 60 months. 212 investors
+
+SC-121: The Spirit Tower - 1 BHK (second) (Hold, Exited)
+1BR, 750 sqft, Sports city
+Price: AED 450,000. Gross yield: 10.67%. Net yield: 7.81%. Annualized: 6.22%. Total ROI: 21.94%. Sale proceeds: AED 553,610.21. 26 months. 52 investors
+
+SC-120: The Spirit Tower - One BHK (Hold, Exited)
+1BR, 850 sqft, Sports city
+Price: AED 450,000. Gross yield: 10.67%. Net yield: 7.81%. Annualized: 6.22%. Total ROI: 15.32%. Sale proceeds: AED 517,316.03. 24 months. 46 investors
+
+SC-115: Royal Residence 2, Sports City (Studio) (Hold, Exited)
+Studio, 600 sqft, Sports city
+Price: AED 270,000. Gross yield: 11.85%. Net yield: 9.7%. Annualized: 8.52%. Total ROI: 20.51%. Sale proceeds: AED 316,623.11. 42 months. 34 investors
+
+--- The Greens ---
+SC-303: Studio in Al Alka 3, The Greens (Hold, Exited)
+Studio, 500 sqft, The Greens
+Price: AED 935,000. Gross yield: 8.34%. Net yield: 7.37%. Annualized: 8.51%. Market value: AED 950,000 (+1.6%). 60 months. 167 investors
+
+SC-123: Emaar's Ghozlan 4  (Hold, Exited)
+Studio, 550 sqft, The Greens
+Price: AED 455,000. Gross yield: 9.23%. Net yield: 7.83%. Annualized: 11.34%. 60 months. 56 investors
+
+SC-108: Emaar's The Greens (Studio) (Hold, Exited)
+Studio, 550 sqft, The Greens
+Price: AED 460,000. Gross yield: 9.57%. Net yield: 7.95%. Annualized: 6.84%. Total ROI: 35.95%. Sale proceeds: AED 599,821.94. 47 months. 36 investors
+
+SC-105: Al Arta 1 (1 Bed) (Hold, Exited)
+1BR, 850 sqft, The Greens
+Price: AED 683,000. Gross yield: 9.37%. Net yield: 7.57%. Annualized: 6.19%. Total ROI: 18.89%. Sale proceeds: AED 777,754.04. 40 months. 25 investors
+
+--- The Views ---
+SC-165: Two Bedroom in Emaar's Turia, The Views (Hold, Exited)
+2BR, 1,250 sqft, The Views
+Price: AED 1.10M. Gross yield: 8.18%. Net yield: 6.18%. Annualized: 9.85%. Total ROI: 52.77%. Sale proceeds: AED 1.76M. 26 months. 65 investors
+
+--- Za'abeel ---
+SC-280: 2 Bed In Downtown Views, Za'abeel (Hold, Exited)
+2BR, 1,300 sqft, Za'abeel
+Price: AED 3.05M. Gross yield: 8.52%. Net yield: 7.54%. Annualized: 9.47%. 60 months. 416 investors
+
+SC-275: 2 Bed In Downtown Views, Za'abeel (Hold, Exited)
+2BR, 1,300 sqft, Za'abeel
+Price: AED 3.15M. Gross yield: 8.25%. Net yield: 7.3%. Annualized: 9.77%. 60 months. 434 investors
+
+
+=== EXITED PROPERTIES — Sold, Returns Distributed (67 properties) ===
+61 Hold, 6 Flip. Total value: AED 106.81M. 6,881 investors. Avg ROI: 41.7%. Total sale proceeds: AED 177.22M
+
+--- Business Bay ---
+SC-235: Beautiful 1 Bedroom in Windsor Manor, Business Bay (Hold, Exited)
+1BR, 775 sqft, Business Bay
+Price: AED 925,000. Gross yield: 14.25%. Net yield: 13.2%. Annualized: 9.23%. Total ROI: 21.2%. Sale proceeds: AED 1.24M. 20 months. 255 investors
+
+SC-178: Studio in Marquise Square, Business Bay (Hold, Exited)
+Studio, 500 sqft, Business Bay
+Price: AED 720,000. Gross yield: 12.93%. Net yield: 11.94%. Annualized: 9.06%. Total ROI: 56.24%. Sale proceeds: AED 1.15M. 36 months. 73 investors
+
+--- DIFC ---
+SC-282: 3 Bedroom Duplex, Central Park Towers (Flip, Exited)
+3BR, 2,050 sqft, DIFC
+Price: AED 4.88M. Total ROI: 25.01%. Sale proceeds: AED 8.70M. 18 months. Renovation: 100%. 57 investors
+
+--- Downtown Dubai ---
+SC-232: 1 Bedroom in Burj Al Nujoom, Downtown (Hold, Exited)
+1BR, 775 sqft, Downtown Dubai
+Price: AED 835,000. Gross yield: 16.72%. Annualized: 10.57%. Total ROI: 32.33%. Sale proceeds: AED 1.13M. 39 months. 179 investors
+
+SC-225: 2 Bedroom in Burj Al Nujoom, Downtown (Hold, Exited)
+2BR, 1,225 sqft, Downtown Dubai
+Price: AED 1.25M. Gross yield: 16.13%. Net yield: 14.37%. Annualized: 10.55%. Total ROI: 28.16%. Sale proceeds: AED 1.64M. 33 months. 245 investors
+
+SC-208: Fantastic 1-Bedroom in 8 Boulevard Walk, Downtown (Hold, Exited)
+1BR, 750 sqft, Downtown Dubai
+Price: AED 980,000. Gross yield: 17.41%. Net yield: 15.69%. Annualized: 11.64%. Total ROI: 51.12%. Sale proceeds: AED 1.53M. 43 months. 112 investors
+
+SC-201: Stellar 1-Bedroom in Downtown Dubai (Hold, Exited)
+1BR, 825 sqft, Downtown Dubai
+Price: AED 950,000. Gross yield: 17.96%. Net yield: 16.19%. Annualized: 12.13%. Total ROI: 40.49%. Sale proceeds: AED 1.41M. 28 months. 86 investors
+
+SC-187: Yacht Bay Studio in Dubai Marina (Hold, Exited)
+Studio, 600 sqft, Downtown Dubai
+Price: AED 630,000. Gross yield: 13.9%. Net yield: 12.76%. Annualized: 9.45%. Total ROI: 47.08%. Sale proceeds: AED 910,307.28. 47 months. 60 investors
+
+SC-168: Boulevard Central 2, Studio (Hold, Exited)
+Studio, 500 sqft, Downtown Dubai
+Price: AED 875,000. Gross yield: 11.56%. Net yield: 10.59%. Annualized: 10.5%. Total ROI: 46.39%. Sale proceeds: AED 1.23M. 52 months. 68 investors
+
+SC-166: Studio in Claren Tower 1, Downtown Dubai (Hold, Exited)
+Studio, 575 sqft, Downtown Dubai
+Price: AED 775,000. Gross yield: 13.05%. Net yield: 11.56%. Annualized: 6.02%. Total ROI: 59.55%. Sale proceeds: AED 1.16M. 51 months. 63 investors
+
+--- Dubai Marina ---
+SC-233: 2 Bedroom in Opal Tower, Dubai Marina (Hold, Exited)
+2BR, 1,250 sqft, Dubai Marina
+Price: AED 1.31M. Gross yield: 16.52%. Annualized: 10.3%. Total ROI: 32.46%. Sale proceeds: AED 1.87M. 29 months. 352 investors
+
+SC-220: Fantastic 1-Bedroom in Dream Towers, Dubai Marina (Hold, Exited)
+1BR, 775 sqft, Dubai Marina
+Price: AED 690,000. Gross yield: 16.86%. Net yield: 15.21%. Annualized: 10.42%. Total ROI: 22.37%. Sale proceeds: AED 898,247. 29 months. 207 investors
+
+SC-211: 1-Bedroom in Dream Towers, Dubai Marina (Hold, Exited)
+1BR, 825 sqft, Dubai Marina
+Price: AED 600,000. Gross yield: 18.1%. Net yield: 16.56%. Annualized: 10.55%. Total ROI: 38.09%. Sale proceeds: AED 877,205.42. 31 months. 118 investors
+
+SC-202: Remarkable 2-Bedroom in Dubai Marina (Hold, Exited)
+2BR, 1,300 sqft, Dubai Marina
+Price: AED 925,000. Gross yield: 18.45%. Net yield: 17.19%. Annualized: 12.09%. Total ROI: 43.53%. Sale proceeds: AED 1.39M. 32 months. 126 investors
+
+SC-193: 1-Bedroom in Cascades Tower, Dubai Marina (Hold, Exited)
+1BR, 750 sqft, Dubai Marina
+Price: AED 800,000. Gross yield: 15.12%. Net yield: 12.92%. Annualized: 9.91%. Total ROI: 26.43%. Sale proceeds: AED 1.10M. 19 months. 160 investors
+
+SC-185: Studio One (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 730,000. Gross yield: 13.81%. Net yield: 12.77%. Annualized: 9.32%. Total ROI: 33.23%. Sale proceeds: AED 1.04M. 23 months. 148 investors
+
+SC-181: 1-Bedroom in The Cascades, Dubai Marina (Hold, Exited)
+1BR, 825 sqft, Dubai Marina
+Price: AED 800,000. Gross yield: 13.57%. Net yield: 11.33%. Annualized: 8.8%. Total ROI: 30.76%. Sale proceeds: AED 1.11M. 27 months. 75 investors
+
+SC-169: 2 bedroom in Studio One, Dubai Marina  (Hold, Exited)
+2BR, 1,225 sqft, Dubai Marina
+Price: AED 1.25M. Gross yield: 11.68%. Net yield: 10.64%. Annualized: 9.32%. Total ROI: 55.77%. Sale proceeds: AED 1.82M. 49 months. 155 investors
+
+SC-148: Marina Residence One-Bed (Hold, Exited)
+1BR, 750 sqft, Dubai Marina
+Price: AED 530,000. Gross yield: 19.08%. Net yield: 17.2%. Annualized: 9.67%. Total ROI: 54.24%. Sale proceeds: AED 809,332.68. 32 months. 49 investors
+
+SC-145: Bay Central Studio (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 530,000. Gross yield: 13.5%. Net yield: 11.7%. Annualized: 9.79%. Total ROI: 36.62%. Sale proceeds: AED 765,173.07. 17 months. 53 investors
+
+SC-141: Studio One (Hold, Exited)
+Studio, 600 sqft, Dubai Marina
+Price: AED 500,000. Gross yield: 14%. Net yield: 12.76%. Annualized: 7.33%. Total ROI: 76.5%. Sale proceeds: AED 855,095.06. 37 months. 60 investors
+
+SC-137: Marina View - One Bedroom (Hold, Exited)
+1BR, 775 sqft, Dubai Marina
+Price: AED 650,000. Gross yield: 8.92%. Net yield: 7.37%. Annualized: 7.1%. Total ROI: 68.38%. Sale proceeds: AED 1.09M. 29 months. 58 investors
+
+SC-111: Marina Diamond 1 by Diamond Developers (Studio) (Hold, Exited)
+Studio, 500 sqft, Dubai Marina
+Price: AED 420,000. Gross yield: 13.1%. Net yield: 11.49%. Annualized: 10.64%. Total ROI: 59.24%. Sale proceeds: AED 605,817.75. 44 months. 39 investors
+
+SC-104: Marina Quays ( Dubai Marina) (Hold, Exited)
+1BR, 825 sqft, Dubai Marina
+Price: AED 841,500. Gross yield: 11%. Net yield: 8.77%. Annualized: 6.74%. Total ROI: 26.46%. Sale proceeds: AED 1.01M. 48 months. 35 investors
+
+SC-103: Marina Diamond 1 (Studio) (Hold, Exited)
+Studio, 550 sqft, Dubai Marina
+Price: AED 475,000. Gross yield: 11.81%. Net yield: 10.32%. Annualized: 6.69%. Total ROI: 42.08%. Sale proceeds: AED 608,888.06. 53 months. 48 investors
+
+--- Dubai South City ---
+SC-174: Studio apartment in Mag 5, Dubai South (Hold, Exited)
+Studio, 525 sqft, Dubai South City
+Price: AED 291,000. Gross yield: 17.06%. Annualized: 7.31%. Total ROI: 29.03%. Sale proceeds: AED 376,885.78. 38 months. 69 investors
+
+SC-163: Mag 5 - 565 - Studio (Hold, Exited)
+Studio, 500 sqft, Dubai South City
+Price: AED 292,006. Gross yield: 8.22%. Annualized: 9.63%. Total ROI: 33.88%. Sale proceeds: AED 386,138.85. 46 months. 33 investors
+
+SC-162: Two Bedroom in Mag 5, Dubai South (Hold, Exited)
+2BR, 1,300 sqft, Dubai South City
+Price: AED 442,944. Gross yield: 8.13%. Annualized: 9.6%. Total ROI: 46.85%. Sale proceeds: AED 633,465.13. 46 months. 28 investors
+
+SC-161: Mag 5 - 560 - Studio (Hold, Exited)
+Studio, 575 sqft, Dubai South City
+Price: AED 292,006. Gross yield: 8.22%. Annualized: 9.59%. Total ROI: 40.7%. Sale proceeds: AED 411,304. 43 months. 26 investors
+
+--- Dubailand ---
+SC-143: Lakeside Studio Tower C (Hold, Exited)
+Studio, 500 sqft, Dubailand
+Price: AED 210,000. Gross yield: 10.95%. Net yield: 8.71%. Annualized: 7.39%. Total ROI: 44.25%. Sale proceeds: AED 307,881.63. 32 months. 27 investors
+
+SC-138: Al Waha Villas - 2 bhk townhome (Hold, Exited)
+2BR, 2,250 sqft, Dubailand
+Price: AED 765,000. Gross yield: 9.93%. Net yield: 9.09%. Annualized: 8.06%. Total ROI: 107.19%. Sale proceeds: AED 1.60M. 39 months. 86 investors
+
+--- Emirates Living ---
+SC-114: Remraam by Dubai Properties (1 Bed) (Hold, Exited)
+1BR, 825 sqft, Emirates Living
+Price: AED 435,000. Gross yield: 10.34%. Net yield: 8.2%. Annualized: 9.36%. Total ROI: 30.04%. Sale proceeds: AED 498,022.14. 53 months. 43 investors
+
+--- IMPZ ---
+SC-159: Lincoln Park North Side (Hold, Exited)
+1BR, 775 sqft, IMPZ
+Price: AED 430,000. Gross yield: 9.77%. Net yield: 7.69%. Annualized: 9.46%. Total ROI: 33.3%. Sale proceeds: AED 585,751.14. 35 months. 74 investors
+
+SC-152: Lago Vista C - Studio (Hold, Exited)
+Studio, 600 sqft, IMPZ
+Price: AED 255,000. Gross yield: 9.41%. Net yield: 7.29%. Annualized: 9.46%. Total ROI: 30.37%. Sale proceeds: AED 357,490.44. 26 months. 33 investors
+
+SC-117: Damac's Lakeside Tower Studio (Hold, Exited)
+Studio, 525 sqft, IMPZ
+Price: AED 225,000. Gross yield: 13.33%. Net yield: 11.57%. Annualized: 7.67%. Total ROI: 39.56%. Sale proceeds: AED 314,267.05. 39 months. 24 investors
+
+--- JBR ---
+SC-171: JBR - Murjan 2 - Studio (Hold, Exited)
+Studio, 575 sqft, JBR
+Price: AED 850,000. Gross yield: 11.86%. Net yield: 10.72%. Annualized: 8.44%. Total ROI: 36.13%. Sale proceeds: AED 1.13M. 37 months. 102 investors
+
+--- JLT ---
+SC-223: 1-Bedroom in Armada Tower 3, Jumeirah Lake Towers (Hold, Exited)
+1BR, 850 sqft, JLT
+Price: AED 775,000. Gross yield: 16.01%. Annualized: 10.35%. Total ROI: 20.82%. Sale proceeds: AED 970,773. 30 months. 184 investors
+
+SC-157: Goldcrest Views 2 JLT - 6th floor (Hold, Exited)
+Studio, 600 sqft, JLT
+Price: AED 350,000. Gross yield: 9.86%. Net yield: 8.04%. Annualized: 10.59%. Total ROI: 67.39%. Sale proceeds: AED 632,476.47. 32 months. 52 investors
+
+SC-118: Concorde Tower (Hold, Exited)
+1BR, 800 sqft, JLT
+Price: AED 450,000. Gross yield: 10%. Net yield: 7.92%. Annualized: 8.33%. Total ROI: 83.96%. Sale proceeds: AED 770,782.72. 53 months. 70 investors
+
+SC-102: Lake View Studio (Hold, Exited)
+Studio, 525 sqft, JLT
+Price: AED 500,000. Gross yield: 11%. Net yield: 9.9%. Annualized: 13.37%. Total ROI: 48.36%. Sale proceeds: AED 663,874.89. 62 months. 29 investors
+
+--- Jumeriah Islands ---
+ID-228: Miami House Collection 25 (Flip, Exited)
+4BR, 4,600 sqft, Jumeriah Islands
+Price: AED 15.47M. Total ROI: 15.58%. Sale proceeds: AED 25M. 12 months. Renovation: 100%. 494 investors
+
+ID-227: Miami House Collection 22 (Flip, Exited)
+4BR, 4,500 sqft, Jumeriah Islands
+Price: AED 12.68M. Net yield: 20.97%. Total ROI: 18.84%. Sale proceeds: AED 21.75M. 17 months. Renovation: 100%. 514 investors
+
+ID-226: Miami House Collection 9 (Flip, Exited)
+4BR, 4,575 sqft, Jumeriah Islands
+Price: AED 9.25M. Total ROI: 45.04%. Sale proceeds: AED 23M. 11 months. Renovation: 100%. 332 investors
+
+ID-224: Miami House Collection 8 (Flip, Exited)
+4BR, 4,500 sqft, Jumeriah Islands
+Price: AED 12.57M. Total ROI: 29.25%. Sale proceeds: AED 22M. 18 months. Renovation: 100%. 299 investors
+
+--- JVC ---
+SC-231: One-Bedroom Duplex in Fortunato, JVC (Hold, Exited)
+1BR, 750 sqft, JVC
+Price: AED 580,000. Gross yield: 10.34%. Annualized: 8.27%. Total ROI: 49.28%. Sale proceeds: AED 894,468.67. 34 months. 145 investors
+
+SC-182: Shamal Residence 2 (Hold, Exited)
+Studio, 600 sqft, JVC
+Price: AED 360,000. Gross yield: 9.72%. Net yield: 7.77%. Annualized: 8.68%. Total ROI: 49.89%. Sale proceeds: AED 530,318.25. 47 months. 16 investors
+
+SC-179: One Bedroom in Fortunato Tower, JVC (Hold, Exited)
+1BR, 775 sqft, JVC
+Price: AED 420,000. Gross yield: 9.76%. Net yield: 8.14%. Annualized: 7.95%. Total ROI: 63.92%. Sale proceeds: AED 713,403.07. 35 months. 84 investors
+
+SC-154: Crystal Residence JVC (Hold, Exited)
+Studio, 525 sqft, JVC
+Price: AED 340,000. Gross yield: 11.18%. Net yield: 9.53%. Annualized: 6.59%. Total ROI: 77.22%. Sale proceeds: AED 586,176.89. 50 months. 70 investors
+
+SC-153: Shamal Residence JVC (Hold, Exited)
+Studio, 500 sqft, JVC
+Price: AED 365,000. Gross yield: 10.41%. Net yield: 8.44%. Annualized: 9.34%. Total ROI: 50.54%. Sale proceeds: AED 515,314.89. 53 months. 82 investors
+
+SC-132: Belgravia 2 by Ellington (Hold, Exited)
+Studio, 525 sqft, JVC
+Price: AED 430,000. Gross yield: 8.84%. Net yield: 7.19%. Annualized: 7.05%. Total ROI: 67.99%. Sale proceeds: AED 670,789.15. 56 months. 53 investors
+
+SC-131: Eaton Place by Ellington (Hold, Exited)
+1BR, 750 sqft, JVC
+Price: AED 890,000. Gross yield: 7.3%. Annualized: 11.17%. Total ROI: 31.88%. Sale proceeds: AED 1.09M. 51 months. 124 investors
+
+SC-109: JVC Townhouse by Nakheel (1 Bed) (Hold, Exited)
+1BR, 2,275 sqft, JVC
+Price: AED 980,000. Gross yield: 8.67%. Annualized: 7.76%. Total ROI: 47.3%. Sale proceeds: AED 1.40M. 39 months. 67 investors
+
+SC-106: Pulse Smart Residence, JVC (1 Bed) (Hold, Exited)
+1BR, 750 sqft, JVC
+Price: AED 455,000. Gross yield: 10.99%. Net yield: 9.01%. Annualized: 6.56%. Total ROI: 35.95%. Sale proceeds: AED 557,725.38. 71 months. 51 investors
+
+--- Other ---
+SC-285: 3 Bedroom Villa, Palm Jumeirah (Flip, Exited)
+3BR, 3,850 sqft, Dubai
+Price: AED 14.82M. Total ROI: 24.59%. Sale proceeds: AED 24M. 14 months. Renovation: 100%. 114 investors
+
+--- Palm Jumeirah ---
+SC-234: 1 Bedroom in Golden Mile 8, Palm Jumeirah (Hold, Exited)
+1BR, 850 sqft, Palm Jumeirah
+Price: AED 1.60M. Gross yield: 12.6%. Annualized: 9.04%. Total ROI: 18.61%. Sale proceeds: AED 2.07M. 18 months. 193 investors
+
+--- Remraam ---
+SC-110: Dubai Properties' Remraam (1 Bed) (Hold, Exited)
+1BR, 850 sqft, Remraam
+Price: AED 442,000. Gross yield: 12.44%. Net yield: 10.38%. Annualized: 9%. Total ROI: 26.19%. Sale proceeds: AED 495,553.33. 57 months. 53 investors
+
+SC-107: Studio in Al Thamam Building, Remraam (Hold, Exited)
+Studio, 525 sqft, Remraam
+Price: AED 287,000. Gross yield: 11.5%. Net yield: 9.37%. Annualized: 7.56%. Total ROI: 49.72%. Sale proceeds: AED 382,415.77. 62 months. 38 investors
+
+--- Silicon Oasis ---
+SC-160: Studio in Silicon Gates 1, DSO (Hold, Exited)
+Studio, 550 sqft, Silicon Oasis
+Price: AED 250,000. Gross yield: 10%. Net yield: 7.99%. Annualized: 9.24%. Total ROI: 45.08%. Sale proceeds: AED 383,464.29. 38 months. 20 investors
+
+SC-142: One Bedroom with Two Balconies in DSO (Hold, Exited)
+1BR, 750 sqft, Silicon Oasis
+Price: AED 340,000. Gross yield: 10%. Net yield: 7.79%. Annualized: 8.32%. Total ROI: 27.09%. Sale proceeds: AED 430,506.26. 38 months. 42 investors
+
+SC-140: Affordable Studio in Silicon Oasis (Hold, Exited)
+Studio, 600 sqft, Silicon Oasis
+Price: AED 208,000. Gross yield: 11.54%. Net yield: 8.55%. Annualized: 6.87%. Total ROI: 24.41%. Sale proceeds: AED 257,785.24. 31 months. 30 investors
+
+SC-124: Silicon Gates 1 (DSO) (Hold, Exited)
+Studio, 575 sqft, Silicon Oasis
+Price: AED 210,000. Gross yield: 10.48%. Net yield: 8.05%. Annualized: 7.13%. Total ROI: 81.55%. Sale proceeds: AED 377,746.79. 54 months. 41 investors
+
+--- Sports city ---
+SC-121: The Spirit Tower - 1 BHK (second) (Hold, Exited)
+1BR, 750 sqft, Sports city
+Price: AED 450,000. Gross yield: 10.67%. Net yield: 7.81%. Annualized: 6.22%. Total ROI: 21.94%. Sale proceeds: AED 553,610.21. 26 months. 52 investors
+
+SC-120: The Spirit Tower - One BHK (Hold, Exited)
+1BR, 850 sqft, Sports city
+Price: AED 450,000. Gross yield: 10.67%. Net yield: 7.81%. Annualized: 6.22%. Total ROI: 15.32%. Sale proceeds: AED 517,316.03. 24 months. 46 investors
+
+SC-115: Royal Residence 2, Sports City (Studio) (Hold, Exited)
+Studio, 600 sqft, Sports city
+Price: AED 270,000. Gross yield: 11.85%. Net yield: 9.7%. Annualized: 8.52%. Total ROI: 20.51%. Sale proceeds: AED 316,623.11. 42 months. 34 investors
+
+--- The Greens ---
+SC-108: Emaar's The Greens (Studio) (Hold, Exited)
+Studio, 550 sqft, The Greens
+Price: AED 460,000. Gross yield: 9.57%. Net yield: 7.95%. Annualized: 6.84%. Total ROI: 35.95%. Sale proceeds: AED 599,821.94. 47 months. 36 investors
+
+SC-105: Al Arta 1 (1 Bed) (Hold, Exited)
+1BR, 850 sqft, The Greens
+Price: AED 683,000. Gross yield: 9.37%. Net yield: 7.57%. Annualized: 6.19%. Total ROI: 18.89%. Sale proceeds: AED 777,754.04. 40 months. 25 investors
+
+--- The Views ---
+SC-165: Two Bedroom in Emaar's Turia, The Views (Hold, Exited)
+2BR, 1,250 sqft, The Views
+Price: AED 1.10M. Gross yield: 8.18%. Net yield: 6.18%. Annualized: 9.85%. Total ROI: 52.77%. Sale proceeds: AED 1.76M. 26 months. 65 investors
