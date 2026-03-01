@@ -1,5 +1,9 @@
 # Plan: Improve SmartCrowd Voice Agent
 
+## Business Context
+
+SmartCrowd's growth is limited by an investor confidence gap: real investors cite fee confusion, liquidity fear, decision paralysis, legitimacy doubt, and return expectation mismatch as reasons they hesitate or leave. These are education problems — the answers exist, but the self-serve dashboard doesn't deliver them. The voice agent addresses all five objections conversationally, functioning as the personal investment advisor SmartCrowd can't afford to staff on every session. Research shows voice AI generates 4.7x more qualified leads than chatbots and that sub-minute response drives 391% conversion improvement. For the full product case with data, metrics, and test scenarios, see [voice-agent-case-study.md](./2026-03-01-voice-agent-case-study.md).
+
 ## Context
 
 The SmartCrowd dashboard has an ElevenLabs voice agent with 4 client-side tools and a ~120-line system prompt with all platform knowledge baked in. Two core problems:
