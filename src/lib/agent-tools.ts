@@ -11,6 +11,152 @@ const allProperties: Property[] = [
   ...exitedProperties,
 ];
 
+// --- Speech-to-text normalization (Phase 2) ---
+
+const NUMBER_WORDS: Record<string, number> = {
+  zero: 0, oh: 0,
+  one: 1, two: 2, three: 3, four: 4, five: 5,
+  six: 6, seven: 7, eight: 8, nine: 9,
+  ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15,
+  sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19,
+  twenty: 20, thirty: 30, forty: 40, fifty: 50,
+  sixty: 60, seventy: 70, eighty: 80, ninety: 90,
+};
+
+/**
+ * Convert spoken number words to a numeric string.
+ * Handles: "three fifteen" → "315", "three one five" → "315",
+ * "three hundred fifteen" → "315", "forty two" → "42"
+ */
+function wordsToNumber(words: string): string | null {
+  const tokens = words.toLowerCase().split(/[\s-]+/).filter(t => t.length > 0);
+  if (tokens.length === 0) return null;
+
+  const nums: number[] = [];
+  let i = 0;
+
+  while (i < tokens.length) {
+    const val = NUMBER_WORDS[tokens[i]];
+    if (val === undefined) return null;
+
+    if (i + 1 < tokens.length && tokens[i + 1] === "hundred") {
+      // "three hundred fifteen" → 315
+      let result = val * 100;
+      i += 2;
+      while (i < tokens.length && NUMBER_WORDS[tokens[i]] !== undefined) {
+        result += NUMBER_WORDS[tokens[i]];
+        i++;
+      }
+      nums.push(result);
+    } else if (val >= 20 && val % 10 === 0 && i + 1 < tokens.length) {
+      // "forty two" → 42
+      const next = NUMBER_WORDS[tokens[i + 1]];
+      if (next !== undefined && next >= 1 && next <= 9) {
+        nums.push(val + next);
+        i += 2;
+      } else {
+        nums.push(val);
+        i++;
+      }
+    } else {
+      nums.push(val);
+      i++;
+    }
+  }
+
+  if (nums.length === 0) return null;
+  if (nums.length === 1) return String(nums[0]);
+
+  // All single digits → concatenate: "three one five" → "315"
+  if (nums.every(n => n >= 0 && n <= 9)) return nums.join("");
+
+  // Single digit + two-digit: "three fifteen" → 315
+  if (nums.length === 2 && nums[0] >= 1 && nums[0] <= 9 && nums[1] >= 10 && nums[1] <= 99) {
+    return String(nums[0] * 100 + nums[1]);
+  }
+
+  return nums.map(String).join("");
+}
+
+/**
+ * Normalize speech-to-text variations of SC property codes.
+ * "SC 315" / "S.C. 315" / "S C three fifteen" → "SC-315"
+ */
+export function normalizeSCCode(input: string): string {
+  const s = input.trim();
+
+  // Match "SC" prefix with various separators, then capture the rest
+  const scPrefix = /^[Ss][\s.\-]*[Cc][\s.\-]*(.+)$/;
+  const match = s.match(scPrefix);
+
+  if (match) {
+    let numPart = match[1].trim();
+
+    // Already digits
+    if (/^\d+$/.test(numPart)) return `SC-${numPart}`;
+
+    // Try converting number words ("three fifteen" → "315")
+    const converted = wordsToNumber(numPart);
+    if (converted) return `SC-${converted}`;
+
+    // Strip remaining separators and check again
+    numPart = numPart.replace(/[\s.\-]/g, "");
+    if (/^\d+$/.test(numPart)) return `SC-${numPart}`;
+  }
+
+  // Bare "sc315" without separator
+  const bare = s.match(/^[Ss][Cc](\d+)$/);
+  if (bare) return `SC-${bare[1]}`;
+
+  return s;
+}
+
+const AREA_SPEECH_ALIASES: [RegExp, string][] = [
+  // JVC - Jumeirah Village Circle
+  [/\bjay\s+vee\s+see\b/i, "JVC"],
+  [/\bjay\s+v\s+c\b/i, "JVC"],
+  [/\bj\s+v\s+c\b/i, "JVC"],
+  // JVT - Jumeirah Village Triangle
+  [/\bjay\s+vee\s+tee\b/i, "JVT"],
+  [/\bj\s+v\s+t\b/i, "JVT"],
+  // JLT - Jumeirah Lakes Towers
+  [/\bjay\s+el\s+tee\b/i, "JLT"],
+  [/\bjay\s+l\s+t\b/i, "JLT"],
+  [/\bj\s+l\s+t\b/i, "JLT"],
+  // DIFC - Dubai International Financial Centre
+  [/\bdee\s+eye\s+ef\s+see\b/i, "DIFC"],
+  [/\bd\s+i\s+f\s+c\b/i, "DIFC"],
+  // IMPZ
+  [/\beye\s+em\s+pee\s+zee\b/i, "IMPZ"],
+  [/\bi\s+m\s+p\s+z\b/i, "IMPZ"],
+  // DSO - Dubai Silicon Oasis
+  [/\bdee\s+ess\s+oh\b/i, "Silicon Oasis"],
+  [/\bd\s+s\s+o\b/i, "Silicon Oasis"],
+  [/\bdso\b/i, "Silicon Oasis"],
+];
+
+/**
+ * Normalize spoken area name abbreviations.
+ * "jay vee see" → "JVC", "dee eye ef see" → "DIFC"
+ */
+export function normalizeAreaName(input: string): string {
+  let result = input;
+  for (const [pattern, canonical] of AREA_SPEECH_ALIASES) {
+    result = result.replace(pattern, canonical);
+  }
+  return result;
+}
+
+/**
+ * Combined normalization for property_id parameters.
+ * Tries SC code normalization first, then area name normalization.
+ */
+function normalizePropertyQuery(input: string): string {
+  const scNormalized = normalizeSCCode(input);
+  if (scNormalized !== input) return scNormalized;
+  return normalizeAreaName(input);
+}
+
 function findProperties(query: string, maxResults: number = 3): Property[] {
   const q = query.toLowerCase().trim();
 
@@ -181,7 +327,8 @@ export function calculateRoi({
   investment_amount: number;
   holding_years?: number;
 }): string {
-  const matches = findProperties(property_id, 1);
+  const normalizedId = normalizePropertyQuery(property_id);
+  const matches = findProperties(normalizedId, 1);
 
   if (matches.length === 0) {
     return `No property found matching "${property_id}". Try a different name or SC code.`;
@@ -273,7 +420,8 @@ export function getRenovationStatus({
 }: {
   property_id: string;
 }): string {
-  const matches = findProperties(property_id, 1);
+  const normalizedId = normalizePropertyQuery(property_id);
+  const matches = findProperties(normalizedId, 1);
 
   if (matches.length === 0) {
     return `No property found matching "${property_id}".`;

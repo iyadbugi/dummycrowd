@@ -67,103 +67,81 @@ The SmartCrowd dashboard has an ElevenLabs voice agent with 4 client-side tools 
 
 ---
 
-## Phase 2: Speech Recognition Handling
+## Phase 2: Speech Recognition Handling ✅ COMPLETE
 
 **Goal**: Add normalization so remaining 2 tools handle speech-to-text variations gracefully.
 
-### 2.1 SC Code Normalization
-Add `normalizeSCCode(input: string): string` to `agent-tools.ts`:
-- Strip whitespace/punctuation: "SC 315" / "S.C. 315" / "sc-315" → "SC-315"
-- Handle spelled-out numbers: "three fifteen" → "315", "three one five" → "315"
+**Completed 2026-03-02**
 
-### 2.2 Area Name Speech Aliases
-Add `normalizeAreaName(input: string): string`:
-- "jay vee see" / "jvc" → "JVC"
-- "dee eye ef see" → "DIFC"
-- "impz" → "IMPZ"
-- Common misspellings and spoken forms
+### What was done
 
-### 2.3 Apply to Tool Functions
-Call normalization at the top of `searchProperties`, `calculateRoi`, `getRenovationStatus` before any matching logic.
+**`normalizeSCCode(input)`** — added to `src/lib/agent-tools.ts`:
+- Strips whitespace/punctuation: "SC 315" / "S.C. 315" / "sc-315" / "sc315" → "SC-315"
+- Handles spelled-out numbers: "three fifteen" → "315", "three one five" → "315", "three hundred fifteen" → "315"
+- Handles compound numbers: "forty two" → "42", "oh" as zero
 
-### Files to Modify
-- **`src/lib/agent-tools.ts`** -- Add normalization functions, apply in tool handlers
+**`normalizeAreaName(input)`** — added to `src/lib/agent-tools.ts`:
+- "jay vee see" → "JVC", "jay vee tee" → "JVT", "jay el tee" → "JLT"
+- "dee eye ef see" → "DIFC", "eye em pee zee" → "IMPZ"
+- "dee ess oh" / "dso" → "Silicon Oasis"
+- Works as substring replacement (handles "properties in jay vee see area")
+
+**Applied** `normalizePropertyQuery()` to `calculateRoi` and `getRenovationStatus` — the 2 active client tools. No ElevenLabs changes needed (normalization is client-side).
 
 ### Verification
-- [ ] Test with "S C three fifteen" → resolves to SC-315
-- [ ] Test with "jay vee see" → resolves to JVC area filter
+- [x] Unit tests: "S C three fifteen" → SC-315 (12 SC code tests, 8 area name tests)
+- [x] Unit tests: "jay vee see" → JVC, resolves to JVC properties
+- [x] TypeScript compiles clean
 
 ---
 
-## Phase 3: Unit Tests
+## Phase 3: Unit Tests ✅ COMPLETE
 
 **Goal**: Add tests for `agent-tools.ts` -- the only file with real business logic.
 
-### Test Cases
-- **`findProperties`**: exact SC code match, fuzzy name match, area match, no results
-- **`searchProperties`**: filter by area, type, status, min_yield, combinations, empty results
-- **`calculateRoi`**: Hold/Flip/Exited calculations, fee math correctness (1.5% entry, 0.5% annual, 2.5% exit)
-- **`getRenovationStatus`**: Flip vs Hold property, progress ranges (0%, 15%, 60%, 85%, 100%)
-- **Normalization** (from Phase 2): SC code variations, area name aliases
+**Completed 2026-03-02**
 
-### Files to Create
-- **`src/lib/__tests__/agent-tools.test.ts`** (new)
+### What was done
+
+**Setup:**
+- Installed vitest, created `vitest.config.ts` with `@/*` path alias
+- Added `npm test` script to `package.json`
+
+**Test file:** `src/lib/__tests__/agent-tools.test.ts` — 30 tests, all passing:
+- `normalizeSCCode`: 12 tests (spacing, punctuation, bare codes, case, spelled-out numbers, passthrough)
+- `normalizeAreaName`: 8 tests (JVC, JVT, JLT, DIFC, IMPZ, DSO, phrases, passthrough)
+- `calculateRoi`: 7 tests (Hold/Flip/Exited, fee math, speech normalization integration)
+- `getRenovationStatus`: 4 tests (not found, Hold rejection, Flip progress, speech normalization)
 
 ### Verification
-- [ ] `npx vitest run src/lib/__tests__/agent-tools.test.ts` -- all pass
+- [x] `npx vitest run src/lib/__tests__/agent-tools.test.ts` — 30 pass, 0 fail
 
 ---
 
-## Phase 4: System Prompt Rewrite
+## Phase 4: System Prompt Rewrite ✅ COMPLETE
 
 **Goal**: Lean, conversion-focused prompt. Knowledge is now in RAG (Phase 1), so the prompt focuses on personality and behavior.
 
-### Process
-1. Draft new prompt section by section
-2. Present each section to user via AskUserQuestion for review
-3. Iterate until approved
-4. Update `agent-config.ts`
-5. User pastes updated prompt into ElevenLabs dashboard (or runs configure script)
+**Completed 2026-03-02**
 
-### New Prompt Sections
+### What was done
 
-**Section 1 -- Identity & Voice**
-- Named persona: "Sara, SmartCrowd Investment Guide"
-- Educational guide, not salesperson
-- Measured confidence, deliberate pacing
-- Concise (2-3 sentences), natural AED rounding
-- Honest about uncertainty and complexity
+Rewrote `SYSTEM_PROMPT` in `src/lib/agent-config.ts` with 5 sections:
 
-**Section 2 -- Conversation Strategy** (the conversion engine)
-- **Progressive disclosure**: concept → specifics → data → next steps
-- **Educational framing**: every feature positioned as investor benefit
-- **Social proof weaving**: specific track record numbers, with past-performance disclaimers
-- **Objection anticipation**: proactively address risk, liquidity, fees, regulation
-- **Decision paralysis detection**: offer comparisons, suggest starting small (AED 500)
-- **Progressive commitment**: explore → calculate → navigate → invest
+1. **Identity & Voice** — Named persona "Sara, SmartCrowd Investment Guide". Measured confidence, 2-3 sentence responses, natural AED rounding, honest about uncertainty.
+2. **Conversation Strategy** — Progressive disclosure, educational framing, objection anticipation, social proof with caveats, decision paralysis detection, natural action guidance.
+3. **Knowledge Base & Tools** — All property/platform questions from KB. 2 tools: `calculate_roi`, `get_renovation_status`. Explicit instruction not to call tools for KB-answerable questions.
+4. **Speech Recognition Coaching** — Common spoken variations listed, instruction to pass spoken forms as-is (tools handle normalization).
+5. **Guardrails** — No guaranteed returns, no tax/legal advice, no urgency/pressure language, no competitor bashing, support email redirect.
 
-**Section 3 -- Knowledge Base & Tools**
-- KB for: platform info, fees, property details, historical data, FAQs
-- 3 remaining tools: `search_properties`, `calculate_roi`, `get_renovation_status`
-- 2 new tools (Phase 5): `navigate_to_property`, `start_investment`
-- Tool chaining guidance
+Also updated `FIRST_MESSAGE` to use Sara persona with educational-guide tone.
 
-**Section 4 -- Speech Recognition Coaching**
-- Guide agent on common speech-to-text variations
-- Instruct to normalize before calling tools
+**Key change:** Removed ~60% of prompt content (platform knowledge, fee tables, how-it-works steps) — all now served by RAG from KB docs. Prompt dropped from ~120 lines to ~35 lines, focusing on personality and behavior.
 
-**Section 5 -- Guardrails**
-- No guaranteed returns, no tax/legal advice, no competitor bashing
-- No urgency/pressure language
-- Always disclose past performance caveat
-- Acknowledge frustration gracefully
-
-### Files to Modify
-- **`src/lib/agent-config.ts`** -- Rewrite SYSTEM_PROMPT, update TOOL_DEFINITIONS (3 tools)
-
-### Verification
+### Manual step (ElevenLabs)
+- [ ] Paste updated system prompt into ElevenLabs agent settings
+- [ ] Update first message on ElevenLabs
 - [ ] Test in Playground: general questions answered from KB (no tool calls)
-- [ ] Test: "show me JVC properties" → uses search_properties
 - [ ] Test: "what would I earn on 10,000 AED in SC-315?" → uses calculate_roi
 - [ ] Test: agent naturally weaves in social proof and addresses risks
 
