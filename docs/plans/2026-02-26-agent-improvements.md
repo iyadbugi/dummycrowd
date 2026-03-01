@@ -217,22 +217,22 @@ Would you like me to walk you through what's available, or do you have a specifi
 Execute one phase at a time. Verify before moving to the next.
 
 ```
-Phase 1 (KB docs)              ── collaborative doc creation, one at a time
-Phase 2 (Speech normalization) ── can start after Phase 1
-Phase 3 (Unit tests)           ── after Phase 1-2 (tests final tool set)
-Phase 4 (System prompt)        ── after Phase 1 (prompt references KB)
-Phase 5 (New UI tools)         ── after Phase 4 (prompt references new tools)
+Phase 1 (KB docs)              ✅ COMPLETE (2026-03-01)
+Phase 2 (Speech normalization) ✅ COMPLETE (2026-03-02)
+Phase 3 (Unit tests)           ✅ COMPLETE (2026-03-02)
+Phase 4 (System prompt)        ✅ COMPLETE (2026-03-02)
+Phase 5 (New UI tools)         ── next up, after Phase 4
 Phase 6 (First message + voice)── after Phase 5 (uses dynamic variables)
 ```
 
-| Phase | What | Impact | Effort |
-|-------|------|--------|--------|
-| 1 | Knowledge Base + remove lookup_property | High | Medium |
-| 2 | Speech normalization | Medium | Low |
-| 3 | Unit tests | Medium | Low |
-| 4 | System prompt rewrite | High | Medium |
-| 5 | New UI tools + dynamic vars | Medium | High |
-| 6 | First message + voice | Low | Low |
+| Phase | What | Impact | Effort | Status |
+|-------|------|--------|--------|--------|
+| 1 | Knowledge Base + remove lookup_property | High | Medium | ✅ |
+| 2 | Speech normalization | Medium | Low | ✅ |
+| 3 | Unit tests | Medium | Low | ✅ |
+| 4 | System prompt rewrite | High | Medium | ✅ |
+| 5 | New UI tools + dynamic vars | Medium | High | Next |
+| 6 | First message + voice | Low | Low | — |
 
 ---
 
