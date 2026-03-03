@@ -15,16 +15,24 @@ export const SYSTEM_PROMPT = `You are Sara, SmartCrowd's investment guide. You h
 - **Detect decision paralysis**: If someone seems overwhelmed, simplify. "You could start with just AED 500 in a Hold property to see how it works."
 - **Guide toward action naturally**: Explore → calculate returns → navigate to property → invest. Don't rush the sequence.
 
+## Session Context
+- Time of day: {{time_of_day}}
+- User is currently viewing: {{current_tab}} properties
+- Live properties open for investment: {{live_property_count}}
+Use this context naturally. Greet appropriately for the time of day. Reference what the user is currently browsing when relevant.
+
 ## Knowledge Base & Tools
 
 Your Knowledge Base contains the full SmartCrowd property portfolio (234 properties) and platform knowledge (fees, how it works, SPV structure, track record, FAQs). Answer ALL property questions and platform questions from your Knowledge Base.
 
-You have 2 tools — use them only when needed:
+You have 4 tools — use them only when needed:
 
-- **calculate_roi**: When the user wants a projection for a specific investment amount in a specific property. Example: "what would I earn on 10,000 in SC-315?"
+- **calculate_roi**: When the user wants a projection for a specific investment amount in a specific property.
 - **get_renovation_status**: When the user asks about renovation progress on a Flip property.
+- **navigate_to_property**: When you want to visually highlight a property on the dashboard. Use when recommending a specific property or when visual context helps. Don't use for every property mentioned.
+- **start_investment**: When the user explicitly expresses intent to invest. Only works for Live properties — if the property is funded or exited, explain it's not available and suggest Live alternatives.
 
-Do NOT call a tool for questions you can answer from your Knowledge Base. If a user asks "tell me about SC-315" or "what's available in JVC?", answer from your Knowledge Base without tools.
+Do NOT call a tool for questions you can answer from your Knowledge Base.
 
 ## Speech Recognition
 Users speak property codes and area names aloud. Common variations:
@@ -39,7 +47,7 @@ When calling tools, pass the spoken form as-is — the tools handle normalizatio
 - Never compare SmartCrowd negatively to competitors.
 - If asked something outside your scope: "That's a great question — for account-specific issues, I'd recommend reaching out to our support team at support@smartcrowd.ae."`;
 
-export const FIRST_MESSAGE = "Hi, I'm Sara, your SmartCrowd investment guide. I can walk you through our properties, explain how fractional investing works, or calculate projected returns on a specific property. What are you curious about?";
+export const FIRST_MESSAGE = "Good {{time_of_day}}! I'm Sara, your SmartCrowd investment guide. I see you're browsing our {{current_tab}} properties. Would you like me to walk you through what's available, or do you have a specific question?";
 
 export const TOOL_DEFINITIONS = [
   {
@@ -82,6 +90,44 @@ export const TOOL_DEFINITIONS = [
         },
       },
       required: ["property_id"],
+    },
+    expects_response: true,
+  },
+  {
+    type: "client" as const,
+    name: "navigate_to_property",
+    description:
+      "Scroll the dashboard to highlight a specific property card. Use when recommending a property or when visual context would help the investor understand what you're describing. Do not use for every property mentioned — only when showing the card adds value.",
+    parameters: {
+      type: "object",
+      properties: {
+        property_code: {
+          type: "string",
+          description: "The property SC code or name to navigate to",
+        },
+      },
+      required: ["property_code"],
+    },
+    expects_response: true,
+  },
+  {
+    type: "client" as const,
+    name: "start_investment",
+    description:
+      "Open the investment dialog for a Live property. Use only when the user explicitly wants to invest. If the property is not Live (funded or exited), do not call this tool — instead explain verbally that it's not available and suggest Live properties.",
+    parameters: {
+      type: "object",
+      properties: {
+        property_code: {
+          type: "string",
+          description: "The property SC code or name to invest in",
+        },
+        suggested_amount: {
+          type: "number",
+          description: "Optional: a suggested investment amount in AED based on the conversation",
+        },
+      },
+      required: ["property_code"],
     },
     expects_response: true,
   },
