@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { Property } from "@/types/property";
 import { formatPrice, getPropertySpecs, getRemainingAmount, getFundedPercentage } from "@/lib/property-utils";
 import { Card } from "@/components/ui/card";
@@ -240,9 +241,10 @@ function FundingProgress({ property }: { property: Property }) {
 // ---------------------------------------------------------------------------
 interface PropertyCardProps {
   property: Property;
+  highlighted?: boolean;
 }
 
-export default function PropertyCard({ property }: PropertyCardProps) {
+export default function PropertyCard({ property, highlighted }: PropertyCardProps) {
   const areaName = property.location.area?.name ?? "";
   const gradient = getGradient(areaName, property.title);
   const specs = getPropertySpecs(property);
@@ -252,8 +254,23 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   const isClosed = property.propertyStatus === "CLOSED";
   const isExited = property.propertyStatus === "EXITED";
 
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (highlighted && cardRef.current) {
+      cardRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [highlighted]);
+
   return (
-    <Card className="overflow-hidden shadow-sm hover:shadow-md transition-shadow p-0 gap-0 dark:bg-[#111F42] dark:border-[#1C3058]">
+    <Card
+      ref={cardRef}
+      className={`overflow-hidden shadow-sm hover:shadow-md transition-shadow p-0 gap-0 dark:bg-[#111F42] dark:border-[#1C3058] ${
+        highlighted
+          ? "ring-2 ring-sc-blue ring-offset-2 dark:ring-offset-[#0B1A33] animate-pulse"
+          : ""
+      }`}
+    >
       {/* ---- Image area ---- */}
       <div className={`h-[200px] rounded-t-xl overflow-hidden relative bg-gradient-to-br ${gradient}`}>
         {/* Top-left badge */}

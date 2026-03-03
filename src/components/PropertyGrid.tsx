@@ -11,15 +11,24 @@ const CARDS_PER_PAGE = 12;
 
 interface PropertyGridProps {
   properties: Property[];
+  highlightedCode?: string | null;
 }
 
-export default function PropertyGrid({ properties }: PropertyGridProps) {
+export default function PropertyGrid({ properties, highlightedCode }: PropertyGridProps) {
   const [currentPage, setCurrentPage] = useState(0);
 
   // Reset to page 0 when properties array changes (tab/filter switch)
   useEffect(() => {
     setCurrentPage(0);
   }, [properties]);
+
+  useEffect(() => {
+    if (!highlightedCode) return;
+    const index = properties.findIndex((p) => p.code === highlightedCode);
+    if (index >= 0) {
+      setCurrentPage(Math.floor(index / CARDS_PER_PAGE));
+    }
+  }, [highlightedCode, properties]);
 
   if (properties.length === 0) {
     return (
@@ -41,7 +50,10 @@ export default function PropertyGrid({ properties }: PropertyGridProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
           >
-            <PropertyCard property={p} />
+            <PropertyCard
+              property={p}
+              highlighted={highlightedCode === p.code}
+            />
           </motion.div>
         ))}
       </div>
