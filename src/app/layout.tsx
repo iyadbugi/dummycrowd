@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import VoiceAgent from "@/components/VoiceAgent";
+import InvestmentDialog from "@/components/InvestmentDialog";
 import ThemeProvider from "@/components/ThemeProvider";
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function RootLayout({
             </main>
           </div>
           <VoiceAgent />
+          <InvestmentDialog />
         </ThemeProvider>
       </body>
     </html>
