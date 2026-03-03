@@ -237,9 +237,8 @@ function formatPropertySummary(p: Property): string {
 }
 
 function getStatusForProperty(p: Property): "Live" | "Funded" | "Exited" {
-  if (p.propertyStatus === "LIVE") return "Live";
-  if (p.propertyStatus === "EXITED" || p.propertyStatus === "SOLD")
-    return "Exited";
+  if (liveProperties.some((lp) => lp.code === p.code)) return "Live";
+  if (exitedProperties.some((ep) => ep.code === p.code)) return "Exited";
   return "Funded";
 }
 

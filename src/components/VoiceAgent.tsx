@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useConversation } from "@elevenlabs/react";
-import { Mic, PhoneOff } from "lucide-react";
+import { Mic, PhoneOff, Send } from "lucide-react";
 import {
   calculateRoi,
   getRenovationStatus,
@@ -13,9 +13,17 @@ import {
 import { getCurrentTab, getTimeOfDay, getLivePropertyCount } from "@/lib/dashboard-context";
 import type { AgentState as OrbAgentState } from "@/components/ui/orb";
 
+function OrbFallback() {
+  return (
+    <div className="h-full w-full flex items-center justify-center">
+      <div className="h-24 w-24 rounded-full bg-gradient-to-br from-[#2563EB] to-[#3B82F6] animate-pulse" />
+    </div>
+  );
+}
+
 const Orb = dynamic(
   () => import("@/components/ui/orb").then((mod) => ({ default: mod.Orb })),
-  { ssr: false }
+  { ssr: false, loading: () => <OrbFallback /> }
 );
 
 type AgentState = "idle" | "connecting" | "connected" | "error";
@@ -25,6 +33,8 @@ export default function VoiceAgent() {
   const [agentState, setAgentState] = useState<AgentState>("idle");
   const [mode, setMode] = useState<Mode>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [textInput, setTextInput] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const conversation = useConversation({
     clientTools: {
@@ -43,7 +53,9 @@ export default function VoiceAgent() {
         return result;
       },
       navigate_to_property: (params: { property_code: string }) => {
+        console.log("[navigate_to_property] params:", params);
         const result = navigateToProperty(params);
+        console.log("[navigate_to_property] result:", result);
         return result;
       },
       start_investment: (params: { property_code: string; suggested_amount?: number }) => {
@@ -87,7 +99,15 @@ export default function VoiceAgent() {
           live_property_count: getLivePropertyCount(),
         },
       });
-    } catch (err) {
+    } catch (err: unknown) {
+      // "Session cancelled" is normal — user clicked away before connection finished
+      const msg = err instanceof Error ? err.message : String(err);
+      if (msg.includes("cancelled") || msg.includes("canceled")) {
+        console.log("Session cancelled during connection");
+        setAgentState("idle");
+        setMode(null);
+        return;
+      }
       console.error("Failed to start conversation:", err);
       setAgentState("error");
       setErrorMsg("Could not connect. Check your internet and try again.");
@@ -165,6 +185,36 @@ export default function VoiceAgent() {
                 {errorMsg}
               </p>
             )}
+            {/* Text input */}
+            {agentState === "connected" && (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (textInput.trim()) {
+                    conversation.sendUserMessage(textInput.trim());
+                    setTextInput("");
+                  }
+                }}
+                className="flex w-full gap-2 px-4 md:px-0"
+              >
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={textInput}
+                  onChange={(e) => setTextInput(e.target.value)}
+                  placeholder="Type a message..."
+                  className="flex-1 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none focus:border-white/40 md:border-gray-200 md:bg-gray-50 md:text-sc-text-dark md:placeholder-sc-text-muted md:focus:border-sc-blue"
+                />
+                <button
+                  type="submit"
+                  disabled={!textInput.trim()}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sc-blue text-white transition-opacity disabled:opacity-30"
+                >
+                  <Send className="h-4 w-4" />
+                </button>
+              </form>
+            )}
+
             <button
               onClick={endConversation}
               className="flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700 md:px-5 md:py-2.5"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Property } from "@/types/property";
 import PropertyCard from "@/components/PropertyCard";
@@ -17,18 +17,24 @@ interface PropertyGridProps {
 export default function PropertyGrid({ properties, highlightedCode }: PropertyGridProps) {
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Reset to page 0 when properties array changes (tab/filter switch)
+  // Navigate to highlighted property's page (without resetting when highlight clears)
   useEffect(() => {
-    setCurrentPage(0);
-  }, [properties]);
-
-  useEffect(() => {
-    if (!highlightedCode) return;
-    const index = properties.findIndex((p) => p.code === highlightedCode);
-    if (index >= 0) {
-      setCurrentPage(Math.floor(index / CARDS_PER_PAGE));
+    if (highlightedCode) {
+      const index = properties.findIndex((p) => p.code === highlightedCode);
+      if (index >= 0) {
+        setCurrentPage(Math.floor(index / CARDS_PER_PAGE));
+      }
     }
   }, [highlightedCode, properties]);
+
+  // Reset to page 0 only when the properties array itself changes (tab/filter switch)
+  const prevPropertiesRef = useRef(properties);
+  useEffect(() => {
+    if (prevPropertiesRef.current !== properties && !highlightedCode) {
+      setCurrentPage(0);
+    }
+    prevPropertiesRef.current = properties;
+  }, [properties, highlightedCode]);
 
   if (properties.length === 0) {
     return (
