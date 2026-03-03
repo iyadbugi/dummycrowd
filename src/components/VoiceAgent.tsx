@@ -1,13 +1,16 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useConversation } from "@elevenlabs/react";
 import { Mic, PhoneOff } from "lucide-react";
 import {
   calculateRoi,
   getRenovationStatus,
+  navigateToProperty,
+  startInvestment,
 } from "@/lib/agent-tools";
+import { getCurrentTab, getTimeOfDay, getLivePropertyCount } from "@/lib/dashboard-context";
 import type { AgentState as OrbAgentState } from "@/components/ui/orb";
 
 const Orb = dynamic(
@@ -39,6 +42,14 @@ export default function VoiceAgent() {
         const result = getRenovationStatus(params);
         return result;
       },
+      navigate_to_property: (params: { property_code: string }) => {
+        const result = navigateToProperty(params);
+        return result;
+      },
+      start_investment: (params: { property_code: string; suggested_amount?: number }) => {
+        const result = startInvestment(params);
+        return result;
+      },
     },
     onConnect: () => {
       setAgentState("connected");
@@ -68,7 +79,14 @@ export default function VoiceAgent() {
       const res = await fetch("/api/signed-url");
       if (!res.ok) throw new Error("Failed to get signed URL");
       const { signedUrl } = await res.json();
-      await conversation.startSession({ signedUrl });
+      await conversation.startSession({
+        signedUrl,
+        dynamicVariables: {
+          time_of_day: getTimeOfDay(),
+          current_tab: getCurrentTab(),
+          live_property_count: getLivePropertyCount(),
+        },
+      });
     } catch (err) {
       console.error("Failed to start conversation:", err);
       setAgentState("error");
@@ -81,6 +99,21 @@ export default function VoiceAgent() {
     setAgentState("idle");
     setMode(null);
   }, [conversation]);
+
+  // Send contextual update to agent when user switches tabs
+  useEffect(() => {
+    function handleTabChange(e: Event) {
+      const { tab } = (e as CustomEvent).detail;
+      if (agentState === "connected") {
+        conversation.sendContextualUpdate(
+          `The user just switched to the ${tab} properties tab.`
+        );
+      }
+    }
+
+    window.addEventListener("dashboard-tab-change", handleTabChange);
+    return () => window.removeEventListener("dashboard-tab-change", handleTabChange);
+  }, [agentState, conversation]);
 
   const orbState: OrbAgentState =
     mode === "speaking"
