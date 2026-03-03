@@ -4,6 +4,8 @@ import {
   normalizeAreaName,
   calculateRoi,
   getRenovationStatus,
+  navigateToProperty,
+  startInvestment,
 } from "../agent-tools";
 
 // --- normalizeSCCode ---
@@ -211,5 +213,55 @@ describe("getRenovationStatus", () => {
       property_id: "S C three nineteen",
     });
     expect(result).toContain("SC-319");
+  });
+});
+
+// --- navigateToProperty ---
+
+describe("navigateToProperty", () => {
+  it("returns error for unknown property", () => {
+    const result = navigateToProperty({ property_code: "SC-999" });
+    expect(result).toContain("No property found");
+  });
+
+  it("returns success message with property code and title", () => {
+    const result = navigateToProperty({ property_code: "SC-315" });
+    expect(result).toContain("SC-315");
+    expect(result).toContain("Navigating");
+  });
+
+  it("resolves speech-mangled codes", () => {
+    const result = navigateToProperty({ property_code: "S C three fifteen" });
+    expect(result).toContain("SC-315");
+  });
+});
+
+// --- startInvestment ---
+
+describe("startInvestment", () => {
+  it("returns error for unknown property", () => {
+    const result = startInvestment({ property_code: "SC-999" });
+    expect(result).toContain("No property found");
+  });
+
+  it("returns success for Live property (SC-331)", () => {
+    const result = startInvestment({ property_code: "SC-331" });
+    expect(result).toContain("Opening investment");
+    expect(result).toContain("SC-331");
+  });
+
+  it("rejects Funded property (SC-315)", () => {
+    const result = startInvestment({ property_code: "SC-315" });
+    expect(result).toContain("not open for new investment");
+  });
+
+  it("rejects Exited property (SC-106)", () => {
+    const result = startInvestment({ property_code: "SC-106" });
+    expect(result).toContain("not open for new investment");
+  });
+
+  it("resolves speech-mangled codes", () => {
+    const result = startInvestment({ property_code: "S C three thirty one" });
+    expect(result).toContain("SC-331");
   });
 });

@@ -415,6 +415,63 @@ Projection for ${amount.toLocaleString()} AED over ~${periodMonths} months:
 Note: This is a projection based on the target ROI, not a guarantee. Actual returns depend on the sale price after renovation.`;
 }
 
+export function navigateToProperty({
+  property_code,
+}: {
+  property_code: string;
+}): string {
+  const normalized = normalizeSCCode(property_code);
+  const matches = findProperties(normalized, 1);
+
+  if (matches.length === 0) {
+    return `No property found matching "${property_code}".`;
+  }
+
+  const p = matches[0];
+  const tab = getStatusForProperty(p).toLowerCase() as "live" | "funded" | "exited";
+
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(
+      new CustomEvent("navigate-to-property", {
+        detail: { code: p.code, tab },
+      })
+    );
+  }
+
+  return `Navigating to ${p.code}: ${p.title}.`;
+}
+
+export function startInvestment({
+  property_code,
+  suggested_amount,
+}: {
+  property_code: string;
+  suggested_amount?: number;
+}): string {
+  const normalized = normalizeSCCode(property_code);
+  const matches = findProperties(normalized, 1);
+
+  if (matches.length === 0) {
+    return `No property found matching "${property_code}".`;
+  }
+
+  const p = matches[0];
+
+  if (p.propertyStatus !== "LIVE") {
+    return `${p.code}: ${p.title} is currently ${getStatusForProperty(p).toLowerCase()} and not open for new investment. Only Live properties accept new investments.`;
+  }
+
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(
+      new CustomEvent("start-investment", {
+        detail: { property: p, suggestedAmount: suggested_amount },
+      })
+    );
+  }
+
+  return `Opening investment details for ${p.code}: ${p.title}.`;
+}
+
 export function getRenovationStatus({
   property_id,
 }: {
