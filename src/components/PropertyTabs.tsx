@@ -8,6 +8,7 @@ import {
 } from "@/data/properties";
 import { Property } from "@/types/property";
 import PropertyGrid from "@/components/PropertyGrid";
+import { setCurrentTab } from "@/lib/dashboard-context";
 import { Home, Wrench, ChevronDown } from "lucide-react";
 
 type Tab = "live" | "funded" | "exited";
@@ -33,6 +34,7 @@ export default function PropertyTabs() {
   const [activeTab, setActiveTab] = useState<Tab>("live");
   const [typeFilter, setTypeFilter] = useState<TypeFilter>("ALL");
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [highlightedCode, setHighlightedCode] = useState<string | null>(null);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -54,6 +56,29 @@ export default function PropertyTabs() {
   // Reset type filter to ALL when switching tabs
   useEffect(() => {
     setTypeFilter("ALL");
+    setCurrentTab(activeTab);
+  }, [activeTab]);
+
+  // Listen for navigate-to-property events from voice agent
+  useEffect(() => {
+    function handleNavigate(e: Event) {
+      const { code, tab } = (e as CustomEvent).detail;
+      setActiveTab(tab);
+      setTypeFilter("ALL");
+      setHighlightedCode(code);
+      // Auto-clear highlight after 4 seconds
+      setTimeout(() => setHighlightedCode(null), 4000);
+    }
+
+    window.addEventListener("navigate-to-property", handleNavigate);
+    return () => window.removeEventListener("navigate-to-property", handleNavigate);
+  }, []);
+
+  // Dispatch tab change event for voice agent contextual updates
+  useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent("dashboard-tab-change", { detail: { tab: activeTab } })
+    );
   }, [activeTab]);
 
   // Compute filtered properties
@@ -140,7 +165,7 @@ export default function PropertyTabs() {
       </div>
 
       {/* Property grid */}
-      <PropertyGrid properties={filteredProperties} />
+      <PropertyGrid properties={filteredProperties} highlightedCode={highlightedCode} />
     </div>
   );
 }
