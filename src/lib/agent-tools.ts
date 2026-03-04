@@ -182,7 +182,12 @@ function findProperties(query: string, maxResults: number = 3): Property[] {
       return { property: p, score };
     })
     .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => {
+      if (a.score !== b.score) return b.score - a.score;
+      // Tiebreaker: Live properties first (investable)
+      const statusOrder: Record<string, number> = { LIVE: 0, CLOSED: 1, SOLD: 2, EXITED: 3 };
+      return (statusOrder[a.property.propertyStatus] ?? 9) - (statusOrder[b.property.propertyStatus] ?? 9);
+    });
 
   return scored.slice(0, maxResults).map((r) => r.property);
 }
@@ -352,14 +357,7 @@ export function calculateRoi({
     const netProfit = netProceeds - amount;
     const netRoiPct = ((netProfit / amount) * 100).toFixed(1);
 
-    return `${p.code}: ${p.title} (Exited after ${period} months, actual ${totalRoiPct}% return).
-On a ${amount.toLocaleString()} AED investment:
-- Entry fee (1.5%): ${Math.round(entryFee).toLocaleString()} AED
-- Working capital: ${Math.round(workingCapital).toLocaleString()} AED
-- Gross return (${totalRoiPct}%): ${Math.round(grossReturn).toLocaleString()} AED
-- Exit fee (2.5%): ${Math.round(exitFee).toLocaleString()} AED
-- Net return: ${Math.round(netProfit).toLocaleString()} AED (${netRoiPct}% net ROI)
-Note: These are actual historical results for this property.`;
+    return `${p.code} (Exited, actual ${totalRoiPct}% return over ${period} months). ${amount.toLocaleString()} AED: net return ${Math.round(netProfit).toLocaleString()} AED (${netRoiPct}% net ROI after fees). After 1.5% entry and 2.5% exit fees. Historical result.`;
   }
 
   if (p.investmentType === "HOLD") {
@@ -380,16 +378,7 @@ Note: These are actual historical results for this property.`;
     const netRoiPct = ((netProfit / amount) * 100).toFixed(1);
     const annualizedPct = (parseFloat(netRoiPct) / years).toFixed(1);
 
-    return `${p.code}: ${p.title} (Hold, ${yieldRate * 100}% yield).
-Projection for ${amount.toLocaleString()} AED over ${years} years:
-- Entry fee (1.5%): ${Math.round(entryFee).toLocaleString()} AED
-- Working capital: ${Math.round(workingCapital).toLocaleString()} AED
-- Estimated rental income (${years}yr): ${Math.round(totalRentalIncome).toLocaleString()} AED
-- Annual admin fees (0.5%/yr x ${years}): ${Math.round(totalAdminFees).toLocaleString()} AED
-- Capital appreciation (${p.valuation.marketValuePercentage}%): ${Math.round(capitalGain).toLocaleString()} AED
-- Exit fee (2.5%): ${Math.round(exitFee).toLocaleString()} AED
-- Estimated net return: ${Math.round(netProfit).toLocaleString()} AED (${netRoiPct}% total, ~${annualizedPct}% per year)
-Note: This is a projection based on current yield and market data, not a guarantee.`;
+    return `${p.code} (Hold, ${yieldRate * 100}% yield). ${amount.toLocaleString()} AED over ${years} years: estimated net return ${Math.round(netProfit).toLocaleString()} AED (${netRoiPct}% total, ~${annualizedPct}% per year). After 1.5% entry, 0.5%/yr admin, and 2.5% exit fees. Projection, not a guarantee.`;
   }
 
   // FLIP
@@ -404,14 +393,7 @@ Note: This is a projection based on current yield and market data, not a guarant
   const netProfit = netProceeds - amount;
   const netRoiPct = ((netProfit / amount) * 100).toFixed(1);
 
-  return `${p.code}: ${p.title} (Flip, ${annualizedRoi}% annualized ROI target).
-Projection for ${amount.toLocaleString()} AED over ~${periodMonths} months:
-- Entry fee (1.5%): ${Math.round(entryFee).toLocaleString()} AED
-- Working capital: ${Math.round(workingCapital).toLocaleString()} AED
-- Estimated gross return (${annualizedRoi}% ann. x ${years.toFixed(1)}yr): ${Math.round(grossReturn).toLocaleString()} AED
-- Exit fee (2.5%): ${Math.round(exitFee).toLocaleString()} AED
-- Estimated net return: ${Math.round(netProfit).toLocaleString()} AED (${netRoiPct}% net ROI)
-Note: This is a projection based on the target ROI, not a guarantee. Actual returns depend on the sale price after renovation.`;
+  return `${p.code} (Flip, ${annualizedRoi}% annualized target). ${amount.toLocaleString()} AED over ~${periodMonths} months: estimated net return ${Math.round(netProfit).toLocaleString()} AED (${netRoiPct}% net ROI). After 1.5% entry and 2.5% exit fees. Projection, not a guarantee.`;
 }
 
 export function navigateToProperty({
@@ -427,7 +409,8 @@ export function navigateToProperty({
   }
 
   const p = matches[0];
-  const tab = getStatusForProperty(p).toLowerCase() as "live" | "funded" | "exited";
+  const status = getStatusForProperty(p);
+  const tab = status.toLowerCase() as "live" | "funded" | "exited";
 
   if (typeof window !== "undefined") {
     window.dispatchEvent(
@@ -435,6 +418,15 @@ export function navigateToProperty({
         detail: { code: p.code, tab },
       })
     );
+  }
+
+  if (status !== "Live") {
+    // Find a live alternative with the same investment type
+    const liveAlt = liveProperties.find((lp) => lp.investmentType === p.investmentType);
+    const altMsg = liveAlt
+      ? ` Live alternative: ${liveAlt.code} (${liveAlt.title}).`
+      : "";
+    return `Navigated to ${p.code}: ${p.title} — but note this property is ${status.toUpperCase()} and not open for new investment.${altMsg}`;
   }
 
   return `Navigating to ${p.code}: ${p.title}.`;

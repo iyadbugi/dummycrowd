@@ -2,6 +2,69 @@ import { Property } from "@/types/property";
 
 export const liveProperties: Property[] = [
   {
+    "id": 785,
+    "code": "SC-332",
+    "title": "2 Bedroom in MAG 214, JLT",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 1950000,
+    "projectPrice": 1950000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "LIVE",
+    "renovationProgress": null,
+    "totalReturnRoi": 0,
+    "totalReturnRoiPercentage": 0,
+    "investors": 76,
+    "rental": {
+      "grossYield": 6.31,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": null,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 76,
+      "annualized": 10.48,
+      "totalGrossRoi": null,
+      "investmentPeriod": 0,
+      "funded": 26.03,
+      "fundedAmount": 507585,
+      "totalReturnRoi": null,
+      "totalReturnRoiPercentage": null,
+      "renovationProgress": null
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": null,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 0,
+      "sqft": 1557
+    },
+    "location": {
+      "area": {
+        "name": "JLT",
+        "displayName": "JLT"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": null,
+      "closeDate": null,
+      "soldDate": null,
+      "completionDate": null
+    }
+  },
+  {
     "id": 784,
     "code": "SC-331",
     "title": "Studio in Discovery Gardens",
@@ -15,7 +78,7 @@ export const liveProperties: Property[] = [
     "renovationProgress": null,
     "totalReturnRoi": 0,
     "totalReturnRoiPercentage": 0,
-    "investors": 0,
+    "investors": 125,
     "rental": {
       "grossYield": 6.07,
       "netYield": null,
@@ -26,12 +89,12 @@ export const liveProperties: Property[] = [
       "returnFrequency": "MONTHLY"
     },
     "performance": {
-      "investors": 0,
+      "investors": 125,
       "annualized": 10.5,
       "totalGrossRoi": null,
       "investmentPeriod": 0,
-      "funded": 0,
-      "fundedAmount": 0,
+      "funded": 86.03,
+      "fundedAmount": 497293.4,
       "totalReturnRoi": null,
       "totalReturnRoiPercentage": null,
       "renovationProgress": null
@@ -78,7 +141,7 @@ export const liveProperties: Property[] = [
     "renovationProgress": null,
     "totalReturnRoi": 0,
     "totalReturnRoiPercentage": 0,
-    "investors": 72,
+    "investors": 89,
     "rental": {
       "grossYield": null,
       "netYield": null,
@@ -89,12 +152,12 @@ export const liveProperties: Property[] = [
       "returnFrequency": "MONTHLY"
     },
     "performance": {
-      "investors": 72,
+      "investors": 89,
       "annualized": 15.13,
       "totalGrossRoi": null,
       "investmentPeriod": 12,
-      "funded": 33.15,
-      "fundedAmount": 9066001.26,
+      "funded": 35.58,
+      "fundedAmount": 9731855,
       "totalReturnRoi": null,
       "totalReturnRoiPercentage": null,
       "renovationProgress": null

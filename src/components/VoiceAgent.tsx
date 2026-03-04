@@ -61,6 +61,7 @@ export default function VoiceAgent() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const suppressFirstMessageRef = useRef(false);
 
   const isChat = view === "chat";
 
@@ -106,9 +107,12 @@ export default function VoiceAgent() {
       else if (m.mode === "listening") setAgentMode("listening");
     },
     onMessage: (props: { message: string; source: string; role: string }) => {
-      // Only add agent messages — user messages are added in handleSendMessage
+      const clean = props.message.replace(/<\/?Sara>/gi, "").trim();
+      if (!clean) return;
       if (props.role === "agent") {
-        setMessages((prev) => [...prev, { role: "agent", text: props.message }]);
+        setMessages((prev) => [...prev, { role: "agent", text: clean }]);
+      } else if (props.role === "user") {
+        setMessages((prev) => [...prev, { role: "user", text: clean }]);
       }
     },
     onError: (error: unknown) => {
@@ -189,21 +193,11 @@ export default function VoiceAgent() {
     async (text: string) => {
       if (!text.trim()) return;
       setView("chat");
-      if (connectionState !== "connected") {
-        await startSession();
-        // Wait briefly for connection, then mute + send
-        const waitForConnection = () =>
-          new Promise<void>((resolve) => {
-            const check = setInterval(() => {
-              // The onConnect callback will set connectionState
-              // We need to check the conversation status
-              resolve();
-              clearInterval(check);
-            }, 500);
-          });
-        await waitForConnection();
-      }
       conversation.setVolume({ volume: 0 });
+      if (connectionState !== "connected") {
+        suppressFirstMessageRef.current = true;
+        await startSession();
+      }
       setMessages((prev) => [...prev, { role: "user", text: text.trim() }]);
       conversation.sendUserMessage(text.trim());
       setTextInput("");

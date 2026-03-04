@@ -1,21 +1,26 @@
 SmartCrowd Property Portfolio
 
 
-=== LIVE PROPERTIES — Open for Investment (2 properties) ===
-1 Hold, 1 Flip. Total value: AED 27.93M. 72 investors
+=== LIVE PROPERTIES — Open for Investment (3 properties) ===
+2 Hold, 1 Flip. Total value: AED 29.88M. 290 investors
 
 --- DIFC ---
 SC-327: "Villa in the Sky" 3-floor Penthouse in Central Park Tower, DIFC (Flip, Live)
 4BR, 6,496 sqft, DIFC
-Price: AED 27.35M. Annualized: 15.13%. 12 months. 72 investors. 33% funded
+Price: AED 27.35M. Annualized: 15.13%. 12 months. 89 investors. 36% funded
 
 --- Discovery Gardens ---
 SC-331: Studio in Discovery Gardens (Hold, Live)
 Studio, 550 sqft, Discovery Gardens
-Price: AED 578,000. Gross yield: 6.07%. Annualized: 10.5%
+Price: AED 578,000. Gross yield: 6.07%. Annualized: 10.5%. 125 investors. 86% funded
+
+--- JLT ---
+SC-332: 2 Bedroom in MAG 214, JLT (Hold, Live)
+2BR, 1,557 sqft, JLT
+Price: AED 1,950,000. Gross yield: 6.31%. Annualized: 10.48%. 76 investors. 26% funded
 
 
-=== FUNDED PROPERTIES — Fully Funded, Earning Returns (165 properties) ===
+=== FUNDED PROPERTIES — CLOSED, Cannot Accept New Investment (165 properties) ===
 151 Hold, 14 Flip. Total value: AED 342.78M. 28,048 investors. Avg gross yield: 11.2%
 
 --- Al Barari ---
@@ -100,7 +105,7 @@ SC-237: 1-Bedroom in Park Towers, DIFC  (Hold, Exited)
 Price: AED 1.30M. Gross yield: 9.08%. Net yield: 7.57%. Annualized: 7.7%. 60 months. 345 investors
 
 --- Discovery Gardens ---
-SC-330: Studio in Discovery Gardens (Hold, Funded)
+SC-330: Studio in Discovery Gardens (Hold, FUNDED — CLOSED, not available for investment)
 Studio, 550 sqft, Discovery Gardens
 Price: AED 578,000. Gross yield: 8.3%. Net yield: 6.69%. Annualized: 10.5%. Market value: AED 580,000 (+0.35%). 60 months. 150 investors
 
