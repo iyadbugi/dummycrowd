@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useConversation } from "@elevenlabs/react";
-import { Phone, PhoneOff, Send, MessageSquare, X } from "lucide-react";
+import { Phone, PhoneOff, Send, MessageSquare, X, Minus } from "lucide-react";
 import {
   calculateRoi,
   getRenovationStatus,
@@ -59,6 +59,7 @@ export default function VoiceAgent() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [textInput, setTextInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [viewBeforeMinimize, setViewBeforeMinimize] = useState<View>("idle");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suppressFirstMessageRef = useRef(false);
@@ -110,6 +111,10 @@ export default function VoiceAgent() {
       const clean = props.message.replace(/<\/?Sara>/gi, "").trim();
       if (!clean) return;
       if (props.role === "agent") {
+        if (suppressFirstMessageRef.current) {
+          suppressFirstMessageRef.current = false;
+          return;
+        }
         setMessages((prev) => [...prev, { role: "agent", text: clean }]);
       } else if (props.role === "user") {
         setMessages((prev) => [...prev, { role: "user", text: clean }]);
@@ -126,6 +131,13 @@ export default function VoiceAgent() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Scroll to bottom when restoring chat from minimized
+  useEffect(() => {
+    if (view === "chat") {
+      messagesEndRef.current?.scrollIntoView({ behavior: "instant" });
+    }
+  }, [view]);
 
   // Tab context updates
   useEffect(() => {
@@ -197,6 +209,7 @@ export default function VoiceAgent() {
       if (connectionState !== "connected") {
         suppressFirstMessageRef.current = true;
         await startSession();
+        conversation.setVolume({ volume: 0 });
       }
       setMessages((prev) => [...prev, { role: "user", text: text.trim() }]);
       conversation.sendUserMessage(text.trim());
@@ -204,6 +217,20 @@ export default function VoiceAgent() {
     },
     [connectionState, startSession, conversation]
   );
+
+  const minimize = useCallback(() => {
+    setViewBeforeMinimize(view === "minimized" ? "idle" : view);
+    setView("minimized");
+    conversation.setVolume({ volume: 0 });
+  }, [view, conversation]);
+
+  const expand = useCallback(() => {
+    const restoreTo = connectionState === "connected" ? viewBeforeMinimize : "idle";
+    setView(restoreTo);
+    if (restoreTo === "voice") {
+      conversation.setVolume({ volume: 1 });
+    }
+  }, [connectionState, viewBeforeMinimize, conversation]);
 
   const switchToChat = useCallback(() => {
     setView("chat");
@@ -240,22 +267,30 @@ export default function VoiceAgent() {
   /* ---- Render ---- */
 
   // State: Minimized pill
+  const isActive = connectionState === "connected" || connectionState === "connecting";
   if (view === "minimized") {
     return (
       <button
-        onClick={() => setView("idle")}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-white/80 dark:bg-[#111F42]/90 backdrop-blur-xl border border-gray-200/60 dark:border-white/10 pl-1.5 pr-5 py-1.5 shadow-lg shadow-black/5 dark:shadow-black/20 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group cursor-pointer"
+        onClick={expand}
+        className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-white/80 dark:bg-[#111F42]/90 backdrop-blur-xl border pl-1.5 pr-5 py-1.5 shadow-lg shadow-black/5 dark:shadow-black/20 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group cursor-pointer ${
+          isActive
+            ? "border-sc-blue/40 dark:border-sc-blue/30"
+            : "border-gray-200/60 dark:border-white/10"
+        }`}
       >
         {/* Mini orb */}
         <div className="h-9 w-9 rounded-full overflow-hidden shrink-0">
           <Orb
             colors={["#2563EB", "#3B82F6"]}
-            agentState={null}
+            agentState={isActive ? orbState : null}
           />
         </div>
         <span className="text-sm font-medium text-sc-text-dark whitespace-nowrap">
-          Talk to Sara
+          {isActive ? "Sara is active" : "Talk to Sara"}
         </span>
+        {isActive && (
+          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+        )}
       </button>
     );
   }
@@ -291,12 +326,21 @@ export default function VoiceAgent() {
               <Phone className="h-3.5 w-3.5" />
             </button>
           )}
+          {/* Minimize */}
+          <button
+            onClick={minimize}
+            className="flex items-center justify-center h-7 w-7 rounded-full text-sc-text-muted hover:text-sc-text-dark hover:bg-gray-100 dark:hover:bg-white/8 transition-colors"
+            title="Minimize"
+          >
+            <Minus className="h-4 w-4" />
+          </button>
           {/* Close / End */}
           <button
             onClick={
               connectionState === "connected" ? endSession : () => setView("minimized")
             }
             className="flex items-center justify-center h-7 w-7 rounded-full text-sc-text-muted hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+            title={connectionState === "connected" ? "End session" : "Close"}
           >
             <X className="h-4 w-4" />
           </button>
