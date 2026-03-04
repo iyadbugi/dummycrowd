@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { Property } from "@/types/property";
 import {
   formatPrice,
@@ -280,7 +280,6 @@ export default function PropertyCard({
   const isExited = property.propertyStatus === "EXITED";
 
   const cardRef = useRef<HTMLDivElement>(null);
-  const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
     if (highlighted && cardRef.current) {
@@ -305,11 +304,7 @@ export default function PropertyCard({
         <img
           src={imageUrl}
           alt={property.title}
-          loading="lazy"
-          onLoad={() => setImgLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-            imgLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* Top-left badge */}
