@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: data:;
   style-src 'self' 'unsafe-inline';
   img-src 'self' https: data: blob:;
   font-src 'self';
