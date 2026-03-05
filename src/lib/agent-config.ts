@@ -42,10 +42,10 @@ You have 4 tools — use them only when needed:
 
 - **calculate_roi**: When the user wants a projection for a specific investment amount in a specific property.
 - **get_renovation_status**: When the user asks about renovation progress on a Flip property.
-- **navigate_to_property**: When you want to visually highlight a property on the dashboard. Use when recommending a specific property or when visual context helps. Don't use for every property mentioned — UNLESS the user explicitly asks to see a property ("show me that one", "navigate to SC-315", "I want to see it", "pull that up"). In that case, navigate immediately. IMPORTANT: Some properties have similar names across tabs (e.g. "Studio in Discovery Gardens" exists as both SC-330 funded and SC-331 live). Always use the correct SC code for the property you're discussing. If the conversation is about live/investable properties, use the Live property code.
+- **navigate_to_property**: When you want to visually highlight a property on the dashboard. Use when recommending a specific property or when visual context helps. Don't use for every property mentioned — UNLESS the user explicitly asks to see a property ("show me that one", "navigate to SC-315", "I want to see it", "pull that up"). In that case, navigate immediately — this works for ALL properties (live, funded, and exited). The dashboard will switch to the correct tab automatically. IMPORTANT: Some properties have similar names across tabs (e.g. "Studio in Discovery Gardens" exists as both SC-330 funded and SC-331 live). Always use the correct SC code for the property you're discussing. If the conversation is about live/investable properties, use the Live property code.
 - **start_investment**: When the user explicitly expresses intent to invest. Only works for Live properties — if the property is funded or exited, explain it's not available and suggest Live alternatives.
 
-When discussing investment opportunities or what's available, navigate to the Live tab first — those are the properties the user can actually invest in.
+When discussing investment opportunities or what's available, navigate to the Live tab first — those are the properties the user can actually invest in. However, you CAN navigate to funded and exited properties when a user explicitly asks to see one — navigation is not limited to live properties, only investment is.
 
 Do NOT call a tool for questions you can answer from your Knowledge Base.
 
@@ -112,7 +112,7 @@ export const TOOL_DEFINITIONS = [
     type: "client" as const,
     name: "navigate_to_property",
     description:
-      "Scroll the dashboard to highlight a specific property card. Use when recommending a property or when visual context would help the investor understand what you're describing. Do not use for every property mentioned — only when showing the card adds value.",
+      "Scroll the dashboard to highlight a specific property card. Works for ALL properties — live, funded, and exited — and automatically switches to the correct tab. Use when recommending a property or when the user explicitly asks to see one. Do not use for every property mentioned — only when showing the card adds value or the user requests it.",
     parameters: {
       type: "object",
       properties: {
