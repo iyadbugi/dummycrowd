@@ -15,7 +15,7 @@ export const liveProperties: Property[] = [
     "renovationProgress": null,
     "totalReturnRoi": 0,
     "totalReturnRoiPercentage": 0,
-    "investors": 76,
+    "investors": 77,
     "rental": {
       "grossYield": 6.31,
       "netYield": null,
@@ -26,7 +26,7 @@ export const liveProperties: Property[] = [
       "returnFrequency": "MONTHLY"
     },
     "performance": {
-      "investors": 76,
+      "investors": 77,
       "annualized": 10.48,
       "totalGrossRoi": null,
       "investmentPeriod": 0,
@@ -44,7 +44,7 @@ export const liveProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 2,
-      "bathrooms": 0,
+      "bathrooms": 2,
       "sqft": 1557
     },
     "location": {
@@ -62,7 +62,13 @@ export const liveProperties: Property[] = [
       "closeDate": null,
       "soldDate": null,
       "completionDate": null
-    }
+    },
+    "totalAcquisitionCost": 2179060,
+    "transactionCost": 229060,
+    "rentalStatus": "RENTED",
+    "developer": "MAG Group",
+    "fullAddress": "Al Tanyah Fifth, Dubai, United Arab Emirates",
+    "minInvestment": 500
   },
   {
     "id": 784,
@@ -78,7 +84,7 @@ export const liveProperties: Property[] = [
     "renovationProgress": null,
     "totalReturnRoi": 0,
     "totalReturnRoiPercentage": 0,
-    "investors": 125,
+    "investors": 129,
     "rental": {
       "grossYield": 6.07,
       "netYield": null,
@@ -89,7 +95,7 @@ export const liveProperties: Property[] = [
       "returnFrequency": "MONTHLY"
     },
     "performance": {
-      "investors": 125,
+      "investors": 129,
       "annualized": 10.5,
       "totalGrossRoi": null,
       "investmentPeriod": 0,
@@ -107,7 +113,7 @@ export const liveProperties: Property[] = [
     },
     "physical": {
       "bedrooms": 0,
-      "bathrooms": 0,
+      "bathrooms": 1,
       "sqft": 550
     },
     "location": {
@@ -125,12 +131,18 @@ export const liveProperties: Property[] = [
       "closeDate": null,
       "soldDate": null,
       "completionDate": null
-    }
+    },
+    "totalAcquisitionCost": 688759,
+    "transactionCost": 110759,
+    "rentalStatus": "RENTED",
+    "developer": "Nakheel",
+    "fullAddress": "Jebel Ali First, Jebel Ali, Dubai, United Arab Emirates",
+    "minInvestment": 500
   },
   {
     "id": 780,
     "code": "SC-327",
-    "title": "\"Villa in the Sky\" 3-floor Penthouse in Central Park Tower, DIFC",
+    "title": "\"Villa in the Sky\" 3-floor Penthouse in Central Park Towers, DIFC",
     "investmentType": "FLIP",
     "propertyCategory": "RESIDENTIAL",
     "price": 27352040,
@@ -155,7 +167,7 @@ export const liveProperties: Property[] = [
       "investors": 89,
       "annualized": 15.13,
       "totalGrossRoi": null,
-      "investmentPeriod": 12,
+      "investmentPeriod": 18,
       "funded": 35.58,
       "fundedAmount": 9731855,
       "totalReturnRoi": null,
@@ -188,7 +200,13 @@ export const liveProperties: Property[] = [
       "closeDate": null,
       "soldDate": null,
       "completionDate": null
-    }
+    },
+    "totalAcquisitionCost": 27352040,
+    "transactionCost": 2467040,
+    "purchasePrice": 17500000,
+    "renovationBudget": 7385000,
+    "fullAddress": "Za'abeel Second, Dubai, United Arab Emirates",
+    "minInvestment": 500
   }
 ] as const satisfies Property[];
 

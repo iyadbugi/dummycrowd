@@ -58,6 +58,8 @@ export interface PropertyAuction {
   completionDate: string | null;
 }
 
+export type RentalStatus = "RENTED" | "VACANT" | null;
+
 export interface Property {
   id: number;
   code: string;
@@ -79,4 +81,12 @@ export interface Property {
   physical: PropertyPhysical;
   location: PropertyLocation;
   auction: PropertyAuction;
+  totalAcquisitionCost?: number;
+  transactionCost?: number;
+  purchasePrice?: number;
+  renovationBudget?: number;
+  rentalStatus?: RentalStatus;
+  developer?: string | null;
+  fullAddress?: string | null;
+  minInvestment?: number;
 }

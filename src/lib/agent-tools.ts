@@ -217,12 +217,18 @@ function formatPropertySummary(p: Property): string {
   } else if (p.investmentType === "HOLD") {
     const yld = p.rental.grossYield ?? p.rental.dividendYield;
     if (yld) metrics += `Rental yield: ${yld}%. `;
+    if (p.rentalStatus === "RENTED") metrics += `Currently rented — earning instant returns. `;
     if (p.valuation.marketValue) {
       metrics += `Market value: AED ${Math.round(p.valuation.marketValue).toLocaleString()} (${p.valuation.marketValuePercentage > 0 ? "+" : ""}${p.valuation.marketValuePercentage}%). `;
     }
     if (p.rental.totalRentalIncome > 0) {
       metrics += `Rental income earned: AED ${Math.round(p.rental.totalRentalIncome).toLocaleString()}. `;
     }
+    if (p.totalAcquisitionCost) {
+      metrics += `Total acquisition cost: AED ${p.totalAcquisitionCost.toLocaleString()}. `;
+    }
+    if (p.developer) metrics += `Developer: ${p.developer}. `;
+    if (p.minInvestment) metrics += `Min investment: AED ${p.minInvestment.toLocaleString()}. `;
     metrics += `${p.investors || p.performance.investors} investors.`;
   } else {
     const roi = p.performance.annualized;
@@ -235,10 +241,13 @@ function formatPropertySummary(p: Property): string {
     metrics += `${p.investors || p.performance.investors} investors.`;
   }
 
-  const beds = p.physical.bedrooms > 0 ? `${p.physical.bedrooms}BR, ` : "";
-  const sqft = p.physical.sqft ? `${p.physical.sqft} sqft, ` : "";
+  const beds = p.physical.bedrooms > 0 ? `${p.physical.bedrooms}BR` : "";
+  const baths = p.physical.bathrooms > 0 ? `${p.physical.bathrooms}BA` : "";
+  const sqft = p.physical.sqft ? `${p.physical.sqft} sqft` : "";
+  const physicalParts = [beds, baths, sqft].filter(Boolean).join(", ");
+  const locationStr = p.fullAddress ? `${p.fullAddress}` : area;
 
-  return `${p.code}: ${p.title} (${type}, ${status}). ${beds}${sqft}${area}. ${metrics}`.trim();
+  return `${p.code}: ${p.title} (${type}, ${status}). ${physicalParts ? physicalParts + ", " : ""}${locationStr}. ${metrics}`.trim();
 }
 
 function getStatusForProperty(p: Property): "Live" | "Funded" | "Exited" {
