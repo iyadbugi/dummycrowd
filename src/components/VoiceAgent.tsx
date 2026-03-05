@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useConversation } from "@elevenlabs/react";
 import { Phone, PhoneOff, Send, MessageSquare, X, Minus } from "lucide-react";
+import { wordsToDigits } from "@/lib/text-format";
 import {
   calculateRoi,
   getRenovationStatus,
@@ -82,10 +83,7 @@ export default function VoiceAgent() {
         return getRenovationStatus(params);
       },
       navigate_to_property: (params: { property_code: string }) => {
-        console.log("[navigate_to_property] params:", params);
-        const result = navigateToProperty(params);
-        console.log("[navigate_to_property] result:", result);
-        return result;
+        return navigateToProperty(params);
       },
       start_investment: (params: {
         property_code: string;
@@ -115,13 +113,15 @@ export default function VoiceAgent() {
           suppressFirstMessageRef.current = false;
           return;
         }
-        setMessages((prev) => [...prev, { role: "agent", text: clean }]);
+        setMessages((prev) => [...prev, { role: "agent", text: wordsToDigits(clean) }]);
       } else if (props.role === "user") {
         setMessages((prev) => [...prev, { role: "user", text: clean }]);
       }
     },
     onError: (error: unknown) => {
-      console.error("ElevenLabs error:", error);
+      if (process.env.NODE_ENV !== "production") {
+        console.error("ElevenLabs error:", error);
+      }
       setConnectionState("error");
       setErrorMsg("Connection lost. Tap to try again.");
     },
@@ -179,7 +179,9 @@ export default function VoiceAgent() {
         setAgentMode(null);
         return;
       }
-      console.error("Failed to start:", err);
+      if (process.env.NODE_ENV !== "production") {
+        console.error("Failed to start:", err);
+      }
       setConnectionState("error");
       setErrorMsg("Could not connect. Try again.");
     }
