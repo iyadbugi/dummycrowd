@@ -25,7 +25,7 @@ export async function GET() {
       const body = await response.text();
       console.error("[signed-url] ElevenLabs API error:", response.status, body);
       return NextResponse.json(
-        { error: `ElevenLabs API error: ${response.status}`, detail: body },
+        { error: "Failed to generate signed URL" },
         { status: response.status }
       );
     }

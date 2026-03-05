@@ -63,7 +63,6 @@ export default function PropertyTabs() {
   useEffect(() => {
     function handleNavigate(e: Event) {
       const { code, tab } = (e as CustomEvent).detail;
-      console.log("[navigate-to-property] event received:", { code, tab });
       setActiveTab(tab);
       setTypeFilter("ALL");
       setHighlightedCode(code);
