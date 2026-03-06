@@ -139,6 +139,19 @@ export default function VoiceAgent() {
     }
   }, [view]);
 
+  // Auto-minimize when navigating to a property (panel covers cards on mobile)
+  useEffect(() => {
+    function handleNavigate() {
+      if (view !== "minimized") {
+        setViewBeforeMinimize(view);
+        setView("minimized");
+        conversation.setVolume({ volume: 0 });
+      }
+    }
+    window.addEventListener("navigate-to-property", handleNavigate);
+    return () => window.removeEventListener("navigate-to-property", handleNavigate);
+  }, [view, conversation]);
+
   // Tab context updates
   useEffect(() => {
     function handleTabChange(e: Event) {
@@ -274,7 +287,7 @@ export default function VoiceAgent() {
     return (
       <button
         onClick={expand}
-        className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-white/80 dark:bg-[#111F42]/90 backdrop-blur-xl border pl-1.5 pr-5 py-1.5 shadow-lg shadow-black/5 dark:shadow-black/20 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group cursor-pointer ${
+        className={`fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex items-center gap-3 rounded-full bg-white/80 dark:bg-[#111F42]/90 backdrop-blur-xl border pl-1.5 pr-5 py-1.5 shadow-lg shadow-black/5 dark:shadow-black/20 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group cursor-pointer ${
           isActive
             ? "border-sc-blue/40 dark:border-sc-blue/30"
             : "border-gray-200/60 dark:border-white/10"

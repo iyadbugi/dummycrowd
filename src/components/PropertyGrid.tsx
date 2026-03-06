@@ -109,7 +109,7 @@ export default function PropertyGrid({
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-1 mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
+        <div className="flex items-center justify-center gap-1 mt-8 pt-6 border-t border-gray-100 dark:border-white/10 mb-28 md:mb-0">
           {/* Previous */}
           <button
             disabled={currentPage === 0}

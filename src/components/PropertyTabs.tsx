@@ -9,7 +9,7 @@ import {
 import { Property } from "@/types/property";
 import PropertyGrid from "@/components/PropertyGrid";
 import { setCurrentTab } from "@/lib/dashboard-context";
-import { Home, Wrench, ChevronDown } from "lucide-react";
+import { Home, Wrench, ChevronDown, ChevronUp } from "lucide-react";
 
 type Tab = "live" | "funded" | "exited";
 type TypeFilter = "ALL" | "HOLD" | "FLIP";
@@ -34,11 +34,13 @@ export default function PropertyTabs() {
   const [activeTab, setActiveTab] = useState<Tab>("live");
   const [typeFilter, setTypeFilter] = useState<TypeFilter>("ALL");
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [highlightedCode, setHighlightedCode] = useState<string | null>(null);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on click outside
+  // Close dropdowns on click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -46,6 +48,12 @@ export default function PropertyTabs() {
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setDropdownOpen(false);
+      }
+      if (
+        mobileDropdownRef.current &&
+        !mobileDropdownRef.current.contains(event.target as Node)
+      ) {
+        setMobileDropdownOpen(false);
       }
     }
 
@@ -100,8 +108,33 @@ export default function PropertyTabs() {
 
   return (
     <div>
-      {/* Header row: tabs + type filter */}
-      <div className="flex items-center justify-between mb-6">
+      {/* ---- Mobile underline tabs ---- */}
+      <div className="flex md:hidden border-b border-gray-200 dark:border-[#1C3058] mb-4">
+        {tabs.map((tab) => {
+          const count = tab.getData().length;
+          const isActive = activeTab === tab.key;
+
+          return (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`flex-1 py-3 text-sm font-medium text-center relative transition-colors ${
+                isActive
+                  ? "text-sc-blue"
+                  : "text-sc-text-muted"
+              }`}
+            >
+              {tab.label} ({count})
+              {isActive && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-sc-blue rounded-full" />
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ---- Desktop header row: pill tabs + type filter ---- */}
+      <div className="hidden md:flex items-center justify-between mb-6">
         {/* Left: Tab pills */}
         <div className="flex items-center gap-1 rounded-full border border-gray-200 dark:border-[#1C3058] bg-white dark:bg-[#111F42] p-1">
           {tabs.map((tab) => {
@@ -124,7 +157,7 @@ export default function PropertyTabs() {
           })}
         </div>
 
-        {/* Right: Type filter dropdown */}
+        {/* Right: Type filter dropdown (desktop) */}
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setDropdownOpen((prev) => !prev)}
@@ -166,6 +199,49 @@ export default function PropertyTabs() {
 
       {/* Property grid */}
       <PropertyGrid properties={filteredProperties} highlightedCode={highlightedCode} />
+
+      {/* ---- Mobile floating type filter (bottom-left) ---- */}
+      <div className="fixed bottom-[4.5rem] left-4 z-30 md:hidden" ref={mobileDropdownRef}>
+        <button
+          onClick={() => setMobileDropdownOpen((prev) => !prev)}
+          className="flex items-center gap-2 rounded-full px-4 py-2.5 bg-white dark:bg-[#111F42] border border-gray-200 dark:border-[#1C3058] shadow-lg text-sc-text-dark text-sm font-medium"
+        >
+          <currentFilterOption.icon className="h-4 w-4 text-sc-text-muted" />
+          <span>{currentFilterOption.label}</span>
+          {mobileDropdownOpen ? (
+            <ChevronUp className="h-4 w-4 text-sc-text-muted" />
+          ) : (
+            <ChevronDown className="h-4 w-4 text-sc-text-muted" />
+          )}
+        </button>
+
+        {mobileDropdownOpen && (
+          <div className="absolute left-0 bottom-full mb-1 bg-white dark:bg-[#111F42] border border-gray-200 dark:border-[#1C3058] rounded-lg shadow-lg py-1 min-w-[140px]">
+            {typeFilterOptions.map((option) => {
+              const Icon = option.icon;
+              const isActive = typeFilter === option.value;
+
+              return (
+                <button
+                  key={option.value}
+                  onClick={() => {
+                    setTypeFilter(option.value);
+                    setMobileDropdownOpen(false);
+                  }}
+                  className={`w-full px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-white/5 flex items-center gap-2 text-sm cursor-pointer transition-colors ${
+                    isActive
+                      ? "text-sc-blue font-medium"
+                      : "text-sc-text-dark"
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
