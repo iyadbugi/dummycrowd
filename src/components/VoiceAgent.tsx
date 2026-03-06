@@ -145,7 +145,6 @@ export default function VoiceAgent() {
       if (view !== "minimized") {
         setViewBeforeMinimize(view);
         setView("minimized");
-        conversation.setVolume({ volume: 0 });
       }
     }
     window.addEventListener("navigate-to-property", handleNavigate);
@@ -236,8 +235,7 @@ export default function VoiceAgent() {
   const minimize = useCallback(() => {
     setViewBeforeMinimize(view === "minimized" ? "idle" : view);
     setView("minimized");
-    conversation.setVolume({ volume: 0 });
-  }, [view, conversation]);
+  }, [view]);
 
   const expand = useCallback(() => {
     const restoreTo = connectionState === "connected" ? viewBeforeMinimize : "idle";
