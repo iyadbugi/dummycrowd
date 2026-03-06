@@ -55,6 +55,7 @@ export default function RootLayout({
           <VoiceAgent />
           <InvestmentDialog />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

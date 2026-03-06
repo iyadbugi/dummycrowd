@@ -50,6 +50,10 @@ CE = CustomEvent (agent tools dispatch events → UI responds)
 - **Knowledge Base** — 234 properties + platform documentation uploaded to ElevenLabs, RAG-indexed for natural language queries
 - **Three.js Orb** — 3D visualization that reflects agent state (listening, speaking, thinking)
 - **CustomEvent bridge** — Agent tool calls dispatch DOM events that the UI listens to, keeping voice logic and UI rendering decoupled
+- **Voice + Chat modes** — The agent supports both voice and text chat with seamless toggle. A minimize button keeps the session active while the user browses properties
+- **Mobile-first layout** — Responsive layout matching the SmartCrowd app: mobile header with filters/sort/cart/notifications, bottom navigation (Explore/Wallet/Home/Portfolio/Profile), safe-area-inset support for notched devices. Desktop sidebar hidden on mobile, mobile nav hidden on desktop
+- **Dynamic context** — The agent receives session variables at conversation start (`time_of_day`, `current_tab`, `live_property_count`) so it can greet users contextually and reference what's on screen
+- **Security headers** — CSP, HSTS, X-Frame-Options, and permissions policy (microphone=self, camera/geolocation/payment denied)
 
 **How the agent works for visitors:**
 
@@ -64,6 +68,32 @@ Because the prototype has no auth gate, anyone with the link can start a convers
 
 ---
 
+## What Can Sara Do?
+
+**Tools** — client-side functions the agent calls during a conversation:
+
+| Tool | What it does | Try saying |
+|---|---|---|
+| `calculate_roi` | Computes net return after entry, admin, and exit fees for a given property + amount | "Calculate my return on 50,000 dirhams in SC-315" |
+| `get_renovation_status` | Checks renovation progress on Flip properties | "How far along is the renovation on SC-331?" |
+| `navigate_to_property` | Switches tabs, scrolls to the card, highlights it with a pulsing border | "Show me SC-315 on the dashboard" |
+| `start_investment` | Opens the investment dialog for Live properties | "I want to invest in this one" |
+
+**Knowledge base** — what Sara can answer without tools:
+- Property details across 234 listings (location, type, yield, status)
+- How fractional investing works on SmartCrowd
+- Fee structure (1.5% entry, 0.5% annual admin, 2.5% exit)
+- Hold vs Flip investment strategies
+
+**Interaction modes:**
+- Voice or text chat with seamless toggle
+- Minimize to keep the session active while browsing
+- Understands spoken SC codes ("S C three fifteen" → SC-315) and area names ("Jay Vee See" → JVC)
+
+**Guardrails:** Sara won't guarantee returns, give tax/legal advice, or use urgency tactics. Account-specific questions are redirected to support.
+
+---
+
 ## Why This Approach
 
 Most AI demos are wrappers around an API: send text, get text back. This project solves the harder problems that show up when you build a voice agent that actually operates a product.
@@ -73,6 +103,36 @@ Most AI demos are wrappers around an API: send text, get text back. This project
 **Tools return narratives, not data.** The ROI calculator doesn't return `{ roi: 0.35 }`. It returns a formatted paragraph that accounts for entry fees, annual admin fees, and exit fees — ready for the agent to speak naturally. Designing tool output for an LLM that talks is fundamentally different from designing API responses.
 
 **The agent drives the UI.** When a user asks "show me SC-315," the agent calls `navigate_to_property`, which dispatches a CustomEvent. The dashboard switches tabs, scrolls to the card, and highlights it with a pulsing border. The voice agent isn't a sidebar widget — it's a primary interface for the product.
+
+---
+
+## Data Collection & Evaluation
+
+The agent isn't just a chatbot — it's instrumented for product analytics. These are configured on the ElevenLabs platform: the LLM extracts structured data points from each conversation transcript and the agent is scored against evaluation criteria after every session.
+
+**Data collection** (extracted from each conversation):
+
+| Data Point | Description |
+|---|---|
+| User Budget | Investment amount or range mentioned (e.g. "5,000 AED", "just starting") |
+| Investment Experience | Whether the user has invested before — `new`, `experienced`, or `unknown` |
+| Preference | Income/Hold vs Growth/Flip — `hold`, `flip`, `undecided`, or `unknown` |
+| Properties Discussed | SC codes of properties mentioned or navigated to |
+| Outcome | How the conversation ended — `invested`, `interested`, `browsing`, or `dropped_off` |
+| Objections | Hesitations or concerns raised (e.g. "too risky", "fees too high", "need to think about it") |
+
+**Evaluation criteria** (the agent is scored on these after each conversation):
+
+| Criteria | What it measures |
+|---|---|
+| Qualification | Did Sara ask about budget, experience, or goals early in the conversation? |
+| Property Recommendation | Did Sara recommend a specific Live property matched to the user's stated preferences? |
+| Conversion Progress | Did the conversation move toward action — ROI calculation, property navigation, or investment dialog? |
+| Brevity | Did Sara keep responses to 1–2 sentences and avoid listing or stacking multiple ideas? |
+| Guardrail Compliance | Did Sara avoid guaranteeing returns, giving tax/legal advice, or using urgency language? |
+| Customer Satisfaction | Were questions answered? Did the user express positive sentiment or frustration? |
+
+This gives you a feedback loop: every conversation produces both structured lead data and a quality scorecard, without adding any instrumentation code to the client.
 
 ---
 
@@ -108,12 +168,13 @@ The current client-tool approach works because all property data is bundled in t
 
 1. Browse the property dashboard — switch between Live, Funded, and Exited tabs
 2. Filter by investment type: Hold (rental income) or Flip (renovation + resale)
-3. Tap the mic and ask:
+3. Tap the mic and ask (or switch to chat mode and type):
    - *"What properties do you have in JVC?"*
    - *"Calculate my return on 50,000 dirhams in SC-315"*
    - *"Show me that property on the dashboard"*
    - *"I want to invest in this one"*
-4. Toggle dark/light mode in the sidebar
+4. Minimize the agent and keep browsing — the session stays active
+5. Toggle dark/light mode in the sidebar
 
 ---
 
@@ -134,8 +195,9 @@ The current client-tool approach works because all property data is bundled in t
 | Framework | Next.js 16, React 19, TypeScript |
 | Voice AI | ElevenLabs Conversational AI + React SDK |
 | 3D | Three.js, React Three Fiber, Drei |
-| UI | Tailwind CSS 4, shadcn/ui, Framer Motion |
-| Testing | Vitest (30+ unit tests for agent tools) |
+| UI | Tailwind CSS 4, shadcn/ui, Framer Motion, Lucide icons |
+| Testing | Vitest — 30+ unit tests covering SC code normalization, area name normalization, ROI calculations (Hold/Flip/Exited), renovation status, navigation, and investment validation |
+| Analytics | Vercel Analytics |
 
 ## Running Locally
 
