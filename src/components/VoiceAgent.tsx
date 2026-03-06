@@ -251,7 +251,8 @@ export default function VoiceAgent() {
           rawAudioProcessor: "/elevenlabs/rawAudioProcessor.js",
           audioConcatProcessor: "/elevenlabs/audioConcatProcessor.js",
         },
-      });
+        libsampleratePath: "/elevenlabs/libsamplerate.worklet.js",
+      } as Parameters<typeof conversation.startSession>[0]);
       return true;
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);

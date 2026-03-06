@@ -6,9 +6,9 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   img-src 'self' https: data: blob:;
   font-src 'self';
-  connect-src 'self' https://*.elevenlabs.io wss://*.elevenlabs.io;
+  connect-src 'self' https://*.elevenlabs.io wss://*.elevenlabs.io https://cdn.jsdelivr.net;
   media-src 'self' blob:;
-  worker-src 'self' blob:;
+  worker-src 'self' blob: https://cdn.jsdelivr.net;
   frame-src 'none';
 `
   .replace(/\s{2,}/g, " ")
