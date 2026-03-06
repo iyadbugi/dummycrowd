@@ -102,7 +102,7 @@ export default function VoiceAgent() {
   const isChat = view === "chat";
 
   const conversation = useConversation({
-    micMuted: isChat || view === "idle" || view === "minimized",
+    micMuted: isChat || view === "idle" || (view === "minimized" && viewBeforeMinimize !== "voice"),
     clientTools: {
       calculate_roi: (params: {
         property_id: string;
