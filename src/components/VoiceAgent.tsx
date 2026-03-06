@@ -262,7 +262,7 @@ export default function VoiceAgent() {
       }
       console.error("Failed to start:", err);
       setConnectionState("error");
-      setErrorMsg("Could not connect. Try again.");
+      setErrorMsg(msg || "Could not connect. Try again.");
       return false;
     }
   }, [conversation]);
