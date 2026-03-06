@@ -22,11 +22,22 @@ import type { AgentState as OrbAgentState } from "@/components/ui/orb";
 /*  iOS Safari audio unlock                                            */
 /* ------------------------------------------------------------------ */
 
+// Persistent AudioContext used to keep the page "audio-activated" on iOS Safari.
+// Once audio has been played in a user gesture, the page stays activated and
+// subsequent AudioContext.resume() calls (made by the SDK) will succeed even
+// outside a gesture. We keep this context alive for the lifetime of the page.
+let unlockCtx: AudioContext | null = null;
+
 /**
- * Unlock the Web Audio API on iOS Safari. Must be called synchronously
- * inside a user-gesture (tap/click) handler, before any async work.
- * After this, subsequent AudioContext instances created by the SDK
- * will start in the "running" state instead of "suspended".
+ * Activate the page's audio session on iOS Safari. Must be called
+ * synchronously inside a user-gesture (tap/click) handler.
+ *
+ * 1. Creates a persistent AudioContext & plays a silent buffer to
+ *    "activate" the page for Web Audio.
+ * 2. Patches the global AudioContext constructor so that any future
+ *    AudioContext (created by the ElevenLabs SDK deep in its async
+ *    chain) is auto-resumed. This works because the page is already
+ *    activated from step 1.
  */
 function unlockAudioForIOS(): void {
   try {
@@ -35,15 +46,42 @@ function unlockAudioForIOS(): void {
       (window as unknown as { webkitAudioContext: typeof AudioContext })
         .webkitAudioContext;
     if (!AudioCtx) return;
-    const ctx = new AudioCtx();
-    const buf = ctx.createBuffer(1, 1, 22050);
-    const src = ctx.createBufferSource();
-    src.buffer = buf;
-    src.connect(ctx.destination);
-    src.start(0);
-    // Keep the context alive briefly so the unlock persists through
-    // the SDK's async session setup, then clean up.
-    setTimeout(() => ctx.close().catch(() => {}), 5000);
+
+    // Step 1 — play silence to activate the page's audio session.
+    // Only do this once; keep the context alive permanently.
+    if (!unlockCtx) {
+      unlockCtx = new AudioCtx();
+      const buf = unlockCtx.createBuffer(1, 1, 22050);
+      const src = unlockCtx.createBufferSource();
+      src.buffer = buf;
+      src.connect(unlockCtx.destination);
+      src.start(0);
+    }
+    // If somehow suspended (e.g. after an iOS interruption), resume now
+    // while we're still inside the gesture.
+    if (unlockCtx.state === "suspended") {
+      unlockCtx.resume().catch(() => {});
+    }
+
+    // Step 2 — patch AudioContext so the SDK's instances auto-resume.
+    // The page is activated from step 1, so resume() will succeed even
+    // outside a user gesture.
+    if (!(AudioCtx as unknown as { __patched?: boolean }).__patched) {
+      const Original = AudioCtx;
+      const Patched = function (
+        this: AudioContext,
+        options?: AudioContextOptions
+      ) {
+        const ctx = new Original(options);
+        if (ctx.state === "suspended") {
+          ctx.resume().catch(() => {});
+        }
+        return ctx;
+      } as unknown as typeof AudioContext;
+      Patched.prototype = Original.prototype;
+      (Patched as unknown as { __patched: boolean }).__patched = true;
+      window.AudioContext = Patched;
+    }
   } catch {
     // Best-effort — ignore errors on non-Safari browsers
   }
@@ -262,7 +300,7 @@ export default function VoiceAgent() {
       }
       console.error("Failed to start:", err);
       setConnectionState("error");
-      setErrorMsg("Could not connect. Try again.");
+      setErrorMsg(msg || "Could not connect. Try again.");
       return false;
     }
   }, [conversation]);
