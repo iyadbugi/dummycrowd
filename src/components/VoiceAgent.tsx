@@ -19,6 +19,37 @@ import {
 import type { AgentState as OrbAgentState } from "@/components/ui/orb";
 
 /* ------------------------------------------------------------------ */
+/*  iOS Safari audio unlock                                            */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Unlock the Web Audio API on iOS Safari. Must be called synchronously
+ * inside a user-gesture (tap/click) handler, before any async work.
+ * After this, subsequent AudioContext instances created by the SDK
+ * will start in the "running" state instead of "suspended".
+ */
+function unlockAudioForIOS(): void {
+  try {
+    const AudioCtx =
+      window.AudioContext ??
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+    const buf = ctx.createBuffer(1, 1, 22050);
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    src.connect(ctx.destination);
+    src.start(0);
+    // Keep the context alive briefly so the unlock persists through
+    // the SDK's async session setup, then clean up.
+    setTimeout(() => ctx.close().catch(() => {}), 5000);
+  } catch {
+    // Best-effort — ignore errors on non-Safari browsers
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /*  Orb (lazy-loaded, no SSR)                                         */
 /* ------------------------------------------------------------------ */
 
@@ -247,6 +278,7 @@ export default function VoiceAgent() {
   }, [conversation]);
 
   const handleCallStart = useCallback(async () => {
+    unlockAudioForIOS(); // Must be synchronous, before any await
     setView("voice");
     if (connectionState !== "connected") {
       await startSession();
@@ -292,6 +324,7 @@ export default function VoiceAgent() {
   }, [conversation]);
 
   const switchToVoice = useCallback(async () => {
+    unlockAudioForIOS(); // Must be synchronous, before any await
     // If current session is text-only, restart with audio
     if (isTextOnlySessionRef.current && connectionState === "connected") {
       await conversation.endSession();
