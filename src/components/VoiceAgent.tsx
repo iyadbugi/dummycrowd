@@ -61,9 +61,12 @@ export default function VoiceAgent() {
   const [textInput, setTextInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [viewBeforeMinimize, setViewBeforeMinimize] = useState<View>("idle");
+  const [waitingForResponse, setWaitingForResponse] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suppressFirstMessageRef = useRef(false);
+  const signedUrlRef = useRef<string | null>(null);
+  const isTextOnlySessionRef = useRef(false);
 
   const isChat = view === "chat";
 
@@ -113,24 +116,43 @@ export default function VoiceAgent() {
           suppressFirstMessageRef.current = false;
           return;
         }
+        setWaitingForResponse(false);
         setMessages((prev) => [...prev, { role: "agent", text: wordsToDigits(clean) }]);
       } else if (props.role === "user") {
         setMessages((prev) => [...prev, { role: "user", text: clean }]);
       }
     },
     onError: (error: unknown) => {
-      if (process.env.NODE_ENV !== "production") {
-        console.error("ElevenLabs error:", error);
-      }
+      console.error("ElevenLabs error:", error);
       setConnectionState("error");
+      setWaitingForResponse(false);
       setErrorMsg("Connection lost. Tap to try again.");
     },
   });
 
+  // Pre-fetch signed URL when panel opens so startSession can use it immediately
+  const prefetchSignedUrl = useCallback(async () => {
+    try {
+      const res = await fetch("/api/signed-url");
+      if (!res.ok) return;
+      const { signedUrl } = await res.json();
+      signedUrlRef.current = signedUrl;
+    } catch {
+      // Silently fail — startSession will fetch if needed
+    }
+  }, []);
+
+  // Pre-fetch when panel opens to idle
+  useEffect(() => {
+    if (view === "idle") {
+      prefetchSignedUrl();
+    }
+  }, [view, prefetchSignedUrl]);
+
   // Auto-scroll messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, waitingForResponse]);
 
   // Scroll to bottom when restoring chat from minimized
   useEffect(() => {
@@ -168,34 +190,49 @@ export default function VoiceAgent() {
 
   /* ---- Actions ---- */
 
-  const startSession = useCallback(async () => {
+  const startSession = useCallback(async (options?: { textOnly?: boolean }): Promise<boolean> => {
+    const textOnly = options?.textOnly ?? false;
     setConnectionState("connecting");
     setErrorMsg(null);
     setMessages([]);
+    isTextOnlySessionRef.current = textOnly;
     try {
-      const res = await fetch("/api/signed-url");
-      if (!res.ok) throw new Error("Failed to get signed URL");
-      const { signedUrl } = await res.json();
+      // Use pre-fetched URL if available, otherwise fetch now
+      let signedUrl = signedUrlRef.current;
+      if (!signedUrl) {
+        const res = await fetch("/api/signed-url");
+        if (!res.ok) throw new Error("Failed to get signed URL");
+        const data = await res.json();
+        signedUrl = data.signedUrl;
+      }
+      // Clear the cached URL (single use)
+      signedUrlRef.current = null;
+
       await conversation.startSession({
-        signedUrl,
+        signedUrl: signedUrl!,
+        textOnly,
         dynamicVariables: {
           time_of_day: getTimeOfDay(),
           current_tab: getCurrentTab(),
           live_property_count: getLivePropertyCount(),
         },
+        workletPaths: {
+          rawAudioProcessor: "/elevenlabs/rawAudioProcessor.js",
+          audioConcatProcessor: "/elevenlabs/audioConcatProcessor.js",
+        },
       });
+      return true;
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
       if (msg.includes("cancelled") || msg.includes("canceled")) {
         setConnectionState("idle");
         setAgentMode(null);
-        return;
+        return false;
       }
-      if (process.env.NODE_ENV !== "production") {
-        console.error("Failed to start:", err);
-      }
+      console.error("Failed to start:", err);
       setConnectionState("error");
       setErrorMsg("Could not connect. Try again.");
+      return false;
     }
   }, [conversation]);
 
@@ -204,6 +241,8 @@ export default function VoiceAgent() {
     setConnectionState("idle");
     setAgentMode(null);
     setMessages([]);
+    setWaitingForResponse(false);
+    isTextOnlySessionRef.current = false;
     setView("minimized");
   }, [conversation]);
 
@@ -222,10 +261,12 @@ export default function VoiceAgent() {
       conversation.setVolume({ volume: 0 });
       if (connectionState !== "connected") {
         suppressFirstMessageRef.current = true;
-        await startSession();
+        const ok = await startSession({ textOnly: true });
+        if (!ok) return;
         conversation.setVolume({ volume: 0 });
       }
       setMessages((prev) => [...prev, { role: "user", text: text.trim() }]);
+      setWaitingForResponse(true);
       conversation.sendUserMessage(text.trim());
       setTextInput("");
     },
@@ -250,10 +291,19 @@ export default function VoiceAgent() {
     conversation.setVolume({ volume: 0 });
   }, [conversation]);
 
-  const switchToVoice = useCallback(() => {
+  const switchToVoice = useCallback(async () => {
+    // If current session is text-only, restart with audio
+    if (isTextOnlySessionRef.current && connectionState === "connected") {
+      await conversation.endSession();
+      setConnectionState("idle");
+      setAgentMode(null);
+      isTextOnlySessionRef.current = false;
+      handleCallStart();
+      return;
+    }
     setView("voice");
     conversation.setVolume({ volume: 1 });
-  }, [conversation]);
+  }, [conversation, connectionState, handleCallStart]);
 
   /* ---- Derived state ---- */
 
@@ -431,6 +481,22 @@ export default function VoiceAgent() {
               </div>
             </div>
           ))}
+          {/* Error message in chat */}
+          {connectionState === "error" && errorMsg && (
+            <div className="flex justify-center">
+              <p className="text-xs text-red-500 text-center">{errorMsg}</p>
+            </div>
+          )}
+          {/* Typing indicator */}
+          {waitingForResponse && (
+            <div className="flex justify-start">
+              <div className="flex items-center gap-1.5 rounded-2xl rounded-bl-sm bg-gray-50 dark:bg-white/6 px-4 py-3">
+                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse" />
+                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse [animation-delay:150ms]" />
+                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse [animation-delay:300ms]" />
+              </div>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
       )}
