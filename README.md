@@ -2,7 +2,7 @@
 
 A voice-powered prototype for fractional real estate investing. Users browse 234 properties and talk to an AI agent that calculates returns, explains investments, and drives the UI — not just a chatbot, but an agent with real tools.
 
-**[Live Demo →](#)** *(add your URL here)*
+**[Live Demo →](https://smartcrowd-voice.vercel.app/)**
 
 ---
 
@@ -11,6 +11,32 @@ A voice-powered prototype for fractional real estate investing. Users browse 234
 Fractional real estate platforms present users with dense financial data — rental yields, annualized ROI, renovation timelines, fee structures — across hundreds of properties. The typical solution is filters and search bars.
 
 This prototype takes a different approach: a voice agent that understands the domain. Ask it to compare properties, calculate your return on a specific investment, or show you what's available in a given area. The agent doesn't just retrieve information — it computes, navigates, and acts.
+
+---
+
+## What Can Sara Do?
+
+**Tools** — client-side functions the agent calls during a conversation:
+
+| Tool | What it does | Try saying |
+|---|---|---|
+| `calculate_roi` | Computes net return after entry, admin, and exit fees for a given property + amount | "Calculate my return on 50,000 dirhams in SC-315" |
+| `get_renovation_status` | Checks renovation progress on Flip properties | "How far along is the renovation on SC-331?" |
+| `navigate_to_property` | Switches tabs, scrolls to the card, highlights it with a pulsing border | "Show me SC-315 on the dashboard" |
+| `start_investment` | Opens the investment dialog for Live properties | "I want to invest in this one" |
+
+**Knowledge base** — what Sara can answer without tools:
+- Property details across 234 listings (location, type, yield, status)
+- How fractional investing works on SmartCrowd
+- Fee structure (1.5% entry, 0.5% annual admin, 2.5% exit)
+- Hold vs Flip investment strategies
+
+**Interaction modes:**
+- Voice or text chat with seamless toggle
+- Minimize to keep the session active while browsing
+- Understands spoken SC codes ("S C three fifteen" → SC-315) and area names ("Jay Vee See" → JVC)
+
+**Guardrails:** Sara won't guarantee returns, give tax/legal advice, or use urgency tactics. Account-specific questions are redirected to support.
 
 ---
 
@@ -46,14 +72,10 @@ CE = CustomEvent (agent tools dispatch events → UI responds)
 
 - **Next.js 16 + React 19** — App Router, server/client component split
 - **ElevenLabs Conversational AI** — Managed voice agent with knowledge base and client-side tool calling
-- **Client-side tools** — `calculate_roi`, `get_renovation_status`, `navigate_to_property`, `start_investment` — execute in the browser with zero latency
 - **Knowledge Base** — 234 properties + platform documentation uploaded to ElevenLabs, RAG-indexed for natural language queries
 - **Three.js Orb** — 3D visualization that reflects agent state (listening, speaking, thinking)
 - **CustomEvent bridge** — Agent tool calls dispatch DOM events that the UI listens to, keeping voice logic and UI rendering decoupled
-- **Voice + Chat modes** — The agent supports both voice and text chat with seamless toggle. A minimize button keeps the session active while the user browses properties
-- **Mobile-first layout** — Responsive layout matching the SmartCrowd app: mobile header with filters/sort/cart/notifications, bottom navigation (Explore/Wallet/Home/Portfolio/Profile), safe-area-inset support for notched devices. Desktop sidebar hidden on mobile, mobile nav hidden on desktop
 - **Dynamic context** — The agent receives session variables at conversation start (`time_of_day`, `current_tab`, `live_property_count`) so it can greet users contextually and reference what's on screen
-- **Security headers** — CSP, HSTS, X-Frame-Options, and permissions policy (microphone=self, camera/geolocation/payment denied)
 
 **How the agent works for visitors:**
 
@@ -68,41 +90,28 @@ Because the prototype has no auth gate, anyone with the link can start a convers
 
 ---
 
-## What Can Sara Do?
+## Tech Stack
 
-**Tools** — client-side functions the agent calls during a conversation:
-
-| Tool | What it does | Try saying |
-|---|---|---|
-| `calculate_roi` | Computes net return after entry, admin, and exit fees for a given property + amount | "Calculate my return on 50,000 dirhams in SC-315" |
-| `get_renovation_status` | Checks renovation progress on Flip properties | "How far along is the renovation on SC-331?" |
-| `navigate_to_property` | Switches tabs, scrolls to the card, highlights it with a pulsing border | "Show me SC-315 on the dashboard" |
-| `start_investment` | Opens the investment dialog for Live properties | "I want to invest in this one" |
-
-**Knowledge base** — what Sara can answer without tools:
-- Property details across 234 listings (location, type, yield, status)
-- How fractional investing works on SmartCrowd
-- Fee structure (1.5% entry, 0.5% annual admin, 2.5% exit)
-- Hold vs Flip investment strategies
-
-**Interaction modes:**
-- Voice or text chat with seamless toggle
-- Minimize to keep the session active while browsing
-- Understands spoken SC codes ("S C three fifteen" → SC-315) and area names ("Jay Vee See" → JVC)
-
-**Guardrails:** Sara won't guarantee returns, give tax/legal advice, or use urgency tactics. Account-specific questions are redirected to support.
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16, React 19, TypeScript |
+| Voice AI | ElevenLabs Conversational AI + React SDK |
+| 3D | Three.js, React Three Fiber, Drei |
+| UI | Tailwind CSS 4, shadcn/ui, Framer Motion, Lucide icons |
+| Testing | Vitest — 30+ unit tests covering SC code normalization, area name normalization, ROI calculations (Hold/Flip/Exited), renovation status, navigation, and investment validation |
+| Analytics | Vercel Analytics |
 
 ---
 
 ## Why This Approach
 
-Most AI demos are wrappers around an API: send text, get text back. This project solves the harder problems that show up when you build a voice agent that actually operates a product.
+SmartCrowd already has a chatbot — an Intercom-style widget with async messaging and a help center. That approach has real strengths: human agents ensure accuracy on complex cases, and the help center lets users self-educate at their own pace. This voice agent isn't a replacement. It's a different layer, built for the tasks that a Q&A interface doesn't cover well.
 
-**Speech normalization is a real problem.** Users say "jay vee see" and mean JVC. They say "S C three fifteen" and mean SC-315. The agent tools include normalization logic that maps spoken input to structured property codes and area names — something you only discover matters when you test with real speech.
+**Beyond Q&A — the agent computes and acts.** Some tasks aren't questions. "What's my return on 50k in SC-315 after fees?" requires calculation, not retrieval. The voice agent runs tools that compute ROI with fee deductions, check renovation progress, navigate the dashboard to a specific property, and open the investment dialog — collapsing a multi-step funnel into a single conversation. It doesn't answer — it does.
 
-**Tools return narratives, not data.** The ROI calculator doesn't return `{ roi: 0.35 }`. It returns a formatted paragraph that accounts for entry fees, annual admin fees, and exit fees — ready for the agent to speak naturally. Designing tool output for an LLM that talks is fundamentally different from designing API responses.
+**Every conversation produces structured leads.** A traditional chatbot leaves you with unstructured transcripts to read through. This agent extracts structured fields from every session — budget, experience level, property preferences, objections, outcome — and scores each conversation on qualification, recommendation quality, and conversion progress. By the time a user finishes talking to Sara, SmartCrowd has a profiled lead with a quality scorecard, without any client-side instrumentation. See [Data Collection & Evaluation](#data-collection--evaluation) for the full schema.
 
-**The agent drives the UI.** When a user asks "show me SC-315," the agent calls `navigate_to_property`, which dispatches a CustomEvent. The dashboard switches tabs, scrolls to the card, and highlights it with a pulsing border. The voice agent isn't a sidebar widget — it's a primary interface for the product.
+**Scales the exploratory conversation.** Human agents are best for complex cases and high-value investors. But most initial conversations are exploratory — "what's available?", "how does this work?", "what would I earn on this one?". The voice agent handles that layer around the clock, so human agents focus where they add the most value.
 
 ---
 
@@ -136,13 +145,13 @@ This gives you a feedback loop: every conversation produces both structured lead
 
 ---
 
-## Tradeoffs
+## Tradeoffs & Future Work
 
 **Knowledge base vs. client tools — the line evolved through testing.**
 The ElevenLabs knowledge base handles property data and platform information via RAG. Client-side tools handle computation (ROI projections with fee deductions), real-time state (renovation progress), and UI actions (navigation, investment dialogs). The boundary wasn't designed upfront — it shifted as I tested what the agent handled well through retrieval vs. what needed deterministic tool execution.
 
 **Client-bundled data vs. real API.**
-All 234 properties are bundled into the JavaScript payload. Tool calls execute instantly with no network round-trip. This works for a prototype with a fixed dataset but wouldn't scale to thousands of properties or real-time pricing. The right production architecture would move search to an API with an index and keep only calculation tools client-side.
+All 234 properties are bundled into the JavaScript payload. The UI renders from this data, and tools like `calculate_roi` use it for computation — but property retrieval itself is handled by the ElevenLabs Knowledge Base via RAG, not by client-side tools. This works for a prototype with a fixed dataset but wouldn't scale to thousands of properties or real-time pricing. In production, both the UI and tools would query a live API instead of a static bundle.
 
 **Managed voice agent vs. custom pipeline.**
 ElevenLabs handles STT → LLM routing → TTS as a managed service. The alternative — stitching together Whisper + GPT + a TTS engine — gives more control but adds latency at every boundary and requires infrastructure for streaming. For a prototype focused on the agent-tool interaction layer, the managed approach was the right call.
@@ -158,76 +167,21 @@ ElevenLabs supports three ways to connect an agent to your application. This pro
 
 The current client-tool approach works because all property data is bundled in the browser and no tool needs secrets or external services. The moment you add a tool that writes to a database or calls a third-party API, that tool should move to a server-side endpoint.
 
+**What I'd improve in production:**
+- **Real backend + auth** — API backed by a database and search index, with user accounts for persistent preferences and investment history
+- **Conversation memory** — Persist conversation state across sessions so returning users can reference previous discussions
+- **Single-source knowledge base** — Move property data to server-side tools that query a live API, and shrink the knowledge base to static content only (brand, fees, FAQs) to eliminate data duplication
+
 ---
 
 ## Demo
 
-**[Live Demo →](#)** *(add your URL here)*
+**[Live Demo →](https://smartcrowd-voice.vercel.app/)**
 
 **What to try:**
 
 1. Browse the property dashboard — switch between Live, Funded, and Exited tabs
 2. Filter by investment type: Hold (rental income) or Flip (renovation + resale)
-3. Tap the mic and ask (or switch to chat mode and type):
-   - *"What properties do you have in JVC?"*
-   - *"Calculate my return on 50,000 dirhams in SC-315"*
-   - *"Show me that property on the dashboard"*
-   - *"I want to invest in this one"*
+3. Talk to Sara — see [What Can Sara Do?](#what-can-sara-do) for example prompts
 4. Minimize the agent and keep browsing — the session stays active
 5. Toggle dark/light mode in the sidebar
-
----
-
-## What I'd Improve
-
-**Real backend and auth.** Replace bundled property data with an API backed by a database and search index. Add user accounts so investment history and preferences persist. At scale, tool calls would need server-side execution with proper authorization.
-
-**Conversation memory.** The agent currently has no memory across sessions. A returning user should be able to say "show me the property we discussed last time" and get a meaningful response. This requires persisting conversation state and linking it to user identity.
-
-**Knowledge base evolution.** Currently, property data is duplicated — it lives in the ElevenLabs knowledge base (for RAG retrieval) and in `src/data/properties.ts` (for tools and UI rendering). In production, the knowledge base would shrink to static information only: brand personality, fee structure, how fractional investing works, and FAQs. Property-specific data would move to server-side tools that query a live API on demand, and the UI would fetch from the same API — giving you a single source of truth instead of two copies that can drift.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 16, React 19, TypeScript |
-| Voice AI | ElevenLabs Conversational AI + React SDK |
-| 3D | Three.js, React Three Fiber, Drei |
-| UI | Tailwind CSS 4, shadcn/ui, Framer Motion, Lucide icons |
-| Testing | Vitest — 30+ unit tests covering SC code normalization, area name normalization, ROI calculations (Hold/Flip/Exited), renovation status, navigation, and investment validation |
-| Analytics | Vercel Analytics |
-
-## Running Locally
-
-```bash
-git clone <repo-url>
-cd dummycrowd
-npm install
-```
-
-Create `.env.local`:
-
-```
-ELEVENLABS_API_KEY=your-api-key
-NEXT_PUBLIC_AGENT_ID=your-agent-id
-```
-
-```bash
-npm run dev
-```
-
-See [`docs/elevenlabs-setup-guide.md`](docs/elevenlabs-setup-guide.md) for ElevenLabs agent configuration.
-
-## Deployment
-
-This is a standard Next.js app — deploying to Vercel requires near-zero configuration.
-
-1. Push the repo to GitHub and import it in the [Vercel dashboard](https://vercel.com/new)
-2. Add two environment variables in the Vercel project settings:
-   - `ELEVENLABS_API_KEY` — your ElevenLabs API key
-   - `NEXT_PUBLIC_AGENT_ID` — your ElevenLabs agent ID
-3. Deploy — the `/api/signed-url` route works as a Vercel serverless function out of the box
-
-Make sure `.env.local` is in your `.gitignore` (it is by default in Next.js projects). Never commit API keys to the repository.
