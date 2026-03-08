@@ -495,15 +495,6 @@ export default function VoiceAgent() {
       {/* ---- CHAT: Messages ---- */}
       {view === "chat" && (
         <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
-          {connectionState === "connecting" && messages.length === 0 && (
-            <div className="flex-1 flex items-center justify-center h-full">
-              <div className="flex items-center gap-2 text-sc-text-muted">
-                <div className="h-1.5 w-1.5 rounded-full bg-sc-blue animate-pulse" />
-                <div className="h-1.5 w-1.5 rounded-full bg-sc-blue animate-pulse [animation-delay:150ms]" />
-                <div className="h-1.5 w-1.5 rounded-full bg-sc-blue animate-pulse [animation-delay:300ms]" />
-              </div>
-            </div>
-          )}
           {messages.map((msg, i) => (
             <div
               key={i}
