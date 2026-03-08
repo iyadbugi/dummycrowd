@@ -507,7 +507,7 @@ export default function VoiceAgent() {
           {messages.map((msg, i) => (
             <div
               key={i}
-              className={`flex animate-message-in ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
                 className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13px] leading-relaxed ${
@@ -528,11 +528,11 @@ export default function VoiceAgent() {
           )}
           {/* Typing indicator */}
           {waitingForResponse && (
-            <div className="flex justify-start animate-message-in">
-              <div className="flex items-center gap-1 rounded-2xl rounded-bl-sm bg-gray-50 dark:bg-white/6 px-4 py-3">
-                <div className="h-[6px] w-[6px] rounded-full bg-sc-text-muted/60 animate-bounce-dot" />
-                <div className="h-[6px] w-[6px] rounded-full bg-sc-text-muted/60 animate-bounce-dot [animation-delay:160ms]" />
-                <div className="h-[6px] w-[6px] rounded-full bg-sc-text-muted/60 animate-bounce-dot [animation-delay:320ms]" />
+            <div className="flex justify-start">
+              <div className="flex items-center gap-1.5 rounded-2xl rounded-bl-sm bg-gray-50 dark:bg-white/6 px-4 py-3">
+                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse" />
+                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse [animation-delay:150ms]" />
+                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse [animation-delay:300ms]" />
               </div>
             </div>
           )}
