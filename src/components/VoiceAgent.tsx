@@ -295,22 +295,18 @@ export default function VoiceAgent() {
   const handleSendMessage = useCallback(
     async (text: string) => {
       if (!text.trim()) return;
-      const trimmed = text.trim();
       setView("chat");
-      setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
-      setWaitingForResponse(true);
-      setTextInput("");
       conversation.setVolume({ volume: 0 });
       if (connectionState !== "connected") {
         suppressFirstMessageRef.current = true;
         const ok = await startSession({ textOnly: true });
-        if (!ok) {
-          setWaitingForResponse(false);
-          return;
-        }
+        if (!ok) return;
         conversation.setVolume({ volume: 0 });
       }
-      conversation.sendUserMessage(trimmed);
+      setMessages((prev) => [...prev, { role: "user", text: text.trim() }]);
+      setWaitingForResponse(true);
+      conversation.sendUserMessage(text.trim());
+      setTextInput("");
     },
     [connectionState, startSession, conversation]
   );
