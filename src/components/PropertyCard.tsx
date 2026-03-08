@@ -7,6 +7,8 @@ import {
   getPropertySpecs,
   getRemainingAmount,
   getFundedPercentage,
+  type PropertySpec,
+  type SpecIcon,
 } from "@/lib/property-utils";
 import { getPropertyImage } from "@/lib/property-images";
 import { Card } from "@/components/ui/card";
@@ -44,20 +46,25 @@ function getGradient(areaName: string, title: string): string {
 // ---------------------------------------------------------------------------
 // Spec icon helper
 // ---------------------------------------------------------------------------
-const specIcons = [Bed, Maximize, MapPin, Clock] as const;
+const specIconMap: Record<SpecIcon, typeof Bed> = {
+  bed: Bed,
+  size: Maximize,
+  location: MapPin,
+  clock: Clock,
+};
 
-function SpecRow({ specs }: { specs: string[] }) {
+function SpecRow({ specs }: { specs: PropertySpec[] }) {
   return (
     <div className="flex items-center gap-1.5 text-[13px] text-sc-text-muted flex-wrap">
       {specs.map((spec, i) => {
-        const Icon = specIcons[i] ?? MapPin;
+        const Icon = specIconMap[spec.icon];
         return (
           <span key={i} className="flex items-center gap-1">
             {i > 0 && (
               <span className="text-gray-300 dark:text-white/20 mx-0.5">|</span>
             )}
             <Icon className="w-3.5 h-3.5 shrink-0" />
-            <span>{spec}</span>
+            <span>{spec.value}</span>
           </span>
         );
       })}

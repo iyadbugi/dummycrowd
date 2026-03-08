@@ -46,39 +46,46 @@ export function formatPriceShort(amount: number): string {
   return amount.toString();
 }
 
+export type SpecIcon = "bed" | "size" | "location" | "clock";
+
+export interface PropertySpec {
+  icon: SpecIcon;
+  value: string;
+}
+
 /**
- * Returns an array of property spec strings for display.
- * Example: ["1", "824 sq ft", "JVT", "Long term"]
+ * Returns an array of property specs with their associated icon types.
+ * Only includes specs where data is available.
  */
-export function getPropertySpecs(property: Property): string[] {
-  const specs: string[] = [];
+export function getPropertySpecs(property: Property): PropertySpec[] {
+  const specs: PropertySpec[] = [];
 
   // Bedrooms (only if > 0)
   if (property.physical.bedrooms > 0) {
-    specs.push(String(property.physical.bedrooms));
+    specs.push({ icon: "bed", value: String(property.physical.bedrooms) });
   }
 
   // Square footage (if available)
   if (property.physical.sqft) {
-    specs.push(`${property.physical.sqft.toLocaleString("en-US")} sq ft`);
+    specs.push({ icon: "size", value: `${property.physical.sqft.toLocaleString("en-US")} sq ft` });
   }
 
   // Area display name (if available, fall back to extracting from title)
   if (property.location.area) {
-    specs.push(property.location.area.displayName);
+    specs.push({ icon: "location", value: property.location.area.displayName });
   } else {
     const areaFromTitle = extractAreaFromTitle(property.title);
     if (areaFromTitle) {
-      specs.push(areaFromTitle);
+      specs.push({ icon: "location", value: areaFromTitle });
     }
   }
 
   // Investment term (for HOLD properties with investmentCategory)
   if (property.investmentType === "HOLD" && property.investmentCategory) {
     if (property.investmentCategory === "LONG_TERM") {
-      specs.push("Long term");
+      specs.push({ icon: "clock", value: "Long term" });
     } else if (property.investmentCategory === "SHORT_TERM") {
-      specs.push("Short term");
+      specs.push({ icon: "clock", value: "Short term" });
     }
   }
 
