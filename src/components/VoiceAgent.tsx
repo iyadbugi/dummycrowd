@@ -141,7 +141,7 @@ export default function VoiceAgent() {
     },
     onMessage: (props: { message: string; source: string; role: string }) => {
       const clean = props.message
-        .replace(/<\/?(?:Sara|Arabic)>/gi, "")
+        .replace(/<\/?[a-zA-Z][a-zA-Z0-9]*>/gi, "")
         .replace(/\[[a-z]+(?:ing)?\]\s*/gi, "")
         .replace(/([a-zA-Z])(\d)/g, "$1 $2")
         .replace(/(\d)([a-zA-Z])/g, "$1 $2")
