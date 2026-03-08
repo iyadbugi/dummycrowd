@@ -152,6 +152,18 @@ function formatWithCommas(n: number): string {
  * Convert number-word sequences in text to digit representations.
  */
 export function wordsToDigits(text: string): string {
+  // Pre-pass: convert mixed digit+magnitude patterns like "20 million" → "20,000,000"
+  // and "3.57 million" → "3,570,000"
+  text = text.replace(
+    /(\d+(?:\.\d+)?)\s*(million|billion|thousand)/gi,
+    (_, num, mag) => {
+      const n = parseFloat(num);
+      const multiplier = MAGNITUDES[mag.toLowerCase()];
+      if (multiplier === undefined) return _;
+      return formatWithCommas(Math.round(n * multiplier));
+    }
+  );
+
   // Split into tokens, preserving whitespace and punctuation structure
   const tokens = text.split(/(\s+)/);
   const result: string[] = [];

@@ -140,7 +140,12 @@ export default function VoiceAgent() {
       else if (m.mode === "listening") setAgentMode("listening");
     },
     onMessage: (props: { message: string; source: string; role: string }) => {
-      const clean = props.message.replace(/<\/?Sara>/gi, "").trim();
+      const clean = props.message
+        .replace(/<\/?Sara>/gi, "")
+        .replace(/\[(?:warm|reassuring|patient|curious|excited|serious|slow|laugh|chuckles)\]\s*/gi, "")
+        .replace(/([a-zA-Z])(\d)/g, "$1 $2")
+        .replace(/(\d)([a-zA-Z])/g, "$1 $2")
+        .trim();
       if (!clean) return;
       if (props.role === "agent") {
         if (suppressFirstMessageRef.current) {
