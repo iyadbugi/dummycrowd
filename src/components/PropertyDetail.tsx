@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Property } from "@/types/property";
-import { getPropertyImage } from "@/lib/property-images";
+import { getPropertyImages } from "@/lib/property-images";
 import { setCurrentTab } from "@/lib/dashboard-context";
 import {
   ArrowRight,
@@ -14,10 +14,19 @@ import {
   MapPin,
   Clock,
   Check,
+  ChevronLeft,
+  ChevronRight,
   FileText,
   Download,
   Shield,
+  X,
 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type Tab = "live" | "funded" | "exited";
 type DetailTab = "overview" | "financials" | "location" | "documents" | "qa";
@@ -47,7 +56,12 @@ export default function PropertyDetail({
   const isHold = p.investmentType === "HOLD";
   const isLive = p.propertyStatus === "LIVE";
   const area = p.location.area?.displayName ?? "";
-  const imageUrl = getPropertyImage(p.location.area?.name ?? "", p.title);
+  const images = getPropertyImages(
+    p.code,
+    p.location.area?.name ?? "",
+    p.title,
+    5
+  );
 
   const yieldValue =
     p.rental.dividendYield ?? p.rental.grossYield ?? null;
@@ -58,6 +72,8 @@ export default function PropertyDetail({
   const investors = p.investors || p.performance.investors;
 
   const [detailTab, setDetailTab] = useState<DetailTab>("overview");
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const lightboxOpen = lightboxIndex !== null;
 
   // Let the voice agent know the current context when user lands here
   useEffect(() => {
@@ -66,6 +82,31 @@ export default function PropertyDetail({
       new CustomEvent("dashboard-tab-change", { detail: { tab: parentTab } })
     );
   }, [parentTab]);
+
+  const openLightbox = useCallback((i: number) => setLightboxIndex(i), []);
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const nextImage = useCallback(
+    () =>
+      setLightboxIndex((i) => (i === null ? i : (i + 1) % images.length)),
+    [images.length]
+  );
+  const prevImage = useCallback(
+    () =>
+      setLightboxIndex((i) =>
+        i === null ? i : (i - 1 + images.length) % images.length
+      ),
+    [images.length]
+  );
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") nextImage();
+      else if (e.key === "ArrowLeft") prevImage();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen, nextImage, prevImage]);
 
   function openInvest() {
     window.dispatchEvent(
@@ -95,70 +136,133 @@ export default function PropertyDetail({
         </span>
       </div>
 
-      {/* Hero */}
-      <div className="flex flex-col gap-2.5">
-        <div className="relative aspect-[21/9] overflow-hidden rounded-md border border-hairline bg-sand-200">
-          <img
-            src={imageUrl}
-            alt={p.title}
-            className="h-full w-full object-cover"
-            style={{ filter: "contrast(0.95) saturate(0.88)" }}
-          />
-          <div className="pointer-events-none absolute inset-0 flex items-start justify-between p-3">
-            <div className="flex gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-900 backdrop-blur-md">
-                <span
-                  className={`h-[5px] w-[5px] rounded-full ${
-                    isHold ? "bg-forest-700" : "bg-terra-500"
-                  }`}
-                />
-                {isHold ? "Hold" : "Flip"}
-              </span>
-              {isLive && p.rentalStatus === "RENTED" && (
-                <span className="inline-flex items-center rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-600 backdrop-blur-md">
-                  Rented
-                </span>
-              )}
-              {!isHold && (
-                <span className="inline-flex items-center rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-600 backdrop-blur-md">
-                  {p.performance.investmentPeriod} mo flip
-                </span>
-              )}
-            </div>
-            <span className="whitespace-nowrap rounded-[3px] bg-black/55 px-[7px] py-[3px] font-mono text-[10px] font-medium tracking-[0.04em] text-paper backdrop-blur-md">
-              {p.code}
-            </span>
-          </div>
-        </div>
-        {/* Thumbnails (placeholder — would be real gallery) */}
-        <div className="flex gap-2.5">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className={`aspect-[4/3] w-[90px] overflow-hidden rounded-sm border ${
-                i === 0 ? "border-ink-900" : "border-hairline"
-              } bg-sand-100`}
-            >
-              <img
-                src={imageUrl}
-                alt=""
-                className="h-full w-full object-cover"
-                style={{
-                  filter: `contrast(0.95) saturate(${0.88 - i * 0.2})`,
-                }}
-              />
-            </div>
-          ))}
-          <div className="flex aspect-[4/3] w-[90px] items-center justify-center rounded-sm border border-hairline bg-sand-100 font-mono text-[11px] text-ink-600">
-            +7
-          </div>
-        </div>
-      </div>
-
-      {/* Two-column detail layout */}
+      {/* Two-column detail layout (gallery lives inside the main column) */}
       <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[1fr_340px]">
         {/* Main */}
         <div className="min-w-0">
+          {/* Gallery: mosaic on desktop, hero + thumbs on mobile */}
+          <div className="mb-5">
+            {/* Desktop mosaic */}
+            <div className="relative hidden h-[440px] grid-cols-4 grid-rows-2 gap-2 lg:grid">
+              <button
+                type="button"
+                onClick={() => openLightbox(0)}
+                className="group relative col-span-2 row-span-2 cursor-zoom-in overflow-hidden rounded-md border border-hairline bg-sand-200 text-left"
+                aria-label="Open photo 1"
+              >
+                <img
+                  src={images[0]}
+                  alt={p.title}
+                  className="h-full w-full object-cover transition-transform duration-[250ms] ease-slice group-hover:scale-[1.015]"
+                  style={{ filter: "contrast(0.95) saturate(0.88)" }}
+                />
+                <div className="pointer-events-none absolute inset-0 flex items-start justify-between p-3">
+                  <div className="flex gap-2">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-900 backdrop-blur-md">
+                      <span
+                        className={`h-[5px] w-[5px] rounded-full ${
+                          isHold ? "bg-forest-700" : "bg-terra-500"
+                        }`}
+                      />
+                      {isHold ? "Hold" : "Flip"}
+                    </span>
+                    {isLive && p.rentalStatus === "RENTED" && (
+                      <span className="inline-flex items-center rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-600 backdrop-blur-md">
+                        Rented
+                      </span>
+                    )}
+                    {!isHold && (
+                      <span className="inline-flex items-center rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-600 backdrop-blur-md">
+                        {p.performance.investmentPeriod} mo flip
+                      </span>
+                    )}
+                  </div>
+                  <span className="whitespace-nowrap rounded-[3px] bg-black/55 px-[7px] py-[3px] font-mono text-[10px] font-medium tracking-[0.04em] text-paper backdrop-blur-md">
+                    {p.code}
+                  </span>
+                </div>
+              </button>
+              {[1, 2, 3, 4].map((i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => openLightbox(i)}
+                  className="group relative cursor-zoom-in overflow-hidden rounded-md border border-hairline bg-sand-200 text-left"
+                  aria-label={`Open photo ${i + 1}`}
+                >
+                  <img
+                    src={images[i]}
+                    alt=""
+                    className="h-full w-full object-cover transition-transform duration-[250ms] ease-slice group-hover:scale-[1.03]"
+                    style={{ filter: "contrast(0.95) saturate(0.88)" }}
+                  />
+                  {i === 4 && (
+                    <span
+                      className="pointer-events-none absolute bottom-2 right-2 rounded-sm bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-ink-900 backdrop-blur-md ring-1 ring-hairline"
+                    >
+                      Show all photos
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile: hero + thumb strip */}
+            <div className="flex flex-col gap-2.5 lg:hidden">
+              <button
+                type="button"
+                onClick={() => openLightbox(0)}
+                className="relative aspect-[16/10] cursor-zoom-in overflow-hidden rounded-md border border-hairline bg-sand-200 text-left"
+                aria-label="Open photo 1"
+              >
+                <img
+                  src={images[0]}
+                  alt={p.title}
+                  className="h-full w-full object-cover"
+                  style={{ filter: "contrast(0.95) saturate(0.88)" }}
+                />
+                <div className="pointer-events-none absolute inset-0 flex items-start justify-between p-3">
+                  <div className="flex gap-2">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-900 backdrop-blur-md">
+                      <span
+                        className={`h-[5px] w-[5px] rounded-full ${
+                          isHold ? "bg-forest-700" : "bg-terra-500"
+                        }`}
+                      />
+                      {isHold ? "Hold" : "Flip"}
+                    </span>
+                    {isLive && p.rentalStatus === "RENTED" && (
+                      <span className="inline-flex items-center rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-600 backdrop-blur-md">
+                        Rented
+                      </span>
+                    )}
+                  </div>
+                  <span className="whitespace-nowrap rounded-[3px] bg-black/55 px-[7px] py-[3px] font-mono text-[10px] font-medium tracking-[0.04em] text-paper backdrop-blur-md">
+                    {p.code}
+                  </span>
+                </div>
+              </button>
+              <div className="flex gap-2.5 overflow-x-auto">
+                {images.slice(1).map((src, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => openLightbox(i + 1)}
+                    className="aspect-[4/3] w-[90px] shrink-0 cursor-zoom-in overflow-hidden rounded-sm border border-hairline bg-sand-100"
+                    aria-label={`Open photo ${i + 2}`}
+                  >
+                    <img
+                      src={src}
+                      alt=""
+                      className="h-full w-full object-cover"
+                      style={{ filter: "contrast(0.95) saturate(0.88)" }}
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="mt-2 flex items-center gap-3">
             <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-ink-500">
               {area} · {p.location.city.displayName || "Dubai"}
@@ -286,7 +390,7 @@ export default function PropertyDetail({
         </div>
 
         {/* Right rail */}
-        <aside className="flex flex-col gap-3 lg:sticky lg:top-5">
+        <aside className="flex flex-col gap-3 lg:sticky lg:top-5 lg:max-h-[calc(100vh-2.5rem)] lg:overflow-y-auto lg:pr-1">
           <div className="flex flex-col gap-3.5 rounded-md border border-hairline bg-paper p-[18px]">
             <div className="flex items-start justify-between gap-2.5">
               <div>
@@ -394,6 +498,86 @@ export default function PropertyDetail({
           </div>
         </aside>
       </div>
+
+      <Dialog
+        open={lightboxOpen}
+        onOpenChange={(o) => {
+          if (!o) closeLightbox();
+        }}
+      >
+        <DialogContent
+          className="!fixed !inset-0 !top-0 !left-0 !translate-x-0 !translate-y-0 w-screen h-screen max-w-none sm:max-w-none max-h-none border-none bg-transparent p-0 gap-0 rounded-none shadow-none overflow-hidden"
+          showCloseButton={false}
+        >
+          <DialogTitle className="sr-only">
+            {p.title} — photo {(lightboxIndex ?? 0) + 1} of {images.length}
+          </DialogTitle>
+          <DialogDescription className="sr-only">
+            Photo gallery for {p.code}. Use the arrow keys or the buttons to
+            navigate.
+          </DialogDescription>
+          <div className="relative flex h-full w-full items-center justify-center">
+            {/* Blurred image backdrop */}
+            {lightboxOpen && (
+              <img
+                src={images[lightboxIndex!]}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover"
+                style={{ filter: "blur(56px) saturate(1.15) brightness(0.55)" }}
+              />
+            )}
+            {/* Subtle vignette to deepen edges */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%)",
+              }}
+            />
+
+            {lightboxOpen && (
+              <img
+                src={images[lightboxIndex!]}
+                alt={`${p.title} photo ${lightboxIndex! + 1}`}
+                className="relative max-h-[92vh] max-w-[92vw] rounded-sm object-contain shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]"
+              />
+            )}
+
+            <button
+              type="button"
+              onClick={closeLightbox}
+              aria-label="Close"
+              className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20"
+            >
+              <X className="h-5 w-5" strokeWidth={1.8} />
+            </button>
+
+            <button
+              type="button"
+              onClick={prevImage}
+              aria-label="Previous photo"
+              className="absolute left-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20"
+            >
+              <ChevronLeft className="h-6 w-6" strokeWidth={1.8} />
+            </button>
+            <button
+              type="button"
+              onClick={nextImage}
+              aria-label="Next photo"
+              className="absolute right-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20"
+            >
+              <ChevronRight className="h-6 w-6" strokeWidth={1.8} />
+            </button>
+
+            <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full bg-black/50 px-4 py-2 font-mono text-[12px] text-white backdrop-blur-md ring-1 ring-white/10">
+              <span>
+                {(lightboxIndex ?? 0) + 1} / {images.length}
+              </span>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

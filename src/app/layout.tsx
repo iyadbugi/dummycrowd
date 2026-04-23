@@ -49,7 +49,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} antialiased bg-paper text-ink-900`}
       >
-        <div className="flex flex-col md:flex-row min-h-screen">
+        <div className="flex flex-col md:flex-row h-screen">
           {/* Desktop rail */}
           <div className="hidden md:block w-[220px] flex-shrink-0">
             <Sidebar />
@@ -62,7 +62,7 @@ export default function RootLayout({
                 <TopBar />
               </Suspense>
             </div>
-            <main className="flex-1 overflow-y-auto px-4 pb-28 pt-4 md:px-7 md:pt-7 md:pb-20">
+            <main className="flex-1 overflow-y-auto px-4 pb-28 pt-4 md:px-7 md:pt-7 md:pb-6">
               {children}
             </main>
           </div>

@@ -76,7 +76,7 @@ export default function InvestmentDialog() {
       ? netInvested *
         (1 + (annual / 100) * (p.performance.investmentPeriod / 12))
       : 0;
-  const imageUrl = getPropertyImage(p.location.area?.name ?? "", p.title);
+  const imageUrl = getPropertyImage(p.code, p.location.area?.name ?? "", p.title);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

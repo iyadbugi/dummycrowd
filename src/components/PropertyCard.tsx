@@ -38,7 +38,7 @@ export default function PropertyCard({
   const isExited = property.propertyStatus === "EXITED";
 
   const areaName = property.location.area?.name ?? "";
-  const imageUrl = getPropertyImage(areaName, property.title);
+  const imageUrl = getPropertyImage(property.code, areaName, property.title);
 
   // Primary stat (left)
   const yieldValue = isHold
