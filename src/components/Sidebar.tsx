@@ -71,9 +71,13 @@ export default function Sidebar() {
   return (
     <aside className="sticky top-0 flex h-screen w-[220px] flex-col gap-0.5 border-r border-hairline bg-paper px-[14px] pb-[14px]">
       {/* Brand */}
-      <div className="mb-1 flex h-[60px] shrink-0 items-center px-2">
+      <Link
+        href="/"
+        aria-label="Slice home"
+        className="mb-1 flex h-[60px] shrink-0 items-center rounded-sm px-2 transition-colors hover:opacity-80"
+      >
         <Logo height={34} />
-      </div>
+      </Link>
 
       {/* Primary nav */}
       <div className="flex flex-col gap-px pt-2.5">
