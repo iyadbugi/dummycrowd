@@ -13,9 +13,6 @@ interface PropertyGridProps {
   highlightedCode?: string | null;
 }
 
-// ---------------------------------------------------------------------------
-// Pagination helper: generate page numbers with ellipsis
-// ---------------------------------------------------------------------------
 function getPageNumbers(
   currentPage: number,
   totalPages: number
@@ -23,26 +20,13 @@ function getPageNumbers(
   if (totalPages <= 7) {
     return Array.from({ length: totalPages }, (_, i) => i);
   }
-
   const pages: (number | "ellipsis")[] = [0];
-
-  if (currentPage > 2) {
-    pages.push("ellipsis");
-  }
-
+  if (currentPage > 2) pages.push("ellipsis");
   const start = Math.max(1, currentPage - 1);
   const end = Math.min(totalPages - 2, currentPage + 1);
-
-  for (let i = start; i <= end; i++) {
-    pages.push(i);
-  }
-
-  if (currentPage < totalPages - 3) {
-    pages.push("ellipsis");
-  }
-
+  for (let i = start; i <= end; i++) pages.push(i);
+  if (currentPage < totalPages - 3) pages.push("ellipsis");
   pages.push(totalPages - 1);
-
   return pages;
 }
 
@@ -52,7 +36,6 @@ export default function PropertyGrid({
 }: PropertyGridProps) {
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Navigate to highlighted property's page
   useEffect(() => {
     if (highlightedCode) {
       const index = properties.findIndex((p) => p.code === highlightedCode);
@@ -62,7 +45,6 @@ export default function PropertyGrid({
     }
   }, [highlightedCode, properties]);
 
-  // Reset to page 0 only when the properties array itself changes (tab/filter switch)
   const prevPropertiesRef = useRef(properties);
   useEffect(() => {
     if (prevPropertiesRef.current !== properties && !highlightedCode) {
@@ -73,9 +55,11 @@ export default function PropertyGrid({
 
   if (properties.length === 0) {
     return (
-      <p className="text-center text-sc-text-muted py-12">
-        No properties found
-      </p>
+      <div className="rounded-md border border-dashed border-hairline px-6 py-12 text-center">
+        <p className="text-[13px] text-ink-600">
+          No properties match your filters.
+        </p>
+      </div>
     );
   }
 
@@ -86,17 +70,17 @@ export default function PropertyGrid({
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {currentProperties.map((p, index) => (
           <motion.div
             key={p.id}
             className="h-full"
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.4,
-              delay: index * 0.05,
-              ease: [0.25, 0.1, 0.25, 1],
+              duration: 0.3,
+              delay: index * 0.03,
+              ease: [0.22, 1, 0.36, 1],
             }}
           >
             <PropertyCard
@@ -107,49 +91,43 @@ export default function PropertyGrid({
         ))}
       </div>
 
-      {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-1 mt-8 pt-6 border-t border-gray-100 dark:border-white/10 mb-28 md:mb-0">
-          {/* Previous */}
+        <div className="mt-8 mb-28 flex items-center justify-center gap-1 border-t border-hairline-2 pt-6 md:mb-0">
           <button
             disabled={currentPage === 0}
-            onClick={() => setCurrentPage((prev) => prev - 1)}
-            className="flex items-center justify-center w-9 h-9 rounded-lg text-sc-text-muted hover:bg-gray-100 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            onClick={() => setCurrentPage((p) => p - 1)}
+            className="flex h-9 w-9 items-center justify-center rounded-md text-ink-600 transition-colors hover:bg-sand-100 disabled:cursor-not-allowed disabled:opacity-30"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="h-4 w-4" strokeWidth={1.6} />
           </button>
-
-          {/* Page numbers */}
           {pageNumbers.map((page, i) =>
             page === "ellipsis" ? (
               <span
                 key={`ellipsis-${i}`}
-                className="w-9 h-9 flex items-center justify-center text-sc-text-muted text-sm"
+                className="flex h-9 w-9 items-center justify-center font-mono text-[12px] text-ink-400"
               >
-                ...
+                …
               </span>
             ) : (
               <button
                 key={page}
                 onClick={() => setCurrentPage(page)}
-                className={`w-9 h-9 rounded-lg text-sm font-medium transition-colors ${
+                className={`h-9 w-9 rounded-md font-mono text-[12px] font-medium transition-colors ${
                   currentPage === page
-                    ? "bg-sc-blue text-white shadow-sm"
-                    : "text-sc-text-muted hover:bg-gray-100 dark:hover:bg-white/5"
+                    ? "bg-ink-900 text-paper"
+                    : "text-ink-600 hover:bg-sand-100"
                 }`}
               >
                 {page + 1}
               </button>
             )
           )}
-
-          {/* Next */}
           <button
             disabled={currentPage === totalPages - 1}
-            onClick={() => setCurrentPage((prev) => prev + 1)}
-            className="flex items-center justify-center w-9 h-9 rounded-lg text-sc-text-muted hover:bg-gray-100 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            onClick={() => setCurrentPage((p) => p + 1)}
+            className="flex h-9 w-9 items-center justify-center rounded-md text-ink-600 transition-colors hover:bg-sand-100 disabled:cursor-not-allowed disabled:opacity-30"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="h-4 w-4" strokeWidth={1.6} />
           </button>
         </div>
       )}

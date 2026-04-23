@@ -1,28 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import MobileHeader from "@/components/MobileHeader";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import VoiceAgent from "@/components/VoiceAgent";
 import InvestmentDialog from "@/components/InvestmentDialog";
-import ThemeProvider from "@/components/ThemeProvider";
+import TopBar from "@/components/TopBar";
 import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-slice-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-slice-serif",
   subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-slice-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "SmartCrowd - Explore Properties",
+  title: "Slice · Own a slice from AED 500",
   description:
-    "Browse fractional real estate investment opportunities in Dubai",
+    "Fractional real estate investing in Dubai. Shariah-compliant, DFSA-regulated.",
 };
 
 export const viewport: Viewport = {
@@ -35,26 +44,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} antialiased bg-paper text-ink-900`}
       >
-        <ThemeProvider>
-          <div className="flex flex-col md:flex-row h-screen bg-sc-gray-bg dark:bg-[#0B1A33] transition-colors duration-300">
-            {/* Sidebar: desktop only */}
-            <div className="hidden md:block p-3 flex-shrink-0">
-              <Sidebar />
+        <div className="flex flex-col md:flex-row min-h-screen">
+          {/* Desktop rail */}
+          <div className="hidden md:block w-[220px] flex-shrink-0">
+            <Sidebar />
+          </div>
+          {/* Mobile header */}
+          <MobileHeader />
+          <div className="flex-1 flex flex-col min-w-0">
+            <div className="hidden md:block">
+              <TopBar />
             </div>
-            {/* Mobile header */}
-            <MobileHeader />
-            <main className="flex-1 overflow-y-auto p-4 pb-28 md:p-6 md:pb-6">
+            <main className="flex-1 overflow-y-auto px-4 pb-28 pt-4 md:px-7 md:pt-7 md:pb-20">
               {children}
             </main>
           </div>
-          <MobileBottomNav />
-          <VoiceAgent />
-          <InvestmentDialog />
-        </ThemeProvider>
+        </div>
+        <MobileBottomNav />
+        <VoiceAgent />
+        <InvestmentDialog />
         <Analytics />
       </body>
     </html>

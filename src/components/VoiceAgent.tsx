@@ -53,10 +53,13 @@ function unlockAudioForIOS(): void {
 /*  Orb (lazy-loaded, no SSR)                                         */
 /* ------------------------------------------------------------------ */
 
+// Slice forest-green orb palette (matches breathing gradient in Slice prototype)
+const ORB_COLORS: [string, string] = ["#A8C5AE", "#5A8566"];
+
 function OrbFallback() {
   return (
     <div className="h-full w-full flex items-center justify-center">
-      <div className="h-3/5 w-3/5 rounded-full bg-gradient-to-br from-[#2563EB] to-[#3B82F6] animate-pulse opacity-60" />
+      <div className="h-3/5 w-3/5 rounded-full bg-[radial-gradient(circle_at_30%_30%,#B8D0BD,#8AAE92_60%,#4F7A5C)] animate-pulse opacity-80" />
     </div>
   );
 }
@@ -368,30 +371,23 @@ export default function VoiceAgent() {
 
   /* ---- Render ---- */
 
-  // State: Minimized pill
+  // State: Minimized FAB pill (Slice style — dark ink-900, forest orb)
   const isActive = connectionState === "connected" || connectionState === "connecting";
   if (view === "minimized") {
     return (
       <button
         onClick={expand}
-        className={`fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex items-center gap-3 rounded-full bg-white/80 dark:bg-[#111F42]/90 backdrop-blur-xl border pl-1.5 pr-5 py-1.5 shadow-lg shadow-black/5 dark:shadow-black/20 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group cursor-pointer ${
-          isActive
-            ? "border-sc-blue/40 dark:border-sc-blue/30"
-            : "border-gray-200/60 dark:border-white/10"
-        }`}
+        className="fixed bottom-[84px] md:bottom-5 right-4 md:right-5 z-50 flex items-center gap-2.5 rounded-full bg-ink-900 pl-2 pr-4 py-2 text-[12.5px] font-medium text-paper shadow-pop transition-all duration-200 ease-slice hover:brightness-110 active:scale-[0.98] cursor-pointer"
+        aria-label={isActive ? "Expand Sara" : "Talk to Sara"}
       >
-        {/* Mini orb */}
-        <div className="h-9 w-9 rounded-full overflow-hidden shrink-0">
-          <Orb
-            colors={["#2563EB", "#3B82F6"]}
-            agentState={isActive ? orbState : null}
-          />
+        <div className="h-[26px] w-[26px] shrink-0 overflow-hidden rounded-full">
+          <Orb colors={ORB_COLORS} agentState={isActive ? orbState : null} />
         </div>
-        <span className="text-sm font-medium text-sc-text-dark whitespace-nowrap">
+        <span className="whitespace-nowrap">
           {isActive ? "Sara is active" : "Talk to Sara"}
         </span>
         {isActive && (
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+          <span className="h-[5px] w-[5px] shrink-0 rounded-full bg-[#7FB08C]" />
         )}
       </button>
     );
@@ -399,93 +395,89 @@ export default function VoiceAgent() {
 
   // Panel container (shared across idle, voice, chat)
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-white dark:bg-[#0F1D38] md:inset-auto md:bottom-6 md:right-6 md:w-[380px] md:h-[540px] md:rounded-2xl md:border md:border-gray-200/60 md:dark:border-white/8 md:shadow-2xl md:shadow-black/10 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex flex-col overflow-hidden bg-paper md:inset-auto md:bottom-5 md:right-5 md:h-[540px] md:w-[380px] md:rounded-md md:border md:border-hairline md:shadow-pop">
       {/* ---- Header ---- */}
-      <div className="flex items-center justify-between px-5 py-3.5 shrink-0">
+      <div className="flex shrink-0 items-center justify-between border-b border-hairline-2 px-5 py-3.5">
         <div className="flex items-center gap-2.5">
-          <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[13px] font-semibold tracking-wide text-sc-text-dark uppercase">
+          <div className="h-2 w-2 rounded-full bg-forest-500 sl-breathe" />
+          <span className="text-[13px] font-medium tracking-[0.04em] text-ink-900 uppercase">
             Sara
           </span>
         </div>
-        <div className="flex items-center gap-1.5">
-          {/* Mode toggle — only when connected */}
+        <div className="flex items-center gap-1">
           {connectionState === "connected" && view === "voice" && (
             <button
               onClick={switchToChat}
-              className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[11px] font-medium text-sc-text-muted hover:text-sc-text-dark hover:bg-gray-100 dark:hover:bg-white/8 transition-colors"
+              className="flex h-7 w-7 items-center justify-center rounded-sm text-ink-600 transition-colors hover:bg-sand-100 hover:text-ink-900"
               title="Switch to chat"
             >
-              <MessageSquare className="h-3.5 w-3.5" />
+              <MessageSquare className="h-3.5 w-3.5" strokeWidth={1.6} />
             </button>
           )}
           {connectionState === "connected" && view === "chat" && (
             <button
               onClick={switchToVoice}
-              className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[11px] font-medium text-sc-text-muted hover:text-sc-text-dark hover:bg-gray-100 dark:hover:bg-white/8 transition-colors"
+              className="flex h-7 w-7 items-center justify-center rounded-sm text-ink-600 transition-colors hover:bg-sand-100 hover:text-ink-900"
               title="Switch to voice"
             >
-              <Phone className="h-3.5 w-3.5" />
+              <Phone className="h-3.5 w-3.5" strokeWidth={1.6} />
             </button>
           )}
-          {/* Minimize */}
           <button
             onClick={minimize}
-            className="flex items-center justify-center h-7 w-7 rounded-full text-sc-text-muted hover:text-sc-text-dark hover:bg-gray-100 dark:hover:bg-white/8 transition-colors"
+            className="flex h-7 w-7 items-center justify-center rounded-sm text-ink-600 transition-colors hover:bg-sand-100 hover:text-ink-900"
             title="Minimize"
           >
-            <Minus className="h-4 w-4" />
+            <Minus className="h-4 w-4" strokeWidth={1.6} />
           </button>
-          {/* Close / End */}
           <button
             onClick={
-              connectionState === "connected" ? endSession : () => setView("minimized")
+              connectionState === "connected"
+                ? endSession
+                : () => setView("minimized")
             }
-            className="flex items-center justify-center h-7 w-7 rounded-full text-sc-text-muted hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
+            className="flex h-7 w-7 items-center justify-center rounded-sm text-ink-600 transition-colors hover:bg-sand-100 hover:text-terra-700"
             title={connectionState === "connected" ? "End session" : "Close"}
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4" strokeWidth={1.6} />
           </button>
         </div>
       </div>
 
-      {/* Thin separator */}
-      <div className="h-px bg-gray-100 dark:bg-white/6 mx-5" />
-
       {/* ---- IDLE: Orb invitation ---- */}
       {view === "idle" && (
-        <div className="flex-1 flex flex-col items-center justify-center gap-4 px-5">
+        <div className="flex flex-1 flex-col items-center justify-center gap-4 px-5">
           <button
             onClick={handleCallStart}
-            className="group h-40 w-40 rounded-full cursor-pointer transition-transform hover:scale-105 active:scale-95"
+            className="group h-40 w-40 cursor-pointer rounded-full transition-transform hover:scale-105 active:scale-95"
             aria-label="Start voice call"
           >
-            <Orb colors={["#2563EB", "#3B82F6"]} agentState={null} />
+            <Orb colors={ORB_COLORS} agentState={null} />
           </button>
-          <p className="text-sm text-sc-text-muted">
-            Tap to call, or type below
+          <p className="font-mono text-[11px] text-ink-500">
+            Tap the orb to speak, or type below
           </p>
         </div>
       )}
 
       {/* ---- VOICE: Active orb ---- */}
       {view === "voice" && (
-        <div className="flex-1 flex flex-col items-center justify-center gap-3 px-5">
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 px-5">
           <div className="h-44 w-44">
-            <Orb colors={["#2563EB", "#3B82F6"]} agentState={orbState} />
+            <Orb colors={ORB_COLORS} agentState={orbState} />
           </div>
-          <p className="text-xs font-medium text-sc-text-muted tracking-wide">
+          <p className="font-mono text-[11px] font-medium tracking-[0.02em] text-ink-600">
             {statusText}
           </p>
           {errorMsg && (
-            <p className="text-xs text-red-500">{errorMsg}</p>
+            <p className="text-[12px] text-data-neg">{errorMsg}</p>
           )}
           {connectionState === "connected" && (
             <button
               onClick={endSession}
-              className="mt-2 flex items-center gap-2 rounded-full bg-red-500/10 text-red-600 dark:text-red-400 px-5 py-2 text-xs font-medium hover:bg-red-500/20 transition-colors"
+              className="mt-2 inline-flex items-center gap-2 rounded-md border border-hairline bg-paper px-4 py-1.5 text-[12px] font-medium text-terra-700 transition-colors hover:bg-terra-100"
             >
-              <PhoneOff className="h-3.5 w-3.5" />
+              <PhoneOff className="h-3.5 w-3.5" strokeWidth={1.8} />
               End call
             </button>
           )}
@@ -494,36 +486,34 @@ export default function VoiceAgent() {
 
       {/* ---- CHAT: Messages ---- */}
       {view === "chat" && (
-        <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
+        <div className="flex-1 space-y-3 overflow-y-auto px-5 py-4">
           {messages.map((msg, i) => (
             <div
               key={i}
               className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13px] leading-relaxed ${
+                className={`max-w-[85%] rounded-md px-3.5 py-2.5 text-[13px] leading-[1.5] ${
                   msg.role === "user"
-                    ? "bg-sc-blue text-white rounded-br-sm"
-                    : "bg-gray-50 dark:bg-white/6 text-sc-text-dark rounded-bl-sm"
+                    ? "bg-ink-900 text-paper rounded-br-xs"
+                    : "bg-paper-2 text-ink-900 rounded-bl-xs"
                 }`}
               >
                 {msg.text}
               </div>
             </div>
           ))}
-          {/* Error message in chat */}
           {connectionState === "error" && errorMsg && (
             <div className="flex justify-center">
-              <p className="text-xs text-red-500 text-center">{errorMsg}</p>
+              <p className="text-center text-[12px] text-data-neg">{errorMsg}</p>
             </div>
           )}
-          {/* Typing indicator */}
           {waitingForResponse && (
             <div className="flex justify-start">
-              <div className="flex items-center gap-1.5 rounded-2xl rounded-bl-sm bg-gray-50 dark:bg-white/6 px-4 py-3">
-                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse" />
-                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse [animation-delay:150ms]" />
-                <div className="h-1.5 w-1.5 rounded-full bg-sc-text-muted/50 animate-pulse [animation-delay:300ms]" />
+              <div className="flex items-center gap-1.5 rounded-md rounded-bl-xs bg-paper-2 px-3.5 py-3">
+                <div className="h-1.5 w-1.5 rounded-full bg-ink-400 animate-pulse" />
+                <div className="h-1.5 w-1.5 rounded-full bg-ink-400 animate-pulse [animation-delay:150ms]" />
+                <div className="h-1.5 w-1.5 rounded-full bg-ink-400 animate-pulse [animation-delay:300ms]" />
               </div>
             </div>
           )}
@@ -541,22 +531,22 @@ export default function VoiceAgent() {
                 handleSendMessage(textInput);
               }
             }}
-            className="flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-white/4 px-4 py-1 focus-within:border-sc-blue dark:focus-within:border-sc-blue/50 transition-colors"
+            className="flex items-center gap-2 rounded-md border border-hairline bg-paper px-3 py-1 transition-colors focus-within:border-forest-500 focus-within:shadow-[0_0_0_3px_rgba(78,106,79,0.12)]"
           >
             <input
               ref={inputRef}
               type="text"
               value={textInput}
               onChange={(e) => setTextInput(e.target.value)}
-              placeholder="Type a message..."
-              className="flex-1 bg-transparent py-2 text-sm text-sc-text-dark dark:text-white placeholder-sc-text-muted dark:placeholder-white/30 outline-none"
+              placeholder="Type a message…"
+              className="flex-1 bg-transparent py-2 text-[13px] text-ink-900 placeholder-ink-400 outline-none"
             />
             <button
               type="submit"
               disabled={!textInput.trim()}
-              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sc-blue text-white transition-all disabled:opacity-20 disabled:scale-90 hover:bg-sc-blue/90 active:scale-90"
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-ink-900 text-paper transition-all hover:brightness-110 active:scale-90 disabled:cursor-not-allowed disabled:bg-sand-300 disabled:text-ink-400"
             >
-              <Send className="h-3.5 w-3.5" />
+              <Send className="h-3.5 w-3.5" strokeWidth={1.8} />
             </button>
           </form>
         </div>

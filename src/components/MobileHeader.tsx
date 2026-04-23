@@ -1,28 +1,27 @@
-import { SlidersHorizontal, ArrowUpDown, ShoppingCart, Bell } from "lucide-react";
+import Link from "next/link";
+import { Bell, Settings } from "lucide-react";
+import Logo from "./Logo";
 
 export default function MobileHeader() {
   return (
-    <header className="flex md:hidden items-center justify-between px-4 py-3 bg-white dark:bg-[#0B1A33] border-b border-gray-100 dark:border-[#1C3058] shrink-0">
-      {/* Left icons */}
-      <div className="flex items-center gap-4">
-        <button className="text-sc-text-muted" aria-label="Filters">
-          <SlidersHorizontal className="h-5 w-5" />
-        </button>
-        <button className="text-sc-text-muted" aria-label="Sort">
-          <ArrowUpDown className="h-5 w-5" />
-        </button>
-      </div>
+    <header className="flex md:hidden items-center justify-between border-b border-hairline bg-paper px-4 py-3 shrink-0">
+      <Link href="/" className="flex items-center" aria-label="Slice home">
+        <Logo height={22} />
+      </Link>
 
-      {/* Center title */}
-      <h1 className="text-base font-semibold text-sc-text-dark">Properties</h1>
-
-      {/* Right icons */}
-      <div className="flex items-center gap-4">
-        <button className="text-sc-text-muted" aria-label="Cart">
-          <ShoppingCart className="h-5 w-5" />
+      <div className="flex items-center gap-1">
+        <button
+          className="relative flex h-9 w-9 items-center justify-center rounded-sm text-ink-600 hover:bg-sand-100"
+          aria-label="Notifications"
+        >
+          <Bell className="h-[18px] w-[18px]" strokeWidth={1.6} />
+          <span className="absolute top-1.5 right-2 h-1.5 w-1.5 rounded-full border-[1.5px] border-paper bg-terra-500" />
         </button>
-        <button className="text-sc-text-muted" aria-label="Notifications">
-          <Bell className="h-5 w-5" />
+        <button
+          className="flex h-9 w-9 items-center justify-center rounded-sm text-ink-600 hover:bg-sand-100"
+          aria-label="Settings"
+        >
+          <Settings className="h-[18px] w-[18px]" strokeWidth={1.6} />
         </button>
       </div>
     </header>

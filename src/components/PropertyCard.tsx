@@ -1,292 +1,30 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 import { Property } from "@/types/property";
-import {
-  formatPrice,
-  getPropertySpecs,
-  getRemainingAmount,
-  getFundedPercentage,
-  type PropertySpec,
-  type SpecIcon,
-} from "@/lib/property-utils";
+import { formatPriceShort } from "@/lib/property-utils";
 import { getPropertyImage } from "@/lib/property-images";
-import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Bed, Maximize, MapPin, Clock, Users, Home, Wrench } from "lucide-react";
+import { Bed, Bath, Ruler, MapPin } from "lucide-react";
 
-// ---------------------------------------------------------------------------
-// Gradient map (fallback behind images while loading)
-// ---------------------------------------------------------------------------
-const gradients: Record<string, string> = {
-  "Discovery Gardens": "from-amber-400 to-orange-500",
-  JVT: "from-blue-400 to-cyan-500",
-  "Downtown Dubai": "from-purple-500 to-indigo-600",
-  DIFC: "from-blue-600 to-indigo-700",
-  "Palm Jumeirah": "from-cyan-400 to-emerald-500",
-  "Sports City": "from-green-400 to-lime-500",
-  "Dubai Marina": "from-blue-500 to-purple-500",
-  JVC: "from-teal-400 to-blue-500",
-  Arjan: "from-rose-400 to-pink-500",
-  "Dubai Hills": "from-emerald-400 to-teal-500",
-  IMPZ: "from-yellow-400 to-amber-500",
-  "Old Town": "from-orange-400 to-red-500",
-  "Business Bay": "from-slate-500 to-blue-600",
-};
-
-function getGradient(areaName: string, title: string): string {
-  if (gradients[areaName]) return gradients[areaName];
-  const titleLower = title.toLowerCase();
-  for (const [area, grad] of Object.entries(gradients)) {
-    if (titleLower.includes(area.toLowerCase())) return grad;
-  }
-  return "from-slate-400 to-gray-500";
-}
-
-// ---------------------------------------------------------------------------
-// Spec icon helper
-// ---------------------------------------------------------------------------
-const specIconMap: Record<SpecIcon, typeof Bed> = {
-  bed: Bed,
-  size: Maximize,
-  location: MapPin,
-  clock: Clock,
-};
-
-function SpecRow({ specs }: { specs: PropertySpec[] }) {
-  return (
-    <div className="flex items-center gap-1.5 text-[13px] text-sc-text-muted flex-wrap">
-      {specs.map((spec, i) => {
-        const Icon = specIconMap[spec.icon];
-        return (
-          <span key={i} className="flex items-center gap-1">
-            {i > 0 && (
-              <span className="text-gray-300 dark:text-white/20 mx-0.5">|</span>
-            )}
-            <Icon className="w-3.5 h-3.5 shrink-0" />
-            <span>{spec.value}</span>
-          </span>
-        );
-      })}
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Metric row (label left, value right)
-// ---------------------------------------------------------------------------
-function MetricRow({
-  label,
-  value,
-  valueClassName,
-}: {
-  label: string;
-  value: string;
-  valueClassName?: string;
-}) {
-  return (
-    <div className="flex justify-between items-baseline gap-2">
-      <span className="text-sc-text-muted text-[13px]">{label}</span>
-      <span
-        className={`text-sc-text-dark text-[13px] font-medium ${valueClassName ?? ""}`}
-      >
-        {value}
-      </span>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Hold metrics (funded / CLOSED)
-// ---------------------------------------------------------------------------
-function HoldMetrics({ property }: { property: Property }) {
-  const isLive = property.propertyStatus === "LIVE";
-  const rentalYield =
-    property.rental.dividendYield ?? property.rental.grossYield ?? null;
-  const rentalYieldDisplay = rentalYield !== null ? `${rentalYield}%` : "\u2014";
-
-  const purchasePrice = `Dhs ${formatPrice(property.price)}`;
-
-  let marketValueDisplay = "\u2014";
-  let marketValueClass = "";
-  if (property.valuation.marketValue !== null) {
-    const pct = property.valuation.marketValuePercentage;
-    const sign = pct >= 0 ? "+" : "";
-    const pctColor = pct >= 0 ? "text-sc-text-green" : "text-sc-text-red";
-    marketValueDisplay = `Dhs ${formatPrice(property.valuation.marketValue)}`;
-    marketValueClass = pctColor;
-    marketValueDisplay += ` (${sign}${pct}%)`;
-  }
-
-  const annualized = property.performance.annualized;
-  const annualizedDisplay = annualized !== null ? `${annualized}%` : "\u2014";
-
-  const rentalIncome = `Dhs ${formatPrice(property.rental.totalRentalIncome)}`;
-
-  return (
-    <div className="space-y-1.5">
-      <MetricRow label="Rental yield" value={rentalYieldDisplay} />
-      {isLive ? (
-        <MetricRow label="Annualized ROI" value={annualizedDisplay} />
-      ) : (
-        <>
-          <MetricRow label="Purchase price" value={purchasePrice} />
-          {property.valuation.marketValue !== null ? (
-            <div className="flex justify-between items-baseline gap-2">
-              <span className="text-sc-text-muted text-[13px]">
-                Current market value
-              </span>
-              <span className={`text-[13px] font-medium ${marketValueClass}`}>
-                {marketValueDisplay}
-              </span>
-            </div>
-          ) : (
-            <MetricRow label="Current market value" value={"\u2014"} />
-          )}
-        </>
-      )}
-      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
-      <MetricRow label="Rental income to date" value={rentalIncome} />
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Flip metrics (funded / CLOSED)
-// ---------------------------------------------------------------------------
-function FlipMetrics({ property }: { property: Property }) {
-  const annualized =
-    property.performance.annualized !== null
-      ? `${property.performance.annualized}%`
-      : "\u2014";
-
-  const timeline = `${property.performance.investmentPeriod} months`;
-  const renovationProgress = `${property.performance.renovationProgress ?? 0}%`;
-  const projectCost = `Dhs ${formatPrice(property.projectPrice)}`;
-
-  return (
-    <div className="space-y-1.5">
-      <MetricRow label="Annualized ROI" value={annualized} />
-      <MetricRow label="Estimated timeline" value={timeline} />
-      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
-      <div className="flex justify-between items-baseline gap-2">
-        <span className="text-sc-text-muted text-[13px]">
-          Renovation progress
-        </span>
-        <span className="text-sc-purple text-[13px] font-medium">
-          {renovationProgress}
-        </span>
-      </div>
-      <MetricRow label="Project cost" value={projectCost} />
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Exited metrics
-// ---------------------------------------------------------------------------
-function ExitedMetrics({ property }: { property: Property }) {
-  const exitPrice =
-    property.valuation.saleProceed !== null
-      ? `Dhs ${formatPrice(property.valuation.saleProceed)}`
-      : "\u2014";
-  const totalRental = `Dhs ${formatPrice(property.rental.totalRentalIncome)}`;
-  const holdingPeriod = `${property.performance.investmentPeriod} months`;
-
-  const totalReturnRoi =
-    property.performance.totalReturnRoi ?? property.totalReturnRoi;
-  const totalReturnPct =
-    property.performance.totalReturnRoiPercentage ??
-    property.totalReturnRoiPercentage;
-  const isPositive = totalReturnRoi >= 0;
-  const sign = isPositive ? "+" : "";
-  const totalReturnDisplay = `Dhs ${sign}${formatPrice(Math.abs(totalReturnRoi))} (${sign}${totalReturnPct}%)`;
-
-  return (
-    <div className="space-y-1.5">
-      <MetricRow label="Exit price" value={exitPrice} />
-      <MetricRow label="Total rental income" value={totalRental} />
-      <MetricRow label="Holding period" value={holdingPeriod} />
-      <div className="border-t border-gray-100 dark:border-white/10 my-2" />
-      <div className="flex justify-between items-baseline gap-2">
-        <span className="text-sc-text-muted text-[13px]">Total return (ROI)</span>
-        <span
-          className={`text-[13px] font-semibold ${
-            isPositive ? "text-sc-text-green" : "text-sc-text-red"
-          }`}
-        >
-          {totalReturnDisplay}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Funding progress bar (LIVE cards)
-// ---------------------------------------------------------------------------
-function FundingProgress({ property }: { property: Property }) {
-  const fundedPct = getFundedPercentage(property);
-  const remaining = getRemainingAmount(property);
-  const isHold = property.investmentType === "HOLD";
-  const priceLabel = isHold ? "Purchase price" : "Project cost";
-  const priceValue = isHold ? property.price : property.projectPrice;
-
-  return (
-    <div className="space-y-2 mt-3">
-      <div className="flex justify-between items-baseline">
-        <span
-          className={`text-[13px] font-semibold ${
-            fundedPct > 0 ? "text-sc-text-green" : "text-sc-text-red"
-          }`}
-        >
-          {fundedPct.toFixed(2)}% Funded
-        </span>
-        <span className="text-sc-text-muted text-[13px]">
-          Remaining <span className="font-medium text-sc-text-dark">Dhs {formatPrice(Math.max(remaining, 0))}</span>
-        </span>
-      </div>
-      <Progress
-        value={Math.min(fundedPct, 100)}
-        className={`h-2 ${
-          isHold
-            ? "[&>[data-slot=progress-indicator]]:bg-sc-green"
-            : "[&>[data-slot=progress-indicator]]:bg-sc-blue"
-        }`}
-      />
-      <div className="flex justify-between items-baseline">
-        <span className="text-sc-text-muted text-[13px]">{priceLabel}</span>
-        <span className="text-sc-blue text-[13px] font-bold">
-          Dhs {formatPrice(priceValue)}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Main PropertyCard component
-// ---------------------------------------------------------------------------
 interface PropertyCardProps {
   property: Property;
   highlighted?: boolean;
+}
+
+function pctFormat(n: number): string {
+  return `${n.toFixed(n >= 10 ? 1 : 2)}`;
+}
+
+function areaDisplay(property: Property): string {
+  return property.location.area?.displayName ?? "—";
 }
 
 export default function PropertyCard({
   property,
   highlighted,
 }: PropertyCardProps) {
-  const areaName = property.location.area?.name ?? "";
-  const gradient = getGradient(areaName, property.title);
-  const imageUrl = getPropertyImage(areaName, property.title);
-  const specs = getPropertySpecs(property);
-  const isHold = property.investmentType === "HOLD";
-  const isFlip = property.investmentType === "FLIP";
-  const isLive = property.propertyStatus === "LIVE";
-  const isClosed = property.propertyStatus === "CLOSED";
-  const isExited = property.propertyStatus === "EXITED";
-
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (highlighted && cardRef.current) {
@@ -294,107 +32,196 @@ export default function PropertyCard({
     }
   }, [highlighted]);
 
+  const isHold = property.investmentType === "HOLD";
+  const isFlip = property.investmentType === "FLIP";
+  const isLive = property.propertyStatus === "LIVE";
+  const isExited = property.propertyStatus === "EXITED";
+
+  const areaName = property.location.area?.name ?? "";
+  const imageUrl = getPropertyImage(areaName, property.title);
+
+  // Primary stat (left)
+  const yieldValue = isHold
+    ? property.rental.dividendYield ?? property.rental.grossYield
+    : property.performance.annualized;
+  const yieldLabel = isHold ? "Rental yield" : "Annualized";
+  const yieldDisplay = yieldValue !== null ? pctFormat(yieldValue) : "—";
+
+  // Right stat: min investment for live/funded, total return for exited
+  const exitedPct = property.performance.totalReturnRoiPercentage;
+  const rightLabel = isExited ? "Total return" : "Min. invest";
+  const rightValue = isExited
+    ? exitedPct !== null
+      ? `${exitedPct >= 0 ? "+" : ""}${pctFormat(exitedPct)}`
+      : "—"
+    : `${property.minInvestment ?? 500}`;
+  const rightUnit = isExited ? "%" : " AED";
+
+  const fundedPct = property.performance.funded;
+  const investors = property.investors || property.performance.investors;
+
   return (
-    <Card
+    <Link
       ref={cardRef}
-      className={`h-full flex flex-col overflow-hidden border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 p-0 gap-0 dark:bg-[#111F42] dark:border-[#1C3058] ${
+      href={`/property/${property.code}`}
+      className={`group flex flex-col overflow-hidden rounded-md border bg-paper transition-[border-color,transform] duration-[120ms] ease-slice ${
         highlighted
-          ? "ring-2 ring-sc-blue ring-offset-2 dark:ring-offset-[#0B1A33] animate-pulse"
-          : ""
+          ? "border-forest-500 ring-2 ring-forest-500/30 ring-offset-2 ring-offset-paper"
+          : "border-hairline hover:border-sand-300"
       }`}
     >
-      {/* ---- Image area ---- */}
-      <div
-        className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${gradient}`}
-      >
-        {/* Stock photo with fade-in */}
+      {/* Photo */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-sand-200">
         <img
           src={imageUrl}
           alt={property.title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-slice group-hover:scale-[1.02]"
+          style={{ filter: "contrast(0.95) saturate(0.88)" }}
         />
 
-        {/* Top-left badge */}
-        <div className="absolute top-3 left-3 z-10">
-          {isHold ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#22C55E] px-3 py-1 text-white text-xs font-medium shadow-md">
-              <Home className="w-3.5 h-3.5" />
-              Hold
-            </span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#8B5CF6] px-3 py-1 text-white text-xs font-medium shadow-md">
-              <Wrench className="w-3.5 h-3.5" />
-              Flip
-            </span>
-          )}
-        </div>
-
-        {/* Bottom overlay gradient + pills */}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10">
-          <div className="flex flex-wrap gap-1.5">
-            {isHold && property.investmentCategory === "LONG_TERM" && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-black/40 backdrop-blur-sm px-2.5 py-1 text-white text-xs font-medium">
-                Rented + High Yield
-              </span>
-            )}
-            {property.investors > 0 && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-black/40 backdrop-blur-sm px-2.5 py-1 text-white text-xs font-medium">
-                <Users className="w-3 h-3" />
-                {property.investors} Investors
-              </span>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* ---- Content area ---- */}
-      <div className="flex-1 flex flex-col p-4 space-y-3">
-        {/* Title row */}
-        <div className="flex justify-between items-start gap-2">
-          <h3 className="font-semibold text-sc-text-dark text-[15px] leading-tight line-clamp-2">
-            {property.title}
-          </h3>
-          <span className="shrink-0 rounded-full border border-sc-blue text-sc-blue text-xs px-2.5 py-0.5 font-semibold whitespace-nowrap">
+        {/* Top overlay */}
+        <div className="pointer-events-none absolute inset-0 flex items-start justify-between p-3">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full bg-paper/90 px-2.5 py-[3px] text-[11px] font-medium leading-tight text-ink-900 backdrop-blur-md`}
+          >
+            <span
+              className={`h-[5px] w-[5px] rounded-full ${
+                isHold ? "bg-forest-700" : "bg-terra-500"
+              }`}
+            />
+            {isHold ? "Hold" : "Flip"}
+          </span>
+          <span className="whitespace-nowrap rounded-[3px] bg-black/55 px-[7px] py-[3px] font-mono text-[10px] font-medium tracking-[0.04em] text-paper backdrop-blur-md">
             {property.code}
           </span>
         </div>
 
-        {/* Specs row */}
-        {specs.length > 0 && <SpecRow specs={specs} />}
-
-        {/* ---- Metrics section (with background tint) ---- */}
-        <div className="flex-1 flex flex-col">
-          <div className="bg-gray-50 dark:bg-white/5 rounded-lg p-3 space-y-1.5">
-            {isExited ? (
-              <ExitedMetrics property={property} />
-            ) : isLive ? (
-              isHold ? (
-                <HoldMetrics property={property} />
-              ) : (
-                <FlipMetrics property={property} />
-              )
-            ) : isClosed ? (
-              isHold ? (
-                <HoldMetrics property={property} />
-              ) : (
-                <FlipMetrics property={property} />
-              )
-            ) : isFlip ? (
-              <FlipMetrics property={property} />
-            ) : (
-              <HoldMetrics property={property} />
-            )}
+        {/* Closes-in (live only) */}
+        {isLive && property.closesIn && (
+          <div className="absolute bottom-3 left-3 rounded-[3px] bg-paper/90 px-2 py-[3px] font-mono text-[10px] font-medium text-ink-900 backdrop-blur-md">
+            Closes in {property.closesIn}
           </div>
+        )}
+      </div>
 
-          {/* Funding progress (LIVE cards only) */}
-          {isLive && <FundingProgress property={property} />}
+      {/* Body */}
+      <div className="flex flex-1 flex-col gap-3 px-4 pt-[14px] pb-4">
+        {/* Head */}
+        <div className="flex min-h-[62px] flex-col justify-start">
+          <h3 className="mb-1 line-clamp-2 text-[15px] font-medium leading-[1.3] tracking-[-0.005em] text-ink-800">
+            {property.title}
+          </h3>
+          <div className="flex items-center gap-2.5 overflow-hidden font-mono text-[12px] leading-[1.4] text-ink-600">
+            {property.physical.bedrooms > 0 && (
+              <span className="inline-flex items-center gap-1">
+                <Bed className="h-3 w-3" strokeWidth={1.6} />
+                {property.physical.bedrooms}
+              </span>
+            )}
+            {property.physical.bathrooms > 0 && (
+              <span className="inline-flex items-center gap-1">
+                <Bath className="h-3 w-3" strokeWidth={1.6} />
+                {property.physical.bathrooms}
+              </span>
+            )}
+            {property.physical.sqft && (
+              <span className="inline-flex items-center gap-1">
+                <Ruler className="h-3 w-3" strokeWidth={1.6} />
+                {property.physical.sqft}
+              </span>
+            )}
+            <span className="inline-flex min-w-0 items-center gap-1 truncate">
+              <MapPin className="h-3 w-3 shrink-0" strokeWidth={1.6} />
+              <span className="truncate">{areaDisplay(property)}</span>
+            </span>
+          </div>
         </div>
 
-        {/* Disclaimer */}
-        <p className="text-[11px] text-sc-text-muted italic mt-auto pt-1">
-          *All values displayed are net, expected and not guaranteed
+        {/* Stats */}
+        <div className="grid grid-cols-2 gap-[14px] border-t border-hairline-2 pt-2.5">
+          <div>
+            <div className="mb-1 text-[10px] font-medium uppercase tracking-[0.06em] text-ink-500">
+              {yieldLabel}
+            </div>
+            <div className="font-mono text-[17px] font-medium leading-none tracking-[-0.02em] tabular-nums text-ink-900">
+              {yieldDisplay}
+              <span className="text-[12px] font-normal text-ink-400">%</span>
+            </div>
+          </div>
+          <div>
+            <div className="mb-1 text-[10px] font-medium uppercase tracking-[0.06em] text-ink-500">
+              {rightLabel}
+            </div>
+            <div
+              className={`font-mono text-[17px] font-medium leading-none tracking-[-0.02em] tabular-nums ${
+                isExited && exitedPct !== null && exitedPct >= 0
+                  ? "text-data-pos"
+                  : isExited && exitedPct !== null && exitedPct < 0
+                    ? "text-data-neg"
+                    : "text-ink-900"
+              }`}
+            >
+              {rightValue}
+              <span className="text-[12px] font-normal text-ink-400">
+                {rightUnit}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Funding bar (live) */}
+        {isLive && (
+          <div className="flex flex-col gap-1.5">
+            <div className="h-[2px] overflow-hidden rounded-full bg-sand-100">
+              <div
+                className={`h-full transition-[width] duration-[400ms] ease-slice ${
+                  isFlip ? "bg-terra-500" : "bg-forest-700"
+                }`}
+                style={{ width: `${Math.min(fundedPct, 100)}%` }}
+              />
+            </div>
+            <div className="flex justify-between font-mono text-[11px] text-ink-600">
+              <span>
+                <span className="text-ink-900">{fundedPct.toFixed(1)}%</span>{" "}
+                funded
+              </span>
+              <span>{investors} investors</span>
+            </div>
+          </div>
+        )}
+
+        {/* Exited foot */}
+        {isExited && (
+          <div className="flex justify-between border-t border-hairline-2 pt-2.5 font-mono text-[11px] text-ink-600">
+            <span>
+              {property.performance.investmentPeriod}mo hold
+            </span>
+            <span>
+              {property.valuation.saleProceed
+                ? `Sold ${formatPriceShort(property.valuation.saleProceed)} AED`
+                : "Exited"}
+            </span>
+          </div>
+        )}
+
+        {/* Funded (non-live, non-exited) foot */}
+        {!isLive && !isExited && (
+          <div className="flex justify-between border-t border-hairline-2 pt-2.5 font-mono text-[11px] text-ink-600">
+            <span>
+              {investors} investors
+            </span>
+            <span>
+              {isHold
+                ? `${formatPriceShort(property.price)} AED`
+                : `${formatPriceShort(property.projectPrice)} AED`}
+            </span>
+          </div>
+        )}
+
+        <p className="mt-auto text-[10px] italic text-ink-400">
+          *Values are net expected, not guaranteed.
         </p>
       </div>
-    </Card>
+    </Link>
   );
 }
