@@ -1,0 +1,4220 @@
+[
+  {
+    "id": 717,
+    "code": "SC-285",
+    "title": "3 Bedroom Villa, Palm Jumeirah",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 14823160,
+    "projectPrice": 14823160,
+    "propertyType": "VILLA",
+    "investmentCategory": null,
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 9176840,
+    "totalReturnRoiPercentage": 24.59,
+    "investors": 114,
+    "rental": {
+      "grossYield": null,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": 0,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 114,
+      "annualized": null,
+      "totalGrossRoi": null,
+      "investmentPeriod": 14,
+      "funded": 100.49,
+      "fundedAmount": 14895793.48,
+      "totalReturnRoi": 9176840,
+      "totalReturnRoiPercentage": 24.59,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 24000000,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "sqft": 3850
+    },
+    "location": {
+      "area": null,
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2024-11-05",
+      "closeDate": "2025-08-11",
+      "soldDate": "2024-11-05",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 712,
+    "code": "SC-282",
+    "title": "3 Bedroom Duplex, Central Park Towers",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 4880772,
+    "projectPrice": 6201326,
+    "propertyType": "APARTMENT",
+    "investmentCategory": null,
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 2669228,
+    "totalReturnRoiPercentage": 25.01,
+    "investors": 57,
+    "rental": {
+      "grossYield": null,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": 0,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 57,
+      "annualized": null,
+      "totalGrossRoi": null,
+      "investmentPeriod": 18,
+      "funded": 100,
+      "fundedAmount": 6201326,
+      "totalReturnRoi": 2669228,
+      "totalReturnRoiPercentage": 25.01,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 8700000,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "sqft": 2050
+    },
+    "location": {
+      "area": {
+        "name": "DIFC",
+        "displayName": "DIFC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2024-08-07",
+      "closeDate": "2026-01-06",
+      "soldDate": "2024-08-07",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 651,
+    "code": "SC-235",
+    "title": "Beautiful 1 Bedroom in Windsor Manor, Business Bay",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 925000,
+    "projectPrice": 925000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 223528.79,
+    "totalReturnRoiPercentage": 21.2,
+    "investors": 255,
+    "rental": {
+      "grossYield": 14.25,
+      "netYield": 13.2,
+      "dividendYield": 8.97,
+      "grossRent": 131856,
+      "netRent": 96339,
+      "totalRentalIncome": 73594.34,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 255,
+      "annualized": 9.23,
+      "totalGrossRoi": 57.55,
+      "investmentPeriod": 20,
+      "funded": 103.45,
+      "fundedAmount": 956912.5,
+      "totalReturnRoi": 223528.79,
+      "totalReturnRoiPercentage": 21.2,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 29.73,
+      "saleProceed": 1237156.95,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "sqft": 775
+    },
+    "location": {
+      "area": {
+        "name": "Business Bay",
+        "displayName": "Business Bay"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-01-30",
+      "closeDate": "2022-12-19",
+      "soldDate": "2023-01-30",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 649,
+    "code": "SC-234",
+    "title": "1 Bedroom in Golden Mile 8, Palm Jumeirah",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 1600000,
+    "projectPrice": 1600000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 332726.25,
+    "totalReturnRoiPercentage": 18.61,
+    "investors": 193,
+    "rental": {
+      "grossYield": 12.6,
+      "netYield": null,
+      "dividendYield": 8.13,
+      "grossRent": 201663,
+      "netRent": 143517.19,
+      "totalRentalIncome": 101076.02,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 193,
+      "annualized": 9.04,
+      "totalGrossRoi": 54.6,
+      "investmentPeriod": 18,
+      "funded": 99.76,
+      "fundedAmount": 1596160,
+      "totalReturnRoi": 332726.25,
+      "totalReturnRoiPercentage": 18.61,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 25,
+      "saleProceed": 2073714,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "sqft": 850
+    },
+    "location": {
+      "area": {
+        "name": "Palm Jumeirah",
+        "displayName": "Palm Jumeirah"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-01-30",
+      "closeDate": "2022-12-27",
+      "soldDate": "2023-01-30",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 647,
+    "code": "SC-233",
+    "title": "2 Bedroom in Opal Tower, Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 1315000,
+    "projectPrice": 1315000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 479848.58,
+    "totalReturnRoiPercentage": 32.46,
+    "investors": 352,
+    "rental": {
+      "grossYield": 16.52,
+      "netYield": null,
+      "dividendYield": 9.75,
+      "grossRent": 217175,
+      "netRent": 144070.69,
+      "totalRentalIncome": 134763.33,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 352,
+      "annualized": 10.3,
+      "totalGrossRoi": 67.7,
+      "investmentPeriod": 29,
+      "funded": 102.23,
+      "fundedAmount": 1344324.5,
+      "totalReturnRoi": 479848.58,
+      "totalReturnRoiPercentage": 32.46,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 46.39,
+      "saleProceed": 1873747.84,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 3,
+      "sqft": 1250
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-01-30",
+      "closeDate": "2023-01-17",
+      "soldDate": "2023-01-30",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 646,
+    "code": "SC-232",
+    "title": "1 Bedroom in Burj Al Nujoom, Downtown",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 835000,
+    "projectPrice": 835000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 306362.72,
+    "totalReturnRoiPercentage": 32.33,
+    "investors": 179,
+    "rental": {
+      "grossYield": 16.72,
+      "netYield": null,
+      "dividendYield": 10.35,
+      "grossRent": 139613,
+      "netRent": 99806.56,
+      "totalRentalIncome": 157839.77,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 179,
+      "annualized": 10.57,
+      "totalGrossRoi": 67.05,
+      "investmentPeriod": 39,
+      "funded": 105.25,
+      "fundedAmount": 878837.5,
+      "totalReturnRoi": 306362.72,
+      "totalReturnRoiPercentage": 32.33,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 31.74,
+      "saleProceed": 1126212.95,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": -1,
+      "sqft": 775
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-11-18",
+      "closeDate": "2022-11-09",
+      "soldDate": "2022-11-18",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 645,
+    "code": "SC-231",
+    "title": "One-Bedroom Duplex in Fortunato, JVC",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 580000,
+    "projectPrice": 580000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 330378.04,
+    "totalReturnRoiPercentage": 49.28,
+    "investors": 145,
+    "rental": {
+      "grossYield": 10.34,
+      "netYield": null,
+      "dividendYield": 7.79,
+      "grossRent": 60000,
+      "netRent": 45203,
+      "totalRentalIncome": 130228.12,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 145,
+      "annualized": 8.27,
+      "totalGrossRoi": 52.4,
+      "investmentPeriod": 34,
+      "funded": 109.23,
+      "fundedAmount": 633534,
+      "totalReturnRoi": 330378.04,
+      "totalReturnRoiPercentage": 49.28,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 55.17,
+      "saleProceed": 894468.67,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-11-28",
+      "closeDate": "2022-11-18",
+      "soldDate": "2022-11-28",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 636,
+    "code": "SC-225",
+    "title": "2 Bedroom in Burj Al Nujoom, Downtown",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 1250000,
+    "projectPrice": 1250000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 395261.63,
+    "totalReturnRoiPercentage": 28.16,
+    "investors": 245,
+    "rental": {
+      "grossYield": 16.13,
+      "netYield": 14.37,
+      "dividendYield": 10,
+      "grossRent": 201663,
+      "netRent": 140753.19,
+      "totalRentalIncome": 200118.79,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 245,
+      "annualized": 10.55,
+      "totalGrossRoi": 66.55,
+      "investmentPeriod": 33,
+      "funded": 101.43,
+      "fundedAmount": 1267875,
+      "totalReturnRoi": 395261.63,
+      "totalReturnRoiPercentage": 28.16,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 24,
+      "saleProceed": 1644046.59,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "sqft": 1225
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-09-28",
+      "closeDate": "2022-09-05",
+      "soldDate": "2022-09-28",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 634,
+    "code": "SC-223",
+    "title": "1-Bedroom in Armada Tower 3, Jumeirah Lake Towers",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 775000,
+    "projectPrice": 775000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 183006.54,
+    "totalReturnRoiPercentage": 20.82,
+    "investors": 184,
+    "rental": {
+      "grossYield": 16.01,
+      "netYield": null,
+      "dividendYield": 9.81,
+      "grossRent": 124100,
+      "netRent": 86851.25,
+      "totalRentalIncome": 116620.04,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 184,
+      "annualized": 10.35,
+      "totalGrossRoi": 66,
+      "investmentPeriod": 30,
+      "funded": 103.4,
+      "fundedAmount": 801350,
+      "totalReturnRoi": 183006.54,
+      "totalReturnRoiPercentage": 20.82,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 12.9,
+      "saleProceed": 970773,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 850
+    },
+    "location": {
+      "area": {
+        "name": "JLT",
+        "displayName": "JLT"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-09-05",
+      "closeDate": "2022-07-31",
+      "soldDate": "2022-09-05",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 631,
+    "code": "SC-220",
+    "title": "Fantastic 1-Bedroom in Dream Towers, Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 690000,
+    "projectPrice": 690000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 177290.02,
+    "totalReturnRoiPercentage": 22.37,
+    "investors": 207,
+    "rental": {
+      "grossYield": 16.86,
+      "netYield": 15.21,
+      "dividendYield": 10.16,
+      "grossRent": 116344,
+      "netRent": 82609.5,
+      "totalRentalIncome": 95212.77,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 207,
+      "annualized": 10.42,
+      "totalGrossRoi": 68.55,
+      "investmentPeriod": 29,
+      "funded": 110.01,
+      "fundedAmount": 759069,
+      "totalReturnRoi": 177290.02,
+      "totalReturnRoiPercentage": 22.37,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 19.57,
+      "saleProceed": 898247,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 775
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-08-18",
+      "closeDate": "2022-06-29",
+      "soldDate": "2022-08-18",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 608,
+    "code": "SC-211",
+    "title": "1-Bedroom in Dream Towers, Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 600000,
+    "projectPrice": 600000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 264500.32,
+    "totalReturnRoiPercentage": 38.09,
+    "investors": 118,
+    "rental": {
+      "grossYield": 18.1,
+      "netYield": 16.56,
+      "dividendYield": 11.03,
+      "grossRent": 108588,
+      "netRent": 78469.75,
+      "totalRentalIncome": 104887.4,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 118,
+      "annualized": 10.55,
+      "totalGrossRoi": 69.45,
+      "investmentPeriod": 31,
+      "funded": 107.46,
+      "fundedAmount": 644760,
+      "totalReturnRoi": 264500.32,
+      "totalReturnRoiPercentage": 38.09,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 33.33,
+      "saleProceed": 877205.42,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 825
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-06-29",
+      "closeDate": "2022-05-12",
+      "soldDate": "2022-06-29",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 605,
+    "code": "SC-208",
+    "title": "Fantastic 1-Bedroom in 8 Boulevard Walk, Downtown",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 980000,
+    "projectPrice": 980000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 564131.52,
+    "totalReturnRoiPercentage": 51.12,
+    "investors": 112,
+    "rental": {
+      "grossYield": 17.41,
+      "netYield": 15.69,
+      "dividendYield": 11.27,
+      "grossRent": 170638,
+      "netRent": 121247.38,
+      "totalRentalIncome": 178604.55,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 112,
+      "annualized": 11.64,
+      "totalGrossRoi": 71.3,
+      "investmentPeriod": 43,
+      "funded": 102.05,
+      "fundedAmount": 1000090,
+      "totalReturnRoi": 564131.52,
+      "totalReturnRoiPercentage": 51.12,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 47.96,
+      "saleProceed": 1531158.22,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-05-24",
+      "closeDate": "2022-05-08",
+      "soldDate": "2022-05-24",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 599,
+    "code": "SC-202",
+    "title": "Remarkable 2-Bedroom in Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 925000,
+    "projectPrice": 925000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 454605.86,
+    "totalReturnRoiPercentage": 43.53,
+    "investors": 126,
+    "rental": {
+      "grossYield": 18.45,
+      "netYield": 17.19,
+      "dividendYield": 11.82,
+      "grossRent": 170638,
+      "netRent": 126262.38,
+      "totalRentalIncome": 140645.83,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 126,
+      "annualized": 12.09,
+      "totalGrossRoi": 74.75,
+      "investmentPeriod": 32,
+      "funded": 101.11,
+      "fundedAmount": 935267.5,
+      "totalReturnRoi": 454605.86,
+      "totalReturnRoiPercentage": 43.53,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 51.35,
+      "saleProceed": 1394948.78,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "sqft": 1300
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-04-28",
+      "closeDate": "2022-04-08",
+      "soldDate": "2022-04-28",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 598,
+    "code": "SC-201",
+    "title": "Stellar 1-Bedroom in Downtown Dubai",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 950000,
+    "projectPrice": 950000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 430970.72,
+    "totalReturnRoiPercentage": 40.49,
+    "investors": 86,
+    "rental": {
+      "grossYield": 17.96,
+      "netYield": 16.19,
+      "dividendYield": 11.63,
+      "grossRent": 170638,
+      "netRent": 121265.38,
+      "totalRentalIncome": 125016.16,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 86,
+      "annualized": 12.13,
+      "totalGrossRoi": 74.2,
+      "investmentPeriod": 28,
+      "funded": 100.88,
+      "fundedAmount": 958360,
+      "totalReturnRoi": 430970.72,
+      "totalReturnRoiPercentage": 40.49,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 44.74,
+      "saleProceed": 1407763.49,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 825
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-06-23",
+      "closeDate": "2022-03-15",
+      "soldDate": "2022-06-23",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 590,
+    "code": "SC-193",
+    "title": "1-Bedroom in Cascades Tower, Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 800000,
+    "projectPrice": 800000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 238338.17,
+    "totalReturnRoiPercentage": 26.43,
+    "investors": 160,
+    "rental": {
+      "grossYield": 15.12,
+      "netYield": 12.92,
+      "dividendYield": 8.91,
+      "grossRent": 120998,
+      "netRent": 80849.36,
+      "totalRentalIncome": 72227.33,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 160,
+      "annualized": 9.91,
+      "totalGrossRoi": 65.4,
+      "investmentPeriod": 19,
+      "funded": 100.58,
+      "fundedAmount": 804640,
+      "totalReturnRoi": 238338.17,
+      "totalReturnRoiPercentage": 26.43,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 34.38,
+      "saleProceed": 1096762.09,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-04-12",
+      "closeDate": "2022-03-25",
+      "soldDate": "2022-04-12",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 584,
+    "code": "SC-187",
+    "title": "Yacht Bay Studio in Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 630000,
+    "projectPrice": 630000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 336488.24,
+    "totalReturnRoiPercentage": 47.08,
+    "investors": 60,
+    "rental": {
+      "grossYield": 13.9,
+      "netYield": 12.76,
+      "dividendYield": 8.62,
+      "grossRent": 87600,
+      "netRent": 63930,
+      "totalRentalIncome": 165190.96,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 60,
+      "annualized": 9.45,
+      "totalGrossRoi": 59.95,
+      "investmentPeriod": 47,
+      "funded": 105.87,
+      "fundedAmount": 666981,
+      "totalReturnRoi": 336488.24,
+      "totalReturnRoiPercentage": 47.08,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 46.03,
+      "saleProceed": 910307.28,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-02-24",
+      "closeDate": "2021-12-31",
+      "soldDate": "2022-02-24",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 582,
+    "code": "SC-185",
+    "title": "Studio One",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 730000,
+    "projectPrice": 730000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 273282.16,
+    "totalReturnRoiPercentage": 33.23,
+    "investors": 148,
+    "rental": {
+      "grossYield": 13.81,
+      "netYield": 12.77,
+      "dividendYield": 8.23,
+      "grossRent": 100831,
+      "netRent": 74451.42,
+      "totalRentalIncome": 78335.55,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 148,
+      "annualized": 9.32,
+      "totalGrossRoi": 60.7,
+      "investmentPeriod": 23,
+      "funded": 100.22,
+      "fundedAmount": 731606,
+      "totalReturnRoi": 273282.16,
+      "totalReturnRoiPercentage": 33.23,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 43.84,
+      "saleProceed": 1044650.36,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 550
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-02-25",
+      "closeDate": "2022-02-10",
+      "soldDate": "2022-02-25",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 579,
+    "code": "SC-182",
+    "title": "Shamal Residence 2",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 360000,
+    "projectPrice": 360000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 206512.31,
+    "totalReturnRoiPercentage": 49.89,
+    "investors": 16,
+    "rental": {
+      "grossYield": 9.72,
+      "netYield": 7.77,
+      "dividendYield": 7.14,
+      "grossRent": 35000,
+      "netRent": 25707,
+      "totalRentalIncome": 104537.81,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 16,
+      "annualized": 8.68,
+      "totalGrossRoi": 56.1,
+      "investmentPeriod": 47,
+      "funded": 100,
+      "fundedAmount": 360000,
+      "totalReturnRoi": 206512.31,
+      "totalReturnRoiPercentage": 49.89,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 52.78,
+      "saleProceed": 530318.25,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-01-31",
+      "closeDate": "2021-12-31",
+      "soldDate": "2022-01-31",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 578,
+    "code": "SC-181",
+    "title": "1-Bedroom in The Cascades, Dubai Marina",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 800000,
+    "projectPrice": 800000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 277355.69,
+    "totalReturnRoiPercentage": 30.76,
+    "investors": 75,
+    "rental": {
+      "grossYield": 13.57,
+      "netYield": 11.33,
+      "dividendYield": 7.59,
+      "grossRent": 108588,
+      "netRent": 70312.16,
+      "totalRentalIncome": 99303.22,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 75,
+      "annualized": 8.8,
+      "totalGrossRoi": 60.1,
+      "investmentPeriod": 27,
+      "funded": 100.56,
+      "fundedAmount": 804480,
+      "totalReturnRoi": 277355.69,
+      "totalReturnRoiPercentage": 30.76,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 37.5,
+      "saleProceed": 1109382.28,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 825
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2022-01-05",
+      "closeDate": "2021-12-22",
+      "soldDate": "2022-01-05",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 576,
+    "code": "SC-179",
+    "title": "One Bedroom in Fortunato Tower, JVC",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 420000,
+    "projectPrice": 420000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 310774.34,
+    "totalReturnRoiPercentage": 63.92,
+    "investors": 84,
+    "rental": {
+      "grossYield": 9.76,
+      "netYield": 8.14,
+      "dividendYield": 7.53,
+      "grossRent": 41000,
+      "netRent": 31625,
+      "totalRentalIncome": 102375.65,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 84,
+      "annualized": 7.95,
+      "totalGrossRoi": 49.4,
+      "investmentPeriod": 35,
+      "funded": 104.27,
+      "fundedAmount": 437934,
+      "totalReturnRoi": 310774.34,
+      "totalReturnRoiPercentage": 63.92,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 57.14,
+      "saleProceed": 713403.07,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 775
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-11-24",
+      "closeDate": "2021-11-24",
+      "soldDate": "2021-11-24",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 575,
+    "code": "SC-178",
+    "title": "Studio in Marquise Square, Business Bay",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 720000,
+    "projectPrice": 720000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 457587.82,
+    "totalReturnRoiPercentage": 56.24,
+    "investors": 73,
+    "rental": {
+      "grossYield": 12.93,
+      "netYield": 11.94,
+      "dividendYield": 8.04,
+      "grossRent": 93075,
+      "netRent": 68712.5,
+      "totalRentalIncome": 153257.69,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 73,
+      "annualized": 9.06,
+      "totalGrossRoi": 57,
+      "investmentPeriod": 36,
+      "funded": 102.61,
+      "fundedAmount": 738792,
+      "totalReturnRoi": 457587.82,
+      "totalReturnRoiPercentage": 56.24,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 42.36,
+      "saleProceed": 1148022.63,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 500
+    },
+    "location": {
+      "area": {
+        "name": "Business Bay",
+        "displayName": "Business Bay"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-11-28",
+      "closeDate": "2021-10-30",
+      "soldDate": "2021-11-28",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 571,
+    "code": "SC-174",
+    "title": "Studio apartment in Mag 5, Dubai South",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 291000,
+    "projectPrice": 291000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 96827.07,
+    "totalReturnRoiPercentage": 29.03,
+    "investors": 69,
+    "rental": {
+      "grossYield": 17.06,
+      "netYield": null,
+      "dividendYield": 10.51,
+      "grossRent": 49640,
+      "netRent": 40179.8,
+      "totalRentalIncome": 63350.17,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 69,
+      "annualized": 7.31,
+      "totalGrossRoi": 44.55,
+      "investmentPeriod": 38,
+      "funded": 105.67,
+      "fundedAmount": 307499.7,
+      "totalReturnRoi": 96827.07,
+      "totalReturnRoiPercentage": 29.03,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 30.58,
+      "saleProceed": 376885.78,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 525
+    },
+    "location": {
+      "area": {
+        "name": "Dubai South City",
+        "displayName": "Dubai South City"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-11-04",
+      "closeDate": "2021-09-29",
+      "soldDate": "2021-11-04",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 568,
+    "code": "SC-171",
+    "title": "JBR - Murjan 2 - Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 850000,
+    "projectPrice": 850000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 344558.56,
+    "totalReturnRoiPercentage": 36.13,
+    "investors": 102,
+    "rental": {
+      "grossYield": 11.86,
+      "netYield": 10.72,
+      "dividendYield": 7.09,
+      "grossRent": 100831,
+      "netRent": 72260.42,
+      "totalRentalIncome": 194125.05,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 102,
+      "annualized": 8.44,
+      "totalGrossRoi": 54.25,
+      "investmentPeriod": 37,
+      "funded": 101.69,
+      "fundedAmount": 864365,
+      "totalReturnRoi": 344558.56,
+      "totalReturnRoiPercentage": 36.13,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 41.18,
+      "saleProceed": 1134142.89,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 575
+    },
+    "location": {
+      "area": {
+        "name": "JBR",
+        "displayName": "JBR"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-09-30",
+      "closeDate": "2021-11-15",
+      "soldDate": "2021-09-30",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 566,
+    "code": "SC-169",
+    "title": "2 bedroom in Studio One, Dubai Marina ",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 1250000,
+    "projectPrice": 1250000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 773661.52,
+    "totalReturnRoiPercentage": 55.77,
+    "investors": 155,
+    "rental": {
+      "grossYield": 11.68,
+      "netYield": 10.64,
+      "dividendYield": 7.71,
+      "grossRent": 146000,
+      "netRent": 105913,
+      "totalRentalIncome": 390224.5,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 155,
+      "annualized": 9.32,
+      "totalGrossRoi": 55.25,
+      "investmentPeriod": 49,
+      "funded": 101.72,
+      "fundedAmount": 1271500,
+      "totalReturnRoi": 773661.52,
+      "totalReturnRoiPercentage": 55.77,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 44,
+      "saleProceed": 1820625.77,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "sqft": 1225
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-10-31",
+      "closeDate": "2021-10-31",
+      "soldDate": "2021-10-31",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 565,
+    "code": "SC-168",
+    "title": "Boulevard Central 2, Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 875000,
+    "projectPrice": 875000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 453896.94,
+    "totalReturnRoiPercentage": 46.39,
+    "investors": 68,
+    "rental": {
+      "grossYield": 11.56,
+      "netYield": 10.59,
+      "dividendYield": 7.35,
+      "grossRent": 101108,
+      "netRent": 73930.56,
+      "totalRentalIncome": 236297.44,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 68,
+      "annualized": 10.5,
+      "totalGrossRoi": 62.35,
+      "investmentPeriod": 52,
+      "funded": 105.29,
+      "fundedAmount": 921287.5,
+      "totalReturnRoi": 453896.94,
+      "totalReturnRoiPercentage": 46.39,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 42.86,
+      "saleProceed": 1229469.5,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 500
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-09-23",
+      "closeDate": "2021-09-02",
+      "soldDate": "2021-09-23",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 563,
+    "code": "SC-166",
+    "title": "Studio in Claren Tower 1, Downtown Dubai",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 775000,
+    "projectPrice": 775000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 517382.86,
+    "totalReturnRoiPercentage": 59.55,
+    "investors": 63,
+    "rental": {
+      "grossYield": 13.05,
+      "netYield": 11.56,
+      "dividendYield": 7.75,
+      "grossRent": 101108,
+      "netRent": 70897.56,
+      "totalRentalIncome": 254411.1,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 63,
+      "annualized": 6.02,
+      "totalGrossRoi": 43.6,
+      "investmentPeriod": 51,
+      "funded": 102.46,
+      "fundedAmount": 794065,
+      "totalReturnRoi": 517382.86,
+      "totalReturnRoiPercentage": 59.55,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 51.61,
+      "saleProceed": 1163985.51,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 575
+    },
+    "location": {
+      "area": {
+        "name": "Downtown Dubai",
+        "displayName": "Downtown Dubai"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-08-29",
+      "closeDate": "2021-08-15",
+      "soldDate": "2021-08-29",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 562,
+    "code": "SC-165",
+    "title": "Two Bedroom in Emaar's Turia, The Views",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 1100000,
+    "projectPrice": 1100000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 635867.38,
+    "totalReturnRoiPercentage": 52.77,
+    "investors": 65,
+    "rental": {
+      "grossYield": 8.18,
+      "netYield": 6.18,
+      "dividendYield": 5.73,
+      "grossRent": 90000,
+      "netRent": 62975,
+      "totalRentalIncome": 129858.18,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 65,
+      "annualized": 9.85,
+      "totalGrossRoi": 60.35,
+      "investmentPeriod": 26,
+      "funded": 100,
+      "fundedAmount": 1100000,
+      "totalReturnRoi": 635867.38,
+      "totalReturnRoiPercentage": 52.77,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 36.36,
+      "saleProceed": 1756922.95,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 3,
+      "sqft": 1250
+    },
+    "location": {
+      "area": {
+        "name": "The Views",
+        "displayName": "The Views"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-08-22",
+      "closeDate": "2021-10-25",
+      "soldDate": "2021-08-22",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 560,
+    "code": "SC-163",
+    "title": "Mag 5 - 565 - Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 292006,
+    "projectPrice": 292006,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 112677.67,
+    "totalReturnRoiPercentage": 33.88,
+    "investors": 33,
+    "rental": {
+      "grossYield": 8.22,
+      "netYield": null,
+      "dividendYield": 7.63,
+      "grossRent": 24000,
+      "netRent": 22275,
+      "totalRentalIncome": 70053.45,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 33,
+      "annualized": 9.63,
+      "totalGrossRoi": 56.25,
+      "investmentPeriod": 46,
+      "funded": 100.01,
+      "fundedAmount": 292035.2,
+      "totalReturnRoi": 112677.67,
+      "totalReturnRoiPercentage": 33.88,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 36.98,
+      "saleProceed": 386138.85,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 500
+    },
+    "location": {
+      "area": {
+        "name": "Dubai South City",
+        "displayName": "Dubai South City"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-07-15",
+      "closeDate": "2021-06-28",
+      "soldDate": "2021-07-15",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 559,
+    "code": "SC-162",
+    "title": "Two Bedroom in Mag 5, Dubai South",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 442944,
+    "projectPrice": 442944,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 232785.64,
+    "totalReturnRoiPercentage": 46.85,
+    "investors": 28,
+    "rental": {
+      "grossYield": 8.13,
+      "netYield": null,
+      "dividendYield": 7.6,
+      "grossRent": 36000,
+      "netRent": 33675,
+      "totalRentalIncome": 113382.19,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 28,
+      "annualized": 9.6,
+      "totalGrossRoi": 55.9,
+      "investmentPeriod": 46,
+      "funded": 100,
+      "fundedAmount": 442944,
+      "totalReturnRoi": 232785.64,
+      "totalReturnRoiPercentage": 46.85,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 42.23,
+      "saleProceed": 633465.13,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "sqft": 1300
+    },
+    "location": {
+      "area": {
+        "name": "Dubai South City",
+        "displayName": "Dubai South City"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-08-09",
+      "closeDate": "2021-07-12",
+      "soldDate": "2021-08-09",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 558,
+    "code": "SC-161",
+    "title": "Mag 5 - 560 - Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 292006,
+    "projectPrice": 292006,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 135360.38,
+    "totalReturnRoiPercentage": 40.7,
+    "investors": 26,
+    "rental": {
+      "grossYield": 8.22,
+      "netYield": null,
+      "dividendYield": 7.63,
+      "grossRent": 24000,
+      "netRent": 22275,
+      "totalRentalIncome": 67570.63,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 26,
+      "annualized": 9.59,
+      "totalGrossRoi": 56,
+      "investmentPeriod": 43,
+      "funded": 108.56,
+      "fundedAmount": 317001.71,
+      "totalReturnRoi": 135360.38,
+      "totalReturnRoiPercentage": 40.7,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 36.98,
+      "saleProceed": 411304,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 575
+    },
+    "location": {
+      "area": {
+        "name": "Dubai South City",
+        "displayName": "Dubai South City"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-07-15",
+      "closeDate": "2021-06-09",
+      "soldDate": "2021-07-15",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 557,
+    "code": "SC-160",
+    "title": "Studio in Silicon Gates 1, DSO",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 250000,
+    "projectPrice": 250000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 132292.84,
+    "totalReturnRoiPercentage": 45.08,
+    "investors": 20,
+    "rental": {
+      "grossYield": 10,
+      "netYield": 7.99,
+      "dividendYield": 7.28,
+      "grossRent": 25000,
+      "netRent": 18193,
+      "totalRentalIncome": 52267.3,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 20,
+      "annualized": 9.24,
+      "totalGrossRoi": 60.65,
+      "investmentPeriod": 38,
+      "funded": 100,
+      "fundedAmount": 250000,
+      "totalReturnRoi": 132292.84,
+      "totalReturnRoiPercentage": 45.08,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 44,
+      "saleProceed": 383464.29,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 550
+    },
+    "location": {
+      "area": {
+        "name": "Silicon Oasis",
+        "displayName": "Silicon Oasis"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-08-26",
+      "closeDate": "2021-07-12",
+      "soldDate": "2021-08-26",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 556,
+    "code": "SC-159",
+    "title": "Lincoln Park North Side",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 430000,
+    "projectPrice": 430000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 158488.65,
+    "totalReturnRoiPercentage": 33.3,
+    "investors": 74,
+    "rental": {
+      "grossYield": 9.77,
+      "netYield": 7.69,
+      "dividendYield": 7.18,
+      "grossRent": 42000,
+      "netRent": 30864,
+      "totalRentalIncome": 64113.01,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 74,
+      "annualized": 9.46,
+      "totalGrossRoi": 59,
+      "investmentPeriod": 35,
+      "funded": 103.03,
+      "fundedAmount": 443029,
+      "totalReturnRoi": 158488.65,
+      "totalReturnRoiPercentage": 33.3,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 22.09,
+      "saleProceed": 585751.14,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 775
+    },
+    "location": {
+      "area": {
+        "name": "IMPZ",
+        "displayName": "IMPZ"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-07-14",
+      "closeDate": "2021-06-06",
+      "soldDate": "2021-07-14",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 554,
+    "code": "SC-157",
+    "title": "Goldcrest Views 2 JLT - 6th floor",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 350000,
+    "projectPrice": 350000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 275393.03,
+    "totalReturnRoiPercentage": 67.39,
+    "investors": 52,
+    "rental": {
+      "grossYield": 9.86,
+      "netYield": 8.04,
+      "dividendYield": 6.17,
+      "grossRent": 34500,
+      "netRent": 25882,
+      "totalRentalIncome": 67562.81,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 52,
+      "annualized": 10.59,
+      "totalGrossRoi": 64.35,
+      "investmentPeriod": 32,
+      "funded": 100.21,
+      "fundedAmount": 350735,
+      "totalReturnRoi": 275393.03,
+      "totalReturnRoiPercentage": 67.39,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 64.29,
+      "saleProceed": 632476.47,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "JLT",
+        "displayName": "JLT"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-06-08",
+      "closeDate": "2021-05-11",
+      "soldDate": "2021-06-08",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 551,
+    "code": "SC-154",
+    "title": "Crystal Residence JVC",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 340000,
+    "projectPrice": 340000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 297376.74,
+    "totalReturnRoiPercentage": 77.22,
+    "investors": 70,
+    "rental": {
+      "grossYield": 11.18,
+      "netYield": 9.53,
+      "dividendYield": 7.4,
+      "grossRent": 38000,
+      "netRent": 29975,
+      "totalRentalIncome": 112197.35,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 70,
+      "annualized": 6.59,
+      "totalGrossRoi": 49.15,
+      "investmentPeriod": 50,
+      "funded": 103.59,
+      "fundedAmount": 352206,
+      "totalReturnRoi": 297376.74,
+      "totalReturnRoiPercentage": 77.22,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 70.59,
+      "saleProceed": 586176.89,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 525
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-06-22",
+      "closeDate": "2021-04-08",
+      "soldDate": "2021-06-22",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 550,
+    "code": "SC-153",
+    "title": "Shamal Residence JVC",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 365000,
+    "projectPrice": 365000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 208378.45,
+    "totalReturnRoiPercentage": 50.54,
+    "investors": 82,
+    "rental": {
+      "grossYield": 10.41,
+      "netYield": 8.44,
+      "dividendYield": 7.87,
+      "grossRent": 38000,
+      "netRent": 28729,
+      "totalRentalIncome": 119397.31,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 82,
+      "annualized": 9.34,
+      "totalGrossRoi": 57.25,
+      "investmentPeriod": 53,
+      "funded": 103.38,
+      "fundedAmount": 377337,
+      "totalReturnRoi": 208378.45,
+      "totalReturnRoiPercentage": 50.54,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 43.84,
+      "saleProceed": 515314.89,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 500
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-06-08",
+      "closeDate": "2021-05-10",
+      "soldDate": "2021-06-08",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 549,
+    "code": "SC-152",
+    "title": "Lago Vista C - Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 255000,
+    "projectPrice": 255000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 88881.01,
+    "totalReturnRoiPercentage": 30.37,
+    "investors": 33,
+    "rental": {
+      "grossYield": 9.41,
+      "netYield": 7.29,
+      "dividendYield": 6.61,
+      "grossRent": 24000,
+      "netRent": 16849,
+      "totalRentalIncome": 33234.32,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 33,
+      "annualized": 9.46,
+      "totalGrossRoi": 58.2,
+      "investmentPeriod": 26,
+      "funded": 100,
+      "fundedAmount": 255000,
+      "totalReturnRoi": 88881.01,
+      "totalReturnRoiPercentage": 30.37,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 1.96,
+      "saleProceed": 357490.44,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "IMPZ",
+        "displayName": "IMPZ"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-06-07",
+      "closeDate": "2021-04-11",
+      "soldDate": "2021-06-07",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 545,
+    "code": "SC-148",
+    "title": "Marina Residence One-Bed",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 530000,
+    "projectPrice": 530000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 327107.54,
+    "totalReturnRoiPercentage": 54.24,
+    "investors": 49,
+    "rental": {
+      "grossYield": 19.08,
+      "netYield": 17.2,
+      "dividendYield": 11.63,
+      "grossRent": 101108,
+      "netRent": 72434.56,
+      "totalRentalIncome": 141828.61,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 49,
+      "annualized": 9.67,
+      "totalGrossRoi": 66.55,
+      "investmentPeriod": 32,
+      "funded": 100,
+      "fundedAmount": 530000,
+      "totalReturnRoi": 327107.54,
+      "totalReturnRoiPercentage": 54.24,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 27.36,
+      "saleProceed": 809332.68,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-03-17",
+      "closeDate": "2021-02-14",
+      "soldDate": "2021-03-17",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 542,
+    "code": "SC-145",
+    "title": "Bay Central Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 530000,
+    "projectPrice": 530000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 219562.66,
+    "totalReturnRoiPercentage": 36.62,
+    "investors": 53,
+    "rental": {
+      "grossYield": 13.5,
+      "netYield": 11.7,
+      "dividendYield": 7.13,
+      "grossRent": 71553,
+      "netRent": 48580.46,
+      "totalRentalIncome": 74393.34,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 53,
+      "annualized": 9.79,
+      "totalGrossRoi": 59.3,
+      "investmentPeriod": 17,
+      "funded": 100,
+      "fundedAmount": 530000,
+      "totalReturnRoi": 219562.66,
+      "totalReturnRoiPercentage": 36.62,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 765173.07,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 550
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-02-18",
+      "closeDate": "2021-01-27",
+      "soldDate": "2021-02-18",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 540,
+    "code": "SC-143",
+    "title": "Lakeside Studio Tower C",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 210000,
+    "projectPrice": 210000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 104156.82,
+    "totalReturnRoiPercentage": 44.25,
+    "investors": 27,
+    "rental": {
+      "grossYield": 10.95,
+      "netYield": 8.71,
+      "dividendYield": 7.92,
+      "grossRent": 23000,
+      "netRent": 16625,
+      "totalRentalIncome": 39806.44,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 27,
+      "annualized": 7.39,
+      "totalGrossRoi": 52,
+      "investmentPeriod": 32,
+      "funded": 100,
+      "fundedAmount": 210000,
+      "totalReturnRoi": 104156.82,
+      "totalReturnRoiPercentage": 44.25,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 19.05,
+      "saleProceed": 307881.63,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 500
+    },
+    "location": {
+      "area": {
+        "name": "Dubailand",
+        "displayName": "Dubailand"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-01-26",
+      "closeDate": "2021-01-20",
+      "soldDate": "2021-01-26",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 535,
+    "code": "SC-142",
+    "title": "One Bedroom with Two Balconies in DSO",
+    "investmentType": "HOLD",
+    "propertyCategory": "COMMERCIAL",
+    "price": 340000,
+    "projectPrice": 340000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 102371.11,
+    "totalReturnRoiPercentage": 27.09,
+    "investors": 42,
+    "rental": {
+      "grossYield": 10,
+      "netYield": 7.79,
+      "dividendYield": 7.13,
+      "grossRent": 34000,
+      "netRent": 24246,
+      "totalRentalIncome": 61043.55,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 42,
+      "annualized": 8.32,
+      "totalGrossRoi": 55.55,
+      "investmentPeriod": 38,
+      "funded": 100.53,
+      "fundedAmount": 341802,
+      "totalReturnRoi": 102371.11,
+      "totalReturnRoiPercentage": 27.09,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 22.06,
+      "saleProceed": 430506.26,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "Silicon Oasis",
+        "displayName": "Silicon Oasis"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-01-26",
+      "closeDate": "2020-12-29",
+      "soldDate": "2021-01-26",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 534,
+    "code": "SC-141",
+    "title": "Studio One",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 500000,
+    "projectPrice": 500000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 425928.57,
+    "totalReturnRoiPercentage": 76.5,
+    "investors": 60,
+    "rental": {
+      "grossYield": 14,
+      "netYield": 12.76,
+      "dividendYield": 7.96,
+      "grossRent": 69998,
+      "netRent": 50598.36,
+      "totalRentalIncome": 149965.51,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 60,
+      "annualized": 7.33,
+      "totalGrossRoi": 54.9,
+      "investmentPeriod": 37,
+      "funded": 100.89,
+      "fundedAmount": 504450,
+      "totalReturnRoi": 425928.57,
+      "totalReturnRoiPercentage": 76.5,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 48,
+      "saleProceed": 855095.06,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-02-16",
+      "closeDate": "2021-02-16",
+      "soldDate": "2021-02-16",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 529,
+    "code": "SC-140",
+    "title": "Affordable Studio in Silicon Oasis",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 208000,
+    "projectPrice": 208000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 58051.25,
+    "totalReturnRoiPercentage": 24.41,
+    "investors": 30,
+    "rental": {
+      "grossYield": 11.54,
+      "netYield": 8.55,
+      "dividendYield": 7.71,
+      "grossRent": 24000,
+      "netRent": 16038.75,
+      "totalRentalIncome": 44668.76,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 30,
+      "annualized": 6.87,
+      "totalGrossRoi": 51.4,
+      "investmentPeriod": 31,
+      "funded": 100,
+      "fundedAmount": 208000,
+      "totalReturnRoi": 58051.25,
+      "totalReturnRoiPercentage": 24.41,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 20.19,
+      "saleProceed": 257785.24,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "Silicon Oasis",
+        "displayName": "Silicon Oasis"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-10-27",
+      "closeDate": "2020-11-16",
+      "soldDate": "2020-10-27",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 527,
+    "code": "SC-138",
+    "title": "Al Waha Villas - 2 bhk townhome",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 765000,
+    "projectPrice": 765000,
+    "propertyType": "TOWN_HOUSE",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 904205.44,
+    "totalReturnRoiPercentage": 107.19,
+    "investors": 86,
+    "rental": {
+      "grossYield": 9.93,
+      "netYield": 9.09,
+      "dividendYield": 8.52,
+      "grossRent": 76000,
+      "netRent": 65200,
+      "totalRentalIncome": 193520.9,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 86,
+      "annualized": 8.06,
+      "totalGrossRoi": 46.7,
+      "investmentPeriod": 39,
+      "funded": 102.33,
+      "fundedAmount": 782824.5,
+      "totalReturnRoi": 904205.44,
+      "totalReturnRoiPercentage": 107.19,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 86.27,
+      "saleProceed": 1596208.92,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "sqft": 2250
+    },
+    "location": {
+      "area": {
+        "name": "Dubailand",
+        "displayName": "Dubailand"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2021-02-22",
+      "closeDate": "2020-12-29",
+      "soldDate": "2021-02-22",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 526,
+    "code": "SC-137",
+    "title": "Marina View - One Bedroom",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 650000,
+    "projectPrice": 650000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 486023.02,
+    "totalReturnRoiPercentage": 68.38,
+    "investors": 58,
+    "rental": {
+      "grossYield": 8.92,
+      "netYield": 7.37,
+      "dividendYield": 6.9,
+      "grossRent": 58000,
+      "netRent": 44837,
+      "totalRentalIncome": 132960.64,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 58,
+      "annualized": 7.1,
+      "totalGrossRoi": 46.65,
+      "investmentPeriod": 29,
+      "funded": 100,
+      "fundedAmount": 650000,
+      "totalReturnRoi": 486023.02,
+      "totalReturnRoiPercentage": 68.38,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 30.77,
+      "saleProceed": 1092676.13,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 775
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-10-10",
+      "closeDate": "2020-11-18",
+      "soldDate": "2020-10-10",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 521,
+    "code": "SC-132",
+    "title": "Belgravia 2 by Ellington",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 430000,
+    "projectPrice": 430000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 320894.25,
+    "totalReturnRoiPercentage": 67.99,
+    "investors": 53,
+    "rental": {
+      "grossYield": 8.84,
+      "netYield": 7.19,
+      "dividendYield": 6.74,
+      "grossRent": 38000,
+      "netRent": 28997,
+      "totalRentalIncome": 140357.6,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 53,
+      "annualized": 7.05,
+      "totalGrossRoi": 46.9,
+      "investmentPeriod": 56,
+      "funded": 113.99,
+      "fundedAmount": 490157,
+      "totalReturnRoi": 320894.25,
+      "totalReturnRoiPercentage": 67.99,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 60.47,
+      "saleProceed": 670789.15,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 525
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-10-14",
+      "closeDate": "2020-10-01",
+      "soldDate": "2020-10-14",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 520,
+    "code": "SC-131",
+    "title": "Eaton Place by Ellington",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 890000,
+    "projectPrice": 890000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 302953.33,
+    "totalReturnRoiPercentage": 31.88,
+    "investors": 124,
+    "rental": {
+      "grossYield": 7.3,
+      "netYield": null,
+      "dividendYield": 7.21,
+      "grossRent": 65000,
+      "netRent": 64212,
+      "totalRentalIncome": 226969.1,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 124,
+      "annualized": 11.17,
+      "totalGrossRoi": 63.9,
+      "investmentPeriod": 51,
+      "funded": 100.47,
+      "fundedAmount": 894183,
+      "totalReturnRoi": 302953.33,
+      "totalReturnRoiPercentage": 31.88,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 25.28,
+      "saleProceed": 1089385.98,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-11-26",
+      "closeDate": "2020-11-16",
+      "soldDate": "2020-11-26",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 513,
+    "code": "SC-124",
+    "title": "Silicon Gates 1 (DSO)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 210000,
+    "projectPrice": 210000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 199587.84,
+    "totalReturnRoiPercentage": 81.55,
+    "investors": 41,
+    "rental": {
+      "grossYield": 10.48,
+      "netYield": 8.05,
+      "dividendYield": 7.15,
+      "grossRent": 22000,
+      "netRent": 15020,
+      "totalRentalIncome": 76459.43,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 41,
+      "annualized": 7.13,
+      "totalGrossRoi": 53.25,
+      "investmentPeriod": 54,
+      "funded": 105.29,
+      "fundedAmount": 221109,
+      "totalReturnRoi": 199587.84,
+      "totalReturnRoiPercentage": 81.55,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 90.48,
+      "saleProceed": 377746.79,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 575
+    },
+    "location": {
+      "area": {
+        "name": "Silicon Oasis",
+        "displayName": "Silicon Oasis"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-07-09",
+      "closeDate": "2020-06-24",
+      "soldDate": "2020-07-09",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 510,
+    "code": "SC-121",
+    "title": "The Spirit Tower - 1 BHK (second)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 450000,
+    "projectPrice": 450000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 108274.95,
+    "totalReturnRoiPercentage": 21.94,
+    "investors": 52,
+    "rental": {
+      "grossYield": 10.67,
+      "netYield": 7.81,
+      "dividendYield": 7.1,
+      "grossRent": 48000,
+      "netRent": 31943,
+      "totalRentalIncome": 62840.99,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 52,
+      "annualized": 6.22,
+      "totalGrossRoi": 47.75,
+      "investmentPeriod": 26,
+      "funded": 100,
+      "fundedAmount": 450000,
+      "totalReturnRoi": 108274.95,
+      "totalReturnRoiPercentage": 21.94,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 553610.21,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "Sports city",
+        "displayName": "Sports city"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-08-18",
+      "closeDate": "2020-06-11",
+      "soldDate": "2020-08-18",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 509,
+    "code": "SC-120",
+    "title": "The Spirit Tower - One BHK",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 450000,
+    "projectPrice": 450000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 75577.1,
+    "totalReturnRoiPercentage": 15.32,
+    "investors": 46,
+    "rental": {
+      "grossYield": 10.67,
+      "netYield": 7.81,
+      "dividendYield": 7.1,
+      "grossRent": 48000,
+      "netRent": 31943,
+      "totalRentalIncome": 65387.32,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 46,
+      "annualized": 6.22,
+      "totalGrossRoi": 47.75,
+      "investmentPeriod": 24,
+      "funded": 100,
+      "fundedAmount": 450000,
+      "totalReturnRoi": 75577.1,
+      "totalReturnRoiPercentage": 15.32,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 517316.03,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "sqft": 850
+    },
+    "location": {
+      "area": {
+        "name": "Sports city",
+        "displayName": "Sports city"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-09-08",
+      "closeDate": "2020-09-08",
+      "soldDate": "2020-09-08",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 507,
+    "code": "SC-118",
+    "title": "Concorde Tower",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 450000,
+    "projectPrice": 450000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 418414.89,
+    "totalReturnRoiPercentage": 83.96,
+    "investors": 70,
+    "rental": {
+      "grossYield": 10,
+      "netYield": 7.92,
+      "dividendYield": 7.5,
+      "grossRent": 45000,
+      "netRent": 33737,
+      "totalRentalIncome": 166218.56,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 70,
+      "annualized": 8.33,
+      "totalGrossRoi": 56.35,
+      "investmentPeriod": 53,
+      "funded": 102.16,
+      "fundedAmount": 459720,
+      "totalReturnRoi": 418414.89,
+      "totalReturnRoiPercentage": 83.96,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 50,
+      "saleProceed": 770782.72,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 800
+    },
+    "location": {
+      "area": {
+        "name": "JLT",
+        "displayName": "JLT"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-06-23",
+      "closeDate": "2020-05-13",
+      "soldDate": "2020-06-23",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 506,
+    "code": "SC-117",
+    "title": "Damac's Lakeside Tower Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 225000,
+    "projectPrice": 225000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 101434.08,
+    "totalReturnRoiPercentage": 39.56,
+    "investors": 24,
+    "rental": {
+      "grossYield": 13.33,
+      "netYield": 11.57,
+      "dividendYield": 10.62,
+      "grossRent": 30000,
+      "netRent": 23888,
+      "totalRentalIncome": 51680.78,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 24,
+      "annualized": 7.67,
+      "totalGrossRoi": 51.9,
+      "investmentPeriod": 39,
+      "funded": 100.31,
+      "fundedAmount": 225697.5,
+      "totalReturnRoi": 101434.08,
+      "totalReturnRoiPercentage": 39.56,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 11.11,
+      "saleProceed": 314267.05,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 525
+    },
+    "location": {
+      "area": {
+        "name": "IMPZ",
+        "displayName": "IMPZ"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-05-27",
+      "closeDate": "2020-05-02",
+      "soldDate": "2020-05-27",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 504,
+    "code": "SC-115",
+    "title": "Royal Residence 2, Sports City (Studio)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 270000,
+    "projectPrice": 270000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 61106.93,
+    "totalReturnRoiPercentage": 20.51,
+    "investors": 34,
+    "rental": {
+      "grossYield": 11.85,
+      "netYield": 9.7,
+      "dividendYield": 8.82,
+      "grossRent": 32000,
+      "netRent": 23804,
+      "totalRentalIncome": 50782.57,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 34,
+      "annualized": 8.52,
+      "totalGrossRoi": 58.05,
+      "investmentPeriod": 42,
+      "funded": 104,
+      "fundedAmount": 280800,
+      "totalReturnRoi": 61106.93,
+      "totalReturnRoiPercentage": 20.51,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": -5.56,
+      "saleProceed": 316623.11,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 600
+    },
+    "location": {
+      "area": {
+        "name": "Sports city",
+        "displayName": "Sports city"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-05-05",
+      "closeDate": "2020-03-24",
+      "soldDate": "2020-05-05",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 503,
+    "code": "SC-114",
+    "title": "Remraam by Dubai Properties (1 Bed)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 435000,
+    "projectPrice": 435000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 142877.63,
+    "totalReturnRoiPercentage": 30.04,
+    "investors": 43,
+    "rental": {
+      "grossYield": 10.34,
+      "netYield": 8.2,
+      "dividendYield": 7.5,
+      "grossRent": 45000,
+      "netRent": 32632,
+      "totalRentalIncome": 133542.99,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 43,
+      "annualized": 9.36,
+      "totalGrossRoi": 59.8,
+      "investmentPeriod": 53,
+      "funded": 102.57,
+      "fundedAmount": 446179.5,
+      "totalReturnRoi": 142877.63,
+      "totalReturnRoiPercentage": 30.04,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 14.94,
+      "saleProceed": 498022.14,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 825
+    },
+    "location": {
+      "area": {
+        "name": "Emirates Living",
+        "displayName": "Emirates Living"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-05-17",
+      "closeDate": "2020-04-27",
+      "soldDate": "2020-05-17",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 500,
+    "code": "SC-111",
+    "title": "Marina Diamond 1 by Diamond Developers (Studio)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 420000,
+    "projectPrice": 420000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 277485.69,
+    "totalReturnRoiPercentage": 59.24,
+    "investors": 39,
+    "rental": {
+      "grossYield": 13.1,
+      "netYield": 11.49,
+      "dividendYield": 9.08,
+      "grossRent": 55000,
+      "netRent": 44737,
+      "totalRentalIncome": 155829.19,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 39,
+      "annualized": 10.64,
+      "totalGrossRoi": 71.2,
+      "investmentPeriod": 44,
+      "funded": 100,
+      "fundedAmount": 420000,
+      "totalReturnRoi": 277485.69,
+      "totalReturnRoiPercentage": 59.24,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 21.43,
+      "saleProceed": 605817.75,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 500
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-03-19",
+      "closeDate": "2020-03-02",
+      "soldDate": "2020-03-19",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 499,
+    "code": "SC-110",
+    "title": "Dubai Properties' Remraam (1 Bed)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 442000,
+    "projectPrice": 442000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 126545.44,
+    "totalReturnRoiPercentage": 26.19,
+    "investors": 53,
+    "rental": {
+      "grossYield": 12.44,
+      "netYield": 10.38,
+      "dividendYield": 9.58,
+      "grossRent": 55000,
+      "netRent": 42362.5,
+      "totalRentalIncome": 114091.86,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 53,
+      "annualized": 9,
+      "totalGrossRoi": 59.1,
+      "investmentPeriod": 57,
+      "funded": 101.2,
+      "fundedAmount": 447304,
+      "totalReturnRoi": 126545.44,
+      "totalReturnRoiPercentage": 26.19,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 13.12,
+      "saleProceed": 495553.33,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 850
+    },
+    "location": {
+      "area": {
+        "name": "Remraam",
+        "displayName": "Remraam"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-02-26",
+      "closeDate": "2020-01-28",
+      "soldDate": "2020-02-26",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 498,
+    "code": "SC-109",
+    "title": "JVC Townhouse by Nakheel (1 Bed)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 980000,
+    "projectPrice": 980000,
+    "propertyType": "TOWN_HOUSE",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 503143.95,
+    "totalReturnRoiPercentage": 47.3,
+    "investors": 67,
+    "rental": {
+      "grossYield": 8.67,
+      "netYield": null,
+      "dividendYield": 7.89,
+      "grossRent": 85000,
+      "netRent": 77344,
+      "totalRentalIncome": 206410.72,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 67,
+      "annualized": 7.76,
+      "totalGrossRoi": 41.6,
+      "investmentPeriod": 39,
+      "funded": 100,
+      "fundedAmount": 980000,
+      "totalReturnRoi": 503143.95,
+      "totalReturnRoiPercentage": 47.3,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 27.55,
+      "saleProceed": 1397239.48,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "sqft": 2275
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2020-06-08",
+      "closeDate": "2020-02-16",
+      "soldDate": "2020-06-08",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 497,
+    "code": "SC-108",
+    "title": "Emaar's The Greens (Studio)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 460000,
+    "projectPrice": 460000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 180431.9,
+    "totalReturnRoiPercentage": 35.95,
+    "investors": 36,
+    "rental": {
+      "grossYield": 9.57,
+      "netYield": 7.95,
+      "dividendYield": 6.86,
+      "grossRent": 44000,
+      "netRent": 33749,
+      "totalRentalIncome": 98316.21,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 36,
+      "annualized": 6.84,
+      "totalGrossRoi": 47.25,
+      "investmentPeriod": 47,
+      "funded": 100,
+      "fundedAmount": 460000,
+      "totalReturnRoi": 180431.9,
+      "totalReturnRoiPercentage": 35.95,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 6.52,
+      "saleProceed": 599821.94,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 550
+    },
+    "location": {
+      "area": {
+        "name": "The Greens",
+        "displayName": "The Greens"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2019-04-29",
+      "closeDate": "2019-11-27",
+      "soldDate": "2019-04-29",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 496,
+    "code": "SC-107",
+    "title": "Studio in Al Thamam Building, Remraam",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 287000,
+    "projectPrice": 287000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 153973.36,
+    "totalReturnRoiPercentage": 49.72,
+    "investors": 38,
+    "rental": {
+      "grossYield": 11.5,
+      "netYield": 9.37,
+      "dividendYield": 8.01,
+      "grossRent": 33000,
+      "netRent": 26275,
+      "totalRentalIncome": 91446.59,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 38,
+      "annualized": 7.56,
+      "totalGrossRoi": 56.92,
+      "investmentPeriod": 62,
+      "funded": 103.99,
+      "fundedAmount": 298451.3,
+      "totalReturnRoi": 153973.36,
+      "totalReturnRoiPercentage": 49.72,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 21.95,
+      "saleProceed": 382415.77,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 525
+    },
+    "location": {
+      "area": {
+        "name": "Remraam",
+        "displayName": "Remraam"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2019-10-02",
+      "closeDate": "2019-07-28",
+      "soldDate": "2019-10-02",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 495,
+    "code": "SC-106",
+    "title": "Pulse Smart Residence, JVC (1 Bed)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 455000,
+    "projectPrice": 455000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 178509.33,
+    "totalReturnRoiPercentage": 35.95,
+    "investors": 51,
+    "rental": {
+      "grossYield": 10.99,
+      "netYield": 9.01,
+      "dividendYield": 8.05,
+      "grossRent": 50000,
+      "netRent": 39125,
+      "totalRentalIncome": 117356.45,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 51,
+      "annualized": 6.56,
+      "totalGrossRoi": 48.1,
+      "investmentPeriod": 71,
+      "funded": 112.29,
+      "fundedAmount": 510919.5,
+      "totalReturnRoi": 178509.33,
+      "totalReturnRoiPercentage": 35.95,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 31.87,
+      "saleProceed": 557725.38,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 750
+    },
+    "location": {
+      "area": {
+        "name": "JVC",
+        "displayName": "JVC"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2019-10-29",
+      "closeDate": "2019-09-30",
+      "soldDate": "2019-10-29",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 494,
+    "code": "SC-105",
+    "title": "Al Arta 1 (1 Bed)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 683000,
+    "projectPrice": 683000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 140666.77,
+    "totalReturnRoiPercentage": 18.89,
+    "investors": 25,
+    "rental": {
+      "grossYield": 9.37,
+      "netYield": 7.57,
+      "dividendYield": 6.54,
+      "grossRent": 64000,
+      "netRent": 47894.36,
+      "totalRentalIncome": 127955.48,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 25,
+      "annualized": 6.19,
+      "totalGrossRoi": 45.75,
+      "investmentPeriod": 40,
+      "funded": 100,
+      "fundedAmount": 683000,
+      "totalReturnRoi": 140666.77,
+      "totalReturnRoiPercentage": 18.89,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 777754.04,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "sqft": 850
+    },
+    "location": {
+      "area": {
+        "name": "The Greens",
+        "displayName": "The Greens"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2019-07-21",
+      "closeDate": "2019-08-04",
+      "soldDate": "2019-07-21",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 483,
+    "code": "SC-104",
+    "title": "Marina Quays ( Dubai Marina)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 841500,
+    "projectPrice": 841500,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 246806.34,
+    "totalReturnRoiPercentage": 26.46,
+    "investors": 35,
+    "rental": {
+      "grossYield": 11,
+      "netYield": 8.77,
+      "dividendYield": 8.12,
+      "grossRent": 92529,
+      "netRent": 73187.4,
+      "totalRentalIncome": 199433.07,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 35,
+      "annualized": 6.74,
+      "totalGrossRoi": 47.35,
+      "investmentPeriod": 48,
+      "funded": 100,
+      "fundedAmount": 841500,
+      "totalReturnRoi": 246806.34,
+      "totalReturnRoiPercentage": 26.46,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 1006473.97,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "sqft": 825
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2019-03-03",
+      "closeDate": "2019-03-03",
+      "soldDate": "2019-03-03",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 482,
+    "code": "SC-103",
+    "title": "Marina Diamond 1 (Studio)",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 475000,
+    "projectPrice": 475000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "SHORT_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 225453.45,
+    "totalReturnRoiPercentage": 42.08,
+    "investors": 48,
+    "rental": {
+      "grossYield": 11.81,
+      "netYield": 10.32,
+      "dividendYield": 7.68,
+      "grossRent": 56119,
+      "netRent": 48412,
+      "totalRentalIncome": 168575.64,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 48,
+      "annualized": 6.69,
+      "totalGrossRoi": 52.6,
+      "investmentPeriod": 53,
+      "funded": 100.64,
+      "fundedAmount": 478040,
+      "totalReturnRoi": 225453.45,
+      "totalReturnRoiPercentage": 42.08,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 7.37,
+      "saleProceed": 608888.06,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 550
+    },
+    "location": {
+      "area": {
+        "name": "Dubai Marina",
+        "displayName": "Dubai Marina"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2019-05-01",
+      "closeDate": "2019-04-24",
+      "soldDate": "2019-05-01",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 481,
+    "code": "SC-102",
+    "title": "Lake View Studio",
+    "investmentType": "HOLD",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 500000,
+    "projectPrice": 500000,
+    "propertyType": "APARTMENT",
+    "investmentCategory": "LONG_TERM",
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 264165.36,
+    "totalReturnRoiPercentage": 48.36,
+    "investors": 29,
+    "rental": {
+      "grossYield": 11,
+      "netYield": 9.9,
+      "dividendYield": 8.73,
+      "grossRent": 55000,
+      "netRent": 46393,
+      "totalRentalIncome": 164243.61,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 29,
+      "annualized": 13.37,
+      "totalGrossRoi": 79.75,
+      "investmentPeriod": 62,
+      "funded": 101.87,
+      "fundedAmount": 509350,
+      "totalReturnRoi": 264165.36,
+      "totalReturnRoiPercentage": 48.36,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 663874.89,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "sqft": 525
+    },
+    "location": {
+      "area": {
+        "name": "JLT",
+        "displayName": "JLT"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2018-10-15",
+      "closeDate": null,
+      "soldDate": "2018-10-15",
+      "completionDate": null
+    }
+  },
+  {
+    "id": 654,
+    "code": "ID-228",
+    "title": "Miami House Collection 25",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 15472500,
+    "projectPrice": 19222500,
+    "propertyType": "VILLA",
+    "investmentCategory": null,
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 2995189.92,
+    "totalReturnRoiPercentage": 15.58,
+    "investors": 494,
+    "rental": {
+      "grossYield": null,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": 0,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 494,
+      "annualized": null,
+      "totalGrossRoi": null,
+      "investmentPeriod": 12,
+      "funded": 68.93,
+      "fundedAmount": 13250069.25,
+      "totalReturnRoi": 2995189.92,
+      "totalReturnRoiPercentage": 15.58,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 25000000,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "sqft": 4600
+    },
+    "location": {
+      "area": {
+        "name": "Jumeriah Islands",
+        "displayName": "Jumeriah Islands"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-10-06",
+      "closeDate": "2023-12-29",
+      "soldDate": "2023-10-06",
+      "completionDate": "2024-02-10"
+    }
+  },
+  {
+    "id": 650,
+    "code": "ID-227",
+    "title": "Miami House Collection 22",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 12682000,
+    "projectPrice": 15932000,
+    "propertyType": "VILLA",
+    "investmentCategory": null,
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 3002035.84,
+    "totalReturnRoiPercentage": 18.84,
+    "investors": 514,
+    "rental": {
+      "grossYield": 20.97,
+      "netYield": 20.97,
+      "dividendYield": 18.88,
+      "grossRent": 2660000,
+      "netRent": 2394000,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 514,
+      "annualized": null,
+      "totalGrossRoi": null,
+      "investmentPeriod": 17,
+      "funded": 58.37,
+      "fundedAmount": 9299508.4,
+      "totalReturnRoi": 3002035.84,
+      "totalReturnRoiPercentage": 18.84,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 21750000,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "sqft": 4500
+    },
+    "location": {
+      "area": {
+        "name": "Jumeriah Islands",
+        "displayName": "Jumeriah Islands"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-05-26",
+      "closeDate": "2023-02-06",
+      "soldDate": "2023-05-26",
+      "completionDate": "2024-03-30"
+    }
+  },
+  {
+    "id": 648,
+    "code": "ID-226",
+    "title": "Miami House Collection 9",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 9252774.6,
+    "projectPrice": 13170000,
+    "propertyType": "VILLA",
+    "investmentCategory": null,
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 5932250.66,
+    "totalReturnRoiPercentage": 45.04,
+    "investors": 332,
+    "rental": {
+      "grossYield": null,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": 0,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 332,
+      "annualized": null,
+      "totalGrossRoi": null,
+      "investmentPeriod": 11,
+      "funded": 38.36,
+      "fundedAmount": 5052012,
+      "totalReturnRoi": 5932250.66,
+      "totalReturnRoiPercentage": 45.04,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 23000000,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "sqft": 4575
+    },
+    "location": {
+      "area": {
+        "name": "Jumeriah Islands",
+        "displayName": "Jumeriah Islands"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-02-03",
+      "closeDate": "2022-11-01",
+      "soldDate": "2023-02-03",
+      "completionDate": "2023-08-21"
+    }
+  },
+  {
+    "id": 635,
+    "code": "ID-224",
+    "title": "Miami House Collection 8",
+    "investmentType": "FLIP",
+    "propertyCategory": "RESIDENTIAL",
+    "price": 12569412.49,
+    "projectPrice": 15932000,
+    "propertyType": "VILLA",
+    "investmentCategory": null,
+    "propertyStatus": "EXITED",
+    "renovationProgress": 100,
+    "totalReturnRoi": 4660662.4,
+    "totalReturnRoiPercentage": 29.25,
+    "investors": 299,
+    "rental": {
+      "grossYield": null,
+      "netYield": null,
+      "dividendYield": null,
+      "grossRent": 0,
+      "netRent": 0,
+      "totalRentalIncome": 0,
+      "returnFrequency": "MONTHLY"
+    },
+    "performance": {
+      "investors": 299,
+      "annualized": null,
+      "totalGrossRoi": null,
+      "investmentPeriod": 18,
+      "funded": 48.96,
+      "fundedAmount": 7800307.2,
+      "totalReturnRoi": 4660662.4,
+      "totalReturnRoiPercentage": 29.25,
+      "renovationProgress": 100
+    },
+    "valuation": {
+      "marketValue": null,
+      "marketValuePercentage": 0,
+      "saleProceed": 22000000,
+      "expectedSaleProceed": null
+    },
+    "physical": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "sqft": 4500
+    },
+    "location": {
+      "area": {
+        "name": "Jumeriah Islands",
+        "displayName": "Jumeriah Islands"
+      },
+      "city": {
+        "name": "Dubai",
+        "displayName": "Dubai"
+      }
+    },
+    "auction": {
+      "fundedDate": "2023-01-10",
+      "closeDate": "2022-10-03",
+      "soldDate": "2023-01-10",
+      "completionDate": "2024-08-10"
+    }
+  }
+]

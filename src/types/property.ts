@@ -89,4 +89,5 @@ export interface Property {
   developer?: string | null;
   fullAddress?: string | null;
   minInvestment?: number;
+  closesIn?: string;
 }
