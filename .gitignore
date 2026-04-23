@@ -33,8 +33,12 @@ yarn-error.log*
 .env*.local
 
 # screenshots / artifacts
-*.png
+# Prevent stray screenshots/PDFs from landing in project root
+/*.png
+/*.pdf
 .playwright-mcp/
+/Slice/
+/docs/screenshots/
 
 # vercel
 .vercel
