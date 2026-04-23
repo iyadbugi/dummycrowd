@@ -1,0 +1,22 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="7" fill="#f7f4ee"/>
+  <text
+    x="16"
+    y="24"
+    text-anchor="middle"
+    font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="24"
+    font-weight="600"
+    fill="#14120e"
+    letter-spacing="-0.03em"
+  >S</text>
+  <line
+    x1="7.5"
+    y1="20"
+    x2="15"
+    y2="8.5"
+    stroke="#4e6a4f"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+</svg>
