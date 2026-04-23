@@ -186,9 +186,9 @@ export default function PropertyDetail({
                 <button
                   key={i}
                   type="button"
-                  onClick={() => openLightbox(i)}
+                  onClick={() => openLightbox(i === 4 ? 0 : i)}
                   className="group relative cursor-zoom-in overflow-hidden rounded-md border border-hairline bg-sand-200 text-left"
-                  aria-label={`Open photo ${i + 1}`}
+                  aria-label={i === 4 ? "Show all photos" : `Open photo ${i + 1}`}
                 >
                   <img
                     src={images[i]}
@@ -197,9 +197,7 @@ export default function PropertyDetail({
                     style={{ filter: "contrast(0.95) saturate(0.88)" }}
                   />
                   {i === 4 && (
-                    <span
-                      className="pointer-events-none absolute bottom-2 right-2 rounded-sm bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-ink-900 backdrop-blur-md ring-1 ring-hairline"
-                    >
+                    <span className="pointer-events-none absolute bottom-2 right-2 rounded-sm bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-ink-900 backdrop-blur-md ring-1 ring-hairline">
                       Show all photos
                     </span>
                   )}
